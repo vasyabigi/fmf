@@ -7,6 +7,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^', include('core.urls')),
+    url(r'^news/', include('news.urls')),
+
 )
 
 if settings.DEBUG:

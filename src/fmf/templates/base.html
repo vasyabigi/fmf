@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+
+{% load i18n %}
+
+<html>
+<head>
+  <title>
+    {% block title %}
+      {% trans "Fmf" %}
+    {% endblock %}
+  </title>
+</head>
+<body>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>

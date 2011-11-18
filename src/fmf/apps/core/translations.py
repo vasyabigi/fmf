@@ -9,4 +9,4 @@ class NewsImageTranslationOptions(TranslationOptions):
     fields = ('title',)
 
 translator.register(News, NewsTranslationOptions)
-translator.register(NewsImage, NewsTranslationOptions)
+translator.register(NewsImage, NewsImageTranslationOptions)

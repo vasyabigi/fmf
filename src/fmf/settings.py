@@ -18,18 +18,14 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'dev.db',
     }
 }
 
 TIME_ZONE = 'Europe/Kiev'
 
-LANGUAGE_CODE = 'uk'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
     ('uk', _('Ukrainian')),
@@ -132,7 +128,7 @@ LOGGING = {
     }
 }
 
-MODELTRANSLATION_TRANSLATION_REGISTRY = 'fmf.core.translation'
+MODELTRANSLATION_TRANSLATION_REGISTRY = 'core.translations'
 
 try:
     DEBUG_APPS = DEBUG_MIDDLEWARE_CLASSES = list()

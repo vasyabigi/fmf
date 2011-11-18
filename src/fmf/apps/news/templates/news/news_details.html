@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+
+{% block title %}{{ news.title }}{% endblock %}
+
+{% block content %}
+  <p>{{ news.title }}</p>
+  {% if news.date %}
+    <p>{{ news.date }}</p>
+  {% endif %}
+  <p>{{ news.description }}</p>
+  <ul>
+    {% for image in news.images.all %}
+      <li>
+        {% thumbnail image.image "350x350" as im %}
+          <img src="{{ im.url }}" alt="{{ news.title|title }}" />
+        {% endthumbnail %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

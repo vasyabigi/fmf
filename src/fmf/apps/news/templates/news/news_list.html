@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load thumbnail i18n %}
+
+{% block title %}{% trans "News" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+  {# TODO add pagination #}
+  <ul>
+    {% for news in news_list %}
+      <li>
+        <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+        {% thumbnail image.image "350x350" upscale=False as im %}
+          <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" />
+        {% endthumbnail %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
