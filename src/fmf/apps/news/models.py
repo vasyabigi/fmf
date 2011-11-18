@@ -1,3 +1,41 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
-# Create your models here.
+from sorl.thumbnail.fields import ImageField
+
+
+class News(models.Model):
+    title = models.CharField(_("Title"), max_length=256)
+    slug = models.SlugField(_("Slug"), max_length=256)
+    main_image = ImageField(upload_to='news/images', verbose_name=_("Main image"))
+    short_description = models.TextField(_("Short Description"))
+    description = models.TextField(_("Description"))
+    date = models.DateField(_("Date"), blank=True, null=True)
+    is_main = models.BooleanField(_("Is on main page"), default=True)
+    is_active = models.BooleanField(_("Active"), default=True)
+    created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
+
+    class Meta:
+        ordering = ('created',)
+        verbose_name = _("News")
+        verbose_name_plural = _("News")
+
+    def __unicode__(self):
+        return self.title
+
+
+class NewsImage(models.Model):
+    news = models.ForeignKey(News, verbose_name=_("News"), related_name='images')
+    title = models.CharField(_("Title"), max_length=256, blank=True, null=True)
+    image = ImageField(upload_to='news/images/', verbose_name=_("Image"))
+
+    class Meta:
+        ordering = ('title', 'news')
+        verbose_name = _("Image")
+        verbose_name_plural = _("Images")
+
+    def __unicode__(self):
+        if self.title:
+            return 'image for %s - %s' % (self.news.title, self.title)
+        else:
+            return 'image for %s' % self.news.title

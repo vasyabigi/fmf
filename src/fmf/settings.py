@@ -31,6 +31,11 @@ TIME_ZONE = 'Europe/Kiev'
 
 LANGUAGE_CODE = 'uk'
 
+LANGUAGES = (
+    ('uk', _('Ukrainian')),
+    ('en', _('English')),
+)
+
 SITE_ID = 1
 
 USE_I18N = True
@@ -99,10 +104,14 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     #apps
+    'core',
+    'news',
 
     #plugins
     'south',
     'django_extensions',
+    'sorl.thumbnail',
+    'modeltranslation',
 )
 
 LOGGING = {
@@ -122,6 +131,8 @@ LOGGING = {
         },
     }
 }
+
+MODELTRANSLATION_TRANSLATION_REGISTRY = 'fmf.core.translation'
 
 try:
     DEBUG_APPS = DEBUG_MIDDLEWARE_CLASSES = list()
