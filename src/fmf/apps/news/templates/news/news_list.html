@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load thumbnail i18n %}
+{% load thumbnail i18n pagination_tags %}
 
 {% block title %}{% trans "News" %} - {{ block.super }}{% endblock %}
 
@@ -12,6 +12,7 @@
 
   {# TODO add pagination #}
   <ul>
+    {% autopaginate news_list 10 %}
     {% for news in news_list %}
       <li>
         <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
@@ -21,4 +22,5 @@
       </li>
     {% endfor %}
   </ul>
+  {% paginate %}
 {% endblock %}
