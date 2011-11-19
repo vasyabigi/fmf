@@ -5,12 +5,17 @@
 {% block title %}{% trans "News" %} - {{ block.super }}{% endblock %}
 
 {% block content %}
+
+  <ul>
+    <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
+  </ul>
+
   {# TODO add pagination #}
   <ul>
     {% for news in news_list %}
       <li>
         <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
-        {% thumbnail image.image "350x350" upscale=False as im %}
+        {% thumbnail news.main_image "50x50" as im %}
           <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" />
         {% endthumbnail %}
       </li>

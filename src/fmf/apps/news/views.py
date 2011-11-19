@@ -5,12 +5,16 @@ from news.models import News
 
 
 class NewsList(ListView):
-    model = News
     template_name = 'news/news_list.html'
     context_object_name = 'news_list'
 
+    def get_queryset(self):
+        return News.objects.filter(is_active=True)
+
 
 class NewsDetails(DetailView):
-    model = News
     template_name = 'news/news_details.html'
     context_object_name = 'news'
+
+    def get_queryset(self):
+        return News.objects.filter(is_active=True)

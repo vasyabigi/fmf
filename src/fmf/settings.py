@@ -28,8 +28,8 @@ TIME_ZONE = 'Europe/Kiev'
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
-    ('uk', _('Ukrainian')),
     ('en', _('English')),
+    ('uk', _('Ukrainian')),
 )
 
 SITE_ID = 1
@@ -67,6 +67,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,6 +83,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.contrib.messages.context_processors.messages",
     'django.core.context_processors.request',
+    'core.context_processors.categories',
 )
 
 ROOT_URLCONF = 'fmf.urls'
@@ -91,6 +93,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'localeurl',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -102,12 +105,14 @@ INSTALLED_APPS = (
     #apps
     'core',
     'news',
+    'stories',
 
     #plugins
     'south',
     'django_extensions',
     'sorl.thumbnail',
     'modeltranslation',
+    
 )
 
 LOGGING = {

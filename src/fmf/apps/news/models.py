@@ -28,7 +28,7 @@ class News(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("news-details", args=(self.slug,))
+        return reverse("news-detail", args=(self.slug,))
 
     def thumb(self):
         im = get_thumbnail(self.main_image, '50x50', crop='center')

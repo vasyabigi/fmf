@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
-{% load thumbnail %}
+{% load thumbnail i18n %}
 
 {% block title %}{{ news.title }}{% endblock %}
 
 {% block content %}
+  <ul>
+    <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
+    <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
+  </ul>
+
   <p>{{ news.title }}</p>
   {% if news.date %}
     <p>{{ news.date }}</p>
@@ -13,8 +18,8 @@
   <ul>
     {% for image in news.images.all %}
       <li>
-        {% thumbnail image.image "350x350" as im %}
-          <img src="{{ im.url }}" alt="{{ news.title|title }}" />
+        {% thumbnail image.image "100x100" as im %}
+          <img src="{{ im.url }}" alt="{{ image.title|default:news.title }}" />
         {% endthumbnail %}
       </li>
     {% endfor %}

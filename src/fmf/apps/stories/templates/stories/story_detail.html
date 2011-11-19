@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ story.title }} - {{ story.category.title }}{% endblock %}
+
+{% block content %}
+  <ul>
+    <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
+    <li><a href="{{ story.category.get_absolute_url }}">{{ story.category.title }}</a></li>
+  </ul>
+
+  <p>{{ story }}</p>
+  <p>{{ story.description }}</p>
+{% endblock %}
