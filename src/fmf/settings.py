@@ -112,7 +112,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'sorl.thumbnail',
     'modeltranslation',
-    
+
 )
 
 LOGGING = {

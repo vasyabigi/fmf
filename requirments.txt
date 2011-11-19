@@ -5,4 +5,8 @@ django-debug-toolbar
 werkzeug
 PIL
 pytils
-sorl.thumbnail
+sorl-thumbnail
+-e svn+http://django-modeltranslation.googlecode.com/svn/trunk/#egg=django-modeltranslation
+django-pagination
+django-localeurl
+-e git+https://github.com/jpwatts/django-positions.git#egg=django-positions

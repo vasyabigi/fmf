@@ -1,12 +1,15 @@
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+
 from sorl.thumbnail.fields import ImageField
+from positions import PositionField
 
 
 class Category(models.Model):
     title = models.CharField(_("Title"), max_length=256)
     slug = models.SlugField(_("Slug"), max_length=256)
+    position = PositionField()
     is_active = models.BooleanField(_("Active"), default=True)
 
     class Meta:
@@ -27,8 +30,8 @@ class Story(models.Model):
     slug = models.SlugField(_("Slug"), max_length=256)
     image = ImageField(upload_to='stories/images', verbose_name=_("Main image"), blank=True, null=True)
     description = models.TextField(_("Description"))
+    position = PositionField(collection='category')
     is_active = models.BooleanField(_("Active"), default=True)
-    #TODO add position
 
     class Meta:
         ordering = ('title',)

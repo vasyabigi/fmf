@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from sorl.thumbnail.fields import ImageField
 from sorl.thumbnail.shortcuts import get_thumbnail
+from positions import PositionField
 
 
 class News(models.Model):
@@ -16,6 +17,7 @@ class News(models.Model):
     description = models.TextField(_("Description"))
     date = models.DateField(_("Date"), blank=True, null=True)
     is_main = models.BooleanField(_("Is on main page"), default=True)
+    position = PositionField()
     is_active = models.BooleanField(_("Active"), default=True)
     created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
 
@@ -44,6 +46,7 @@ class NewsImage(models.Model):
     news = models.ForeignKey(News, verbose_name=_("News"), related_name='images')
     title = models.CharField(_("Title"), max_length=256, blank=True, null=True)
     image = ImageField(upload_to='news/images/', verbose_name=_("Image"))
+    position = PositionField(collection='news')
 
     class Meta:
         ordering = ('title', 'news')

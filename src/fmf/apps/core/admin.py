@@ -1,4 +1,4 @@
-from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
+from modeltranslation.admin import TranslationAdmin, TranslationTabularInline, TranslationStackedInline
 
 from sorl.thumbnail.admin import AdminImageMixin
 
@@ -16,4 +16,7 @@ class BaseTranslationAdmin(AdminImageMixin, TranslationAdmin):
 
 
 class BaseTranslationTabularInLine(AdminImageMixin, TranslationTabularInline):
+    pass
+
+class BaseTranslationStackedInLine(AdminImageMixin, TranslationStackedInline):
     pass
