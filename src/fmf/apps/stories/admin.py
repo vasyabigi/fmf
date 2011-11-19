@@ -5,7 +5,7 @@ from models import Category, Story
 
 class StoryStackedAdmin(BaseTranslationStackedInLine):
     model = Story
-    extra = 0
+    extra = 1
 
 
 class CategoryAdmin(BaseTranslationAdmin):
