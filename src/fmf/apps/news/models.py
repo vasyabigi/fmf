@@ -5,6 +5,7 @@ from django.template.context import Context
 from django.utils.translation import ugettext_lazy as _
 
 from sorl.thumbnail.fields import ImageField
+from sorl.thumbnail.helpers import ThumbnailError
 from sorl.thumbnail.shortcuts import get_thumbnail
 from positions import PositionField
 
@@ -33,10 +34,13 @@ class News(models.Model):
         return reverse("news-detail", args=(self.slug,))
 
     def thumb(self):
-        im = get_thumbnail(self.main_image, '50x50', crop='center')
-        t = Template('<img src="{{ image.url }}" alt="{{ alt }}" />')
-        c = Context({"image": im, 'alt': self.title })
-        thum = t.render(c)
+        try:
+            im = get_thumbnail(self.main_image, '50x50', crop='center')
+            t = Template('<img src="{{ image.url }}" alt="{{ alt }}" />')
+            c = Context({"image": im, 'alt': self.title })
+            thum = t.render(c)
+        except ThumbnailError:
+            thum = _('No image')
         return  thum
     thumb.short_description = _('Image')
     thumb.allow_tags = True

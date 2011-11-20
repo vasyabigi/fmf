@@ -3,4 +3,12 @@
 {% load i18n %}
 
 {% block content %}
+  <ul class="news-slider">
+    {% for new in news %}
+      <li>
+        <a href="{{ new.get_absolute_url }}">{{ new }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
 {% endblock %}
