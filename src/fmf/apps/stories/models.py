@@ -1,5 +1,8 @@
+import uuid
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.db.models.signals import pre_save
+from django.dispatch.dispatcher import receiver
 from django.utils.translation import ugettext_lazy as _
 
 from sorl.thumbnail.fields import ImageField
@@ -43,3 +46,9 @@ class Story(models.Model):
 
     def get_absolute_url(self):
         return reverse('story-detail', args=(self.category.slug, self.slug))
+
+
+@receiver(pre_save, sender=Story)
+def story_slug(sender, instance, **kwargs):
+    if Story.objects.exclude(pk=instance.pk).filter(slug=instance.slug):
+        instance.slug += unicode(uuid.uuid4())[:5]

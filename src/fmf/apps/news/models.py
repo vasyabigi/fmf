@@ -1,5 +1,9 @@
+import uu
+import uuid
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.db.models.signals import pre_save
+from django.dispatch.dispatcher import receiver
 from django.template.base import Template
 from django.template.context import Context
 from django.utils.translation import ugettext_lazy as _
@@ -62,3 +66,9 @@ class NewsImage(models.Model):
             return 'image for %s - %s' % (self.news.title, self.title)
         else:
             return 'image for %s' % self.news.title
+
+
+@receiver(pre_save, sender=News)
+def news_slug(sender, instance, **kwargs):
+    if News.objects.exclude(pk=instance.pk).filter(slug=instance.slug):
+        instance.slug += unicode(uuid.uuid4())[:5]
