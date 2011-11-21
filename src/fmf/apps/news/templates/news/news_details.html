@@ -14,7 +14,7 @@
   {% if news.date %}
     <p>{{ news.date }}</p>
   {% endif %}
-  <p>{{ news.description }}</p>
+  <p>{{ news.description|safe }}</p>
   <ul>
     {% for image in news.images.all %}
       <li>

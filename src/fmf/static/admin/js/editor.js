@@ -33,13 +33,14 @@ dojo.ready(function(){
         "cut", "copy", "paste", "|",
         "bold", "italic", "underline", "strikethrough", "|",
         "insertOrderedList", "insertUnorderedList", "indent", "outdent", "|",
-//        "formatBlock", "fontName", "fontSize", "||",
+//        "formatBlock", "fontName",
+//          "fontSize",
 //        "findreplace", "insertEntity", "blockquote", "|",
-//        "createLink", "insertImage", "insertanchor", "|",
+        "createLink", "insertImage",
 //        "foreColor", "hiliteColor", "|",
-        "showblocknodes", "pastefromword",
+//        "showblocknodes", "pastefromword",
         // headless plugins
-//        "normalizeindentoutdent", "prettyprint",
+        "normalizeindentoutdent", "prettyprint",
         "autourllink", "dijit._editor.plugins.EnterKeyHandling"
       ]
         }
