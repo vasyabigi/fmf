@@ -25,11 +25,11 @@ DATABASES = {
 
 TIME_ZONE = 'Europe/Kiev'
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'uk'
 
 LANGUAGES = (
-    ('en', _('English')),
     ('uk', _('Ukrainian')),
+    ('en', _('English')),
 )
 
 SITE_ID = 1
