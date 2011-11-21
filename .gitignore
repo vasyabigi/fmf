@@ -3,3 +3,4 @@ media/
 *.db
 local_settings.py
 src/fmf/.idea/
+.idea/
