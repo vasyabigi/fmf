@@ -4,12 +4,13 @@
 
 {% block title %}{{ news.title }}{% endblock %}
 
-{% block content %}
-  <ul>
-    <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
-    <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
-  </ul>
+{% block breadcrumbs %}
+  <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
+  <li><a href="{% url news-list %}">{% trans "News list" %}</a></li>
+  <li>{{ news.title }}</li>
+{% endblock %}
 
+{% block content %}
   <p>{{ news.title }}</p>
   {% if news.date %}
     <p>{{ news.date }}</p>

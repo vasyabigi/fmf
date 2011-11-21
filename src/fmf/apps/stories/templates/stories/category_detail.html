@@ -2,17 +2,16 @@
 
 {% load i18n %}
 
-{% block title %}
+{% block title %}{{ category.title }} - {{ block.super }}{% endblock %}
 
+{% block breadcrumbs %}
+  <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
+  <li>{{ category.title }}</li>
 {% endblock %}
 
 {% block content %}
   <ul>
-    <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
-  </ul>
-  
-  <ul>
-    {% for story in category.stories.all %}
+    {% for story in category.active_stories %}
       <li>
         <a href="{{ story.get_absolute_url }}">{{ story }}</a>
         <p>{{ story.short_description|safe }}</p>

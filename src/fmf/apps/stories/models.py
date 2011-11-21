@@ -26,6 +26,10 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('category-detail', args=(self.slug,))
 
+    @property
+    def active_stories(self):
+        return self.stories.filter(is_active=True)
+
 
 class Story(models.Model):
     category = models.ForeignKey(Category, verbose_name=_("Category"), related_name='stories')

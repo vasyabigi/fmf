@@ -4,13 +4,12 @@
 
 {% block title %}{% trans "News" %} - {{ block.super }}{% endblock %}
 
+{% block breadcrumbs %}
+  <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
+  <li>{% trans "News list" %}</li>
+{% endblock %}
+
 {% block content %}
-
-  <ul>
-    <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
-  </ul>
-
-  {# TODO add pagination #}
   <ul>
     {% autopaginate news_list 10 %}
     {% for news in news_list %}
