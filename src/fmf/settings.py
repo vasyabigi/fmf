@@ -137,6 +137,8 @@ LOGGING = {
 
 MODELTRANSLATION_TRANSLATION_REGISTRY = 'core.translations'
 
+PREFIX_DEFAULT_LOCALE = False
+
 try:
     DEBUG_APPS = DEBUG_MIDDLEWARE_CLASSES = list()
     from local_settings import *

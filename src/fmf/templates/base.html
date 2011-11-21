@@ -4,6 +4,7 @@
 
 <html>
   <head>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/fmf.css"/>
     <title>
       {% block title %}{% trans "Fmf" %}{% endblock %}
     </title>
@@ -41,5 +42,6 @@
     </header>
     {% block content %}
     {% endblock %}
+    <script src="{{ STATIC_URL }}js/fmf.js"></script>
   </body>
 </html>
