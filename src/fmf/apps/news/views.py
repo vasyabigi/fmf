@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic.list import ListView
 
@@ -13,7 +14,10 @@ class NewsList(ListView):
 
 
 def news_details(request, slug):
-    news = News.objects.filter(is_active=True, slug=slug)[0]
+    try:
+        news = News.objects.filter(is_active=True).get(slug=slug)
+    except News.DoesNotExist:
+        raise Http404()
     context = {
         'news': news,
     }
