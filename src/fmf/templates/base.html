@@ -14,9 +14,9 @@
       <ul>
       {% for lang in LANGUAGES %}
         {% ifequal lang.0 LANGUAGE_CODE %}
-          <li class="selected" title="{{ lang.1 }}">{{ lang.0 }}</li>
+          <li class="selected" title="{{ lang.1 }}">{{ lang.1 }}</li>
         {% else %}
-          <li><a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.0 }}</a></li>
+          <li><a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a></li>
         {% endifequal %}
       {% endfor %}
       </ul>

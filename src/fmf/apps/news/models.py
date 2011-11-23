@@ -22,7 +22,7 @@ class News(models.Model):
     description = models.TextField(_("Description"))
     date = models.DateField(_("Date"), blank=True, null=True)
     is_main = models.BooleanField(_("Is on main page"), default=True)
-    position = PositionField()
+    position = PositionField(_("Position"))
     is_active = models.BooleanField(_("Active"), default=True)
     created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
 
@@ -54,7 +54,7 @@ class NewsImage(models.Model):
     news = models.ForeignKey(News, verbose_name=_("News"), related_name='images')
     title = models.CharField(_("Title"), max_length=256, blank=True, null=True)
     image = ImageField(upload_to='news/images/', verbose_name=_("Image"))
-    position = PositionField(collection='news')
+    position = PositionField(_("Position"), collection='news')
 
     class Meta:
         ordering = ('title', 'news')
@@ -63,9 +63,9 @@ class NewsImage(models.Model):
 
     def __unicode__(self):
         if self.title:
-            return 'image for %s - %s' % (self.news.title, self.title)
+            return _('image for %(news_title)s - %(title)s') % {'news_title':self.news.title, 'title':self.title}
         else:
-            return 'image for %s' % self.news.title
+            return _('image for %s') % self.news.title
 
 
 @receiver(pre_save, sender=News)

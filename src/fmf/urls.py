@@ -10,7 +10,7 @@ urlpatterns = patterns('',
 
     url(r'^', include('core.urls')),
     url(r'^news/', include('news.urls')),
-    url(r'^', include('stories.urls')),
+    url(r'^category/', include('stories.urls')),
 )
 
 if settings.DEBUG:
@@ -23,4 +23,9 @@ if settings.DEBUG:
             "document_root": settings.MEDIA_ROOT,
             'show_indexes': True,
         }),
+    )
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += patterns('',
+        url(r'^rosetta/', include('rosetta.urls')),
     )

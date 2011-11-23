@@ -12,7 +12,7 @@ from positions import PositionField
 class Category(models.Model):
     title = models.CharField(_("Title"), max_length=256)
     slug = models.SlugField(_("Slug"), max_length=256)
-    position = PositionField()
+    position = PositionField(_("Position"))
     is_active = models.BooleanField(_("Active"), default=True)
 
     class Meta:
@@ -37,7 +37,7 @@ class Story(models.Model):
     slug = models.SlugField(_("Slug"), max_length=256)
     image = ImageField(upload_to='stories/images', verbose_name=_("Main image"), blank=True, null=True)
     description = models.TextField(_("Description"))
-    position = PositionField(collection='category')
+    position = PositionField(_("Position"),collection='category')
     is_active = models.BooleanField(_("Active"), default=True)
 
     class Meta:
