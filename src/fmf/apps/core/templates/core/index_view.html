@@ -1,14 +1,22 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load i18n thumbnail %}
 
 {% block content %}
-  <ul class="news-slider">
-    {% for new in news %}
-      <li>
-        <a href="{{ new.get_absolute_url }}">{{ new }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
+  <article>
+    <!--slider-->
+    <section id="slider_box">
+      <div id="slider">
+        <ul class="news-slider">
+          {% for new in news %}
+            <li>
+              {% thumbnail new.main_image '600x200' as im %}
+                <img src="{{ im.url }}" alt="{{ new.title }}">
+              {% endthumbnail %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </article>
 {% endblock %}
