@@ -2,7 +2,7 @@
 body  {
   overflow:hidden;
   height: 100%;
-  background: url("../images/bg copy.png") repeat;
+  background: url("../images/bg_copy.png") repeat;
 }
 #wrapper  {
   height: 100%;
@@ -15,7 +15,7 @@ body  {
 }
 header {
   position: relative;
-  height: 200px;
+  min-height: 100px;
 }
 header #lang {
   position: absolute;
