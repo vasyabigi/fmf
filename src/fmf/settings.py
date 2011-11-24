@@ -87,6 +87,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'core.context_processors.categories',
 )
 
+
+
 ROOT_URLCONF = 'fmf.urls'
 
 TEMPLATE_DIRS = (
@@ -114,6 +116,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'modeltranslation',
     'pagination',
+    'filebrowser',
 
 )
 

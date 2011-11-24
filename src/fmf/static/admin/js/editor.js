@@ -36,7 +36,7 @@ dojo.ready(function(){
 //        "formatBlock", "fontName",
 //          "fontSize",
 //        "findreplace", "insertEntity", "blockquote", "|",
-        "createLink", "insertImage",
+        "createLink", "insertImage", "removeFormat",
 //        "foreColor", "hiliteColor", "|",
 //        "showblocknodes", "pastefromword",
         // headless plugins
