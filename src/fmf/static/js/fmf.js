@@ -1,51 +1,47 @@
-$(document).ready(function(){
+var Fmf = (function(){
+    return {
+        NewsSlider : function(){
+            var sudoSlider = $("#slider").sudoSlider({
+                fade:true,
+                numeric:true,
+                auto:true,
+                continuous: true,
+                fadespeed: '1000',
+                speed:'4000',
+                resumePause:'5000',
+                updateBefore: true,
+                beforeAniFunc: function(t){
+                    $(this).children('.caption').hide();
+                },
+                afterAniFunc: function(t){
+                    $(this).children('.caption').slideDown(200);
+                }
+            });
 
-/*  SLIDER  */
+            $(".prevBtn, .nextBtn, #slider").hover(
+                function () {
+                    // Mousein
+                    $(".prevBtn, .nextBtn").stop().fadeTo(200, 1);
+                },
+                function () {
+                    //Mouse out
+                    $(".prevBtn, .nextBtn").stop().fadeTo(200, 0);
+                }
+            );
 
-    var auto = true;
-    var autostopped = false;
-    var sudoSlider = $("#slider").sudoSlider({
-     fade:true,
-     numeric:true,
-     auto:true,
-     continuous: true,
-     fadespeed: '1000',
-     speed:'3000',
-     resumePause:'5000'/*,
-     beforeAniFunc: function(){
-     var sliderPos = $("#slider").offset().top;
-     var scrolledDown = $(window).scrollTop();
-      if (sliderPos < scrolledDown)
-       {
-          $('html,body').animate({scrollTop: sliderPos}, 800);
-       }
-     }*/
-  });
-    $(".prevBtn, .nextBtn, #slider").hover(
-    function () {
-      // Mousein
-      $(".prevBtn, .nextBtn").stop().fadeTo(200, 1);
-    },
-    function () {
-      //Mouse out
-      $(".prevBtn, .nextBtn").stop().fadeTo(200, 0);
+            $(".prevBtn, .nextBtn").stop().fadeTo(0, 0);
+            $('#slider_box').mouseenter(function() {
+                auto = sudoSlider.getValue('autoAnimation');
+                sudoSlider.stopAuto();
+            });
+            $('#slider_box').mouseleave(function() {
+                sudoSlider.startAuto();
+            });
+        } //End of NewsSlider
     }
-    );
-    $(".prevBtn, .nextBtn").stop().fadeTo(0, 0);
-    $('#slider_box') .mouseenter(function() {
-      auto = sudoSlider.getValue('autoAnimation');
-      sudoSlider.stopAuto();
-   }).mouseleave(function() {
-         sudoSlider.startAuto();
-   });
+})($);
 
-/*  TABS  */
-  
 
-	$(function() {
-		$("#accordion" ).accordion({
-			collapsible: true
-		});
-	});
-
+$(document).ready(function(){
+    Fmf.NewsSlider();
 });

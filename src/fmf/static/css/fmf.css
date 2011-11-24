@@ -2,21 +2,20 @@
 body  {
   overflow:hidden;
   height: 100%;
-  background: url("../images/bg.png") repeat;
+  background: url("../images/bg copy.png") repeat;
 }
 #wrapper  {
   height: 100%;
   width: 80%;
   margin: 0 auto;
   padding: 0 20px;
-  border:1px solid #556b2f;
+  border:1px solid #cccccc;
   background-color: rgba(0, 0, 0, .1);
   overflow: hidden;
 }
 header {
   position: relative;
   height: 200px;
-  background: url("../images/fmftoprukr.jpg") top center no-repeat;
 }
 header #lang {
   position: absolute;
@@ -117,15 +116,14 @@ nav ul li a:hover {
   box-shadow: 3px 3px 15px rgba(85,85,85,0.7);
 }
 
-/*SLIDER*/
-
+/*News-slider*/
 #slider_box {
   position: relative;
-  width: 696px;
+  width: 600px;
   margin: 0 auto;
 }
 #slider {
-  width:696px;
+  width:600px;
 }
 #slider img{
     border:none;
@@ -136,16 +134,16 @@ nav ul li a:hover {
     list-style:none;
 }
 #slider li {
-    width:696px;
+    width:600px;
     overflow:hidden;
-  position: relative;
+    position: relative;
 }
 .caption {
     position:absolute;
-    bottom:0;
+    bottom:3px;
     left:0;
-    width:700px;
-    height:25px;
+    width:600px;
+    height:50px;
     text-align:center;
     color:black;
     background:white;
@@ -154,8 +152,8 @@ nav ul li a:hover {
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#a3ffffff,endColorstr=#a3ffffff);
     zoom: 1;
 }
-/*News*/
 
+/*News*/
 #main_news {
   float:left;
   width:60%;

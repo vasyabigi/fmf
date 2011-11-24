@@ -10,9 +10,10 @@
         <ul class="news-slider">
           {% for new in news %}
             <li>
-              {% thumbnail new.main_image '600x200' as im %}
+              {% thumbnail new.main_image '600x300' crop='center' as im %}
                 <img src="{{ im.url }}" alt="{{ new.title }}">
               {% endthumbnail %}
+              <div class="caption"><a href="{{ new.get_absolute_url }}">{{ new.title }}</a></div>
             </li>
           {% endfor %}
         </ul>
