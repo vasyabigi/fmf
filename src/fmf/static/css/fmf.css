@@ -25,27 +25,30 @@ header #lang {
 }
 header #lang li {
   display:block;
-  width: 2.5em;
-  height: 2.5em;
   margin: 0.2em;
-  background: #dcdcdc;
-  border: 1px solid #cccccc;
+  padding: 0.2em;
+  border: 1px solid #aaaaaa;
   border-radius: 0.5em;
-  text-decoration: none;
   font: bold italic 1em/2.5em Georgia;
   text-align: center;
-  color: #555555;
   -webkit-transition:all 0.2s ease-in;
 }
-header #lang li a:hover {
-  background: #555555;
-  color: #dcdcdc;
-  border:1px solid #999999;
+header #lang li.selected a{
+  cursor: default;
+}
+header #lang li.selected, header #lang li:hover {
+  background: #dcdcdc;
+}
+header #lang li a {
+  display:block;
+  width:100%;
+  padding-right: 50px;
+  color: #555555;
 }
 
 /*Main navigation*/
 nav {
-   margin:20px 50px 200px;
+   margin:20px;
 }
 nav > ul {
  position: relative;
