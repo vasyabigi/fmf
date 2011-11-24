@@ -42,79 +42,98 @@ header #lang li a:hover {
   color: #dcdcdc;
   border:1px solid #999999;
 }
+
+/*Main navigation*/
 nav {
-  width: 620px;
-  margin: 20px auto;
-  list-style:none;
-  text-align:center;
-  font: normal 30px/50px Georgia sans-serif;
-  clear:both;
+   margin:20px 50px 200px;
 }
-nav ul li{
-  float:left;
+nav > ul {
+ position: relative;
+ z-index: 597;
+ float: left;
+ font: bold 17px/normal Arial, Helvetica, sans-serif;
 }
-nav ul li:first-child a{
-  border-left:none;
-  border-radius: 5px 0 0 5px;
+nav > ul,
+nav > ul li,
+nav > ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-nav ul li:first-child a:hover {
-  margin-left:0;
+nav > ul li {
+  float: left;
+  padding: 5px 0;
+  line-height: 1.3em;
+  vertical-align: middle;
+  background-color: #333;
+  color: #fff;
+  zoom: 1;
 }
-nav ul li:last-child a{
-  border-right:none;
-  border-radius: 0 5px 5px 0;
-}
-nav ul li a {
-  display:block;
-  width:150px;
-  color:#f0c600;
-  text-shadow: 1px 1px 5px black;
-  text-align:center;
-  text-decoration:none;
-  border-right: 1px solid #404716;
-  border-left: 1px solid #9fb020;
-  border-bottom: 1px solid #404716;
-  -moz-box-shadow: 2px 2px 5px #555;
-  -webkit-box-shadow: 2px 2px 5px #555;
-  box-shadow: 2px 2px 5px #555;
-  background-color: #7f8e27;
-  background-image: -moz-linear-gradient(top, #59631e,#8ea106);
-  background-image: -ms-linear-gradient(top, #59631e, #8ea106);
-  background-image: -o-linear-gradient(top, #59631e, #8ea106);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#59631e), to(#8ea106));
-  background-image: -webkit-linear-gradient(top, #59631e, #8ea106);
 
-  transition-property: transform, box-shadow, color;
-  transition-duration: 0.5s;
-  transition-timing-function: easy-in;
-
-  -moz-transition-property:-moz-transform, box-shadow, color;
-  -moz-transition-duration:0.3s;
-  -moz-transition-timing-function:easy-in;
-
-  -webkit-transition-property:-webkit-transform, box-shadow, color;
-  -webkit-transition-duration:0.3s;
-  -webkit-transition-timing-function:easy-in;
-
-  -o-transition-property:-o-transform, box-shadow, color;
-  -o-transition-duration:0.3s;
-  -o-transition-timing-function:easy-in;
-
-  -ms-transition-property:-ms-transform, box-shadow, color;
-  -ms-transition-duration:0.3s;
-  -ms-transition-timing-function:easy-in;
+nav > ul li.hover,
+nav > ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
 }
-nav ul li a:hover {
-     -moz-transform: scale(1.05) ;  /* FF3.5+ */
-       -o-transform: scale(1.1) ;  /* Opera 10.5 */
-  -webkit-transform: scale(1.05) ;  /* Saf3.1+, Chrome */
-      -ms-transform: scale(1.1) ;  /* IE9 */
-          transform: scale(1.05) ;
-  border-right:none;
-  margin-right:1px;
-  color: #ff9000;
-  box-shadow: 3px 3px 15px rgba(85,85,85,0.7);
+nav > ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: auto;
+  width:auto;
+  right: 0;
+  margin-top: -1px;
+  border-top: 1px solid #1a1a1a;
+  border-left: solid 1px #4c4c4c;
+  font: bold 11px/1em Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 598;
 }
+nav > ul ul li {
+  float: none;
+  padding: 0;
+  background-color: #3a3a3a;
+}
+nav > ul ul ul {
+  top: 0;
+  right: auto;
+  left: 100%;
+  margin-top: 0;
+  border-top: none;
+  border-left: none;
+  font-weight: normal;
+}
+nav > ul ul ul li {
+ background-color: #4c4c4c;
+}
+
+nav > ul li:hover > ul {
+  visibility: visible;
+}
+  nav > ul a:link,
+  nav > ul a:visited { color: #fff; text-decoration: none;}
+  nav > ul a:hover {
+    border-color:#4498c7 #5db1e0 #5db1e0 !important;
+    background-color: #4498c7;
+    color: #fff;
+  }
+  nav > ul a:active {
+    color: #fff;
+  }
+nav > ul li a{
+padding: 5px 30px;
+border-style: solid;
+border-width: 1px;
+border-color: #404040 #1a1a1a #1a1a1a #505050;
+}
+
+nav > ul ul li a {display:block;padding:8px;  border-color: #4a4a4a #242424 #242424; border-left: none; }
+
+nav > ul ul ul li a { border-color: #595959 #333 #333; }
+
+nav > ul ul ul ul li a { border-color: #767676 #404040 #404040; }
+/*END Main navigation*/
+
 
 /*News-slider*/
 #slider_box {
@@ -143,7 +162,7 @@ nav ul li a:hover {
     bottom:3px;
     left:0;
     width:600px;
-    height:50px;
+    height:50px;  
     text-align:center;
     color:black;
     background:white;
