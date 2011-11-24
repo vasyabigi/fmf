@@ -16,7 +16,7 @@ class Category(models.Model):
     is_active = models.BooleanField(_("Active"), default=True)
 
     class Meta:
-        ordering = ('title',)
+        ordering = ('position',)
         verbose_name = _("Category")
         verbose_name_plural = _("Categories")
 
@@ -41,7 +41,7 @@ class Story(models.Model):
     is_active = models.BooleanField(_("Active"), default=True)
 
     class Meta:
-        ordering = ('title',)
+        ordering = ('position',)
         verbose_name = _("Story")
         verbose_name_plural = _("Stories")
 
