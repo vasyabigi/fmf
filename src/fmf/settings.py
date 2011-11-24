@@ -3,7 +3,7 @@ import sys
 
 from django.utils.translation import ugettext_lazy as _
 
-PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
 sys.path.append(os.path.join(PROJECT_PATH, 'apps'),)
 
