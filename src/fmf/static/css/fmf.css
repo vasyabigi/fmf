@@ -158,19 +158,28 @@ nav > ul ul ul ul li a { border-color: #767676 #404040 #404040; }
     position: relative;
 }
 .caption {
-    position:absolute;
-    bottom:3px;
-    left:0;
-    width:600px;
-    height:50px;  
-    text-align:center;
-    color:black;
-    background:white;
-    background:transparent;
-    background:rgba(255,255,255,0.7);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#a3ffffff,endColorstr=#a3ffffff);
-    zoom: 1;
+  position:absolute;
+  bottom:3px;
+  left:0;
+  width:600px;
+  height:50px;
+  text-align:center;
+  color:black;
+  background:rgba(0,0,0,0.5);
+  zoom: 1;
+  behavior: url(/static/js/PIE.htc);
 }
+.caption a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #bbb;
+  font: 20px Georgia sans-serif;
+}
+  .caption a:hover {
+    color:#ddd;
+  }
+
 
 /*News*/
 #main_news {
