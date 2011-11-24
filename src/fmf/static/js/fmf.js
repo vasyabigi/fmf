@@ -20,7 +20,7 @@ var Fmf = (function(){
 
             $(".prevBtn, .nextBtn, #slider").hover(
                 function () {
-                    // Mousein
+                    // Mouse in
                     $(".prevBtn, .nextBtn").stop().fadeTo(200, 1);
                 },
                 function () {
