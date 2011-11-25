@@ -104,11 +104,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.flatpages',
 
     #apps
     'core',
     'news',
     'stories',
+    'flatpages_extra',
 
     #plugins
     'south',
@@ -117,6 +119,7 @@ INSTALLED_APPS = (
     'modeltranslation',
     'pagination',
     'filebrowser',
+    'tinymce',
 
 )
 
@@ -141,6 +144,13 @@ LOGGING = {
 MODELTRANSLATION_TRANSLATION_REGISTRY = 'core.translations'
 
 PREFIX_DEFAULT_LOCALE = False
+
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste,searchreplace,layer",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+}
 
 try:
     DEBUG_APPS = DEBUG_MIDDLEWARE_CLASSES = list()

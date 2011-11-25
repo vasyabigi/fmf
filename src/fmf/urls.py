@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^localeurl/', include('localeurl.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin/filebrowser/', include('filebrowser.urls')),
+    (r'^tinymce/', include('tinymce.urls')),
 
     url(r'^', include('core.urls')),
     url(r'^news/', include('news.urls')),

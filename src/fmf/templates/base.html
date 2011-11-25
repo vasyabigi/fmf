@@ -42,6 +42,7 @@
         <!--navigation-->
         <nav>
           <ul>
+            <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
             <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
             {% for category in categories %}
               {% with category.active_stories as stories %}
@@ -75,6 +76,8 @@
 
       <footer>
         {% block footer %}
+          <br/>
+          <p>Запрошуємо Вас на фізико-математичний факультет, де Вам будуть подані можливості для отримання елітної освіти та насиченого, цікавого студенського життя!</p>
         {% endblock %}
       </footer>
     </div>

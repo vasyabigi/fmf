@@ -4,3 +4,4 @@ media/
 local_settings.py
 src/fmf/.idea/
 .idea/
+static_collected/
