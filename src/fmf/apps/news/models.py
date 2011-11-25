@@ -27,7 +27,7 @@ class News(models.Model):
     created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
 
     class Meta:
-        ordering = ('created',)
+        ordering = ('position',)
         verbose_name = _("News")
         verbose_name_plural = _("News")
 

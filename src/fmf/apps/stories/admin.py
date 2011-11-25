@@ -6,6 +6,7 @@ from models import Category, Story
 class StoryStackedAdmin(BaseTranslationStackedInLine):
     model = Story
     extra = 1
+    prepopulated_fields = {'slug': ('title_uk',)}
 
 
 class CategoryAdmin(BaseTranslationAdmin):
