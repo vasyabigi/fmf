@@ -77,9 +77,6 @@ nav > ul li {
   padding: 5px 0;
   line-height: 1.3em;
   vertical-align: middle;
-  background-color: #333;
-  color: #ddd;
-  zoom: 1;
 }
 nav > ul > li:hover {
   position: relative;
@@ -105,9 +102,8 @@ nav > ul ul li {
 }
 nav > ul ul a:hover {
   background-color:rgba(221,221,221,.8);
-  border-width:1px 0;
-  border-color: #fff;
-  border-style: solid;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
 }
 nav > ul ul ul {
   top: 0;
@@ -120,9 +116,11 @@ nav > ul ul ul {
 }
 nav > ul li:hover > ul {
   visibility: visible;
-} nav > ul li:hover,
-  nav > ul a:link,
-  nav > ul a:visited { color: #fff; text-decoration: none;}
+}
+nav > ul > li a {
+  padding: 5px 30px;
+  color:#eee;
+}
   nav > ul a:hover{
     background-color: rgba(221,221,221,.6);
     color: #333;
@@ -130,15 +128,8 @@ nav > ul li:hover > ul {
 nav > ul li:hover > a {
    color: #333;
   }
-nav > ul li a {
-padding: 5px 30px;
-}
-
-nav > ul ul li a {display:block;padding:8px;  border-color: #4a4a4a #242424 #242424; border-left: none; }
-
+nav > ul ul li a {display:block;padding:8px;border: 1px solid transparent;color:#555;}
 nav > ul ul ul li a { border-color: #595959 #333 #333; }
-
-nav > ul ul ul ul li a { border-color: #767676 #404040 #404040; }
 /*END Main navigation*/
 
 
@@ -196,6 +187,35 @@ nav > ul ul ul ul li a { border-color: #767676 #404040 #404040; }
 #main_news article {
   margin: 20px 10px;
 }
+#news_list ul li {
+  overflow: hidden;
+  padding: 10px;
+  border: 1px solid;
+  border-color: transparent;
+}
+#news_list ul li:hover {
+  border-top-color:#444;
+  border-bottom-color:#777;
+  background-color: rgba(255,255,255,0.2)
+}
+#news_list ul li img {
+  float:left;
+  margin:0 10px 10px 0;
+}
+#news_list ul li a, .breadcrumbs li a, .breadcrumbs li {
+  font: bold 18px/25px Arial sans-serif;
+}
+#news_list ul li .news_date{
+  font: 12px arial sans-serif;
+  color: #333;
+  margin: 5px 0;
+}
+#news_list ul li .news_short{
+  font: 16px Georgia sans-serif;
+  color: #111;
+  margin: 5px 0;
+}
+
 /*TABS*/
 
 #sidebar {
