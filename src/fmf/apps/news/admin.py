@@ -1,7 +1,10 @@
 from django.contrib import admin
+from django.core.urlresolvers import reverse
 
 from core.admin import BaseTranslationAdmin, BaseTranslationTabularInLine
 from models import News, NewsImage
+
+from tinymce.widgets import TinyMCE
 
 
 class NewsImageAdmin(BaseTranslationTabularInLine):
@@ -15,5 +18,13 @@ class NewsAdmin(BaseTranslationAdmin):
         NewsImageAdmin,
     )
     prepopulated_fields = {'slug': ('title',)}
+
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.name.startswith('description_'):
+            return db_field.formfield(widget=TinyMCE(
+                attrs={'cols': 70, 'rows': 25, 'class':'vLargeTextField modeltranslation modeltranslation-default'},
+                mce_attrs={'external_link_list_url': reverse('tinymce.views.flatpages_link_list')},
+            ))
+        return super(NewsAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
 admin.site.register(News, NewsAdmin)
