@@ -12,3 +12,4 @@ django-localeurl
 -e git+https://github.com/jpwatts/django-positions.git#egg=django-positions
 django-filebrowser-no-grappelli
 django-tinymce
+psycopg2

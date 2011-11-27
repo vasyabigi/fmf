@@ -73,6 +73,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'pagination.middleware.PaginationMiddleware',
 )
 
@@ -84,7 +85,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.contrib.messages.context_processors.messages",
     'django.core.context_processors.request',
-    'core.context_processors.categories',
 )
 
 
@@ -109,7 +109,6 @@ INSTALLED_APPS = (
     #apps
     'core',
     'news',
-    'stories',
     'flatpages_extra',
 
     #plugins

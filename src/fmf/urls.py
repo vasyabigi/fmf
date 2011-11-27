@@ -11,8 +11,9 @@ urlpatterns = patterns('',
     (r'^tinymce/', include('tinymce.urls')),
 
     url(r'^', include('core.urls')),
+
     url(r'^news/', include('news.urls')),
-    url(r'^category/', include('stories.urls')),
+
 )
 
 if settings.DEBUG:

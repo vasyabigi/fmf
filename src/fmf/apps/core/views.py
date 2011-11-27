@@ -1,6 +1,6 @@
 from django.views.generic.base import TemplateView
 
-from stories.models import Category
+from models import IndexSliderImage
 from news.models import News
 
 
@@ -9,5 +9,6 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context['news'] = News.objects.filter(is_active=True, is_main=True)[:5]
+        context['images'] = IndexSliderImage.objects.filter(is_active=True)
+        context['news_list'] = News.objects.filter(is_active=True, is_main=True)[:3]
         return context
