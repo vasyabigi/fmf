@@ -34,6 +34,7 @@ class BaseTranslationStackedInLine(AdminImageMixin, TranslationStackedInline):
 
 class IndexSliderImageAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ('thumb', 'page', 'position')
+    list_display_links = ('thumb', 'page')
 
 admin.site.register(IndexSliderImage, IndexSliderImageAdmin)
 

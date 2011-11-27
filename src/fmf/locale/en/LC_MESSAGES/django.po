@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 23:32+0200\n"
+"POT-Creation-Date: 2011-11-28 00:59+0200\n"
 "PO-Revision-Date: 2011-11-23 23:27\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,16 +26,60 @@ msgstr "Українська"
 msgid "English"
 msgstr ""
 
-#: apps/news/models.py:18 apps/news/models.py:55 apps/stories/models.py:13
-#: apps/stories/models.py:36
+#: apps/core/forms.py:8
+msgid "URL"
+msgstr ""
+
+#: apps/core/forms.py:9
+msgid ""
+"Example: '/about/contact/'. Make sure to have leading and trailing slashes."
+msgstr ""
+
+#: apps/core/forms.py:11
+msgid ""
+"This value must contain only letters, numbers, dots, underscores, dashes, "
+"slashes or tildes."
+msgstr ""
+
+#: apps/core/models.py:15
+msgid "Page"
+msgstr ""
+
+#: apps/core/models.py:16 apps/core/models.py:41 apps/news/models.py:49
+#: apps/news/models.py:56 apps/news/models.py:61
+msgid "Image"
+msgstr ""
+
+#: apps/core/models.py:18 apps/news/models.py:26
+msgid "Active"
+msgstr ""
+
+#: apps/core/models.py:23
+msgid "Image for slider"
+msgstr ""
+
+#: apps/core/models.py:24
+msgid "Images for slider"
+msgstr ""
+
+#: apps/core/models.py:27
+#, python-format
+msgid "Image for %s"
+msgstr ""
+
+#: apps/core/models.py:39 apps/news/models.py:47
+msgid "No image"
+msgstr ""
+
+#: apps/news/models.py:18 apps/news/models.py:55
 msgid "Title"
 msgstr ""
 
-#: apps/news/models.py:19 apps/stories/models.py:14 apps/stories/models.py:37
+#: apps/news/models.py:19
 msgid "Slug"
 msgstr ""
 
-#: apps/news/models.py:20 apps/stories/models.py:38
+#: apps/news/models.py:20
 msgid "Main image"
 msgstr ""
 
@@ -43,7 +87,7 @@ msgstr ""
 msgid "Short Description"
 msgstr ""
 
-#: apps/news/models.py:22 apps/stories/models.py:39
+#: apps/news/models.py:22
 msgid "Description"
 msgstr ""
 
@@ -55,8 +99,8 @@ msgstr ""
 msgid "Is on main page"
 msgstr ""
 
-#: apps/news/models.py:26 apps/stories/models.py:16 apps/stories/models.py:41
-msgid "Active"
+#: apps/news/models.py:25 apps/news/models.py:57
+msgid "Position"
 msgstr ""
 
 #: apps/news/models.py:27
@@ -64,16 +108,8 @@ msgid "Created"
 msgstr ""
 
 #: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:54
-#: apps/news/templates/news/news_list.html:5 templates/base.html:25
+#: apps/news/templates/news/news_list.html:5 templates/base.html:46
 msgid "News"
-msgstr ""
-
-#: apps/news/models.py:47
-msgid "No image"
-msgstr ""
-
-#: apps/news/models.py:49 apps/news/models.py:56 apps/news/models.py:61
-msgid "Image"
 msgstr ""
 
 #: apps/news/models.py:62
@@ -91,9 +127,8 @@ msgid "image for %s"
 msgstr ""
 
 #: apps/news/templates/news/news_details.html:8
-#: apps/news/templates/news/news_list.html:8
-#: apps/stories/templates/stories/category_detail.html:8
-#: apps/stories/templates/stories/story_detail.html:8 templates/base.html:45
+#: apps/news/templates/news/news_list.html:8 templates/base.html:45
+#: templates/base.html.py:58
 msgid "Home"
 msgstr ""
 
@@ -102,23 +137,7 @@ msgstr ""
 msgid "News list"
 msgstr ""
 
-#: apps/stories/models.py:20 apps/stories/models.py:35
-msgid "Category"
-msgstr ""
-
-#: apps/stories/models.py:21
-msgid "Categories"
-msgstr ""
-
-#: apps/stories/models.py:45
-msgid "Story"
-msgstr ""
-
-#: apps/stories/models.py:46
-msgid "Stories"
-msgstr ""
-
-#: templates/base.html:9
+#: templates/base.html:26
 msgid "Fmf"
 msgstr ""
 
