@@ -13,3 +13,4 @@ django-localeurl
 django-filebrowser-no-grappelli
 django-tinymce
 psycopg2
+django-chunks

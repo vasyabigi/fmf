@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-{% load i18n localeurl_tags %}
+{% load i18n localeurl_tags chunks %}
 
 <!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7"> <![endif]-->
@@ -44,20 +44,8 @@
           <ul>
             <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
             <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
-            {% for category in categories %}
-              {% with category.active_stories as stories %}
-                {% if stories %}
-                  <li>
-                    <a href="{{ category.get_absolute_url }}">{{ category }}</a>
-                    <ul>
-                      {% for story in stories %}
-                        <li><a href="{{ story.get_absolute_url }}">{{ story }}</a></li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                {% endif %}
-              {% endwith %}
-            {% endfor %}
+            {% chunk "students_menu" %}
+            {% chunk "about_menu" %}
           </ul>
         </nav>
         <div id="nav_bg"></div>

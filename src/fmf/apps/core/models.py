@@ -27,7 +27,7 @@ class IndexSliderImage(models.Model):
         return _('Image for %s') % self.page
 
     def get_url(self):
-        return reverse('flatpage_url', args=(self.page.url,))
+        return reverse('django.contrib.flatpages.views.flatpage', args=(self.page.url,))
 
     def thumb(self):
         try:

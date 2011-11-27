@@ -106,11 +106,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.flatpages',
 
-    #apps
-    'core',
-    'news',
-    'flatpages_extra',
-
     #plugins
     'south',
     'django_extensions',
@@ -119,6 +114,11 @@ INSTALLED_APPS = (
     'pagination',
     'filebrowser',
     'tinymce',
+    'chunks',
+
+    #apps
+    'core',
+    'news',
 
 )
 

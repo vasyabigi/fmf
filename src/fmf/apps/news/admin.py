@@ -14,6 +14,7 @@ class NewsImageAdmin(BaseTranslationTabularInLine):
 
 class NewsAdmin(BaseTranslationAdmin):
     list_display = ('title', 'thumb', 'short_description',)
+    list_display_links = ('title', 'thumb')
     inlines = (
         NewsImageAdmin,
     )
