@@ -19,7 +19,7 @@ html, body {
   /*Main navigation*/
 
 nav {
-  background-color: #333;
+ background: #393939;
 }
 nav > ul {
   width: 80%;
@@ -30,24 +30,31 @@ nav > ul {
 }
 nav > ul > li {
   display: inline-block;
+  margin-right:-5px;
   vertical-align: middle;
+  background: #393939;
+  border-left: 1px solid #494949;
+  border-right: 1px solid #2B2B2B;
 }
 nav > ul > li:hover {
   position: relative;
   z-index: 599;
   cursor: default;
   background: #D7D7D7;
+  border-left-color: #fff;
+  border-right-color: #ddd;
 }
 nav > ul ul {
   visibility: hidden;
   position: absolute;
-  top: 100%;
-  left: auto;
+  top: 95%;
+  left:-1px;
   width:100%;
-  right: 0;
   margin-top: -1px;
+  border: 1px solid;
+  border-color: #fff #ddd #ddd #fff ;
   font: bold 11px/1em Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow:2px 2px 2px 0 #bbb;
+  box-shadow: 3px 3px 1px 0 rgba(35, 35, 35, 0.1);
   z-index: 598;
 }
 nav > ul ul li {
@@ -56,12 +63,10 @@ nav > ul ul li {
   padding: 0;
   background-color: #eee;
   border: 1px solid transparent;
-  border-left: none;
   border-right: none;
 }
 nav > ul ul li:hover {
-  border-top: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
+
 }
 nav > ul ul a:hover {
   border-top-color: #fff;
@@ -76,7 +81,7 @@ nav > ul > li a {
   color: #C5C5C5;
 }
   nav > ul a:hover{
-    background-color: #d5d5d5;
+    background-color: #d7d7d7;
     color: #333;
   }
 nav > ul li:hover > a {
@@ -88,38 +93,61 @@ nav > ul ul li a {display:block;margin-left:-1px;padding:8px;border: 1px solid t
 
 #lang {
   float:right;
-  padding: 5px 0;
+  padding: 3px 0;
   background: none;
   font: 12px Arial  Tahoma, Geneva, sans-serif;;
+}
+#lang:hover {
+  border-left: 1px solid #494949;
+  border-right: 1px solid #2B2B2B;
+}
+#lang > a:first-child {
+  border-radius: 5px 0 0 5px;
+  margin-right:0;
+  padding-left: 10px;
+}
+#lang > a:last-child {
+  border-radius: 0 5px 5px 0;
+  margin-left:-3px;
+  padding-right: 10px;
 }
 #lang a {
   display: inline-block;
   position: relative;
-  margin: 5px;
+  margin: 2px;
   padding: 0.5em;
-  border: 1px solid #222;
-  background-color:#555;
-  border-radius: 20px;
-  box-shadow: inset 0 3px 3px 0 #777, 0 2px 1px 0 #222;
-  font: bold italic 0.8em/1.5em Tahoma, Geneva, sans-serif;;
-  color: #dcdcdc;
+  border: 1px solid #614023;
+  background-color: #705536;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8a6741), color-stop(100%, #705536));
+  background-image: -webkit-linear-gradient(#8a6741,#705536);
+  background-image: -moz-linear-gradient(#8a6741,#705536);
+  background-image: -o-linear-gradient(#8a6741,#705536);
+  background-image: linear-gradient(#8a6741,#705536);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  color:#eee;
+  font:13px/17px Tahoma, Geneva, sans-serif;
   text-align: center;
-  text-shadow:0 1px 1px #000;
   -webkit-transition:all 0.2s ease-in;
 }
 #lang a:hover {
-    background-color:#666;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d5d3b), color-stop(100%, #634b30));
+  background-image: -webkit-linear-gradient(#7d5d3b,#634b30);
+  background-image: -moz-linear-gradient(#7d5d3b,#634b30);
+  background-image: -o-linear-gradient(#7d5d3b,#634b30);
+  background-image: linear-gradient(#7d5d3b,#634b30);
+  border-color: #54381E;
+}
+#lang a:active, #lang .selected, #lang .selected:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #634b30), color-stop(100%, #7d5d3b));
+  background-image: -webkit-linear-gradient(#634b30,#7d5d3b);
+  background-image: -moz-linear-gradient(#634b30,#7d5d3b);
+  background-image: -o-linear-gradient(#634b30,#7d5d3b);
+  background-image: linear-gradient(#634b30,#7d5d3b);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1) inset;
+  color:#ccc;
 }
 #lang a.selected{
   cursor: default;
-  box-shadow:none;
-  border-color: #777;
-  text-shadow: none;
-  background: #dcdcdc;
-  color: #555555;
-}
-#lang a.selected {
-  background: #dcdcdc;
 }
     /*END Language buttons*/
 
@@ -149,7 +177,7 @@ body > article {
   height: 100%;
   margin: 0 auto -100px; 
   z-index: 1;
-  padding: 20px 0 30px;
+  padding: 20px 0 0;
   border-top: 1px solid white;
   background: #D2D1D0;
   background: -webkit-gradient(linear, 50% 0%, 50% 300, color-stop(0%, #E3E3E2), color-stop(100%, #D2D1D0));
@@ -211,6 +239,9 @@ body > article {
   /*END Slider*/
 
   /*News*/
+#news {
+  margin-bottom:15px;
+}
 #main_news article {
   margin: 20px 10px;
 }
@@ -268,9 +299,9 @@ footer {
   position: relative;
   height:100px;
   width: 100%;
+
   background: #232323;
   color: #837E76;
-  box-shadow: 0 -3px 5px 0 #111;
   z-index:2
 }
 /*END footer*/
