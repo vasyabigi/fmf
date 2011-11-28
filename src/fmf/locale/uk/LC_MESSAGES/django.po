@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-28 00:58+0200\n"
-"PO-Revision-Date: 2011-11-28 01:01\n"
+"PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: settings.py:31
 msgid "Ukrainian"
-msgstr "Українська"
+msgstr "Укр"
 
 #: settings.py:32
 msgid "English"
-msgstr "English"
+msgstr "Eng"
 
 #: apps/core/forms.py:8
 msgid "URL"

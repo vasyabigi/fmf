@@ -30,48 +30,47 @@
     </title>
   </head>
   <body>
-      <!--header-->
-      <header>
-          <!--navigation-->
-          <nav>
-            <ul>
-              <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
-              <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
-              {% chunk "students_menu" %}
-              {% chunk "about_menu" %}
-              <li id="lang">
-                {% for lang in LANGUAGES %}
-                  {% ifequal lang.0 LANGUAGE_CODE %}
-                    <a class="selected" href="#">{{ lang.1 }}</a>
-                  {% else %}
-                    <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
-                  {% endifequal %}
-                {% endfor %}
-              </li>
-            </ul>
-          </nav>
-        <!--end navigation-->
-      </header>
-      <!--end header-->
-      <div id="page_info">
-          <ul class="breadcrumbs container">
-            {% block breadcrumbs %}
-              <li>{% trans "Home" %}</li>
-            {% endblock %}
+    <!--header-->
+    <header>
+        <!--navigation-->
+        <nav>
+          <ul>
+            <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
+            <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
+            {% chunk "students_menu" %}
+            {% chunk "about_menu" %}
+            <li id="lang">
+              {% for lang in LANGUAGES %}
+                {% ifequal lang.0 LANGUAGE_CODE %}
+                  <a class="selected" href="#">{{ lang.1 }}</a>
+                {% else %}
+                  <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
+                {% endifequal %}
+              {% endfor %}
+            </li>
           </ul>
-      </div>
+        </nav>
+        <!--end navigation-->
+    </header>
+    <!--end header-->
+    <div id="page_info">
+      <ul class="breadcrumbs container">
+        {% block breadcrumbs %}
+          <li>{% trans "Home" %}</li>
+        {% endblock %}
+      </ul>
+    </div>
       
-      {% block content %}
-      {% endblock %}
+    {% block content %}
+    {% endblock %}
 
-      <footer>
-        <div class="container">
-          {% block footer %}
-            <br/>
-            <p>Запрошуємо Вас на фізико-математичний факультет, де Вам будуть подані можливості для отримання елітної освіти та насиченого, цікавого студенського життя!</p>
-          {% endblock %}
-        </div>
-      </footer>
+    <footer>
+      <div class="container">
+        {% block footer %}
+          {% chunk "footer" %}
+        {% endblock %}
+      </div>
+    </footer>
     <div>
       <!--scripts-->
       <script src="{{ STATIC_URL }}js/jquery.js"></script>
