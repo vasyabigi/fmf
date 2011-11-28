@@ -22,12 +22,21 @@
     <section id="news" class="container bordered">
       <ul>
         {% for news in news_list %}
-          <li>
-            {{ news.title }}
-            {% thumbnail news.main_image '200x150' crop='center' as im %}
-                <img src="{{ im.url }}" alt="{{ news.title }}">
-            {% endthumbnail %}
-          </li>
+          {% if forloop.first %}
+            <li>
+              {{ news.title }}
+              {% thumbnail news.main_image '300x200' crop='center' as im %}
+                  <img src="{{ im.url }}" alt="{{ news.title }}">
+              {% endthumbnail %}
+            </li>
+          {% else %}
+            <li>
+              {{ news.title }}
+              {% thumbnail news.main_image '200x150' crop='center' as im %}
+                  <img src="{{ im.url }}" alt="{{ news.title }}">
+              {% endthumbnail %}
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </section><!--end news-->

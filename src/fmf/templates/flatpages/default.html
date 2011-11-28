@@ -4,6 +4,9 @@
   {{ flatpage.title }}
 {% endblock %}
 
-{% block content %}
-  {{ flatpage.content }}
-{% endblock %}
+
+  {% block content %}
+    <section class="container bordered">
+    {{ flatpage.content }}
+    </section>
+  {% endblock %}

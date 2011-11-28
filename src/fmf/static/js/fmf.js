@@ -1,5 +1,11 @@
 var Fmf = (function(){
     return {
+        init : function(){
+            $('a.selected').click(function(){
+                return false;
+            })
+        },
+
         NewsSlider : function(){
             var sudoSlider = $("#slider").sudoSlider({
                 fade:true,
@@ -44,4 +50,5 @@ var Fmf = (function(){
 
 $(document).ready(function(){
     Fmf.NewsSlider();
+    Fmf.init();
 });
