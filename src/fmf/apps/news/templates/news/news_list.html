@@ -10,23 +10,21 @@
 {% endblock %}
 
 {% block content %}
-  <article>
-    <section id="news_list" class="container bordered">
-      <ul>
-        {% autopaginate news_list 10 %}
-        {% for news in news_list %}
-          <li>
-            {% thumbnail news.main_image "200x150" crop="center" as im %}
-              <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" />
-            {% endthumbnail %}
-            <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
-            <p class="news_date">{{ news.date }}</p>
-            <p class="news_short">{{ news.short_description }}</p>
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
-    <div class="push"></div>
-  </article>
+  <section id="news_list" class="container bordered">
+    <ul>
+      {% autopaginate news_list 10 %}
+      {% for news in news_list %}
+        <li>
+          {% thumbnail news.main_image "200x150" crop="center" as im %}
+            <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" />
+          {% endthumbnail %}
+          <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+          <p class="news_date">{{ news.date }}</p>
+          <p class="news_short">{{ news.short_description }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <div class="push"></div>
   {% paginate %}
 {% endblock %}

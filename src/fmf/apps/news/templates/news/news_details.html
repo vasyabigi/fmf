@@ -11,18 +11,20 @@
 {% endblock %}
 
 {% block content %}
-  <p>{{ news.title }}</p>
-  {% if news.date %}
-    <p>{{ news.date }}</p>
-  {% endif %}
-  <p>{{ news.description|safe }}</p>
-  <ul>
-    {% for image in news.images.all %}
-      <li>
-        {% thumbnail image.image "100x100" as im %}
-          <img src="{{ im.url }}" alt="{{ image.title|default:news.title }}" />
-        {% endthumbnail %}
-      </li>
-    {% endfor %}
-  </ul>
+  <section class="container bordered">
+    <p>{{ news.title }}</p>
+    {% if news.date %}
+      <p>{{ news.date }}</p>
+    {% endif %}
+    <p>{{ news.description|safe }}</p>
+    <ul>
+      {% for image in news.images.all %}
+        <li>
+          {% thumbnail image.image "100x100" as im %}
+            <img src="{{ im.url }}" alt="{{ image.title|default:news.title }}" />
+          {% endthumbnail %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 {% endblock %}

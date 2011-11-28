@@ -246,15 +246,18 @@ body > article {
 }
 #news ul {
   margin: 10px;
+  overflow: hidden;
 }
 #main_news article {
   margin: 20px 10px;
 }
 #news_list ul li, #news ul li {
   overflow: hidden;
-  padding: 10px ;
   border: 1px solid;
   border-color: #fff #fff #D5D5D5 #D5D5D5;
+  display: block;
+  float: left;
+  width: 33%;
 }
 #news_list ul li:hover, #news ul li:hover {
   background-color: #eee;
@@ -306,17 +309,40 @@ body > article {
 /*END Content*/
 
 /*Footer*/
-
 .push {
     height: 100px;
 }
 footer {
   position: relative;
+  padding: 20px 0 0;
   height:100px;
   width: 100%;
 
   background: #232323;
   color: #837E76;
   z-index:2
+}
+
+footer li {
+  display: block;
+  float: left;
+  width: 25%;
+  color: #bbb;
+}
+
+footer li p {
+  padding-bottom: 10px;
+}
+
+footer li p strong {
+  font-size: 1.1em;
+}
+
+footer li a {
+  color: #bbb;
+}
+
+footer li a:hover {
+  color: #ddd;
 }
 /*END footer*/
