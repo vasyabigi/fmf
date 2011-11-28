@@ -193,8 +193,9 @@ body > article {
 
 #slider_box {
   position: relative;
+  float: left;
   width: 600px;
-  margin: 0 auto 20px;
+  margin: 0 20px 20px 10%;
   padding: 10px;
 }
 #slider {
@@ -241,6 +242,10 @@ body > article {
   /*News*/
 #news {
   margin-bottom:15px;
+  padding: 0;
+}
+#news ul {
+  margin: 10px;
 }
 #main_news article {
   margin: 20px 10px;
@@ -273,18 +278,28 @@ body > article {
 }
   /*END News*/
   /*TABS*/
-
-#sidebar {
-  float:right;
-  width:30%;
-  overflow: hidden;
+.tabs {
+  float:left;
+  width: 20%;
 }
-aside {
-  
+#tab_nav {
+  height: 36px;
 }
-#accordion {
-  width: 250px;
-  margin:50px
+#tab_nav li {
+  display: inline-block;
+  float:left;
+}
+#tab_nav li a {
+  display: block;
+  padding: 3px;
+  background: #f4f4f4;
+  font: 12px/30px arial;
+}
+#tab_nav li a.active {
+  background: #ccc;
+}
+#tab_content {
+  background: #ccc;
 }
   /*END TABS*/
 
