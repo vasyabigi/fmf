@@ -6,6 +6,7 @@ from django.template.context import Context
 from django.utils.translation import ugettext_lazy as _
 
 from positions.fields import PositionField
+from pytils.translit import slugify
 from sorl.thumbnail.fields import ImageField
 from sorl.thumbnail.helpers import ThumbnailError
 from sorl.thumbnail.shortcuts import get_thumbnail
@@ -40,3 +41,20 @@ class IndexSliderImage(models.Model):
         return  thum
     thumb.short_description = _('Image')
     thumb.allow_tags = True
+
+
+class IndexTab(models.Model):
+    title = models.CharField(_("Title"), max_length=256, unique=True)
+    content = models.TextField(_("Content"))
+    position = PositionField()
+
+    class Meta:
+        ordering = ('position',)
+        verbose_name = _("Index tab")
+        verbose_name_plural = _("Index tabs")
+
+    def __unicode__(self):
+        return self.title
+
+    def get_slug(self):
+        return slugify(self.title)

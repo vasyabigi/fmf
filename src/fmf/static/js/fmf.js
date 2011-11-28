@@ -43,12 +43,29 @@ var Fmf = (function(){
             $('#slider_box').mouseleave(function() {
                 sudoSlider.startAuto();
             });
-        } //End of NewsSlider
+        }, //End of NewsSlider
+
+        IndexTabs : function(){
+            $("#tab_content li").hide();
+            $("#"+$("#tab_nav li a.active").attr("title")).show();
+
+            $("#tab_nav li a").click(function() {
+                if ($(this).hasClass('active')) {
+                    return false;
+                }
+                $("#tab_nav li a.active").removeClass("active");
+                $(this).addClass("active");
+                $("#tab_content li").hide();
+                $("#"+$(this).attr("title")).fadeIn();
+                return false;
+            });
+        }
     }
 })($);
 
 
 $(document).ready(function(){
-    Fmf.NewsSlider();
     Fmf.init();
+    Fmf.NewsSlider();
+    Fmf.IndexTabs();
 });
