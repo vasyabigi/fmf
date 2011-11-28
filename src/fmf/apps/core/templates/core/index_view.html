@@ -5,7 +5,7 @@
 {% block content %}
   <article>
     <!--slider-->
-    <section id="slider_box">
+    <section id="slider_box" class="container bordered">
       <div id="slider">
         <ul class="news-slider">
           {% for image in images %}
@@ -20,7 +20,7 @@
       </div>
     </section><!--end slider-->
     <!--news-->
-    <section id="news">
+    <section id="news" class="container bordered">
       <ul>
         {% for news in news_list %}
           <li>
@@ -32,5 +32,6 @@
         {% endfor %}
       </ul>
     </section><!--end news-->
+    <div class="push"></div>
   </article>
 {% endblock %}

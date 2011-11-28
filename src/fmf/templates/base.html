@@ -18,6 +18,9 @@
     <!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
     <meta name="author" content="Vasya&Seroga">
     <meta name="Copyright" content="Copyright V&S 2011. All Rights Reserved.">
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <!--Styles-->
     <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/style_sudo.css">
@@ -27,48 +30,48 @@
     </title>
   </head>
   <body>
-    <div id="wrapper">
       <!--header-->
       <header>
-        <ul id="lang">
-        {% for lang in LANGUAGES %}
-          {% ifequal lang.0 LANGUAGE_CODE %}
-            <li class="selected" title="{{ lang.1 }}"><a href="#">{{ lang.1 }}</a></li>
-          {% else %}
-            <li><a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a></li>
-          {% endifequal %}
-        {% endfor %}
-        </ul>
-        <!--navigation-->
-        <nav>
-          <ul>
-            <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
-            <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
-            {% chunk "students_menu" %}
-            {% chunk "about_menu" %}
-          </ul>
-        </nav>
-        <div id="nav_bg"></div>
+          <!--navigation-->
+          <nav>
+            <ul>
+              <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
+              <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
+              {% chunk "students_menu" %}
+              {% chunk "about_menu" %}
+              <li id="lang">
+                {% for lang in LANGUAGES %}
+                  {% ifequal lang.0 LANGUAGE_CODE %}
+                    <a class="selected" href="#">{{ lang.1 }}</a>
+                  {% else %}
+                    <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
+                  {% endifequal %}
+                {% endfor %}
+              </li>
+            </ul>
+          </nav>
         <!--end navigation-->
       </header>
       <!--end header-->
-
-      <ul class="breadcrumbs">
-        {% block breadcrumbs %}
-          <li>{% trans "Home" %}</li>
-        {% endblock %}
-      </ul>
-
+      <div id="page_info">
+          <ul class="breadcrumbs container">
+            {% block breadcrumbs %}
+              <li>{% trans "Home" %}</li>
+            {% endblock %}
+          </ul>
+      </div>
+      
       {% block content %}
       {% endblock %}
 
       <footer>
-        {% block footer %}
-          <br/>
-          <p>Запрошуємо Вас на фізико-математичний факультет, де Вам будуть подані можливості для отримання елітної освіти та насиченого, цікавого студенського життя!</p>
-        {% endblock %}
+        <div class="container">
+          {% block footer %}
+            <br/>
+            <p>Запрошуємо Вас на фізико-математичний факультет, де Вам будуть подані можливості для отримання елітної освіти та насиченого, цікавого студенського життя!</p>
+          {% endblock %}
+        </div>
       </footer>
-    </div>
     <div>
       <!--scripts-->
       <script src="{{ STATIC_URL }}js/jquery.js"></script>
