@@ -246,7 +246,8 @@ body > article {
   overflow: hidden;
   border: 1px solid;
   border-color: #fff #fff #D5D5D5 #D5D5D5;
-  display: block;
+}
+#news ul li {
   float: left;
   width: 33%;
 }
@@ -255,7 +256,10 @@ body > article {
 }
 #news_list ul li img, #news ul li img {
   float:left;
-  margin:0 10px 10px 0;
+  margin:10px;
+}
+#news_list ul li p, #news ul li p {
+  margin:10px;
 }
 #news_list ul li a, .breadcrumbs li a, .breadcrumbs li {
   font: bold 18px/25px  Tahoma, Geneva, sans-serif;;
