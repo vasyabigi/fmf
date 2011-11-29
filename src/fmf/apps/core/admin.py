@@ -14,14 +14,6 @@ from tinymce.widgets import TinyMCE
 
 class BaseTranslationAdmin(AdminImageMixin, TranslationAdmin):
 
-    def formfield_for_dbfield(self, db_field, **kwargs):
-        if db_field.name.startswith('content_'):
-            return db_field.formfield(widget=TinyMCE(
-                attrs={'cols': 70, 'rows': 25, 'class':'vLargeTextField modeltranslation modeltranslation-default'},
-                mce_attrs={'external_link_list_url': reverse('tinymce.views.flatpages_link_list')},
-            ))
-        return super(BaseTranslationAdmin, self).formfield_for_dbfield(db_field, **kwargs)
-
     class Media:
         js = (
             '/static/modeltranslation/js/force_jquery.js',
@@ -55,6 +47,14 @@ class FlatPageAdmin(BaseTranslationAdmin):
     search_fields = ('url', 'title')
     exclude = ('content',)
 
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.name.startswith('content_'):
+            return db_field.formfield(widget=TinyMCE(
+                attrs={'cols': 70, 'rows': 25, 'class':'vLargeTextField modeltranslation modeltranslation-default'},
+                mce_attrs={'external_link_list_url': reverse('tinymce.views.flatpages_link_list')},
+            ))
+        return super(FlatPageAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageAdmin)
 
@@ -68,6 +68,12 @@ admin.site.register(Chunk, ChunkAdmin)
 
 
 class IndexTabAdmin(BaseTranslationAdmin):
-    pass
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.name.startswith('content_'):
+            return db_field.formfield(widget=TinyMCE(
+                attrs={'cols': 70, 'rows': 25, 'class':'vLargeTextField modeltranslation modeltranslation-default'},
+                mce_attrs={'external_link_list_url': reverse('tinymce.views.flatpages_link_list')},
+            ))
+        return super(IndexTabAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
 admin.site.register(IndexTab, IndexTabAdmin)
