@@ -39,6 +39,7 @@
             <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
             {% chunk "students_menu" %}
             {% chunk "about_menu" %}
+            {% chunk "international_menu" %}
             <li id="lang">
               {% for lang in LANGUAGES %}
                 {% ifequal lang.0 LANGUAGE_CODE %}

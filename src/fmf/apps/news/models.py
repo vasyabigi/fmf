@@ -22,7 +22,7 @@ class News(models.Model):
     description = models.TextField(_("Description"))
     date = models.DateField(_("Date"), blank=True, null=True)
     is_main = models.BooleanField(_("Is on main page"), default=True)
-    position = PositionField(_("Position"))
+    position = PositionField(_("Position"), default=0)
     is_active = models.BooleanField(_("Active"), default=True)
     created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
 
