@@ -59,6 +59,10 @@ var Fmf = (function(){
                 $("#"+$(this).attr("title")).fadeIn();
                 return false;
             });
+        },
+
+        TabsWidth : function(){
+          
         }
     }
 })($);

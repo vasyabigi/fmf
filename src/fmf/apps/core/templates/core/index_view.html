@@ -3,35 +3,36 @@
 {% load i18n thumbnail %}
 
 {% block content %}
+  <div class="container">
   <!--slider-->
-  <section id="slider_box" class="bordered">
-    <div id="slider">
-      <ul class="news-slider">
-        {% for image in images %}
-          <li>
-            {% thumbnail image.image '600x300' crop='center' as im %}
-              <img src="{{ im.url }}" alt="{{ image.page.title }}">
-            {% endthumbnail %}
-            <div class="caption"><a href="{{ image.get_url }}">{{ image.page.title }}</a></div>
-          </li>
+    <section id="slider_box" class="bordered">
+      <div id="slider">
+        <ul class="news-slider">
+          {% for image in images %}
+            <li>
+              {% thumbnail image.image '600x300' crop='center' as im %}
+                <img src="{{ im.url }}" alt="{{ image.page.title }}">
+              {% endthumbnail %}
+              <div class="caption"><a href="{{ image.get_url }}">{{ image.page.title }}</a></div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    <!--end slider-->
+    <section class="tabs bordered">
+      <ul id="tab_nav">
+        {% for tab in tabs %}
+          <li><a {% if forloop.first %}class="active"{% endif %}  href="#" title="{{ tab.get_slug }}">{{ tab.title }}</a></li>
         {% endfor %}
       </ul>
-    </div>
-  </section>
-  <!--end slider-->
-  <section class="tabs bordered">
-    <ul id="tab_nav">
-      {% for tab in tabs %}
-        <li><a {% if forloop.first %}class="active"{% endif %}  href="#" title="{{ tab.get_slug }}">{{ tab.title }}</a></li>
-      {% endfor %}
-    </ul>
-    <ul id="tab_content">
-      {% for tab in tabs %}
-        <li {% if forloop.first %}class="active"{% endif %} id="{{ tab.get_slug }}">{{ tab.content|safe }}</li>
-      {% endfor %}
-    </ul>
-  </section>
-
+      <ul id="tab_content">
+        {% for tab in tabs %}
+          <li {% if forloop.first %}class="active"{% endif %} id="{{ tab.get_slug }}">{{ tab.content|safe }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
   <div class="clearfix"></div>
   <!--news-->
   <section id="news" class="container bordered">

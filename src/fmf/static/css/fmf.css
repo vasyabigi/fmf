@@ -157,15 +157,6 @@ nav > ul ul li a {display:block;margin-left:-1px;padding:8px;border: 1px solid t
 
 /*Breadscrumbs*/
 
-#page_info {
-  padding: 10px 0;
-  background: #D7D7D7;
-  border-bottom: 1px solid #BABABA;
-}
-.breadcrumbs {
-  height: 50px;
-  vertical-align: middle;
-}
 /*END Breadscrumbs*/
 
 /*Content*/
@@ -195,7 +186,7 @@ body > article {
   position: relative;
   float: left;
   width: 600px;
-  margin: 0 20px 20px 10%;
+  margin: 0 20px 20px 0;
   padding: 10px;
 }
 #slider {
@@ -282,11 +273,12 @@ body > article {
   /*END News*/
   /*TABS*/
 .tabs {
-  float:left;
-  width: 20%;
+  margin-left: 640px;
+  height: 303px;
 }
 #tab_nav {
   height: 36px;
+  overflow-x:auto;
 }
 #tab_nav li {
   display: inline-block;
@@ -303,6 +295,10 @@ body > article {
 }
 #tab_content {
   background: #ccc;
+}
+#tab_content li {
+  overflow-y:auto;
+  height: 265px;
 }
   /*END TABS*/
 
