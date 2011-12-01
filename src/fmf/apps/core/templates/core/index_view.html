@@ -36,19 +36,7 @@
   <div class="clearfix"></div>
   <!--news-->
   <section id="news" class="container bordered">
-<!--    <ul>
-      {% for news in news_list %}
-        <li>
-          <a href="{{ news.get_absolute_url }}">
-            {% thumbnail news.main_image '150x150' crop='center' as im %}
-                <img src="{{ im.url }}" alt="{{ news.title }}">
-            {% endthumbnail %}
-          </a>
-          <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
-          <p>{{ news.short_description }}</p>
-        </li>
-      {% endfor %}
-    </ul>-->
+    <a href="{% url news-list %}">{% trans "News" %}</a>
     <table cellspacing="0" cellpadding="0">
       <tr>
         {% for news in news_list %}
