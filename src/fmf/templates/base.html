@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/style_sudo.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/fmf.css">
     <title>
-      {% block title %}{% trans "Fmf" %}{% endblock %}
+      {% block title %}{% trans "Faculty of Physics and Mathematics" %}{% endblock %}
     </title>
   </head>
   <body>
@@ -35,13 +35,11 @@
       <header>
           <!--navigation-->
           <nav class="clearfix">
-            <ul>
-              <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
-              {% chunk "about_menu" %}
-              {% chunk "students_menu" %}
-              {% chunk "entarnts_menu" %}
-              {% chunk "international_menu" %}
-            </ul>
+            {% block nav %}
+              {% with 'home' as active %}
+                {% include 'core/nav.html' %}
+              {% endwith %}
+            {% endblock %}
             <div id="lang">
               {% for lang in LANGUAGES %}
                 {% ifequal lang.0 LANGUAGE_CODE %}

@@ -1,0 +1,7 @@
+{% extends "flatpages/default" %}
+
+{% block nav %}
+  {% with 'entrants' as active %}
+    {% include 'core/nav.html' %}  
+  {% endwith %}
+{% endblock %}

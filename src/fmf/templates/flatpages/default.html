@@ -4,9 +4,14 @@
   {{ flatpage.title }}
 {% endblock %}
 
+{% block nav %}
+  {% with 'entrants' as active %}
+    {% include 'core/nav.html' %}
+  {% endwith %}
+{% endblock %}
 
-  {% block content %}
-    <section class="container bordered">
-    {{ flatpage.content }}
-    </section>
-  {% endblock %}
+{% block content %}
+  <section class="flatpage container bordered">
+  {{ flatpage.content }}
+  </section>
+{% endblock %}

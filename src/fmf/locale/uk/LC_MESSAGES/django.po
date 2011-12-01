@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-28 23:33+0200\n"
-"PO-Revision-Date: 2011-11-28 23:33\n"
+"POT-Creation-Date: 2011-12-02 00:59+0200\n"
+"PO-Revision-Date: 2011-12-02 01:00\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -93,6 +93,12 @@ msgstr "Таб на головній"
 msgid "Index tabs"
 msgstr "Таби на головній"
 
+#: apps/core/templates/core/index_view.html:39 apps/news/models.py:31
+#: apps/news/models.py:32 apps/news/models.py:54
+#: apps/news/templates/news/news_list.html:5
+msgid "News"
+msgstr "Новини"
+
 #: apps/news/models.py:19
 msgid "Slug"
 msgstr "Посилання"
@@ -125,11 +131,6 @@ msgstr "Позиція"
 msgid "Created"
 msgstr "Створено"
 
-#: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:54
-#: apps/news/templates/news/news_list.html:5 templates/base.html:39
-msgid "News"
-msgstr "Новини"
-
 #: apps/news/models.py:62
 msgid "Images"
 msgstr "Зображення"
@@ -145,7 +146,7 @@ msgid "image for %s"
 msgstr "зображення для %s"
 
 #: apps/news/templates/news/news_details.html:8
-#: apps/news/templates/news/news_list.html:8 templates/base.html:38
+#: apps/news/templates/news/news_list.html:8 templates/base.html:39
 msgid "Home"
 msgstr "Головна"
 
@@ -155,8 +156,24 @@ msgid "News list"
 msgstr "Список новин"
 
 #: templates/base.html:29
-msgid "Fmf"
-msgstr "FMF"
+msgid "Faculty of Physics and Mathematics"
+msgstr "Фізико Математичний Факультет"
+
+#: templates/base.html:40
+msgid "About the faculty"
+msgstr "Про факультет"
+
+#: templates/base.html:45
+msgid "Students"
+msgstr "Студентам"
+
+#: templates/base.html:50
+msgid "Entrants"
+msgstr "Абітурієнтам"
+
+#: templates/base.html:55
+msgid "Cooperation"
+msgstr "Співпраця"
 
 #: templates/pagination/pagination.html:5
 #: templates/pagination/pagination.html:7
@@ -167,6 +184,9 @@ msgstr "попередня"
 #: templates/pagination/pagination.html:23
 msgid "next"
 msgstr "наступна"
+
+#~ msgid "Fmf"
+#~ msgstr "FMF"
 
 #~ msgid "Category"
 #~ msgstr "Категорія"

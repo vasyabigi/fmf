@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-28 23:34+0200\n"
+"POT-Creation-Date: 2011-12-02 00:51+0200\n"
 "PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,6 +87,12 @@ msgstr ""
 msgid "Index tabs"
 msgstr ""
 
+#: apps/core/templates/core/index_view.html:39 apps/news/models.py:31
+#: apps/news/models.py:32 apps/news/models.py:54
+#: apps/news/templates/news/news_list.html:5
+msgid "News"
+msgstr ""
+
 #: apps/news/models.py:19
 msgid "Slug"
 msgstr ""
@@ -119,11 +125,6 @@ msgstr ""
 msgid "Created"
 msgstr ""
 
-#: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:54
-#: apps/news/templates/news/news_list.html:5 templates/base.html:39
-msgid "News"
-msgstr ""
-
 #: apps/news/models.py:62
 msgid "Images"
 msgstr ""
@@ -139,7 +140,7 @@ msgid "image for %s"
 msgstr ""
 
 #: apps/news/templates/news/news_details.html:8
-#: apps/news/templates/news/news_list.html:8 templates/base.html:38
+#: apps/news/templates/news/news_list.html:8 templates/base.html:39
 msgid "Home"
 msgstr ""
 
@@ -150,6 +151,22 @@ msgstr ""
 
 #: templates/base.html:29
 msgid "Fmf"
+msgstr ""
+
+#: templates/base.html:40
+msgid "About the faculty"
+msgstr ""
+
+#: templates/base.html:45
+msgid "Students"
+msgstr ""
+
+#: templates/base.html:50
+msgid "Entrants"
+msgstr ""
+
+#: templates/base.html:55
+msgid "Cooperation"
 msgstr ""
 
 #: templates/pagination/pagination.html:5
