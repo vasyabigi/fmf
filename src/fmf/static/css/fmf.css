@@ -106,13 +106,12 @@ nav > ul ul li a {display:block;margin-left:-1px;padding:8px;border: 1px solid t
     /*Language buttons*/
 
 #lang {
-  float:right;
-  background: none;
+  position: absolute;
+  left:80%;
+  top:2px;
+  border: 1px solid;
+  border-color: #2B2B2B #2B2B2B #494949 #494949;
   font-size: 12px;
-}
-#lang:hover {
-  border-left: 1px solid #494949;
-  border-right: 1px solid #2B2B2B;
 }
 #lang > a:first-child {
   border-radius: 5px 0 0 5px;
@@ -334,8 +333,6 @@ body #page > article {
   border-bottom: 2px solid #e5e5e5;
   border-right: none;
   /*border-bottom-color:#e5e5e5;*/
-  background: #e5e5e5;
-  box-shadow: inset 1px 1px 6px -2px #000;
   color:#333;
 }
 #tab_nav li:first-child a.active {
@@ -343,11 +340,11 @@ body #page > article {
   left:0;
   border: none;
 }
-#tab_content {
+#tab_content, #tab_nav li a.active {
   /*border: 1px solid;*/
   /*border-color: #f4f4f4;*/
   background: #e5e5e5;
-  box-shadow: inset 1px 1px 6px -2px #000;
+  box-shadow: inset 3px 3px 3px -3px #000;
 }
 #tab_content li {
   overflow-y:auto;

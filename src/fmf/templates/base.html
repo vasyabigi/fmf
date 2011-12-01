@@ -41,16 +41,16 @@
               {% chunk "students_menu" %}
               {% chunk "entarnts_menu" %}
               {% chunk "international_menu" %}
-              <li id="lang">
-                {% for lang in LANGUAGES %}
-                  {% ifequal lang.0 LANGUAGE_CODE %}
-                    <a class="selected" href="#">{{ lang.1 }}</a>
-                  {% else %}
-                    <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
-                  {% endifequal %}
-                {% endfor %}
-              </li>
             </ul>
+            <div id="lang">
+              {% for lang in LANGUAGES %}
+                {% ifequal lang.0 LANGUAGE_CODE %}
+                  <a class="selected" href="#">{{ lang.1 }}</a>
+                {% else %}
+                  <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
+                {% endifequal %}
+              {% endfor %}
+            </div>
           </nav>
           <!--end navigation-->
           <section class="page_info">
