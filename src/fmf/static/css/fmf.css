@@ -3,7 +3,7 @@
 html, body {
     height: 100%;
     padding: 0 !important;
-    font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+    font:13px "lucida grande",tahoma,verdana,arial,sans-serif;
 }
 #page {
   min-height: 100%;
@@ -107,7 +107,6 @@ nav > ul ul li a {display:block;margin-left:-1px;padding:8px;border: 1px solid t
 
 #lang {
   float:right;
-  padding: 3px 0;
   background: none;
   font-size: 12px;
 }
