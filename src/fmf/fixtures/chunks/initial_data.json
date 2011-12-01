@@ -1,22 +1,52 @@
 [
     {
+        "pk": 2, 
+        "model": "chunks.chunk", 
+        "fields": {
+            "content": "<li><a href=\"/en/about-the-faculty/\">About the faculty</a>\r\n  <ul>\r\n    <li><a href=\"/en/specialties/\">Specialties</a></li>\r\n    <li><a href=\"/en/departments/\">Departments</a></li>\r\n    <li><a href=\"/en/research/\">Research</a></li>\r\n    <li><a href=\"/en/government-purchases/\">Government purchases</a></li>\r\n  </ul>\r\n</li>", 
+            "content_uk": "<li><a href=\"/about-the-faculty/\">\u041f\u0440\u043e \u0444\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442</a>\r\n  <ul>\r\n    <li><a href=\"/specialties/\">\u0421\u043f\u0435\u0446\u0456\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0456</a></li>\r\n    <li><a href=\"/departments/\">\u041a\u0430\u0444\u0435\u0434\u0440\u0438</a></li>\r\n    <li><a href=\"/research/\">\u041d\u0430\u0443\u043a\u043e\u0432\u0430 \u0440\u043e\u0431\u043e\u0442\u0430</a></li>\r\n    <li><a href=\"/government-purchases/\">\u041f\u0440\u043e\u0444\u0441\u043f\u0456\u043b\u043a\u043e\u0432\u0430 \u043e\u0440\u0433\u0430\u043d\u0456\u0437\u0430\u0446\u0456\u044f</a></li>\r\n  </ul>\r\n</li>", 
+            "content_en": "<li><a href=\"/en/about-the-faculty/\">About the faculty</a>\r\n  <ul>\r\n    <li><a href=\"/en/specialties/\">Specialties</a></li>\r\n    <li><a href=\"/en/departments/\">Departments</a></li>\r\n    <li><a href=\"/en/research/\">Research</a></li>\r\n    <li><a href=\"/en/government-purchases/\">Government purchases</a></li>\r\n  </ul>\r\n</li>", 
+            "key": "about_menu"
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "chunks.chunk", 
         "fields": {
-            "content": "<li><a href=\"/en/students/\">Students</a>\r\n  <ul>\r\n    <li><a href=\"/en/bachelor/\">Bachelor</a></li>\r\n    <li><a href=\"'/en/master/\">Master</a></li>\r\n    <li><a href=\"/en/postgraduate/\">Postgraduate</a></li>\r\n  </ul>\r\n</li>", 
-            "content_uk": "<li><a href=\"/students/\">\u0410\u0431\u0456\u0442\u0443\u0440\u0456\u0454\u043d\u0442\u0443</a>\r\n  <ul>\r\n    <li><a href=\"/bachelor/\">\u0411\u0430\u043a\u0430\u043b\u0430\u0432\u0440\u0430\u0442</a></li>\r\n    <li><a href=\"/master/\">\u041c\u0430\u0433\u0456\u0441\u0442\u0440\u0430\u0442\u0443\u0440\u0430</a></li>\r\n    <li><a href=\"/postgraduate/\">\u0410\u0441\u043f\u0456\u0440\u0430\u043d\u0442\u0443\u0440\u0430</a></li>\r\n  </ul>\r\n</li>", 
-            "content_en": "<li><a href=\"/en/students/\">Students</a>\r\n  <ul>\r\n    <li><a href=\"/en/bachelor/\">Bachelor</a></li>\r\n    <li><a href=\"'/en/master/\">Master</a></li>\r\n    <li><a href=\"/en/postgraduate/\">Postgraduate</a></li>\r\n  </ul>\r\n</li>", 
+            "content": "<li><a href=\"/en/students/\">Students</a> \r\n<ul>\r\n  <li><a href=\"/en/bachelor/\">Bachelor</a></li>\r\n  <li><a href=\"/en/master/\">Master</a></li>\r\n  <li><a href=\"/en/postgraduate/\">Postgraduate</a></li>\r\n</ul>\r\n</li>", 
+            "content_uk": "<li><a href=\"/students/\">\u0421\u0442\u0443\u0434\u0435\u043d\u0442\u0430\u043c</a> \r\n<ul>\r\n  <li><a href=\"/bachelor/\">\u0411\u0430\u043a\u0430\u043b\u0430\u0432\u0440\u0430\u0442</a></li>\r\n  <li><a href=\"/master/\">\u041c\u0430\u0433\u0456\u0441\u0442\u0440\u0430\u0442\u0443\u0440\u0430</a></li>\r\n  <li><a href=\"/postgraduate/\">\u0410\u0441\u043f\u0456\u0440\u0430\u043d\u0442\u0443\u0440\u0430 \u0442\u0430 \u0414\u043e\u043a\u0442\u043e\u0440\u0430\u043d\u0442\u0443\u0440\u0430</a></li>\r\n</ul>\r\n</li>", 
+            "content_en": "<li><a href=\"/en/students/\">Students</a> \r\n<ul>\r\n  <li><a href=\"/en/bachelor/\">Bachelor</a></li>\r\n  <li><a href=\"/en/master/\">Master</a></li>\r\n  <li><a href=\"/en/postgraduate/\">Postgraduate</a></li>\r\n</ul>\r\n</li>", 
             "key": "students_menu"
         }
     }, 
     {
-        "pk": 2, 
+        "pk": 3, 
         "model": "chunks.chunk", 
         "fields": {
-            "content": "<li><a href=\"/en/about-the-faculty/\">About the faculty</a>\r\n  <ul>\r\n    <li><a href=\"/en/specialties/\">Specialties</a></li>\r\n    <li><a href=\"/en/departments/\">Departments</a></li>\r\n  </ul>\r\n</li>", 
-            "content_uk": "<li><a href=\"/about-the-faculty/\">\u041f\u0440\u043e \u0444\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442</a>\r\n  <ul>\r\n    <li><a href=\"/specialties/\">\u0421\u043f\u0435\u0446\u0456\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0456</a></li>\r\n    <li><a href=\"/departments/\">\u041a\u0430\u0444\u0435\u0434\u0440\u0438</a></li>\r\n  </ul>\r\n</li>", 
-            "content_en": "<li><a href=\"/en/about-the-faculty/\">About the faculty</a>\r\n  <ul>\r\n    <li><a href=\"/en/specialties/\">Specialties</a></li>\r\n    <li><a href=\"/en/departments/\">Departments</a></li>\r\n  </ul>\r\n</li>", 
-            "key": "about_menu"
+            "content": "<ul>\r\n<li>\r\n<p><strong>Phone:</strong></p>\r\n<p>(044)&nbsp;406-82-51</p>\r\n</li>\r\n<li>\r\n<p><strong>e-mail:</strong></p>\r\n<p><a href=\"mailto:fmf@ntu-kpi.kiev.ua\">fmf@ntu-kpi.kiev.ua</a></p>\r\n</li>\r\n<li>\r\n<p><strong>Address:</strong></p>\r\n<p>03056,&nbsp;Kiyv, Peremogy prospect,&nbsp;37,&nbsp;corpys 7,&nbsp;audience 420</p>\r\n</li>\r\n</ul>", 
+            "content_uk": "<ul>\r\n<li>\r\n<p><strong>\u0422\u0435\u043b:</strong></p>\r\n<p>(044)&nbsp;406-82-51</p>\r\n</li>\r\n<li>\r\n<p><strong>e-mail:</strong></p>\r\n<p><a href=\"mailto:fmf@ntu-kpi.kiev.ua\">fmf@ntu-kpi.kiev.ua</a></p>\r\n</li>\r\n<li>\r\n<p><strong>\u0410\u0434\u0440\u0435\u0441\u0430:</strong></p>\r\n<p>03056,&nbsp;\u041a\u0438\u0457\u0432,&nbsp;\u043f\u0440\u043e\u0441\u043f\u0435\u043a\u0442&nbsp;\u041f\u0435\u0440\u0435\u043c\u043e\u0433\u0438,&nbsp;37,&nbsp;\u043a\u043e\u0440\u043f\u0443\u0441&nbsp;7,&nbsp;\u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0456\u044f&nbsp;420</p>\r\n</li>\r\n</ul>", 
+            "content_en": "<ul>\r\n<li>\r\n<p><strong>Phone:</strong></p>\r\n<p>(044)&nbsp;406-82-51</p>\r\n</li>\r\n<li>\r\n<p><strong>e-mail:</strong></p>\r\n<p><a href=\"mailto:fmf@ntu-kpi.kiev.ua\">fmf@ntu-kpi.kiev.ua</a></p>\r\n</li>\r\n<li>\r\n<p><strong>Address:</strong></p>\r\n<p>03056,&nbsp;Kiyv, Peremogy prospect,&nbsp;37,&nbsp;corpys 7,&nbsp;audience 420</p>\r\n</li>\r\n</ul>", 
+            "key": "footer"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "chunks.chunk", 
+        "fields": {
+            "content": "<li><a href=\"/en/for-entrants/\">Entrants</a>\r\n  <ul>\r\n    <li><a href=\"/en/dean-speech/\">Dean speech</a></li>\r\n    <li><a href=\"/en/rules-of-entry/\">Rules of entry</a></li>\r\n  </ul>\r\n</li>", 
+            "content_uk": "<li><a href=\"/for-entrants/\">\u0410\u0431\u0456\u0442\u0443\u0440\u0456\u0454\u043d\u0442\u0430\u043c</a>\r\n  <ul>\r\n    <li><a href=\"/dean-speech/\">\u041f\u0440\u043e\u043c\u043e\u0432\u0430 \u0434\u0435\u043a\u0430\u043d\u0430</a></li>\r\n    <li><a href=\"/rules-of-entry/\">\u041f\u0440\u0430\u0432\u0438\u043b\u0430 \u0432\u0441\u0442\u0443\u043f\u0443</a></li>\r\n  </ul>\r\n</li>", 
+            "content_en": "<li><a href=\"/en/for-entrants/\">Entrants</a>\r\n  <ul>\r\n    <li><a href=\"/en/dean-speech/\">Dean speech</a></li>\r\n    <li><a href=\"/en/rules-of-entry/\">Rules of entry</a></li>\r\n  </ul>\r\n</li>", 
+            "key": "entarnts_menu"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "chunks.chunk", 
+        "fields": {
+            "content": "<li><a href=\"/en/cooperation/\">Cooperation</a>\r\n  <ul>\r\n    <li><a href=\"/en/international-office/\">International office</a></li>\r\n    <li><a href=\"/en/man/\">Academy of Sciences</a></li>\r\n  </ul>\r\n</li>", 
+            "content_uk": "<li><a href=\"/cooperation/\">\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u0446\u0442\u0432\u043e</a>\r\n  <ul>\r\n    <li><a href=\"/international-office/\">\u041c\u0456\u0436\u043d\u0430\u0440\u043e\u0434\u043d\u0438\u0439 \u043e\u0444\u0456\u0441</a></li>\r\n    <li><a href=\"/man/\">\u041c\u0430\u043b\u0430 \u0410\u043a\u0430\u0434\u0435\u043c\u0456\u044f \u041d\u0430\u0443\u043a</a></li>\r\n  </ul>\r\n</li>", 
+            "content_en": "<li><a href=\"/en/cooperation/\">Cooperation</a>\r\n  <ul>\r\n    <li><a href=\"/en/international-office/\">International office</a></li>\r\n    <li><a href=\"/en/man/\">Academy of Sciences</a></li>\r\n  </ul>\r\n</li>", 
+            "key": "international_menu"
         }
     }
 ]
