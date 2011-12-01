@@ -8,7 +8,7 @@
             "content_en": "<p>About</p>", 
             "title": "About the faculty", 
             "url": "/about-the-faculty/", 
-            "template_name": "", 
+            "template_name": "flatpages/about.html", 
             "title_en": "About the faculty", 
             "sites": [
                 1
@@ -27,7 +27,7 @@
             "content_en": "<p>Bachelor</p>", 
             "title": "Bachelor", 
             "url": "/bachelor/", 
-            "template_name": "", 
+            "template_name": "flatpages/students.html", 
             "title_en": "Bachelor", 
             "sites": [
                 1
@@ -60,19 +60,19 @@
         "pk": 13, 
         "model": "flatpages.flatpage", 
         "fields": {
-            "content_uk": "<p>\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u0446\u0442\u0432\u043e</p>", 
+            "content_uk": "<p>\u0421\u043f\u0456\u0432\u043f\u0440\u0430\u0446\u044f</p>", 
             "registration_required": false, 
             "content_en": "<p>\u0421ooperation</p>", 
             "title": "\u0421ooperation", 
             "url": "/cooperation/", 
-            "template_name": "", 
+            "template_name": "flatpages/cooperation.html", 
             "title_en": "\u0421ooperation", 
             "sites": [
                 1
             ], 
             "content": "<p>\u0421ooperation</p>", 
             "enable_comments": false, 
-            "title_uk": "\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u0446\u0442\u0432\u043e"
+            "title_uk": "\u0421\u043f\u0456\u0432\u043f\u0440\u0430\u0446\u044f"
         }
     }, 
     {
@@ -84,7 +84,7 @@
             "content_en": "<p>Dean speech</p>", 
             "title": "Dean speech", 
             "url": "/dean-speech/", 
-            "template_name": "", 
+            "template_name": "flatpages/entrants.html", 
             "title_en": "Dean speech", 
             "sites": [
                 1
@@ -100,15 +100,15 @@
         "fields": {
             "content_uk": "<p>\u041a\u0430\u0444\u0435\u0434\u0440\u0438</p>", 
             "registration_required": false, 
-            "content_en": "<p>\r\n<div style=\"background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 8px;\">\r\n<p>Departments</p>\r\n</div>\r\n</p>", 
+            "content_en": "<p>&nbsp;</p>\r\n<div style=\"background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 8px;\">\r\n<p>Departments</p>\r\n</div>\r\n<p>&nbsp;</p>", 
             "title": "Departments", 
             "url": "/departments/", 
-            "template_name": "", 
+            "template_name": "flatpages/about.html", 
             "title_en": "Departments", 
             "sites": [
                 1
             ], 
-            "content": "<p>\r\n<div style=\"background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 8px;\">\r\n<p>Departments</p>\r\n</div>\r\n</p>", 
+            "content": "<p>&nbsp;</p>\r\n<div style=\"background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 8px;\">\r\n<p>Departments</p>\r\n</div>\r\n<p>&nbsp;</p>", 
             "enable_comments": false, 
             "title_uk": "\u041a\u0430\u0444\u0435\u0434\u0440\u0438"
         }
@@ -122,7 +122,7 @@
             "content_en": "<p>for-entrants</p>", 
             "title": "For entrants", 
             "url": "/for-entrants/", 
-            "template_name": "", 
+            "template_name": "flatpages/entrants.html", 
             "title_en": "For entrants", 
             "sites": [
                 1
@@ -141,7 +141,7 @@
             "content_en": "<p>government-purchases</p>", 
             "title": "Government purchases", 
             "url": "/government-purchases/", 
-            "template_name": "", 
+            "template_name": "flatpages/about.html", 
             "title_en": "Government purchases", 
             "sites": [
                 1
@@ -160,7 +160,7 @@
             "content_en": "<p>international-office</p>", 
             "title": "international-office", 
             "url": "/international-office/", 
-            "template_name": "", 
+            "template_name": "flatpages/cooperation.html", 
             "title_en": "international-office", 
             "sites": [
                 1
@@ -198,7 +198,7 @@
             "content_en": "<p>Small Academy of Sciences</p>", 
             "title": "Small Academy of Sciences", 
             "url": "/man/", 
-            "template_name": "", 
+            "template_name": "flatpages/cooperation.html", 
             "title_en": "Small Academy of Sciences", 
             "sites": [
                 1
@@ -217,7 +217,7 @@
             "content_en": "<p>Master</p>", 
             "title": "Master", 
             "url": "/master/", 
-            "template_name": "", 
+            "template_name": "flatpages/students.html", 
             "title_en": "Master", 
             "sites": [
                 1
@@ -236,7 +236,7 @@
             "content_en": "<p>Postgraduate</p>", 
             "title": "Postgraduate", 
             "url": "/postgraduate/", 
-            "template_name": "", 
+            "template_name": "flatpages/students.html", 
             "title_en": "Postgraduate", 
             "sites": [
                 1
@@ -255,7 +255,7 @@
             "content_en": "<p>Research</p>", 
             "title": "Research", 
             "url": "/research/", 
-            "template_name": "", 
+            "template_name": "flatpages/about.html", 
             "title_en": "Research", 
             "sites": [
                 1
@@ -274,7 +274,7 @@
             "content_en": "<p>Rules-of-entry</p>", 
             "title": "Rules of entry", 
             "url": "/rules-of-entry/", 
-            "template_name": "", 
+            "template_name": "flatpages/entrants.html", 
             "title_en": "Rules of entry", 
             "sites": [
                 1
@@ -293,7 +293,7 @@
             "content_en": "<p>Specialties</p>", 
             "title": "Specialties", 
             "url": "/specialties/", 
-            "template_name": "", 
+            "template_name": "flatpages/about.html", 
             "title_en": "Specialties", 
             "sites": [
                 1
@@ -312,7 +312,7 @@
             "content_en": "<p><strong>Physics and Mathematics</strong> was founded in 1996, the Department of basic training on the initiative of Rector Academician M. <a href=\"../../../../media/uploads/about_stacks.pdf\">Zgurovsky</a>.</p>", 
             "title": "Students", 
             "url": "/students/", 
-            "template_name": "", 
+            "template_name": "flatpages/students.html", 
             "title_en": "Students", 
             "sites": [
                 1
