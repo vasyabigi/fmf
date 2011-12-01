@@ -30,40 +30,42 @@
     </title>
   </head>
   <body>
-    <!--header-->
-    <header>
-        <!--navigation-->
-        <nav class="clearfix">
-          <ul>
-            <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
-            <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
-            {% chunk "students_menu" %}
-            {% chunk "about_menu" %}
-            {% chunk "international_menu" %}
-            <li id="lang">
-              {% for lang in LANGUAGES %}
-                {% ifequal lang.0 LANGUAGE_CODE %}
-                  <a class="selected" href="#">{{ lang.1 }}</a>
-                {% else %}
-                  <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
-                {% endifequal %}
-              {% endfor %}
-            </li>
-          </ul>
-        </nav>
-        <!--end navigation-->
-        <section class="page_info">
-          <div class="container">
-            <span>Фізико-математичний факультет</span>
-          </div>
-        </section>
-    </header>
-    <!--end header-->
+    <div id="page">
+      <!--header-->
+      <header>
+          <!--navigation-->
+          <nav class="clearfix">
+            <ul>
+              <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
+              <li><a href="{% url news-list %}">{% trans "News" %}</a></li>
+              {% chunk "students_menu" %}
+              {% chunk "about_menu" %}
+              {% chunk "international_menu" %}
+              <li id="lang">
+                {% for lang in LANGUAGES %}
+                  {% ifequal lang.0 LANGUAGE_CODE %}
+                    <a class="selected" href="#">{{ lang.1 }}</a>
+                  {% else %}
+                    <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
+                  {% endifequal %}
+                {% endfor %}
+              </li>
+            </ul>
+          </nav>
+          <!--end navigation-->
+          <section class="page_info">
+            <div class="container">
+              <span>Фізико-математичний факультет</span>
+            </div>
+          </section>
+      </header>
+      <!--end header-->
 
-    <article>
-      {% block content %}
-      {% endblock %}
-    </article>
+      <article>
+        {% block content %}
+        {% endblock %}
+      </article>
+    </div>
 
     <footer>
       <div class="container">
