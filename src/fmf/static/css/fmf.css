@@ -3,7 +3,7 @@
 html, body {
     height: 100%;
     padding: 0 !important;
-   font-family: tahoma, arial, verdana, sans-serif, 'Lucida Sans';
+    font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
 }
 #page {
   min-height: 100%;
