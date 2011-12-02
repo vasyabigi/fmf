@@ -36,7 +36,6 @@
   <div class="clearfix"></div>
   <!--news-->
   <section id="news" class="container bordered">
-    <a href="{% url news-list %}">{% trans "News" %}</a>
     <table cellspacing="0" cellpadding="0">
       <tr>
         {% for news in news_list %}
@@ -56,5 +55,8 @@
         {% endfor %}
       </tr>
     </table>
+    <div class="all_news">
+      <a href="{% url news-list %}">{% trans "News" %} &#9002;&#9002;</a>
+    </div>
   </section><!--end news-->
 {% endblock %}
