@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-02 00:59+0200\n"
-"PO-Revision-Date: 2011-12-02 01:00\n"
+"PO-Revision-Date: 2011-12-02 10:30\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -173,7 +173,7 @@ msgstr "Абітурієнтам"
 
 #: templates/base.html:55
 msgid "Cooperation"
-msgstr "Співпраця"
+msgstr "Співробітництво"
 
 #: templates/pagination/pagination.html:5
 #: templates/pagination/pagination.html:7
