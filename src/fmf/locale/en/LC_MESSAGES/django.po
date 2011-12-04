@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-02 00:51+0200\n"
+"POT-Creation-Date: 2011-12-04 23:23+0200\n"
 "PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,10 +87,29 @@ msgstr ""
 msgid "Index tabs"
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:39 apps/news/models.py:31
-#: apps/news/models.py:32 apps/news/models.py:54
-#: apps/news/templates/news/news_list.html:5
-msgid "News"
+#: apps/core/templates/core/index_view.html:40
+msgid "All news"
+msgstr ""
+
+#: apps/core/templates/core/nav.html:4
+#: apps/news/templates/news/news_details.html:8
+msgid "Home"
+msgstr ""
+
+#: apps/core/templates/core/nav.html:5
+msgid "About the faculty"
+msgstr ""
+
+#: apps/core/templates/core/nav.html:10
+msgid "Students"
+msgstr ""
+
+#: apps/core/templates/core/nav.html:15
+msgid "Entrants"
+msgstr ""
+
+#: apps/core/templates/core/nav.html:20
+msgid "Cooperation"
 msgstr ""
 
 #: apps/news/models.py:19
@@ -125,6 +144,12 @@ msgstr ""
 msgid "Created"
 msgstr ""
 
+#: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:54
+#: apps/news/templates/news/news_list.html:5
+#: apps/news/templates/news/news_list.html:9
+msgid "News"
+msgstr ""
+
 #: apps/news/models.py:62
 msgid "Images"
 msgstr ""
@@ -139,34 +164,17 @@ msgstr ""
 msgid "image for %s"
 msgstr ""
 
-#: apps/news/templates/news/news_details.html:8
-#: apps/news/templates/news/news_list.html:8 templates/base.html:39
-msgid "Home"
-msgstr ""
-
 #: apps/news/templates/news/news_details.html:9
-#: apps/news/templates/news/news_list.html:9
 msgid "News list"
 msgstr ""
 
-#: templates/base.html:29
-msgid "Fmf"
+#: apps/news/templates/news/news_list.html:8
+#: templates/flatpages/default.html:10
+msgid "FPM"
 msgstr ""
 
-#: templates/base.html:40
-msgid "About the faculty"
-msgstr ""
-
-#: templates/base.html:45
-msgid "Students"
-msgstr ""
-
-#: templates/base.html:50
-msgid "Entrants"
-msgstr ""
-
-#: templates/base.html:55
-msgid "Cooperation"
+#: templates/base.html:29 templates/base.html.py:57
+msgid "Faculty of Physics and Mathematics"
 msgstr ""
 
 #: templates/pagination/pagination.html:5

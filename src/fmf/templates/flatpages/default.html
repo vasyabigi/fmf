@@ -1,13 +1,21 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block title %}
   {{ flatpage.title }}
 {% endblock %}
 
+{% block breadcrumbs %}
+  <span><a href="{% url index-view %}">{% trans "FPM" %}</a> > </span>
+  <span>{{ flatpage.title }}</span>
+{% endblock %}
+
+
 {% block nav %}
-{#  {% with 'home' as active %}#}
+  {% with 'home' as active %}
     {% include 'core/nav.html' %}
-{#  {% endwith %}#}
+  {% endwith %}
 {% endblock %}
 
 {% block content %}

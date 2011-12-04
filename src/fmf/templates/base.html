@@ -53,7 +53,9 @@
           <!--end navigation-->
           <section class="page_info">
             <div class="container">
-              <span>Фізико-математичний факультет</span>
+              {% block breadcrumbs %}
+                <span>{% trans "Faculty of Physics and Mathematics" %}</span>
+              {% endblock %}
             </div>
           </section>
       </header>

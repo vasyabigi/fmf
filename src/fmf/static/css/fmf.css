@@ -257,12 +257,12 @@ body #page > article {
 }
 #news .all_news {
   display: inline-block;
-  margin: 0 0 10px 10px;
+  margin: 10px 0 0 15px;
   padding: 5px 15px;
   font-weight: bold;
 }
 #news .all_news a {
-  font-size: 17px;
+  font-size: 14px;
   color:#333;
   text-shadow: 0 1px #fff;
 }
@@ -273,7 +273,7 @@ body #page > article {
 #main_news article {
   margin: 20px 10px;
 }
-#news_list ul li, #news tr td, #news .all_news {
+#news_list ul li, #news tr td {
   overflow: hidden;
   border: 1px solid;
   border-color: #fff #fff #D5D5D5 #D5D5D5;

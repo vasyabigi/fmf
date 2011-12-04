@@ -2,22 +2,22 @@
 
 <ul>
   <li {% if active == 'home' %}class="active"{% endif %}><a href="{% url index-view %}">{% trans "Home" %}</a></li>
-  <li {% if active == 'about' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/about-the-faculty/">{% trans "About the faculty" %}</a>
+  <li {% if active == 'about' %}class="active"{% endif %}><a href="#">{% trans "About the faculty" %}</a>
     <ul>
     {% chunk "about_menu" %}
     </ul>
   </li>
-  <li {% if active == 'students' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/students/">{% trans "Students" %}</a>
+  <li {% if active == 'students' %}class="active"{% endif %}><a href="#">{% trans "Students" %}</a>
     <ul>
     {% chunk "students_menu" %}
     </ul>
   </li>
-  <li {% if active == 'entrants' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/for-entrants/">{% trans "Entrants" %}</a>
+  <li {% if active == 'entrants' %}class="active"{% endif %}><a href="#">{% trans "Entrants" %}</a>
     <ul>
       {% chunk "entarnts_menu" %}
     </ul>
   </li>
-  <li {% if active == 'cooperation' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/cooperation/">{% trans "Cooperation" %}</a>
+  <li {% if active == 'cooperation' %}class="active"{% endif %}><a href="#">{% trans "Cooperation" %}</a>
     <ul>
     {% chunk "international_menu" %}
     </ul>

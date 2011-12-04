@@ -3,6 +3,10 @@ var Fmf = (function(){
         init : function(){
             $('a.selected').click(function(){
                 return false;
+            });
+
+            $('a[href=#]').click(function(){
+                return false;
             })
         },
 

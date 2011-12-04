@@ -3,9 +3,9 @@
         "pk": 1, 
         "model": "chunks.chunk", 
         "fields": {
-            "content": "<li><a href=\"/en/students/\">Students</a> \r\n<ul>\r\n  <li><a href=\"/en/bachelor/\">Bachelor</a></li>\r\n  <li><a href=\"/en/master/\">Master</a></li>\r\n  <li><a href=\"/en/postgraduate/\">Postgraduate</a></li>\r\n</ul>\r\n</li>", 
-            "content_uk": "<li><a href=\"/bachelor/\">\u0411\u0430\u043a\u0430\u043b\u0430\u0432\u0440\u0430\u0442</a></li>\r\n<li><a href=\"/master/\">\u041c\u0430\u0433\u0456\u0441\u0442\u0440\u0430\u0442\u0443\u0440\u0430</a></li>\r\n<li><a href=\"/postgraduate/\">\u0410\u0441\u043f\u0456\u0440\u0430\u043d\u0442\u0443\u0440\u0430 \u0442\u0430 \u0414\u043e\u043a\u0442\u043e\u0440\u0430\u043d\u0442\u0443\u0440\u0430</a></li>\r\n", 
-            "content_en": "<li><a href=\"/en/students/\">Students</a> \r\n<ul>\r\n  <li><a href=\"/en/bachelor/\">Bachelor</a></li>\r\n  <li><a href=\"/en/master/\">Master</a></li>\r\n  <li><a href=\"/en/postgraduate/\">Postgraduate</a></li>\r\n</ul>\r\n</li>", 
+            "content": "<li><a href=\"/en/bachelor/\">Bachelor</a></li>\r\n<li><a href=\"/en/master/\">Master</a></li>\r\n<li><a href=\"/en/postgraduate/\">Postgraduate</a></li>\r\n<li><a href=\"/en/timetable/\">Timetable</a></li>", 
+            "content_uk": "<li><a href=\"/bachelor/\">\u0411\u0430\u043a\u0430\u043b\u0430\u0432\u0440\u0430\u0442</a></li>\r\n<li><a href=\"/master/\">\u041c\u0430\u0433\u0456\u0441\u0442\u0440\u0430\u0442\u0443\u0440\u0430</a></li>\r\n<li><a href=\"/postgraduate/\">\u0410\u0441\u043f\u0456\u0440\u0430\u043d\u0442\u0443\u0440\u0430 \u0442\u0430 \u0414\u043e\u043a\u0442\u043e\u0440\u0430\u043d\u0442\u0443\u0440\u0430</a></li>\r\n<li><a href=\"/timetable/\">\u0420\u043e\u0437\u043a\u043b\u0430\u0434</a></li>\r\n", 
+            "content_en": "<li><a href=\"/en/bachelor/\">Bachelor</a></li>\r\n<li><a href=\"/en/master/\">Master</a></li>\r\n<li><a href=\"/en/postgraduate/\">Postgraduate</a></li>\r\n<li><a href=\"/en/timetable/\">Timetable</a></li>", 
             "key": "students_menu"
         }
     }, 
@@ -43,9 +43,9 @@
         "pk": 4, 
         "model": "chunks.chunk", 
         "fields": {
-            "content": "<li><a href=\"/en/international-office/\">International office</a></li>\r\n<li><a href=\"/en/man/\">Academy of Sciences</a></li>\r\n", 
-            "content_uk": "<li><a href=\"/international-office/\">\u041c\u0456\u0436\u043d\u0430\u0440\u043e\u0434\u043d\u0438\u0439 \u043e\u0444\u0456\u0441</a></li>\r\n<li><a href=\"/man/\">\u041c\u0430\u043b\u0430 \u0410\u043a\u0430\u0434\u0435\u043c\u0456\u044f \u041d\u0430\u0443\u043a</a></li>\r\n", 
-            "content_en": "<li><a href=\"/en/international-office/\">International office</a></li>\r\n<li><a href=\"/en/man/\">Academy of Sciences</a></li>\r\n", 
+            "content": "<li><a href=\"http://fmf-io.kpi.ua/index.php?lang=en\">International office</a></li>\r\n<li><a href=\"/en/man/\">Academy of Sciences</a></li>\r\n", 
+            "content_uk": "<li><a href=\"http://fmf-io.kpi.ua/index.php?lang=uk\">\u041c\u0456\u0436\u043d\u0430\u0440\u043e\u0434\u043d\u0438\u0439 \u043e\u0444\u0456\u0441</a></li>\r\n<li><a href=\"/man/\">\u041c\u0430\u043b\u0430 \u0410\u043a\u0430\u0434\u0435\u043c\u0456\u044f \u041d\u0430\u0443\u043a</a></li>\r\n", 
+            "content_en": "<li><a href=\"http://fmf-io.kpi.ua/index.php?lang=en\">International office</a></li>\r\n<li><a href=\"/en/man/\">Academy of Sciences</a></li>\r\n", 
             "key": "international_menu"
         }
     }
