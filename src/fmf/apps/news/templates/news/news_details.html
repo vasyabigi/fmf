@@ -5,9 +5,9 @@
 {% block title %}{{ news.title }}{% endblock %}
 
 {% block breadcrumbs %}
-  <li><a href="{% url index-view %}">{% trans "Home" %}</a></li>
-  <li><a href="{% url news-list %}">{% trans "News list" %}</a></li>
-  <li>{{ news.title }}</li>
+  <span><a href="{% url index-view %}">{% trans "FPM" %}</a> ></span>
+  <span><a href="{% url news-list %}">{% trans "News" %}</a> ></span>
+  <span>{{ news.title }}</span>
 {% endblock %}
 
 {% block content %}
@@ -17,14 +17,20 @@
       <p>{{ news.date }}</p>
     {% endif %}
     <p>{{ news.description|safe }}</p>
-    <ul>
-      {% for image in news.images.all %}
-        <li>
-          {% thumbnail image.image "100x100" as im %}
-            <img src="{{ im.url }}" alt="{{ image.title|default:news.title }}" />
-          {% endthumbnail %}
-        </li>
-      {% endfor %}
-    </ul>
+    {% with news.images.all as images %}
+      {% if images %}
+        <div id="news-detail-images">
+          <ul>
+            {% for image in images %}
+              <li>
+                {% thumbnail image.image "300x200" crop="center" as im %}
+                  <img src="{{ im.url }}" alt="{{ image.title|default:news.title }}" />
+                {% endthumbnail %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endwith %}
   </section>
 {% endblock %}

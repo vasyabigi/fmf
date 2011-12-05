@@ -57,7 +57,7 @@ class NewsImage(models.Model):
     position = PositionField(_("Position"), collection='news')
 
     class Meta:
-        ordering = ('title', 'news')
+        ordering = ('position',)
         verbose_name = _("Image")
         verbose_name_plural = _("Images")
 

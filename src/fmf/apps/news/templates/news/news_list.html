@@ -19,7 +19,9 @@
             <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" />
           {% endthumbnail %}
           <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
-          <p class="news_date">{{ news.date }}</p>
+          {% if news.date %}
+            <p class="news_date">{{ news.date }}</p>
+          {% endif %}
           <p class="news_short">{{ news.short_description }}</p>
         </li>
       {% endfor %}
