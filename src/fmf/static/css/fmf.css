@@ -46,6 +46,7 @@ nav > ul {
   line-height: 40px;
 }
 nav > ul > li {
+  position: relative;
   display: inline-block;
   float:left;
   vertical-align: middle;
@@ -77,8 +78,10 @@ nav > ul ul {
   font-weight: bold;
   font-size: 11px;
   line-height: 17px;
+  opacity:0;
   box-shadow: 3px 3px 1px 0 rgba(35, 35, 35, 0.1);
   z-index: 598;
+  -webkit-transition:opacity 0.2s ease-in;
 }
 nav > ul ul li {
   display: block;
@@ -91,12 +94,14 @@ nav > ul ul li {
 nav > ul ul a:hover {
   border-top-color: #fff;
   border-bottom-color: #fff;
+  cursor: pointer;
 }
 nav > ul li:hover > ul {
   visibility: visible;
+  opacity:.95;
 }
 nav > ul > li a {
-  padding: 5px 30px;
+  padding: 8px 30px;
   color: #C5C5C5;
 }
   nav > ul ul a:hover {
@@ -106,13 +111,21 @@ nav > ul > li a {
 nav > ul li:hover > a, nav ul > li.active a{
    color: #333;
   }
-nav > ul ul li a {display:block;margin-left:-1px;padding:8px;border: 1px solid transparent;color:#555;}
+nav > ul ul li a {
+  display:block;
+  margin-left:-1px;
+  padding:8px;
+  background: #eee;
+  border: 1px solid transparent;
+  color:#555;
+  -webkit-transition: background,border 0.2s ease-in;
+}
 
     /*Language buttons*/
 
 #lang {
   position: absolute;
-  left:80%;
+  left:90%;
   top:2px;
   border: 1px solid;
   border-color: #2B2B2B #2B2B2B #494949 #494949;
@@ -145,6 +158,7 @@ nav > ul ul li a {display:block;margin-left:-1px;padding:8px;border: 1px solid t
   font-size:13px;
   line-height: 17px;
   text-align: center;
+  -webkit-transition:all 0.3s ease-in;
 }
 #lang a:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d7d7d), color-stop(100%, #636363));
@@ -177,6 +191,13 @@ nav > ul ul li a {display:block;margin-left:-1px;padding:8px;border: 1px solid t
   line-height: 50px;
   color:#333;
   text-shadow:0 1px #e7e7e7;
+}
+.page_info span a {
+  color: #8A6741;
+  -webkit-transition:all 0.3s ease-in;
+}
+.page_info span a:hover {
+  text-shadow: 0 0 7px #777;
 }
 .logo {
   font: bold italic 40px/50px tahoma verdana sans-serif !important;
@@ -261,9 +282,12 @@ body #page > article {
   padding: 0;
 }
 #news figcaption a{
+  color: #333;
+  font-size: 16px;
+  -webkit-transition:all 0.3s ease-in;
+}
+#news tr td:hover figcaption a {
   color: #8A6741;
-  font-size: 18px;
-  text-decoration: underline;
 }
 #news figcaption a:hover {
   text-decoration: none;
@@ -273,6 +297,7 @@ body #page > article {
   margin: 10px 0 0 15px;
   padding: 5px 15px;
   font-weight: bold;
+  -webkit-transition:all 0.3s ease-in;
 }
 #news .all_news a {
   font-size: 14px;
@@ -332,8 +357,9 @@ body #page > article {
   /*END News*/
   /*TABS*/
 .tabs {
-  margin-left: 640px;
+  min-width: 285px;
   height: 303px;
+  margin-left: 640px;
 }
 #tab_nav {
   height: 41px;
@@ -364,7 +390,6 @@ body #page > article {
   padding-top: 3px;
   border-bottom: 2px solid #e5e5e5;
   border-right: none;
-  /*border-bottom-color:#e5e5e5;*/
   color:#333;
 }
 #tab_nav li:first-child a.active {
@@ -373,8 +398,6 @@ body #page > article {
   border: none;
 }
 #tab_content, #tab_nav li a.active {
-  /*border: 1px solid;*/
-  /*border-color: #f4f4f4;*/
   background: #e5e5e5;
   box-shadow: inset 3px 3px 3px -3px #000;
 }
@@ -383,28 +406,32 @@ body #page > article {
   height: 265px;
 }
 #tab_content li p{
- margin: 10px;
- font-family: tahoma, arial, verdana, sans-serif, 'Lucida Sans';
+  margin: 10px;
   color:#7d7d7d;
-}
-#tab_content {
-  
 }
 .tabs ::-webkit-scrollbar {
     width: 12px;
 }
-
 #tab_content ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
 #tab_content ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
   /*END TABS*/
-
+.flatpage {
+  overflow: hidden;
+}
+.flatpage p {
+  color: #666;
+}
+.flatpage table{
+  background-color:#e5e5e5;
+  color:#333;
+}
 /*END Content*/
 
 /*Footer*/
@@ -491,4 +518,12 @@ footer li a:hover {
 #tab_content ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+/*MEDIAQUERIES*/
+
+@media screen and (max-width: 1100px) {
+  nav > ul > li a {
+    padding: 8px 10px;
+    color: #C5C5C5;
+  }
 }
