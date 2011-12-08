@@ -1,7 +1,19 @@
 {% extends "flatpages/default.html" %}
 
+{% load i18n flatpages %}
+
 {% block nav %}
   {% with 'students' as active %}
     {% include 'core/nav.html' %}
   {% endwith %}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <span><a href="{% url index-view %}">{% trans "FPM" %}</a> ></span>
+  {% ifequal '/students/' flatpage.url %}
+    <span>{{ flatpage.title }}</span>
+  {% else %}
+    <span><a href="/{{ LANGUAGE_CODE }}/students/">{% trans "Students" %}</a> ></span>
+    <span>{{ flatpage.title }}</span>
+  {% endifequal %}
 {% endblock %}

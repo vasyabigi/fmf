@@ -1,7 +1,19 @@
 {% extends "flatpages/default.html" %}
 
+{% load i18n flatpages %}
+
 {% block nav %}
   {% with 'cooperation' as active %}
     {% include 'core/nav.html' %}  
   {% endwith %}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <span><a href="{% url index-view %}">{% trans "FPM" %}</a> ></span>
+  {% ifequal '/cooperation/' flatpage.url %}
+    <span>{{ flatpage.title }}</span>
+  {% else %}
+    <span><a href="/{{ LANGUAGE_CODE }}/cooperation/">{% trans "Cooperation" %}</a> ></span>
+    <span>{{ flatpage.title }}</span>
+  {% endifequal %}
 {% endblock %}
