@@ -151,8 +151,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'custom_undo_redo_levels': 10,
     'theme_advanced_toolbar_location' : "top",
     'theme_advanced_toolbar_align' : "left",
-    'theme_advanced_buttons1' : "undo,redo,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,|,outdent,indent,|,fontsizeselect,|,bullist,numlist,|,link,unlink,image,|,preview,code,|,cleanup,removeformat,fullscreen",
-    'theme_advanced_buttons2' : "tablecontrols,|,pastetext,pasteword",
+    'theme_advanced_buttons1' : "fullscreen,|,undo,redo,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,|,outdent,indent,|,bullist,numlist,|,link,unlink,image,|,preview,code,|,cleanup,removeformat,|,pastetext,pasteword",
+    'theme_advanced_buttons2' : "formatselect,fontsizeselect,fontselect,tablecontrols",
     'theme_advanced_buttons3' : "",
 }
 

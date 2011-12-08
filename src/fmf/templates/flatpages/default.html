@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block content %}
-  <section class="flatpage container bordered">
+  <section id="{{ flatpage.title_en|slugify }}" class="flatpage container bordered">
   {{ flatpage.content }}
   </section>
 {% endblock %}
