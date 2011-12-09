@@ -12,7 +12,7 @@
 /* Let's default this puppy out
 -------------------------------------------------------------------------------*/
 
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,/* table,*/ caption, tbody, tfoot, thead, tr, th,/* td,*/ article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -81,10 +81,6 @@ a:hover, a:active {outline: none;}
 
 small {font-size: 85%;}
 
-strong, th {font-weight: bold;}
-
-td, td img {vertical-align: top;} 
-
 /* Make sure sup and sub don't screw with your line-heights
 	gist.github.com/413930 */
 sub, sup {font-size: 75%; line-height: 0; position: relative;}
@@ -104,9 +100,6 @@ button {cursor: pointer;}
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
 button, input, select, textarea {margin: 0;}
 
-/* make buttons play nice in IE */
-button {width: auto; overflow: visible;}
- 
 /* scale images in IE7 more attractively */
 .ie7 img {-ms-interpolation-mode: bicubic;}
 
@@ -137,8 +130,8 @@ button {width: auto; overflow: visible;}
 /* we like off-black for text */
 body, select, input, textarea {color: #333;}
 
-a {color: #03f;}
-a:hover {color: #69f;}
+a {color: #8A6741;}
+a:hover {color: #943415;}
 
 /* Print styles!
 -------------------------------------------------------------------------------*/

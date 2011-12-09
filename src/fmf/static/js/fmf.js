@@ -66,7 +66,7 @@ var Fmf = (function(){
         },
 
         TabsWidth : function(){
-          
+
         }
     }
 })($);
@@ -77,3 +77,14 @@ $(document).ready(function(){
     Fmf.NewsSlider();
     Fmf.IndexTabs();
 });
+	$(window).scroll(function() {
+		if($(this).scrollTop() > 300) {
+			$('#toTop').fadeIn();
+		} else {
+			$('#toTop').fadeOut();
+		}
+	});
+
+	$('#toTop').click(function() {
+		$('body,html').animate({scrollTop:0},1000);
+	});
