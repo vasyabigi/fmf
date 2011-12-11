@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-04 23:23+0200\n"
-"PO-Revision-Date: 2011-12-04 23:25\n"
+"POT-Creation-Date: 2011-12-09 09:13+0200\n"
+"PO-Revision-Date: 2011-12-09 09:14\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -93,28 +93,32 @@ msgstr "Таб на головній"
 msgid "Index tabs"
 msgstr "Таби на головній"
 
-#: apps/core/templates/core/index_view.html:40
+#: apps/core/templates/core/index_view.html:39
+msgid "Last news"
+msgstr "Останні новини"
+
+#: apps/core/templates/core/index_view.html:60
 msgid "All news"
 msgstr "Усі новини"
 
 #: apps/core/templates/core/nav.html:4
-#: apps/news/templates/news/news_details.html:8
 msgid "Home"
 msgstr "Головна"
 
-#: apps/core/templates/core/nav.html:5
+#: apps/core/templates/core/nav.html:5 templates/flatpages/about.html:16
 msgid "About the faculty"
 msgstr "Про факультет"
 
-#: apps/core/templates/core/nav.html:10
+#: apps/core/templates/core/nav.html:10 templates/flatpages/students.html:16
 msgid "Students"
 msgstr "Студентам"
 
-#: apps/core/templates/core/nav.html:15
+#: apps/core/templates/core/nav.html:15 templates/flatpages/entrants.html:16
 msgid "Entrants"
 msgstr "Абітурієнтам"
 
 #: apps/core/templates/core/nav.html:20
+#: templates/flatpages/cooperation.html:16
 msgid "Cooperation"
 msgstr "Співробітництво"
 
@@ -151,6 +155,7 @@ msgid "Created"
 msgstr "Створено"
 
 #: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:54
+#: apps/news/templates/news/news_details.html:9
 #: apps/news/templates/news/news_list.html:5
 #: apps/news/templates/news/news_list.html:9
 msgid "News"
@@ -170,16 +175,14 @@ msgstr "зображення для %(news_title)s  - %(title)s"
 msgid "image for %s"
 msgstr "зображення для %s"
 
-#: apps/news/templates/news/news_details.html:9
-msgid "News list"
-msgstr "Список новин"
-
-#: apps/news/templates/news/news_list.html:8
-#: templates/flatpages/default.html:10
+#: apps/news/templates/news/news_details.html:8
+#: apps/news/templates/news/news_list.html:8 templates/flatpages/about.html:12
+#: templates/flatpages/cooperation.html:12 templates/flatpages/default.html:10
+#: templates/flatpages/entrants.html:12 templates/flatpages/students.html:12
 msgid "FPM"
 msgstr "ФМФ"
 
-#: templates/base.html:29 templates/base.html.py:57
+#: templates/base.html:31 templates/base.html.py:60
 msgid "Faculty of Physics and Mathematics"
 msgstr "Фізико Математичний Факультет"
 
@@ -192,6 +195,9 @@ msgstr "попередня"
 #: templates/pagination/pagination.html:23
 msgid "next"
 msgstr "наступна"
+
+#~ msgid "News list"
+#~ msgstr "Список новин"
 
 #~ msgid "Fmf"
 #~ msgstr "FMF"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-04 23:23+0200\n"
+"POT-Creation-Date: 2011-12-09 09:13+0200\n"
 "PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,28 +87,32 @@ msgstr ""
 msgid "Index tabs"
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:40
+#: apps/core/templates/core/index_view.html:39
+msgid "Last news"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:60
 msgid "All news"
 msgstr ""
 
 #: apps/core/templates/core/nav.html:4
-#: apps/news/templates/news/news_details.html:8
 msgid "Home"
 msgstr ""
 
-#: apps/core/templates/core/nav.html:5
+#: apps/core/templates/core/nav.html:5 templates/flatpages/about.html:16
 msgid "About the faculty"
 msgstr ""
 
-#: apps/core/templates/core/nav.html:10
+#: apps/core/templates/core/nav.html:10 templates/flatpages/students.html:16
 msgid "Students"
 msgstr ""
 
-#: apps/core/templates/core/nav.html:15
+#: apps/core/templates/core/nav.html:15 templates/flatpages/entrants.html:16
 msgid "Entrants"
 msgstr ""
 
 #: apps/core/templates/core/nav.html:20
+#: templates/flatpages/cooperation.html:16
 msgid "Cooperation"
 msgstr ""
 
@@ -145,6 +149,7 @@ msgid "Created"
 msgstr ""
 
 #: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:54
+#: apps/news/templates/news/news_details.html:9
 #: apps/news/templates/news/news_list.html:5
 #: apps/news/templates/news/news_list.html:9
 msgid "News"
@@ -164,16 +169,14 @@ msgstr ""
 msgid "image for %s"
 msgstr ""
 
-#: apps/news/templates/news/news_details.html:9
-msgid "News list"
-msgstr ""
-
-#: apps/news/templates/news/news_list.html:8
-#: templates/flatpages/default.html:10
+#: apps/news/templates/news/news_details.html:8
+#: apps/news/templates/news/news_list.html:8 templates/flatpages/about.html:12
+#: templates/flatpages/cooperation.html:12 templates/flatpages/default.html:10
+#: templates/flatpages/entrants.html:12 templates/flatpages/students.html:12
 msgid "FPM"
 msgstr ""
 
-#: templates/base.html:29 templates/base.html.py:57
+#: templates/base.html:31 templates/base.html.py:60
 msgid "Faculty of Physics and Mathematics"
 msgstr ""
 
