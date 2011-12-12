@@ -17,10 +17,10 @@
       <p>{{ news.date }}</p>
     {% endif %}
     <p>{{ news.description|safe }}</p>
-      <div class="news-detail-images-box">
+      <div class="news_detail_images_box">
         {% with news.images.all as images %}
           {% if images %}
-            <div id="news-detail-images">
+            <div id="news_detail_images">
               <ul>
                 {% for image in images %}
                   <li>

@@ -70,7 +70,7 @@ var Fmf = (function(){
         },
 
         NewsDetailsSldier: function(){
-            $("#news-detail-images").sudoSlider({
+            $("#news_detail_images").sudoSlider({
                 autowidth:false,
                 slideCount:4,
                 continuous: true,
@@ -78,8 +78,6 @@ var Fmf = (function(){
             });
 
             $(".fancybox").fancybox({
-                openEffect: 'elastic',
-                closeEffect: 'elastic',
                 nextEffect: 'fade',
                 prevEffect: 'fade',
                 nextSpeed: 'slow',

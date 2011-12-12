@@ -385,28 +385,28 @@ body #page > article {
     margin: 5px 0;
 }
     /*News slider*/
-.news-detail-images-box {
+.news_detail_images_box {
     position: relative;
     width: 600px;
     height: 100px;
     margin: 0 auto;
 }
-.news-detail-images-box #controls .prevBtn {
+.news_detail_images_box #controls .prevBtn {
     left:0;
     top:25px;
 }
-.news-detail-images-box #controls .nextBtn {
+.news_detail_images_box #controls .nextBtn {
     left:561px;
     top:25px;
 }
-#news-detail-images {
+#news_detail_images {
     width: 600px;
     overflow:hidden;
 }
-#news-detail-images li, #news-detail-images img{
+#news_detail_images li, #news_detail_images img{
     width:150px;
 }
-#news-detail-images ul, #news-detail-images li{
+#news_detail_images ul, #news_detail_images li{
     position:relative;
     margin:0;
     padding:0;
