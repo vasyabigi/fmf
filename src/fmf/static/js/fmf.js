@@ -73,14 +73,13 @@ var Fmf = (function(){
             $("#news-detail-images").sudoSlider({
                 autowidth:false,
                 slideCount:4,
-                continuous: true
+                continuous: true,
+                speed: '300'
             });
 
             $(".fancybox").fancybox({
                 openEffect: 'elastic',
-                openEasing: 'easeOutBack',
                 closeEffect: 'elastic',
-                closeEasing: 'easeInBack',
                 nextEffect: 'fade',
                 prevEffect: 'fade',
                 nextSpeed: 'slow',
