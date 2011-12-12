@@ -17,25 +17,27 @@
       <p>{{ news.date }}</p>
     {% endif %}
     <p>{{ news.description|safe }}</p>
-    {% with news.images.all as images %}
-      {% if images %}
-        <div id="news-detail-images">
-          <ul>
-            {% for image in images %}
-              <li>
-                {% thumbnail image.image "800x500" as im_big %}
-                  <a class="fancybox" rel="gallery" href="{{ im_big.url }}" title="{{ image.title|default:news.title }}">
-                    {% thumbnail image.image "150x100" crop="center" as im %}
-                      <img src="{{ im.url }}" alt="{{ image.title|default:news.title }}" />
+      <div class="news-detail-images-box">
+        {% with news.images.all as images %}
+          {% if images %}
+            <div id="news-detail-images">
+              <ul>
+                {% for image in images %}
+                  <li>
+                    {% thumbnail image.image "800x500" as im_big %}
+                      <a class="fancybox" rel="gallery" href="{{ im_big.url }}" title="{{ image.title|default:news.title }}">
+                        {% thumbnail image.image "150x100" crop="center" as im %}
+                          <img src="{{ im.url }}" alt="{{ image.title|default:news.title }}" />
+                        {% endthumbnail %}
+                      </a>
                     {% endthumbnail %}
-                  </a>
-                {% endthumbnail %}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-    {% endwith %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endwith %}
+      </section>
   </section>
 {% endblock %}
 
