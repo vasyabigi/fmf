@@ -23,8 +23,12 @@
           <ul>
             {% for image in images %}
               <li>
-                {% thumbnail image.image "300x200" crop="center" as im %}
-                  <img src="{{ im.url }}" alt="{{ image.title|default:news.title }}" />
+                {% thumbnail image.image "800x500" as im_big %}
+                  <a class="fancybox" rel="gallery" href="{{ im_big.url }}" title="{{ image.title|default:news.title }}">
+                    {% thumbnail image.image "150x100" crop="center" as im %}
+                      <img src="{{ im.url }}" alt="{{ image.title|default:news.title }}" />
+                    {% endthumbnail %}
+                  </a>
                 {% endthumbnail %}
               </li>
             {% endfor %}
@@ -33,4 +37,15 @@
       {% endif %}
     {% endwith %}
   </section>
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{{ STATIC_URL }}js/jquery.sudoSlider.js"></script>
+
+  <script type="text/javascript" src="{{ STATIC_URL }}js/fancybox/jquery.easing-1.3.pack.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.fancybox.css?v=2.0.3" type="text/css" media="screen" />
+  <script type="text/javascript" src="{{ STATIC_URL }}js/fancybox/jquery.fancybox.pack.js?v=2.0.3"></script>
+
 {% endblock %}

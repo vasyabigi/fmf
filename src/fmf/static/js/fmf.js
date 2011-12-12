@@ -67,6 +67,16 @@ var Fmf = (function(){
 
         TabsWidth : function(){
 
+        },
+
+        NewsDetailsSldier: function(){
+            $("#news-detail-images").sudoSlider({
+                autowidth:false,
+                slideCount:4,
+                continuous: true
+            });
+
+            $(".fancybox").fancybox();
         }
     }
 })($);
@@ -76,6 +86,9 @@ $(document).ready(function(){
     Fmf.init();
     Fmf.NewsSlider();
     Fmf.IndexTabs();
+//    Fmf.TabsWidth();
+    Fmf.NewsDetailsSldier();
+
 });
 	$(window).scroll(function() {
 		if($(this).scrollTop() > 300) {
