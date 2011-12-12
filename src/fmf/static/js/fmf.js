@@ -76,7 +76,16 @@ var Fmf = (function(){
                 continuous: true
             });
 
-            $(".fancybox").fancybox();
+            $(".fancybox").fancybox({
+                openEffect: 'elastic',
+                openEasing: 'easeOutBack',
+                closeEffect: 'elastic',
+                closeEasing: 'easeInBack',
+                nextEffect: 'fade',
+                prevEffect: 'fade',
+                nextSpeed: 'slow',
+                prevSpeed: 'slow'
+            });
         }
     }
 })($);
