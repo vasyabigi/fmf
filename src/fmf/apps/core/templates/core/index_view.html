@@ -36,14 +36,13 @@
   <div class="clearfix"></div>
   <!--news-->
   <section id="news" class="container bordered">
-    <p>{% trans "Last news" %}</p>
     <table cellspacing="0" cellpadding="0">
       <tr>
         {% for news in news_list %}
         <td>
           <figure>
             <a href="{{ news.get_absolute_url }}">
-              {% thumbnail news.main_image '150x150' crop='center' as im %}
+              {% thumbnail news.main_image '100x100' crop='center' as im %}
                   <img src="{{ im.url }}" alt="{{ news.title }}">
               {% endthumbnail %}
             </a>

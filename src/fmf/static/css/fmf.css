@@ -211,7 +211,7 @@ nav ul ul ul {
   line-height: 50px;
   color:#333;
   text-shadow:0 1px #e7e7e7;
-  -webkit-transition:all 0.3s ease-in;
+  -webkit-transition:all 0.2s ease-in;
 }
 .page_info span:first-child {
   font-size: 20px;
@@ -219,7 +219,7 @@ nav ul ul ul {
 
 .page_info span a:hover {
   text-shadow: 0 0 10px #fff;
-  -webkit-transition:all 0.3s ease-in;
+  -webkit-transition:all 0.2s ease-in;
 }
 .logo {
   font: bold italic 40px/50px tahoma verdana sans-serif !important;
@@ -317,19 +317,16 @@ body #page > article {
   margin: 0 15px 10px;
   padding: 5px 15px;
   font-weight: bold;
-  -webkit-transition:all 0.3s ease-in;
-}
-#news .all_news:hover {
-  margin: 0 20px 10px;
+  -webkit-transition:all 0.2s ease-in;
 }
 #news .all_news a {
   font-size: 14px;
   text-shadow: 0 1px #fff;
-  -webkit-transition:all 0.3s ease-in;
+  -webkit-transition:all 0.2s ease-in;
 }
 #news figcaption a{
   font-size: 16px;
-  -webkit-transition:all 0.3s ease-in;
+  -webkit-transition:all 0.2s ease-in;
 }
 #news table {
   margin: 10px;
@@ -346,7 +343,7 @@ body #page > article {
   border: 1px solid;
   border-color: #fff #fff #D5D5D5 #D5D5D5;
   background-color: #eee;
-  -webkit-transition:all 0.3s ease-in;
+  -webkit-transition:all 0.2s ease-in;
 }
 #news tr td {
   width: 33%;
@@ -356,7 +353,7 @@ body #page > article {
   margin:0 10px 10px;
   float: left;
 }
-#news_list ul li:hover, #news tr td:hover, #news > div:hover {
+#news_list ul li:hover, #news tr td:hover {
   background-color: #e5e5e5;
 }
 #news_list ul li img {
@@ -556,7 +553,7 @@ footer .social a {
   border-radius: 6px;
   text-indent:-9999px;
   background: url("../images/soc/social.png") no-repeat;
-  -webkit-transition:all 0.3s ease-in;
+  -webkit-transition:all 0.2s ease-in;
 }
 .social a span {
   position: absolute;
@@ -564,12 +561,12 @@ footer .social a {
   background: url("../images/soc/social.png") no-repeat;
   background-position: -50px 0;
   opacity: 0;
-  -webkit-transition: opacity 0.5s;
-  -moz-transition: opacity 0.5s;
-  -o-transition: opacity 0.5s;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
 }
 .social a:hover {
-  box-shadow: 0 0 7px 1px #000;
+  /*box-shadow: 0 0 7px 1px #000;*/
 }
 .social a:hover span {
   opacity: 1;
