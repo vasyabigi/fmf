@@ -20,9 +20,9 @@
     <meta name="Copyright" content="Copyright V&S 2011. All Rights Reserved.">
     <link rel="shortcut icon" href="{{ STATIC_URL }}images/logo.ico">
     <!--[if IE]>
-    <!--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
-    <![endif]-->
-    <!--<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>-->
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->  
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <!--Styles-->
     <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/style_sudo.css">
@@ -71,11 +71,17 @@
     </div>
 
     <footer>
-      <a href="#" id="toTop">Вгору</a>
+      <div class="toTop_button">
+        <a href="#" class="toTop"></a>
+      <!--if eng
+        <a href="#" class="toTop eng"></a>
+      -->
+      </div>
+
       <div class="social">
-        <a href="#" class="vk"></a>
-        <a href="#" class="fb"></a>
-        <a href="#" class="tw"></a>
+        <a href="#" class="fb"><span>Facebook</span></a>
+        <a href="#" class="tw"><span>Twitter</span></a>
+        <a href="#" class="vk"><span>Vkontakte</span></a>
       </div>
       <div class="container">
         {% block footer %}
