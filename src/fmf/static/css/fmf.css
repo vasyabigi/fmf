@@ -555,13 +555,13 @@ footer .social a {
   margin: 5px;
   border-radius: 6px;
   text-indent:-9999px;
-  background: url("../images/soc/social_03.png") no-repeat;
+  background: url("../images/soc/social.png") no-repeat;
   -webkit-transition:all 0.3s ease-in;
 }
 .social a span {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
-  background: url("../images/soc/social_03.png") no-repeat;
+  background: url("../images/soc/social.png") no-repeat;
   background-position: -50px 0;
   opacity: 0;
   -webkit-transition: opacity 0.5s;
