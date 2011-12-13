@@ -383,22 +383,22 @@ body #page > article {
 }
   /*News slider*/
 .news_detail_images_box {
-  position: relative;
-  width: 600px;
-  height: 100px;
-  margin: 0 auto;
+    position: relative;
+    width: 750px;
+    height: 100px;
+    margin: 0 auto;
 }
 .news_detail_images_box #controls .prevBtn {
   left:0;
   top:25px;
 }
 .news_detail_images_box #controls .nextBtn {
-  left:561px;
-  top:25px;
+    left:711px;
+    top:25px;
 }
 #news_detail_images {
-  width: 600px;
-  overflow:hidden;
+    width: 750px;
+    overflow:hidden;
 }
 #news_detail_images li, #news_detail_images img{
   width:150px;

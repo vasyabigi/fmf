@@ -72,7 +72,7 @@ var Fmf = (function(){
         NewsDetailsSldier: function(){
             $("#news_detail_images").sudoSlider({
                 autowidth:false,
-                slideCount:4,
+                slideCount:5,
                 continuous: true,
                 speed: '300'
             });
