@@ -1,16 +1,12 @@
 from django.db import models
-from django.template.base import Template
-from django.template.context import Context
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.flatpages.models import FlatPage
 from positions.fields import PositionField
 from sorl.thumbnail.fields import ImageField
-from sorl.thumbnail.helpers import ThumbnailError
-from sorl.thumbnail.shortcuts import get_thumbnail
 
 
 class ExtraFlatPage(models.Model):
-    page = models.ForeignKey(FlatPage, verbose_name=_("Flatpage"))
+    page = models.ForeignKey(FlatPage, verbose_name=_("Flatpage"), unique=True)
 
     class Meta:
         verbose_name = _("Extra flat page")
