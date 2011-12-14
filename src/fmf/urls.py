@@ -12,7 +12,6 @@ urlpatterns = patterns('',
 
     url(r'^', include('core.urls')),
     url(r'^news/', include('news.urls')),
-
 )
 
 if settings.DEBUG:
@@ -26,6 +25,10 @@ if settings.DEBUG:
             'show_indexes': True,
         }),
     )
+
+urlpatterns += patterns('',
+    url(r'^(?P<url>.*)$', 'flatpages_extra.views.custom_flatpage', name='flatpage_extra'),
+)
 
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',

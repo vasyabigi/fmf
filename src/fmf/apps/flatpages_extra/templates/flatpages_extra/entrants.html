@@ -1,0 +1,28 @@
+{% extends "flatpages/entrants.html" %}
+
+{% load i18n flatpages thumbnail %}
+
+{% block content %}
+  <section id="{{ page.page.title_en|slugify }}" class="flatpage container bordered">
+    {{ flatpage.content|safe }}
+    <div class="entrants_images_box">
+      {% if images %}
+        <div id="entrants_images">
+          <ul>
+            {% for image in images %}
+              <li>
+                {% thumbnail image.image "150x100" crop="center" as im %}
+                  <img src="{{ im.url }}" alt="{{ page.page.title }}" />
+                {% endthumbnail %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{{ STATIC_URL }}js/jquery.sudoSlider.js"></script>
+{% endblock %}
