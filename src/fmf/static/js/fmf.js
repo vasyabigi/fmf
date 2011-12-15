@@ -77,12 +77,13 @@ var Fmf = (function(){
                 speed: '300'
             });
 
-            $(".fancybox").fancybox({
-                nextEffect: 'fade',
-                prevEffect: 'fade',
-                nextSpeed: 'slow',
-                prevSpeed: 'slow'
-            });
+            if ($(".fancybox").length > 0)
+                $(".fancybox").fancybox({
+                    nextEffect: 'fade',
+                    prevEffect: 'fade',
+                    nextSpeed: 'slow',
+                    prevSpeed: 'slow'
+                });
         }
     }
 })($);
