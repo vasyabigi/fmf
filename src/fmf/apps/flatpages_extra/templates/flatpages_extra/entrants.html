@@ -18,17 +18,6 @@
             {% endfor %}
           </ul>
         </div>
-        <div id="entrants_images_nav" style="width:630px;height:160px;position:absolute;top:470px;left:10px;overflow:hidden;z-index:5">
-          <div class="customBox" style="width:9999px;height:160px;background:#bababa;">
-            {% for image in images %}
-              <a class="custom" rel="{{ forloop.counter }}" style="height:150px;width:200px;margin:2px;float:left;background:grey;padding:3px;">
-                {% thumbnail image.image "200x150" crop="center" as im %}
-                <img src="{{ im.url }}" alt="{{ page.page.title }}" />
-                {% endthumbnail %}
-              </a>
-            {% endfor %}
-          </div>
-        </div>
       {% endif %}
     </div>
   </section>

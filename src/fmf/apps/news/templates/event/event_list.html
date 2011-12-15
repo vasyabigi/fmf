@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load thumbnail i18n pagination_tags %}
+
+{% block title %}{% trans "Events" %} - {{ block.super }}{% endblock %}
+
+{% block breadcrumbs %}
+  <span><a href="{% url index-view %}">{% trans "FPM" %}</a> ></span>
+  <span>{% trans "Events" %}</span>
+{% endblock %}
+
+{% block content %}
+  <section id="events" class="container bordered">
+    <ul>
+      {% autopaginate events 10 %}
+      {% for event in events %}
+        <li>
+          {% thumbnail event.image "200x150" crop="center" as im %}
+            <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" />
+          {% endthumbnail %}
+          <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
+          {% if event.date %}
+            <p class="news_date">{{ event.date }}</p>
+          {% endif %}
+          <p class="news_short">{{ event.short_description }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+    <p><a href="{% url event-list-past %}">{% trans "Past events" %}</a></p>
+  </section>
+  <div class="push"></div>
+  {% paginate %}
+{% endblock %}

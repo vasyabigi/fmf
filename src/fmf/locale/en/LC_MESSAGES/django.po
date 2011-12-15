@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-09 09:13+0200\n"
+"POT-Creation-Date: 2011-12-16 00:57+0200\n"
 "PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,12 @@ msgid "Page"
 msgstr ""
 
 #: apps/core/models.py:17 apps/core/models.py:42 apps/news/models.py:49
-#: apps/news/models.py:56 apps/news/models.py:61
+#: apps/news/models.py:56 apps/news/models.py:61 apps/news/models.py:106
 msgid "Image"
 msgstr ""
 
-#: apps/core/models.py:19 apps/news/models.py:26
+#: apps/core/models.py:19 apps/flatpages_extra/models.py:26
+#: apps/news/models.py:26 apps/news/models.py:83
 msgid "Active"
 msgstr ""
 
@@ -67,11 +68,12 @@ msgstr ""
 msgid "Image for %s"
 msgstr ""
 
-#: apps/core/models.py:40 apps/news/models.py:47
+#: apps/core/models.py:40 apps/news/models.py:47 apps/news/models.py:104
 msgid "No image"
 msgstr ""
 
 #: apps/core/models.py:47 apps/news/models.py:18 apps/news/models.py:55
+#: apps/news/models.py:77
 msgid "Title"
 msgstr ""
 
@@ -87,11 +89,11 @@ msgstr ""
 msgid "Index tabs"
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:39
-msgid "Last news"
+#: apps/core/templates/core/index_view.html:37
+msgid "List of all events"
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:60
+#: apps/core/templates/core/index_view.html:63
 msgid "All news"
 msgstr ""
 
@@ -116,23 +118,43 @@ msgstr ""
 msgid "Cooperation"
 msgstr ""
 
-#: apps/news/models.py:19
+#: apps/flatpages_extra/models.py:9
+msgid "Flatpage"
+msgstr ""
+
+#: apps/flatpages_extra/models.py:12
+msgid "Extra flat page"
+msgstr ""
+
+#: apps/flatpages_extra/models.py:13
+msgid "Extra flat pages"
+msgstr ""
+
+#: apps/flatpages_extra/models.py:29
+msgid "Extra flat page image"
+msgstr ""
+
+#: apps/flatpages_extra/models.py:30
+msgid "Extra flat page images"
+msgstr ""
+
+#: apps/news/models.py:19 apps/news/models.py:78
 msgid "Slug"
 msgstr ""
 
-#: apps/news/models.py:20
+#: apps/news/models.py:20 apps/news/models.py:79
 msgid "Main image"
 msgstr ""
 
-#: apps/news/models.py:21
+#: apps/news/models.py:21 apps/news/models.py:80
 msgid "Short Description"
 msgstr ""
 
-#: apps/news/models.py:22
+#: apps/news/models.py:22 apps/news/models.py:81
 msgid "Description"
 msgstr ""
 
-#: apps/news/models.py:23
+#: apps/news/models.py:23 apps/news/models.py:82
 msgid "Date"
 msgstr ""
 
@@ -144,7 +166,7 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: apps/news/models.py:27
+#: apps/news/models.py:27 apps/news/models.py:84
 msgid "Created"
 msgstr ""
 
@@ -169,11 +191,35 @@ msgstr ""
 msgid "image for %s"
 msgstr ""
 
+#: apps/news/models.py:88
+msgid "Event"
+msgstr ""
+
+#: apps/news/models.py:89 apps/news/templates/event/event_detail.html:9
+#: apps/news/templates/event/event_list.html:5
+#: apps/news/templates/event/event_list.html:9
+#: apps/news/templates/event/event_list_past.html:5
+msgid "Events"
+msgstr ""
+
+#: apps/news/templates/event/event_detail.html:8
+#: apps/news/templates/event/event_list.html:8
+#: apps/news/templates/event/event_list_past.html:8
 #: apps/news/templates/news/news_details.html:8
 #: apps/news/templates/news/news_list.html:8 templates/flatpages/about.html:12
 #: templates/flatpages/cooperation.html:12 templates/flatpages/default.html:10
 #: templates/flatpages/entrants.html:12 templates/flatpages/students.html:12
 msgid "FPM"
+msgstr ""
+
+#: apps/news/templates/event/event_list.html:29
+#: apps/news/templates/event/event_list_past.html:9
+#: apps/news/templates/event/event_list_past.html:14
+msgid "Past events"
+msgstr ""
+
+#: apps/news/templates/event/event_list_past.html:30
+msgid "Back to future events"
 msgstr ""
 
 #: templates/base.html:31 templates/base.html.py:60
