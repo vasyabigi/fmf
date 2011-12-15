@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.contrib.flatpages.models import FlatPage
 
-from models import IndexSliderImage, IndexTab
+from models import IndexSliderImage
 from forms import FlatpageForm
 
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline, TranslationStackedInline
@@ -65,15 +65,3 @@ class ChunkAdmin(BaseTranslationAdmin):
 
 admin.site.unregister(Chunk)
 admin.site.register(Chunk, ChunkAdmin)
-
-
-class IndexTabAdmin(BaseTranslationAdmin):
-    def formfield_for_dbfield(self, db_field, **kwargs):
-        if db_field.name.startswith('content_'):
-            return db_field.formfield(widget=TinyMCE(
-                attrs={'cols': 70, 'rows': 25, 'class':'vLargeTextField modeltranslation modeltranslation-default'},
-                mce_attrs={'external_link_list_url': reverse('tinymce.views.flatpages_link_list')},
-            ))
-        return super(IndexTabAdmin, self).formfield_for_dbfield(db_field, **kwargs)
-
-admin.site.register(IndexTab, IndexTabAdmin)

@@ -41,20 +41,3 @@ class IndexSliderImage(models.Model):
         return  thum
     thumb.short_description = _('Image')
     thumb.allow_tags = True
-
-
-class IndexTab(models.Model):
-    title = models.CharField(_("Title"), max_length=256, unique=True)
-    content = models.TextField(_("Content"))
-    position = PositionField()
-
-    class Meta:
-        ordering = ('position',)
-        verbose_name = _("Index tab")
-        verbose_name_plural = _("Index tabs")
-
-    def __unicode__(self):
-        return self.title
-
-    def get_slug(self):
-        return slugify(self.title)
