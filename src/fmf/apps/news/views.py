@@ -1,3 +1,4 @@
+import datetime
 from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic.list import ListView
@@ -31,7 +32,15 @@ class EventList(ListView):
     context_object_name = 'events'
 
     def get_queryset(self):
-        return Event.objects.filter(is_active=True)
+        return Event.objects.filter(is_active=True, date__gte=datetime.datetime.today()).order_by('date')
+
+
+class EventPastList(ListView):
+    template_name = 'event/event_list_past.html'
+    context_object_name = 'events'
+
+    def get_queryset(self):
+        return Event.objects.filter(is_active=True, date__lt=datetime.datetime.today()).order_by('-date')
 
 
 def event_details(request, slug):

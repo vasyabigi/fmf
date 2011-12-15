@@ -60,7 +60,7 @@ var Fmf = (function(){
                 $("#tab_nav li a.active").removeClass("active");
                 $(this).addClass("active");
                 $("#tab_content > li").hide();
-                $("#"+$(this).attr("title")).fadeIn();
+                $("#"+$(this).attr("title")).fadeIn(100);
                 return false;
             });
         },

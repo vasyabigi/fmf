@@ -6,11 +6,12 @@
 
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "FPM" %}</a> ></span>
-  <span>{% trans "Events" %}</span>
+  <span>{% trans "Past events" %}</span>
 {% endblock %}
 
 {% block content %}
   <section id="events" class="container bordered">
+    <h2>{% trans "Past events" %}:</h2>
     <ul>
       {% autopaginate events 10 %}
       {% for event in events %}
@@ -26,7 +27,7 @@
         </li>
       {% endfor %}
     </ul>
-    <p><a href="{% url event-list-past %}">{% trans "Past events" %}</a></p>
+    <p><a href="{% url event-list %}">{% trans "Back to future events" %}</a></p>
   </section>
   <div class="push"></div>
   {% paginate %}

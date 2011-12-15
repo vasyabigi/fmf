@@ -21,14 +21,20 @@
     </section>
     <!--end slider-->
     <section class="tabs bordered">
-      <ul>
+      <ul id="tab_nav">
         {% for event in events %}
-          <li><a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
-            {{ event.date }}
+          <li><a {% if forloop.first %}class="active"{% endif %}  href="#" title="{{ event.pk }}">{{ event.date }}</a></li>
+        {% endfor %}
+      </ul>
+      <ul id="tab_content">
+        {% for event in events %}
+          <li {% if forloop.first %}class="active"{% endif %} id="{{ event.id }}">
+            <p><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></p>
             {{ event.short_description }}
           </li>
         {% endfor %}
       </ul>
+      <p><a href="{% url event-list %}">{% trans "List of all events" %}</a></p>
     </section>
   </div>
   <div class="clearfix"></div>

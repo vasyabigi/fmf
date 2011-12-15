@@ -80,13 +80,11 @@ class Event(models.Model):
     short_description = models.TextField(_("Short Description"))
     description = models.TextField(_("Description"))
     date = models.DateField(_("Date"))
-    is_main = models.BooleanField(_("Is on main page"), default=True)
-    position = PositionField(_("Position"), default=0)
     is_active = models.BooleanField(_("Active"), default=True)
     created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
 
     class Meta:
-        ordering = ('position',)
+        ordering = ('-date',)
         verbose_name = _("Event")
         verbose_name_plural = _("Events")
 

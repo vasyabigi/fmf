@@ -462,6 +462,7 @@ body #page > article {
 #tab_content li {
   overflow-y:auto;
   height: 265px;
+  padding: 0 10px;
 }
 #tab_content li p{
   margin: 10px;
