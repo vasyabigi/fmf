@@ -11,7 +11,9 @@ var Fmf = (function(){
         },
 
         NewsSlider : function(){
+            var oldt = 0;
             var sudoSlider = $("#slider").sudoSlider({
+                customLink: '.custom',
                 fade:true,
                 numeric:true,
                 auto:true,
@@ -22,6 +24,23 @@ var Fmf = (function(){
                 updateBefore: true,
                 beforeAniFunc: function(t){
                     $(this).children('.caption').hide();
+
+                    var scroll = -t+2;
+                    if (scroll == 1) scroll = 0;
+                    if (scroll < -2) scroll = -2;
+                    var scroll = scroll * $('.custom').eq(0).outerWidth(true);
+
+                    var diff = Math.sqrt(Math.abs(oldt-t));
+                    var speed = parseInt(diff*800);
+
+                    $('.customBox').animate(
+                            { marginLeft: scroll },
+                            {
+                                queue:true,
+                                duration:speed
+                            }
+                    );
+                    oldt = t;
                 },
                 afterAniFunc: function(t){
                     $(this).children('.caption').slideDown(200);
@@ -65,8 +84,35 @@ var Fmf = (function(){
             });
         },
 
-        TabsWidth : function(){
+        EntrantsSlider : function(){
+            var oldt = 0;
+            var sudoSlider = $("#entrants_images").sudoSlider({
+                customLink: '.custom',
+                fade:true,
+                continuous: true,
+                fadespeed: '1000',
+                speed:'4000',
+                resumePause:'5000',
+                updateBefore: true,
+                beforeAniFunc: function(t){
+                    var scroll = -t+2;
+                    if (scroll == 1) scroll = 0;
+                    if (scroll < -2) scroll = -2;
+                    var scroll = scroll * $('.custom').eq(0).outerWidth(true);
 
+                    var diff = Math.sqrt(Math.abs(oldt-t));
+                    var speed = parseInt(diff*800);
+
+                    $('.customBox').animate(
+                            { marginLeft: scroll },
+                            {
+                                queue:true,
+                                duration:speed
+                            }
+                    );
+                    oldt = t;
+                }
+            });
         },
 
         NewsDetailsSldier: function(){
@@ -92,10 +138,11 @@ $(document).ready(function(){
     Fmf.init();
     Fmf.NewsSlider();
     Fmf.IndexTabs();
-//    Fmf.TabsWidth();
+    Fmf.EntrantsSlider();
     Fmf.NewsDetailsSldier();
 
 });
+
 	$(window).scroll(function() {
 		if($(this).scrollTop() > 300) {
 			$('.toTop').fadeIn();
@@ -107,6 +154,7 @@ $(document).ready(function(){
 	$('.toTop').click(function() {
 		$('body,html').animate({scrollTop:0},1000);
 	});
+
 
 (function($) {
 

@@ -257,6 +257,7 @@ body #page > article {
   z-index: 1;
 }
 #slider {
+  z-index: 2;
   width:600px;
 }
 #slider img{
@@ -506,6 +507,57 @@ body #page > article {
   padding-left:40px;
   list-style-type: disc;
 }
+
+.entrants_images_box {
+  position: relative;
+  float: left;
+  width: 600px;
+  margin: 0 20px 220px 0;
+  padding: 10px;
+  z-index: 1;
+}
+#entrants_images {
+  z-index: 2;
+  width:600px;
+}
+#entrants_images img{
+  border:none;
+}
+entrants_images ul, #entrants_images li{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+#entrants_images li {
+  width:600px;
+  overflow:hidden;
+}
+
+/*
+#entrants_images_nav {
+  width:210px;
+  height:40px;
+  position:absolute;
+  top:150px;
+  left:100px;
+  overflow:hidden;
+}
+#entrants_images_nav .customBox {
+  width:350px;
+  height:40px;
+  background:#bababa;
+}
+#entrants_images_nav .customBox .custom {
+  display: block;
+  height:30px;
+  width:60px;
+  margin:2px;
+  float:left;
+  background:grey;
+  padding:3px;
+}
+*/
+
  /* END Flatpages*/
 
 /*END Content*/
