@@ -21,14 +21,12 @@
     </section>
     <!--end slider-->
     <section class="tabs bordered">
-      <ul id="tab_nav">
-        {% for tab in tabs %}
-          <li><a {% if forloop.first %}class="active"{% endif %}  href="#" title="{{ tab.get_slug }}">{{ tab.title }}</a></li>
-        {% endfor %}
-      </ul>
-      <ul id="tab_content">
-        {% for tab in tabs %}
-          <li {% if forloop.first %}class="active"{% endif %} id="{{ tab.get_slug }}">{{ tab.content|safe }}</li>
+      <ul>
+        {% for event in events %}
+          <li><a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
+            {{ event.date }}
+            {{ event.short_description }}
+          </li>
         {% endfor %}
       </ul>
     </section>

@@ -72,3 +72,38 @@ class NewsImage(models.Model):
 def news_slug(sender, instance, **kwargs):
     if News.objects.exclude(pk=instance.pk).filter(slug=instance.slug):
         instance.slug += unicode(uuid.uuid4())[:5]
+
+class Event(models.Model):
+    title = models.CharField(_("Title"), max_length=256)
+    slug = models.SlugField(_("Slug"), max_length=256)
+    image = ImageField(upload_to='events/images/', verbose_name=_("Main image"), blank=True, null=True)
+    short_description = models.TextField(_("Short Description"))
+    description = models.TextField(_("Description"))
+    date = models.DateField(_("Date"))
+    is_main = models.BooleanField(_("Is on main page"), default=True)
+    position = PositionField(_("Position"), default=0)
+    is_active = models.BooleanField(_("Active"), default=True)
+    created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
+
+    class Meta:
+        ordering = ('position',)
+        verbose_name = _("Event")
+        verbose_name_plural = _("Events")
+
+    def __unicode__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("event-detail", args=(self.slug,))
+
+    def thumb(self):
+        try:
+            im = get_thumbnail(self.image, '50x50', crop='center')
+            t = Template('<img src="{{ image.url }}" alt="{{ alt }}" />')
+            c = Context({"image": im, 'alt': self.title })
+            thum = t.render(c)
+        except ThumbnailError:
+            thum = _('No image')
+        return  thum
+    thumb.short_description = _('Image')
+    thumb.allow_tags = True

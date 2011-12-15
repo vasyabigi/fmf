@@ -2,7 +2,7 @@ from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic.list import ListView
 
-from news.models import News
+from models import News, Event
 
 
 class NewsList(ListView):
@@ -22,4 +22,25 @@ def news_details(request, slug):
         'news': news,
     }
     template_name = 'news/news_details.html'
+    return TemplateResponse(request, template_name, context)
+
+
+
+class EventList(ListView):
+    template_name = 'event/event_list.html'
+    context_object_name = 'events'
+
+    def get_queryset(self):
+        return Event.objects.filter(is_active=True)
+
+
+def event_details(request, slug):
+    try:
+        event = Event.objects.filter(is_active=True).get(slug=slug)
+    except Event.DoesNotExist:
+        raise Http404()
+    context = {
+        'event': event,
+    }
+    template_name = 'event/event_detail.html'
     return TemplateResponse(request, template_name, context)

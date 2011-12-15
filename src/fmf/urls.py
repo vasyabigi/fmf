@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 
     url(r'^', include('core.urls')),
     url(r'^news/', include('news.urls')),
+    url(r'^events/', include('news.event_urls')),
 )
 
 if settings.DEBUG:
