@@ -21,9 +21,9 @@ class ExtraFlatPage(models.Model):
 
 class ExtraFlatPageImage(models.Model):
     page = models.ForeignKey(ExtraFlatPage, related_name='images')
+    title = models.CharField(_("Title"), max_length=256, blank=True, null=True)
     image = ImageField(upload_to='images/flatpages')
     position = PositionField(collection='page')
-    is_active = models.BooleanField(_("Active"), default=True)
 
     class Meta:
         verbose_name = _("Extra flat page image")

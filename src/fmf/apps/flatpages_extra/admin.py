@@ -1,11 +1,12 @@
 from django.contrib import admin
-from core.admin import BaseTranslationAdmin, BaseTranslationTabularInLine
+
+from core.admin import BaseTranslationTabularInLine
 from models import ExtraFlatPage, ExtraFlatPageImage
 
 from sorl.thumbnail.admin import AdminImageMixin
 
 
-class ExtraFlatPageImageInLine(AdminImageMixin, admin.TabularInline):
+class ExtraFlatPageImageInLine(BaseTranslationTabularInLine):
     model = ExtraFlatPageImage
     extra = 1
 
