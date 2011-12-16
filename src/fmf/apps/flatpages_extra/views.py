@@ -19,4 +19,4 @@ def custom_flatpage(request, url):
     except TemplateDoesNotExist:
         raise Http404()
 
-    return TemplateResponse(request, template_name, {'images': page.images.filter(is_active=True), 'flatpage':page.page })
+    return TemplateResponse(request, template_name, {'images': page.images.all(), 'flatpage':page.page })
