@@ -12,9 +12,9 @@
 
 {% block content %}
   <section class="container bordered">
-    <p>{{ news.title }}</p>
+    <p class="title">{{ news.title }}</p>
     {% if news.date %}
-      <p>{{ news.date }}</p>
+      <p class="date">{{ news.date }}</p>
     {% endif %}
     <p>{{ news.description|safe }}</p>
       <div class="news_detail_images_box">

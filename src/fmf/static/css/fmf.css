@@ -196,7 +196,7 @@ nav ul ul ul {
   color:#ccc;
   behavior: url(/static/js/PIE.htc);
 }
-#lang a.selected, .active a{
+#lang a.selected, .active > a{
   cursor: default;
 }
   /*END Language buttons*/
@@ -312,7 +312,7 @@ body #page > article {
   text-shadow: 0 1px #fff;
   color: #7d7d7d;
 }
-#news .all_news {
+.all_news {
   float:right;
   display: inline-block;
   margin: 0 15px 10px;
@@ -325,7 +325,7 @@ body #page > article {
   text-shadow: 0 1px #fff;
   -webkit-transition:all 0.2s ease-in;
 }
-#news figcaption a{
+#news figcaption a, #tab_content li > p:first-child a{
   font-size: 16px;
   -webkit-transition:all 0.2s ease-in;
 }
@@ -462,12 +462,23 @@ body #page > article {
 }
 #tab_content li {
   overflow-y:auto;
-  height: 265px;
-  padding: 0 10px;
+  height: 225px;
+  padding:10px;
+  color:#7d7d7d;
 }
 #tab_content li p{
   margin: 10px;
   color:#7d7d7d;
+}
+#tab_content li > p:first-child {
+  margin-top: 0;
+  padding: 5px 10px;
+  text-align: center;
+  border-bottom:1px solid #bababa;
+}
+#tab_content li > p:first-child a{
+  display: block;
+  border-top:1px solid #bababa
 }
 .tabs ::-webkit-scrollbar {
   width: 12px;
