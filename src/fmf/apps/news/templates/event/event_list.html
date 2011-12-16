@@ -20,13 +20,13 @@
           {% endthumbnail %}
           <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
           {% if event.date %}
-            <p class="news_date">{{ event.date }}</p>
+            <p class="date">{{ event.date }}</p>
           {% endif %}
-          <p class="news_short">{{ event.short_description }}</p>
+          <p class="short_description_large">{{ event.short_description }}</p>
         </li>
       {% endfor %}
     </ul>
-    <p><a href="{% url event-list-past %}">{% trans "Past events" %}</a></p>
+    <p class="show_all"><a href="{% url event-list-past %}">{% trans "Past events" %} »</a></p>
   </section>
   <div class="push"></div>
   {% paginate %}

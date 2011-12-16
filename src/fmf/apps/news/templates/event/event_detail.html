@@ -12,8 +12,8 @@
 
 {% block content %}
   <section class="container bordered">
-    <p>{{ event.title }}</p>
-    <p>{{ event.date }}</p>
-    <p>{{ event.description|safe }}</p>
+    <p class="title">{{ event.title }}</p>
+    <p class="date">{{ event.date }}</p>
+    <p class="text">{{ event.description|safe }}</p>
   </section>
 {% endblock %}

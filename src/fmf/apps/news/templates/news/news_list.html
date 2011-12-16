@@ -20,9 +20,9 @@
           {% endthumbnail %}
           <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
           {% if news.date %}
-            <p class="news_date">{{ news.date }}</p>
+            <p class="date">{{ news.date }}</p>
           {% endif %}
-          <p class="news_short">{{ news.short_description }}</p>
+          <p class="short_description_large">{{ news.short_description }}</p>
         </li>
       {% endfor %}
     </ul>

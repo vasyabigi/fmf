@@ -204,7 +204,7 @@ nav ul ul ul {
   /*END Main navigation*/
 
   /*Page_info*/
-.page_info span {
+.page_info span, .title {
   margin: 0 2px;
   font-weight:bold;
   font-size:15px;
@@ -312,7 +312,7 @@ body #page > article {
   text-shadow: 0 1px #fff;
   color: #7d7d7d;
 }
-.all_news {
+.show_all {
   float:right;
   display: inline-block;
   margin: 0 15px 10px;
@@ -320,7 +320,7 @@ body #page > article {
   font-weight: bold;
   -webkit-transition:all 0.2s ease-in;
 }
-#news .all_news a {
+.show_all a {
   font-size: 14px;
   text-shadow: 0 1px #fff;
   -webkit-transition:all 0.2s ease-in;
@@ -336,15 +336,20 @@ body #page > article {
 #main_news article {
   margin: 20px 10px;
 }
-#news_list ul li {
-  padding: 10px 0;
-}
-#news_list ul li, #news tr td {
+
+#news_list ul li, #news tr td, #events ul li {
   overflow: hidden;
+  padding: 10px;
   border: 1px solid;
   border-color: #fff #fff #D5D5D5 #D5D5D5;
   background-color: #eee;
   -webkit-transition:all 0.2s ease-in;
+}
+#news tr td {
+  padding:0;
+}
+#news_list ul li p, #news tr td p, #events ul li p {
+  margin-left:10px
 }
 #news tr td {
   width: 33%;
@@ -354,33 +359,32 @@ body #page > article {
   margin:0 10px 10px;
   float: left;
 }
-#news_list ul li:hover, #news tr td:hover {
+#news_list ul li:hover, #news tr td:hover, #events ul li:hover {
   background-color: #e5e5e5;
 }
-#news_list ul li img {
+#news_list ul li img, #events ul li img {
   float:left;
   margin:0 10px;
-}
-#news_list ul li p, #news tr td p {
-  margin:10px;
-  color: #7D7D7D;
 }
 #news_list ul li a {
   margin: 10px 0;
 }
-#news_list ul li a, .breadcrumbs li a, .breadcrumbs li {
+#news_list ul li a, #events ul li a, .breadcrumbs li a, .breadcrumbs li {
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
 }
-#news_list ul li .news_date{
+.date{
   color: #BB9D59;
   margin: 5px 0;
+  }
+.short_description {
+  margin:10px;
+  color: #7D7D7D;
 }
-#news_list ul li .news_short{
+.short_description_large{
   font-size: 16px;
   color: #555;
-  margin: 5px 0;
 }
   /*News slider*/
 .news_detail_images_box {
@@ -467,18 +471,40 @@ body #page > article {
   color:#7d7d7d;
 }
 #tab_content li p{
-  margin: 10px;
+  margin:0 10px 10px;
   color:#7d7d7d;
 }
-#tab_content li > p:first-child {
+.title_short {
+  position: relative;
   margin-top: 0;
   padding: 5px 10px;
   text-align: center;
   border-bottom:1px solid #bababa;
 }
-#tab_content li > p:first-child a{
+.title_short:after {
+  content:'';
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+  border-bottom:1px solid #fff;
+}
+.title_short a{
   display: block;
-  border-top:1px solid #bababa
+  border-top:1px solid #bababa;
+  position: relative;
+  padding-top: 3px;
+}
+.title_short a:after{
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  border-top:1px solid #fff;
+}
+#events {
+  overflow: hidden;
 }
 .tabs ::-webkit-scrollbar {
   width: 12px;
@@ -498,10 +524,8 @@ body #page > article {
 .flatpage {
   overflow: hidden;
 }
-.flatpage p, .flatpage ul {
-  margin: 10px;
-  line-height: 1.5;
-  color: #666;
+.flatpage p, .flatpage ul, .text, .text p {
+
 }
 .flatpage table{
   margin: 20px;

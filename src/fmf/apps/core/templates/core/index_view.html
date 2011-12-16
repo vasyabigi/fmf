@@ -29,12 +29,12 @@
       <ul id="tab_content">
         {% for event in events %}
           <li {% if forloop.first %}class="active"{% endif %} id="{{ event.id }}">
-            <p><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></p>
+            <p class="title_short"><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></p>
             {{ event.short_description }}
           </li>
         {% endfor %}
       </ul>
-      <p class="all_news"><a href="{% url event-list %}">{% trans "List of all events" %} »</a></p>
+      <p class="show_all"><a href="{% url event-list %}">{% trans "List of all events" %} »</a></p>
     </section>
   </div>
   <div class="clearfix"></div>
@@ -52,14 +52,14 @@
             </a>
             <figcaption>
               <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
-              <p>{{ news.short_description }}</p>
+              <p class="short_description">{{ news.short_description }}</p>
             </figcaption>
           </figure>
         </td>
         {% endfor %}
       </tr>
     </table>
-    <div class="all_news">
+    <div class="show_all">
       <a href="{% url news-list %}">{% trans "All news" %} »</a>
     </div>
   </section><!--end news-->

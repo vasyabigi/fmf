@@ -16,7 +16,7 @@
     {% if news.date %}
       <p class="date">{{ news.date }}</p>
     {% endif %}
-    <p>{{ news.description|safe }}</p>
+    <p class="text">{{ news.description|safe }}</p>
       <div class="news_detail_images_box">
         {% with news.images.all as images %}
           {% if images %}
