@@ -108,6 +108,7 @@ class Event(models.Model):
     thumb.short_description = _('Image')
     thumb.allow_tags = True
 
+
 @receiver(pre_save, sender=Event)
 def put_date_to(sender, instance, **kwargs):
     if not instance.date_to:

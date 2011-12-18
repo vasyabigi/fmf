@@ -30,14 +30,14 @@ header {
 }
   /*Main navigation*/
 nav, nav > ul > li,footer {
-  background: #404040;
-  background: -o-linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
-  background: -moz-linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
-  background: -webkit-linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
-  background: -ms-linear-gradient(bottom, #333333 0%, #777 66%, #111 100%);
-  background: linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
-  -pie-background: linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
-  behavior: url(/static/js/PIE.htc);
+  background: #313131; /* Old browsers */
+  background: -moz-linear-gradient(top, #313131 0%, #575757 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#313131), color-stop(100%,#575757)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #313131 0%,#575757 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #313131 0%,#575757 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #313131 0%,#575757 100%); /* IE10+ */
+  background: linear-gradient(top, #313131 0%,#575757 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313131', endColorstr='#575757',GradientType=0 ); /* IE6-9 */
 }
 nav > ul {
   width: 80%;
