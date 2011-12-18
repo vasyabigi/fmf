@@ -22,22 +22,17 @@
     <!--end slider-->
     <section class="tabs bordered">
       <p>{% trans "Upcoming events" %}:</p>
-      <ul id="tab_nav">
+{#    TODO clean css: id="tab_nav", id="tab_content" #}
+      <ul id="events">
         {% for event in events %}
-          <li><a {% if forloop.first %}class="active"{% endif %}  href="#" data-pk="{{ event.pk }}">
-          {% ifequal event.date_from event.date_to %}
-            {{ event.date_from }}
-          {% else %}
-            {{ event.date_from }} - {{ event.date_to }}
-          {% endifequal %}
-          </a></li>
-        {% endfor %}
-      </ul>
-      <ul id="tab_content">
-        {% for event in events %}
-          <li {% if forloop.first %}class="active"{% endif %} id="{{ event.id }}">
-            <p class="title_short"><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></p>
-            {{ event.short_description }}
+          <li>
+            <p>
+              {% ifequal event.date_from event.date_to %}{{ event.date_from }}
+              {% else %}{{ event.date_from }} - {{ event.date_to }}
+              {% endifequal %}
+            </p>
+            <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
+            <p>{{ event.short_description }}</p>
           </li>
         {% endfor %}
       </ul>
