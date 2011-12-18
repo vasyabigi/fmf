@@ -21,6 +21,7 @@
     </section>
     <!--end slider-->
     <section class="tabs bordered">
+      <p>{% trans "Upcoming events" %}:</p>
       <ul id="tab_nav">
         {% for event in events %}
           <li><a {% if forloop.first %}class="active"{% endif %}  href="#" data-pk="{{ event.pk }}">
@@ -46,6 +47,7 @@
   <div class="clearfix"></div>
   <!--news-->
   <section id="news" class="container bordered">
+    <p>{% trans "Last news" %}:</p>
     <table cellspacing="0" cellpadding="0">
       <tr>
         {% for news in news_list %}
