@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block breadcrumbs %}
-  <span><a href="{% url index-view %}">{% trans "FPM" %}</a> ></span>
+  <span><a href="{% url index-view %}">{% trans "Home" %}</a> ></span>
   {% ifequal '/entrants/' flatpage.url %}
     <span>{{ flatpage.title }}</span>
   {% else %}

@@ -73,11 +73,12 @@ def news_slug(sender, instance, **kwargs):
     if News.objects.exclude(pk=instance.pk).filter(slug=instance.slug):
         instance.slug += unicode(uuid.uuid4())[:5]
 
+
 class Event(models.Model):
     title = models.CharField(_("Title"), max_length=256)
     slug = models.SlugField(_("Slug"), max_length=256)
-    date_from = models.DateField(_("Date from"))
-    date_to = models.DateField(_("Date to"))
+    date_from = models.DateField(_("Date from"), help_text=_("If date only one - put it just here"))
+    date_to = models.DateField(_("Date to"), blank=True, null=True)
     image = ImageField(upload_to='events/images/', verbose_name=_("Main image"), blank=True, null=True)
     short_description = models.TextField(_("Short Description"))
     description = models.TextField(_("Description"))
@@ -106,3 +107,8 @@ class Event(models.Model):
         return  thum
     thumb.short_description = _('Image')
     thumb.allow_tags = True
+
+@receiver(pre_save, sender=Event)
+def put_date_to(sender, instance, **kwargs):
+    if not instance.date_to:
+        instance.date_to = instance.date_from
