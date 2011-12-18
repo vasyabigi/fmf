@@ -30,10 +30,9 @@ class NewsAdmin(BaseTranslationAdmin):
 
 
 class EventAdmin(BaseTranslationAdmin):
-    list_display = ('title', 'date', 'short_description',)
-    list_display_links = ('title', 'date')
+    list_display = ('title', 'date_from', 'date_to', 'short_description',)
     prepopulated_fields = {'slug': ('title',)}
-    fields = ('title', 'slug', 'date', 'image', 'short_description', 'description', 'is_active')
+#    fields = ('title', 'slug', 'date_from', 'date_to', 'image', 'short_description', 'description', 'is_active')
 
     def formfield_for_dbfield(self, db_field, **kwargs):
         if db_field.name.startswith('description_'):

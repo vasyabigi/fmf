@@ -76,15 +76,16 @@ def news_slug(sender, instance, **kwargs):
 class Event(models.Model):
     title = models.CharField(_("Title"), max_length=256)
     slug = models.SlugField(_("Slug"), max_length=256)
+    date_from = models.DateField(_("Date from"))
+    date_to = models.DateField(_("Date to"))
     image = ImageField(upload_to='events/images/', verbose_name=_("Main image"), blank=True, null=True)
     short_description = models.TextField(_("Short Description"))
     description = models.TextField(_("Description"))
-    date = models.DateField(_("Date"))
     is_active = models.BooleanField(_("Active"), default=True)
     created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
 
     class Meta:
-        ordering = ('-date',)
+        ordering = ('-date_to',)
         verbose_name = _("Event")
         verbose_name_plural = _("Events")
 

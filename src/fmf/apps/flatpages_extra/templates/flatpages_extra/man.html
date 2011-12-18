@@ -4,26 +4,26 @@
 
 {% block content %}
   <section id="{{ flatpage.title_en|slugify }}" class="flatpage container bordered">
-    {{ flatpage.content|safe }}
     <div class="news_detail_images_box">
-      {% if images %}
-        <div id="news_detail_images">
-          <ul>
-            {% for image in images %}
-              <li>
-                {% thumbnail image.image "800x500" as im_big %}
-                  <a class="fancybox" rel="gallery" href="{{ im_big.url }}" title="{{ image.title|default:flatpage.title }}">
-                    {% thumbnail image.image "150x100" crop="center" as im %}
-                      <img src="{{ im.url }}" alt="{{ image.title|default:flatpage.title }}" />
+          {% if images %}
+            <div id="news_detail_images">
+              <ul>
+                {% for image in images %}
+                  <li>
+                    {% thumbnail image.image "800x500" as im_big %}
+                      <a class="fancybox" rel="gallery" href="{{ im_big.url }}" title="{{ image.title|default:flatpage.title }}">
+                        {% thumbnail image.image "150x100" crop="top" as im %}
+                          <img src="{{ im.url }}" alt="{{ image.title|default:flatpage.title }}" />
+                        {% endthumbnail %}
+                      </a>
                     {% endthumbnail %}
-                  </a>
-                {% endthumbnail %}
-              </li>
-            {% endfor %}
-          </ul>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
-    </div>
+    {{ flatpage.content|safe }}
   </section>
 {% endblock %}
 

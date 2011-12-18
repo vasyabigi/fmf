@@ -23,7 +23,13 @@
     <section class="tabs bordered">
       <ul id="tab_nav">
         {% for event in events %}
-          <li><a {% if forloop.first %}class="active"{% endif %}  href="#" title="{{ event.pk }}">{{ event.date }}</a></li>
+          <li><a {% if forloop.first %}class="active"{% endif %}  href="#" data-pk="{{ event.pk }}">
+          {% ifequal event.date_from event.date_to %}
+            {{ event.date_from }}
+          {% else %}
+            {{ event.date_from }} - {{ event.date_to }}
+          {% endifequal %}
+          </a></li>
         {% endfor %}
       </ul>
       <ul id="tab_content">
@@ -34,7 +40,7 @@
           </li>
         {% endfor %}
       </ul>
-      <p class="show_all"><a href="{% url event-list %}">{% trans "List of all events" %} »</a></p>
+      <p class="show_all"><a href="{% url event-list %}">{% trans "Анонси подій" %} »</a></p>
     </section>
   </div>
   <div class="clearfix"></div>

@@ -70,7 +70,7 @@ var Fmf = (function(){
 
         IndexTabs : function(){
             $("#tab_content li").hide();
-            $("#"+$("#tab_nav li a.active").attr("title")).show();
+            $("#"+$("#tab_nav li a.active").attr("data-pk")).show();
 
             $("#tab_nav li a").click(function() {
                 if ($(this).hasClass('active')) {
@@ -79,7 +79,7 @@ var Fmf = (function(){
                 $("#tab_nav li a.active").removeClass("active");
                 $(this).addClass("active");
                 $("#tab_content > li").hide();
-                $("#"+$(this).attr("title")).fadeIn(100);
+                $("#"+$(this).attr("data-pk")).fadeIn(100);
                 return false;
             });
         },
