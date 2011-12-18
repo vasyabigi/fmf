@@ -18,7 +18,7 @@ html, body {
 }
 .bordered {
   padding: 10px;
-  background-color:#F4F4F4;
+  background:#F4F4F4;
   border:1px solid #BBB;
   box-shadow: inset 0 0 0 1px #FFF, 1px 1px 0 0 #bbb;
   behavior: url(/static/js/PIE.htc);
@@ -31,12 +31,12 @@ header {
   /*Main navigation*/
 nav, nav > ul > li,footer {
   background: #404040;
-  background: -o-linear-gradient(bottom, #333333 0%, #505050 66%, #333333 100%);
-  background: -moz-linear-gradient(bottom, #333333 0%, #505050 66%, #333333 100%);
-  background: -webkit-linear-gradient(bottom, #333333 0%, #505050 66%, #333333 100%);
-  background: -ms-linear-gradient(bottom, #333333 0%, #505050 66%, #333333 100%);
-  background: linear-gradient(bottom, #333333 0%, #505050 66%, #333333 100%);
-  -pie-background: linear-gradient(bottom, #333333 0%, #505050 66%, #333333 100%);
+  background: -o-linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
+  background: -moz-linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
+  background: -webkit-linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
+  background: -ms-linear-gradient(bottom, #333333 0%, #777 66%, #111 100%);
+  background: linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
+  -pie-background: linear-gradient(bottom, #111 0%, #777 66%, #111 100%);
   behavior: url(/static/js/PIE.htc);
 }
 nav > ul {
@@ -48,7 +48,7 @@ nav > ul {
   font-size: 17px;
   line-height: 40px;
 }
-nav > ul li {
+nav > ul > li {
   position: relative;
   display: inline-block;
   float:left;
@@ -57,19 +57,19 @@ nav > ul li {
   border-right: 1px solid #2a2a2a;
 }
 nav > ul > li.active, nav > ul > li.active:hover {
-  background: #D7D7D7;
+  background: #D7D7D7 !important;
   border-left-color: #ddd;
   border-right-color: #ddd;
 }
 nav > ul li:hover {
   position: relative;
-  z-index: 599;
   cursor: default;
-  background: #e8e8e8;
+  background: #e8e8e8 !important;
   border-left-color: #fff;
   border-right-color: #eee;
   opacity: 1;
 }
+
 nav > ul ul {
   visibility: hidden;
   position: absolute;
@@ -93,30 +93,31 @@ nav > ul ul li {
   display: block;
   float: none;
   padding: 0;
-  background-color: #eee;
+  background: #eee;
   border: 1px solid transparent;
   border-right: none;
   opacity: .95;
+  -webkit-transition:all 0.2s ease-in;
 }
 nav > ul ul a:hover, nav > ul ul li:hover > a {
   border-top-color: #fff;
   border-bottom-color: #fff;
   cursor: pointer;
+  background: #d7d7d7;
+  color: #333;
 }
 nav > ul li:hover > ul {
   visibility: visible;
   opacity: 1;
 }
-nav > ul > li a {
+nav > ul > li > a {
   padding: 8px 30px;
-  color: #C5C5C5;
+  color: #ddd;
+  text-shadow: 0 -1px #000;
 }
-  nav > ul ul a:hover, nav > ul ul > li:hover > a {
-  background-color: #d7d7d7;
-  color: #333;
-  }
 nav > ul li:hover > a, nav ul > li.active a{
-   color: #333;
+  color: #333;
+  text-shadow: 0 1px #e7e7e7;
   }
 nav > ul ul li a {
   display:block;
@@ -125,7 +126,9 @@ nav > ul ul li a {
   background: #eee;
   border: 1px solid transparent;
   color:#666;
-  -webkit-transition: background,border 0.2s ease-in;
+  text-shadow:none;
+  z-index: 600;
+  -webkit-transition:opacity 0.2s ease-in;
 }
 nav ul ul ul {
   position: absolute;
@@ -151,7 +154,7 @@ nav ul ul ul {
 }
 #lang > a:last-child {
   border-radius: 0 5px 5px 0;
-  margin-left:-3px;
+  margin-left:-4px;
   padding-right: 10px;
   behavior: url(/static/js/PIE.htc);
 }
@@ -161,7 +164,7 @@ nav ul ul ul {
   margin: 2px;
   padding: 0.5em;
   border: 1px solid #616161;
-  background-color: #707070;
+  background: #707070;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8a8a8a), color-stop(100%, #707070));
   background: -webkit-linear-gradient(#8a8a8a,#707070);
   background: -moz-linear-gradient(#8a8a8a,#707070);
@@ -342,7 +345,7 @@ body #page > article {
   padding: 10px;
   border: 1px solid;
   border-color: #fff #fff #D5D5D5 #D5D5D5;
-  background-color: #eee;
+  background: #eee;
   -webkit-transition:all 0.2s ease-in;
 }
 #news tr td {
@@ -360,7 +363,7 @@ body #page > article {
   float: left;
 }
 #news_list ul li:hover, #news tr td:hover, #events ul li:hover {
-  background-color: #e5e5e5;
+  background: #e5e5e5;
 }
 #news_list ul li img, #events ul li img {
   float:left;
@@ -529,7 +532,7 @@ body #page > article {
 }
 .flatpage table{
   margin: 20px;
-  background-color:#e5e5e5;
+  background:#e5e5e5;
   color:#333;
 }
 .flatpage table,.flatpage table tbody,.flatpage table tr,.flatpage table td {
@@ -681,7 +684,7 @@ footer li {
   display: block;
   float: left;
   width: 25%;
-  color: #bbb;
+  color: #ccc;
 }
 footer li p {
   padding-bottom: 10px;
