@@ -23,6 +23,7 @@
     <section class="tabs bordered">
       <p>{% trans "Upcoming events" %}:</p>
 {#    TODO clean css: id="tab_nav", id="tab_content" #}
+      {% if events %}
       <ul id="events">
         {% for event in events %}
           <li>
@@ -36,6 +37,9 @@
           </li>
         {% endfor %}
       </ul>
+      {% else %}
+        <p>Put something here if no events</p>
+      {% endif %}
       <p class="show_all"><a href="{% url event-list %}">{% trans "Announcements" %} »</a></p>
     </section>
   </div>
