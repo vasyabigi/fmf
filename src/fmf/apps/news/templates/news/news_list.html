@@ -11,7 +11,7 @@
 
 {% block content %}
   <section id="news_list" class="container bordered">
-    <ul>
+    <ul class="list">
       {% autopaginate news_list 10 %}
       {% for news in news_list %}
         <li>

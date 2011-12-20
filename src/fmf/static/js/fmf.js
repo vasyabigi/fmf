@@ -25,9 +25,9 @@ var Fmf = (function(){
                 beforeAniFunc: function(t){
                     $(this).children('.caption').hide();
 
-                    var scroll = -t+2;
-                    if (scroll == 1) scroll = 0;
-                    if (scroll < -2) scroll = -2;
+                    var scroll = -t+3;
+                    if (scroll > -1) scroll = 0;
+                    if (scroll < -6) scroll = -6;
                     var scroll = scroll * $('.custom').eq(0).outerWidth(true);
 
                     var diff = Math.sqrt(Math.abs(oldt-t));

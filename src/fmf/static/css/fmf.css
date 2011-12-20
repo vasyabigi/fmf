@@ -17,6 +17,7 @@ html, body {
   margin: 0 auto;
 }
 .bordered {
+  position: relative;
   padding: 10px;
   background:#F4F4F4;
   border:1px solid #BBB;
@@ -43,7 +44,6 @@ nav > ul {
   width: 80%;
   margin: 0 auto;
   position: relative;
-  z-index: 597;
   font-weight: bold;
   font-size: 17px;
   line-height: 40px;
@@ -64,7 +64,7 @@ nav > ul > li.active, nav > ul > li.active:hover {
 nav > ul li:hover {
   position: relative;
   cursor: default;
-  background: #e8e8e8 !important;
+  background: #e8e8e8;
   border-left-color: #fff;
   border-right-color: #eee;
   opacity: 1;
@@ -84,7 +84,7 @@ nav > ul ul {
   line-height: 17px;
   opacity: 0;
   box-shadow: 3px 3px 1px 0 rgba(35, 35, 35, 0.1);
-  z-index: 598;
+  z-index: 3;
   -webkit-transition:opacity 0.2s ease-in;
   behavior: url(/static/js/PIE.htc);
 }
@@ -97,7 +97,8 @@ nav > ul ul li {
   border: 1px solid transparent;
   border-right: none;
   opacity: .95;
-  -webkit-transition:all 0.2s ease-in;
+  z-index: 3;
+  -webkit-transition:opacity 0.2s ease-in;
 }
 nav > ul ul a:hover, nav > ul ul li:hover > a {
   border-top-color: #fff;
@@ -111,14 +112,18 @@ nav > ul li:hover > ul {
   opacity: 1;
 }
 nav > ul > li > a {
-  padding: 8px 30px;
+  padding: 10px 30px;
   color: #ddd;
   text-shadow: 0 -1px #000;
 }
-nav > ul li:hover > a, nav ul > li.active a{
+nav > ul > li:hover > a, nav ul > li.active > a{
   color: #333;
+  background: #e8e8e8;
   text-shadow: 0 1px #e7e7e7;
-  }
+}
+nav ul > li.active > a{
+  background: #d7d7d7;
+}
 nav > ul ul li a {
   display:block;
   margin-left:-1px;
@@ -127,7 +132,6 @@ nav > ul ul li a {
   border: 1px solid transparent;
   color:#666;
   text-shadow:none;
-  z-index: 600;
   -webkit-transition:opacity 0.2s ease-in;
 }
 nav ul ul ul {
@@ -252,12 +256,10 @@ body #page > article {
   /*Slider*/
 
 #slider_box {
-  position: relative;
   float: left;
   width: 600px;
   margin: 0 20px 20px 0;
   padding: 10px;
-  z-index: 1;
 }
 #slider {
   z-index: 2;
@@ -284,8 +286,9 @@ body #page > article {
   height:50px;
   text-align:center;
   color:black;
-  background:rgba(0,0,0,0.5);
   zoom: 1;
+  background: rgb(50, 50, 50);
+  background:rgba(0,0,0,0.5);
   behavior: url(/static/js/PIE.htc);
 }
 .caption a {
@@ -304,21 +307,30 @@ body #page > article {
   /*News*/
 #news {
   overflow: hidden;
+  margin-top: -20px;
   margin-bottom:15px;
   padding: 0;
 }
-#news > p:first-child {
-  margin: 10px 15px 0;
-  padding:5px;
+#news > .bordered {
+  overflow: hidden;
+  margin:0 1px 1px 0;
+}
+#news .news_title {
+  position: relative;
+  max-width: 600px;
+  margin:0 1px -2px 0;
+  padding:10px;
+  border-bottom: none;
   font-size: 14px;
   font-weight: bold;
   text-shadow: 0 1px #fff;
-  color: #7d7d7d;
+  box-shadow: inset 0 1px 0 1px #FFF, 1px 0 0 0 #bbb;
+  z-index: 2;
 }
 .show_all {
   float:right;
   display: inline-block;
-  margin: 0 15px 10px;
+  margin: 5px 15px 0;
   padding: 5px 15px;
   font-weight: bold;
   -webkit-transition:all 0.2s ease-in;
@@ -333,46 +345,47 @@ body #page > article {
   -webkit-transition:all 0.2s ease-in;
 }
 #news table {
-  margin: 10px;
   border-collapse: separate;
 }
 #main_news article {
   margin: 20px 10px;
 }
 
-#news_list ul li, #news tr td, #events ul li {
+.list li, .list td {
   overflow: hidden;
+  text-overflow:ellipsis;
   padding: 10px;
   border: 1px solid;
   border-color: #fff #fff #D5D5D5 #D5D5D5;
   background: #eee;
   -webkit-transition:all 0.2s ease-in;
 }
-#news tr td {
-  padding:0;
-}
-#news_list ul li p, #news tr td p, #events ul li p {
+.list li p  {
   margin-left:10px
 }
 #news tr td {
   width: 33%;
+  padding:10px 0;
 }
 #news tr td figure > a {
   display: block;
-  margin:0 10px 10px;
+  margin:0 10px;
   float: left;
 }
-#news_list ul li:hover, #news tr td:hover, #events ul li:hover {
+#news figcaption > p:first-child {
+  margin-top: 0;
+}
+.list li:hover, .list tr td:hover {
   background: #e5e5e5;
 }
-#news_list ul li img, #events ul li img {
+#news_list ul li img,.list li img {
   float:left;
   margin:0 10px;
 }
 #news_list ul li a {
   margin: 10px 0;
 }
-#news_list ul li a, #events ul li a, .breadcrumbs li a, .breadcrumbs li {
+#news_list ul li a, #events_list ul li a, .breadcrumbs li a, .breadcrumbs li {
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
@@ -382,7 +395,7 @@ body #page > article {
   margin: 5px 0;
   }
 .short_description {
-  margin:10px;
+  margin:5px 0 0 10px;
   color: #7D7D7D;
 }
 .short_description_large{
@@ -418,15 +431,36 @@ body #page > article {
   list-style:none;
   display:block;
 }
-  /*END News slider*/
+    /*END News slider*/
   /*END News*/
-  /*TABS*/
-.tabs {
+  /*Events*/
+.events {
   min-width: 285px;
-  height: 303px;
+  height: 340px;
   margin-left: 640px;
 }
-#tab_nav {
+.events > p:first-child {
+  margin: 0;
+  padding:0 5px 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 1px #fff;
+}
+.events ul li {
+  height: 75px;
+}
+.events .date {
+  margin-top: 0;
+}
+.events .short_description {
+  overflow: hidden;
+  height: 32px;
+  line-height: 16px;
+}
+#events_list {
+  overflow: hidden;
+}
+/*#tab_nav {
   height: 41px;
   margin-bottom: -5px;
   overflow:auto;
@@ -464,7 +498,7 @@ body #page > article {
 }
 #tab_content, #tab_nav li a.active {
   background: #e5e5e5;
-  box-shadow: inset 3px 3px 3px -3px #000;
+  box-shadow: inset 2px 2px #bbb;
   behavior: url(/static/js/PIE.htc);
 }
 #tab_content li {
@@ -477,6 +511,18 @@ body #page > article {
   margin:0 10px 10px;
   color:#7d7d7d;
 }
+.tabs ::-webkit-scrollbar {
+  width: 12px;
+}
+#tab_content ::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+#tab_content ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}*/
 .title_short {
   position: relative;
   margin-top: 0;
@@ -506,22 +552,7 @@ body #page > article {
   width: 100%;
   border-top:1px solid #fff;
 }
-#events {
-  overflow: hidden;
-}
-.tabs ::-webkit-scrollbar {
-  width: 12px;
-}
-#tab_content ::-webkit-scrollbar-track {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-
-#tab_content ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-  /*END TABS*/
+  /*END Events*/
 
  /*Flatpages*/
 .flatpage {
@@ -549,11 +580,13 @@ body #page > article {
 
 .entrants_images_box {
   position: relative;
-  float: left;
   width: 600px;
   margin: 0 20px 220px 0;
   padding: 10px;
   z-index: 1;
+}
+.entrants_images_box .controls {
+  display: none;
 }
 #entrants_images {
   z-index: 2;
@@ -604,7 +637,7 @@ entrants_images ul, #entrants_images li{
 /*Footer*/
 footer {
   position: relative;
-  height:80px;
+  height:100px;
   width: 100%;
   margin: -100px auto 0;
   padding: 20px 0 0;
@@ -614,7 +647,7 @@ footer {
 .toTop_button .toTop {
   position: fixed;
   display: none;
-  bottom:30px;
+  top:50px;
   right:15px;
   width: 100px;
   height: 35px;

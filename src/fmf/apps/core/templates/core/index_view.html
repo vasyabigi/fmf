@@ -20,20 +20,19 @@
       </div>
     </section>
     <!--end slider-->
-    <section class="tabs bordered">
+    <section class="events bordered">
       <p>{% trans "Upcoming events" %}:</p>
-{#    TODO clean css: id="tab_nav", id="tab_content" #}
       {% if events %}
-      <ul id="events">
+      <ul class="list">
         {% for event in events %}
           <li>
-            <p>
+            <p class="date">
               {% ifequal event.date_from event.date_to %}{{ event.date_from }}
               {% else %}{{ event.date_from }} - {{ event.date_to }}
               {% endifequal %}
             </p>
             <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
-            <p>{{ event.short_description }}</p>
+            <p class="short_description">{{ event.short_description }}</p>
           </li>
         {% endfor %}
       </ul>
@@ -45,29 +44,31 @@
   </div>
   <div class="clearfix"></div>
   <!--news-->
-  <section id="news" class="container bordered">
-    <p>{% trans "Last news" %}:</p>
-    <table cellspacing="0" cellpadding="0">
-      <tr>
-        {% for news in news_list %}
-        <td>
-          <figure>
-            <a href="{{ news.get_absolute_url }}">
-              {% thumbnail news.main_image '100x100' crop='center' as im %}
-                  <img src="{{ im.url }}" alt="{{ news.title }}">
-              {% endthumbnail %}
-            </a>
-            <figcaption>
-              <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
-              <p class="short_description">{{ news.short_description }}</p>
-            </figcaption>
-          </figure>
-        </td>
-        {% endfor %}
-      </tr>
-    </table>
-    <div class="show_all">
-      <a href="{% url news-list %}">{% trans "All news" %} »</a>
+  <section id="news" class="container">
+    <p class="news_title bordered">{% trans "Last news" %}:</p>
+    <div class="bordered">
+      <table cellspacing="0" cellpadding="0" class="list">
+        <tr>
+          {% for news in news_list %}
+          <td>
+            <figure>
+              <a href="{{ news.get_absolute_url }}">
+                {% thumbnail news.main_image '100x100' crop='center' as im %}
+                    <img src="{{ im.url }}" alt="{{ news.title }}">
+                {% endthumbnail %}
+              </a>
+              <figcaption>
+                <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                <p class="short_description">{{ news.short_description }}</p>
+              </figcaption>
+            </figure>
+          </td>
+          {% endfor %}
+        </tr>
+      </table>
+      <div class="show_all">
+        <a href="{% url news-list %}">{% trans "All news" %} »</a>
+      </div>
     </div>
   </section><!--end news-->
 {% endblock %}

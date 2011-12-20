@@ -130,10 +130,12 @@ button, input, select, textarea {margin: 0;}
 /* we like off-black for text */
 body, select, input, textarea {color: #666;}
 p {
-  /*margin: 10px;*/
+  margin: 10px;
   /*color: #666;*/
 }
-a {color: #8A6741;}
+a {
+  color: #8A6741;
+}
 a:hover {color: #943415;}
 
 /* Print styles!

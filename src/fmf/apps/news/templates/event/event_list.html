@@ -10,8 +10,8 @@
 {% endblock %}
 
 {% block content %}
-  <section id="events" class="container bordered">
-    <ul>
+  <section id="events_list" class="container bordered">
+    <ul class="list">
       {% autopaginate events 10 %}
       {% for event in events %}
         <li>
