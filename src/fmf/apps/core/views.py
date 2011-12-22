@@ -14,6 +14,6 @@ class IndexView(TemplateView):
         context.update({
             'images': IndexSliderImage.objects.filter(is_active=True),
             'news_list': News.objects.filter(is_active=True)[:3],
-            'events': Event.objects.filter(is_active=True, date_from__gte=datetime.datetime.today()).order_by('date_from')[:3]
+            'events': Event.objects.filter(is_active=True, date_to__gte=datetime.datetime.today()).order_by('date_from')[:3]
         })
         return context
