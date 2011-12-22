@@ -5,13 +5,13 @@ from chunks.models import Chunk
 from flatpages_extra.models import ExtraFlatPageImage
 
 class NewsTranslationOptions(TranslationOptions):
-    fields = ('title', 'short_description', 'description',)
+    fields = ('title', 'short_description', 'description', 'meta_keywords', 'meta_description')
 
 class NewsImageTranslationOptions(TranslationOptions):
     fields = ('title',)
 
 class EventTranslationOptions(TranslationOptions):
-    fields = ('title', 'short_description', 'description',)
+    fields = ('title', 'short_description', 'description', 'meta_keywords', 'meta_description')
 
 class FlatPageTranslationOptions(TranslationOptions):
     fields = ('title', 'content',)

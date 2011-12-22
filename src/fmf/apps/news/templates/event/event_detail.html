@@ -4,6 +4,15 @@
 
 {% block title %}{{ event.title }}{% endblock %}
 
+{% block meta-information %}
+  {% if event.meta_keywords %}
+    <meta name="keywords" content="{{ event.meta_keywords }}"/>
+    <meta name="description" content="{{ event.meta_description }}"/>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "Home" %}</a> ></span>
   <span><a href="{% url event-list %}">{% trans "Events" %}</a> ></span>
@@ -13,7 +22,11 @@
 {% block content %}
   <section class="container bordered">
     <p class="title">{{ event.title }}</p>
-    <p class="date">{{ event.date }}</p>
+    <p class="date">
+      {% ifequal event.date_from event.date_to %}{{ event.date_from }}
+        {% else %}{{ event.date_from }} - {{ event.date_to }}
+      {% endifequal %}
+    </p>
     <p class="text">{{ event.description|safe }}</p>
   </section>
 {% endblock %}

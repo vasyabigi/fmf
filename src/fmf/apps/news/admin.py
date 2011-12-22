@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _
 
 from core.admin import BaseTranslationAdmin, BaseTranslationTabularInLine
 from models import News, NewsImage, Event
@@ -32,7 +33,6 @@ class NewsAdmin(BaseTranslationAdmin):
 class EventAdmin(BaseTranslationAdmin):
     list_display = ('title', 'date_from', 'date_to', 'short_description',)
     prepopulated_fields = {'slug': ('title',)}
-#    fields = ('title', 'slug', 'date_from', 'date_to', 'image', 'short_description', 'description', 'is_active')
 
     def formfield_for_dbfield(self, db_field, **kwargs):
         if db_field.name.startswith('description_'):

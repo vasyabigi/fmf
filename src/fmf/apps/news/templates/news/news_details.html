@@ -4,6 +4,15 @@
 
 {% block title %}{{ news.title }}{% endblock %}
 
+{% block meta-information %}
+  {% if news.meta_keywords %}
+    <meta name="keywords" content="{{ news.meta_keywords }}"/>
+    <meta name="description" content="{{ news.meta_description }}"/>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "Home" %}</a> ></span>
   <span><a href="{% url news-list %}">{% trans "News" %}</a> ></span>

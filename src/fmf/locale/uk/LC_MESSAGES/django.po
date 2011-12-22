@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-18 16:08+0200\n"
-"PO-Revision-Date: 2011-12-18 16:09\n"
+"POT-Creation-Date: 2011-12-23 00:10+0200\n"
+"PO-Revision-Date: 2011-12-23 00:12\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -51,12 +51,12 @@ msgstr ""
 msgid "Page"
 msgstr "Сторінка"
 
-#: apps/core/models.py:17 apps/core/models.py:42 apps/news/models.py:49
-#: apps/news/models.py:56 apps/news/models.py:61 apps/news/models.py:108
+#: apps/core/models.py:17 apps/core/models.py:42 apps/news/models.py:50
+#: apps/news/models.py:57 apps/news/models.py:62 apps/news/models.py:111
 msgid "Image"
 msgstr "Зображення"
 
-#: apps/core/models.py:19 apps/news/models.py:26 apps/news/models.py:85
+#: apps/core/models.py:19 apps/news/models.py:25 apps/news/models.py:86
 msgid "Active"
 msgstr "Активне"
 
@@ -73,7 +73,7 @@ msgstr "Зображення для слайдера"
 msgid "Image for %s"
 msgstr "зображення для %s"
 
-#: apps/core/models.py:40 apps/news/models.py:47 apps/news/models.py:106
+#: apps/core/models.py:40 apps/news/models.py:48 apps/news/models.py:109
 msgid "No image"
 msgstr "Немає зображення"
 
@@ -81,23 +81,23 @@ msgstr "Немає зображення"
 msgid "Upcoming events"
 msgstr "Найближчі події"
 
-#: apps/core/templates/core/index_view.html:44
+#: apps/core/templates/core/index_view.html:42
 msgid "Announcements"
 msgstr "Анонси подій"
 
-#: apps/core/templates/core/index_view.html:50
+#: apps/core/templates/core/index_view.html:48
 msgid "Last news"
 msgstr "Останні новини"
 
-#: apps/core/templates/core/index_view.html:71
+#: apps/core/templates/core/index_view.html:70
 msgid "All news"
 msgstr "Усі новини"
 
 #: apps/core/templates/core/nav.html:4
-#: apps/news/templates/event/event_detail.html:8
+#: apps/news/templates/event/event_detail.html:17
 #: apps/news/templates/event/event_list.html:8
 #: apps/news/templates/event/event_list_past.html:8
-#: apps/news/templates/news/news_details.html:8
+#: apps/news/templates/news/news_details.html:17
 #: apps/news/templates/news/news_list.html:8 templates/flatpages/about.html:12
 #: templates/flatpages/cooperation.html:12 templates/flatpages/default.html:10
 #: templates/flatpages/entrants.html:12 templates/flatpages/students.html:12
@@ -134,7 +134,7 @@ msgid "Extra flat pages"
 msgstr "Extra для простих сторінок"
 
 #: apps/flatpages_extra/models.py:24 apps/news/models.py:18
-#: apps/news/models.py:55 apps/news/models.py:78
+#: apps/news/models.py:56 apps/news/models.py:79
 msgid "Title"
 msgstr "Назва"
 
@@ -146,19 +146,19 @@ msgstr "Extra картинка"
 msgid "Extra flat page images"
 msgstr "Extra картинки"
 
-#: apps/news/models.py:19 apps/news/models.py:79
+#: apps/news/models.py:19 apps/news/models.py:80
 msgid "Slug"
 msgstr "Посилання"
 
-#: apps/news/models.py:20 apps/news/models.py:82
+#: apps/news/models.py:20 apps/news/models.py:83
 msgid "Main image"
 msgstr "Основне зображення"
 
-#: apps/news/models.py:21 apps/news/models.py:83
+#: apps/news/models.py:21 apps/news/models.py:84
 msgid "Short Description"
 msgstr "Короткий опис"
 
-#: apps/news/models.py:22 apps/news/models.py:84
+#: apps/news/models.py:22 apps/news/models.py:85
 msgid "Description"
 msgstr "Опис"
 
@@ -166,58 +166,62 @@ msgstr "Опис"
 msgid "Date"
 msgstr "Дата"
 
-#: apps/news/models.py:24
-msgid "Is on main page"
-msgstr "На головній сторінці"
-
-#: apps/news/models.py:25 apps/news/models.py:57
+#: apps/news/models.py:24 apps/news/models.py:58
 msgid "Position"
 msgstr "Позиція"
 
-#: apps/news/models.py:27 apps/news/models.py:86
+#: apps/news/models.py:26 apps/news/models.py:87
 msgid "Created"
 msgstr "Створено"
 
-#: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:54
-#: apps/news/templates/news/news_details.html:9
+#: apps/news/models.py:27 apps/news/models.py:88
+msgid "Meta keywords"
+msgstr "meta-keywords"
+
+#: apps/news/models.py:28 apps/news/models.py:89
+msgid "Meta description"
+msgstr "meta-description"
+
+#: apps/news/models.py:32 apps/news/models.py:33 apps/news/models.py:55
+#: apps/news/templates/news/news_details.html:18
 #: apps/news/templates/news/news_list.html:5
 #: apps/news/templates/news/news_list.html:9
 msgid "News"
 msgstr "Новини"
 
-#: apps/news/models.py:62
+#: apps/news/models.py:63
 msgid "Images"
 msgstr "Зображення"
 
-#: apps/news/models.py:66
+#: apps/news/models.py:67
 #, python-format
 msgid "image for %(news_title)s - %(title)s"
 msgstr "зображення для %(news_title)s  - %(title)s"
 
-#: apps/news/models.py:68
+#: apps/news/models.py:69
 #, python-format
 msgid "image for %s"
 msgstr "зображення для %s"
 
-#: apps/news/models.py:80
+#: apps/news/models.py:81
 msgid "Date from"
 msgstr "З"
 
-#: apps/news/models.py:80
+#: apps/news/models.py:81
 msgid "If date only one - put it just here"
 msgstr ""
 "Якщо подія на одну дату - постав дату в це поле, наступне залиш "
 "пустим."
 
-#: apps/news/models.py:81
+#: apps/news/models.py:82
 msgid "Date to"
 msgstr "По"
 
-#: apps/news/models.py:90
+#: apps/news/models.py:93
 msgid "Event"
 msgstr "Подія"
 
-#: apps/news/models.py:91 apps/news/templates/event/event_detail.html:9
+#: apps/news/models.py:94 apps/news/templates/event/event_detail.html:18
 #: apps/news/templates/event/event_list.html:5
 #: apps/news/templates/event/event_list.html:9
 #: apps/news/templates/event/event_list_past.html:5
@@ -234,7 +238,7 @@ msgstr "Минулі події"
 msgid "Back to future events"
 msgstr "Назад до майбутніх подій"
 
-#: templates/base.html:31 templates/base.html.py:60
+#: templates/base.html:31 templates/base.html.py:63
 msgid "Faculty of Physics and Mathematics"
 msgstr "Фізико Математичний Факультет"
 
@@ -247,6 +251,9 @@ msgstr "попередня"
 #: templates/pagination/pagination.html:23
 msgid "next"
 msgstr "наступна"
+
+#~ msgid "Is on main page"
+#~ msgstr "На головній сторінці"
 
 #~ msgid "Content"
 #~ msgstr "Зміст"
