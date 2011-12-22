@@ -4,7 +4,7 @@
 
 {% block content %}
   <section id="{{ page.page.title_en|slugify }}" class="flatpage container bordered">
-    {{ flatpage.content|safe }}
+    <div class="cool_text">{{ flatpage.content|safe }}</div>
     <div class="entrants_images_box">
       {% if images %}
         <div id="slider">
@@ -18,10 +18,10 @@
             {% endfor %}
           </ul>
         </div>
-        <div id="entrants_images_nav" style="width:1050px;height:160px;overflow:hidden;z-index:5">
-          <div class="customBox" style="width:9999px;height:160px;background:#bababa;">
+        <div id="entrants_images_nav">
+          <div class="customBox">
             {% for image in images %}
-              <a class="custom" rel="{{ forloop.counter }}" style="height:150px;width:200px;margin:2px;float:left;background:grey;padding:3px;">
+              <a class="custom" rel="{{ forloop.counter }}">
                 {% thumbnail image.image "200x150" crop="center" as im %}
                   <img src="{{ im.url }}" alt="{{ page.page.title }}" />
                 {% endthumbnail %}

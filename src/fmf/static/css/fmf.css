@@ -580,13 +580,33 @@ body #page > article {
 
 .entrants_images_box {
   position: relative;
-  width: 600px;
-  margin: 0 20px 220px 0;
   padding: 10px;
   z-index: 1;
 }
+.entrants_images_box #slider{
+  margin:0 auto;
+}
 .entrants_images_box .controls {
   display: none;
+}
+#entrants_images_nav {
+  width:1050px;
+  height:160px;
+  overflow:hidden;
+  z-index:5;
+}
+#entrants_images_nav .customBox{
+  width:9999px;
+  height:160px;
+  background:#bababa;
+}
+#entrants_images_nav .customBox .custom{
+  height:150px;
+  width:200px;
+  margin:2px;
+  float:left;
+  background:grey;
+  padding:3px;
 }
 #entrants_images {
   z-index: 2;
@@ -712,7 +732,7 @@ footer .social a.vk {
 }
 footer .social a.vk span{
   background-position: -68px -34px;
-}   
+}
 footer li {
   display: block;
   float: left;
@@ -753,4 +773,37 @@ footer li a:hover {
   color: #C5C5C5;
   }
 }
+/*Fonts*/
 
+@font-face {
+  font-family: 'Reverance';
+  src: url('../fonts/anastasiascript.eot');
+  src: url('../fonts/anastasiascript.eot?#iefix') format('eot'),
+  url('../fonts/anastasiascript.woff') format('woff'),
+  url('../fonts/anastasiascript.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NymphetteRegular';
+  src: url('../fonts/Nymphette-webfont.eot');
+  src: url('../fonts/Nymphette-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Nymphette-webfont.woff') format('woff'),
+  url('../fonts/Nymphette-webfont.ttf') format('truetype'),
+  url('../fonts/Nymphette-webfont.svg#NymphetteRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.cool_text {
+  color: #333;
+  text-shadow: 0 1px 1px #ccc;
+  text-align: center;
+  font:34px 'Reverance', Arial, sans-serif;
+}
+.ornamental {
+  float:right;
+  color: #cedcff;
+  font: 30px 'NymphetteRegular' sans-serif;
+  text-shadow: 0 -1px 1px #777, 0 1px 1px #fff;
+}
