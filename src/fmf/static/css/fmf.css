@@ -30,7 +30,7 @@ header {
   background: #d7d7d7;
 }
   /*Main navigation*/
-nav, nav > ul > li,footer {
+nav, nav > ul > li,footer, .download:after {
   background: #313131; /* Old browsers */
   background: -moz-linear-gradient(top, #313131 0%, #575757 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#313131), color-stop(100%,#575757)); /* Chrome,Safari4+ */
@@ -55,6 +55,9 @@ nav > ul > li {
   vertical-align: middle;
   border-left: 1px solid #5a5a5a;
   border-right: 1px solid #2a2a2a;
+}
+nav > ul > li:first-child, .page_info span:first-child {
+  margin-left:95px;
 }
 nav > ul > li.active, nav > ul > li.active:hover {
   background: #D7D7D7 !important;
@@ -319,10 +322,11 @@ body #page > article {
   position: relative;
   max-width: 600px;
   margin:0 1px -2px 0;
-  padding:10px;
+  padding:5px 10px 0;
   border-bottom: none;
   font-size: 14px;
   font-weight: bold;
+  line-height: 35px;
   text-shadow: 0 1px #fff;
   box-shadow: inset 0 1px 0 1px #FFF, 1px 0 0 0 #bbb;
   z-index: 2;
@@ -340,8 +344,10 @@ body #page > article {
   text-shadow: 0 1px #fff;
   -webkit-transition:all 0.2s ease-in;
 }
-#news figcaption a, #tab_content li > p:first-child a{
-  font-size: 16px;
+#news figcaption a, #tab_content li > p:first-child a, .events ul li a{
+  font-size: 18px;
+  font-style: italic;
+  font-family: "DejaVu Sans" arial sans-serif;
   -webkit-transition:all 0.2s ease-in;
 }
 #news table {
@@ -367,6 +373,10 @@ body #page > article {
   width: 33%;
   padding:10px 0;
 }
+#news tr td figure {
+  overflow: hidden;
+  height: 130px;
+}
 #news tr td figure > a {
   display: block;
   margin:0 10px;
@@ -374,6 +384,9 @@ body #page > article {
 }
 #news figcaption > p:first-child {
   margin-top: 0;
+}
+#news figcaption .short_description {
+
 }
 .list li:hover, .list tr td:hover {
   background: #e5e5e5;
@@ -386,9 +399,7 @@ body #page > article {
   margin: 10px 0;
 }
 #news_list ul li a, #events_list ul li a, .breadcrumbs li a, .breadcrumbs li {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
+  font:bold italic 20px/25px "DejaVu Sans", arial sans-serif;
 }
 .date{
   color: #BB9D59;
@@ -447,10 +458,16 @@ body #page > article {
   text-shadow: 0 1px #fff;
 }
 .events ul li {
-  height: 75px;
-}
+   height: 75px;
+ }
+.events ul li a {
+  font-size: 15px;
+  line-height: 16px;
+ }
 .events .date {
   margin-top: 0;
+  margin-bottom: 0;;
+  text-align: right;
 }
 .events .short_description {
   overflow: hidden;
@@ -557,6 +574,7 @@ body #page > article {
  /*Flatpages*/
 .flatpage {
   overflow: hidden;
+  background: url("../images/logo_bg.png") 90% 30px  #f4f4f4 no-repeat;
 }
 .flatpage p, .flatpage ul, .text, .text p {
 
@@ -580,29 +598,32 @@ body #page > article {
 
 .entrants_images_box {
   position: relative;
+  width: 600px;
+  margin: 0 auto;
   padding: 10px;
   z-index: 1;
 }
-.entrants_images_box #slider{
-  margin:0 auto;
+.entrants_images_box .prevBtn, .nextBtn {
+  top:200px;
 }
 .entrants_images_box .controls {
   display: none;
 }
 #entrants_images_nav {
-  width:1050px;
-  height:160px;
+  width:850px;
+  height:120px;
+  margin:0 auto;
   overflow:hidden;
   z-index:5;
 }
 #entrants_images_nav .customBox{
   width:9999px;
-  height:160px;
+  height:120px;
   background:#bababa;
 }
 #entrants_images_nav .customBox .custom{
-  height:150px;
-  width:200px;
+  height:120px;
+  width:160px;
   margin:2px;
   float:left;
   background:grey;
@@ -777,6 +798,15 @@ footer li a:hover {
 
 @font-face {
   font-family: 'Reverance';
+  src: url('../fonts/reverance.eot');
+  src: url('../fonts/reverance.eot?#iefix') format('eot'),
+  url('../fonts/reverance.woff') format('woff'),
+  url('../fonts/reverance.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Anastasiascript';
   src: url('../fonts/anastasiascript.eot');
   src: url('../fonts/anastasiascript.eot?#iefix') format('eot'),
   url('../fonts/anastasiascript.woff') format('woff'),
@@ -799,11 +829,33 @@ footer li a:hover {
   color: #333;
   text-shadow: 0 1px 1px #ccc;
   text-align: center;
-  font:34px 'Reverance', Arial, sans-serif;
+  font:34px 'Anastasiascript', Arial, sans-serif;
 }
 .ornamental {
   float:right;
-  color: #cedcff;
+  color: #d1d2d0;
   font: 30px 'NymphetteRegular' sans-serif;
-  text-shadow: 0 -1px 1px #777, 0 1px 1px #fff;
+}
+.download {
+  position: relative;
+  display: inline-block;
+}
+.download:after {
+  display: block;
+  content:'▼';
+  position: absolute;
+  top:-10px;
+  right:-80px;
+  border-radius: 4px;
+  font-size: 25px;
+  color:#d1d2d0;
+  text-shadow: 1px 1px white, -1px -1px #444;
+  padding:5px 20px;
+  border:1px solid;
+  border-color: #527d35;
+}
+#logo {
+  position: absolute;
+  margin-top:-18px;
+  z-index: 9;
 }

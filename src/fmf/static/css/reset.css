@@ -116,7 +116,12 @@ button, input, select, textarea {margin: 0;}
   font-size: 0;
 }
 .clearfix { zoom: 1; }  
-
+.clear {
+  clear:both;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
 
 
 /* Ok, this is where the fun starts.

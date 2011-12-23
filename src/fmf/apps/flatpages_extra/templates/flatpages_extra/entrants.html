@@ -5,8 +5,8 @@
 {% block content %}
   <section id="{{ page.page.title_en|slugify }}" class="flatpage container bordered">
     <div class="cool_text">{{ flatpage.content|safe }}</div>
-    <div class="entrants_images_box">
-      {% if images %}
+    {% if images %}
+      <div class="entrants_images_box">
         <div id="slider">
           <ul>
             {% for image in images %}
@@ -18,19 +18,19 @@
             {% endfor %}
           </ul>
         </div>
-        <div id="entrants_images_nav">
-          <div class="customBox">
-            {% for image in images %}
-              <a class="custom" rel="{{ forloop.counter }}">
-                {% thumbnail image.image "200x150" crop="center" as im %}
-                  <img src="{{ im.url }}" alt="{{ page.page.title }}" />
-                {% endthumbnail %}
-              </a>
-            {% endfor %}
-          </div>
-         </div>
-      {% endif %}
-    </div>
+      </div>
+      <div id="entrants_images_nav">
+        <div class="customBox">
+          {% for image in images %}
+          <a class="custom" rel="{{ forloop.counter }}">
+            {% thumbnail image.image "160x120" crop="center" as im %}
+            <img src="{{ im.url }}" alt="{{ page.page.title }}" />
+            {% endthumbnail %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
   </section>
 {% endblock %}
 
