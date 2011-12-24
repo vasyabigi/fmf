@@ -3,10 +3,11 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.base import Template
 from django.template.context import Context
-from django.utils.translation import ugettext_lazy as _
+from django.template.loader import render_to_string
+from django.utils.translation import ugettext_lazy as _, activate
+from django.conf import settings
 
 from positions.fields import PositionField
-from pytils.translit import slugify
 from sorl.thumbnail.fields import ImageField
 from sorl.thumbnail.helpers import ThumbnailError
 from sorl.thumbnail.shortcuts import get_thumbnail
@@ -41,3 +42,17 @@ class IndexSliderImage(models.Model):
         return  thum
     thumb.short_description = _('Image')
     thumb.allow_tags = True
+
+
+def fill_empty_languages(instance, fields):
+    empty_langs = dict()
+    for field in fields:
+        empty_langs[field] = list()
+        for lang in settings.LANGUAGES:
+            if not getattr(instance, '%s_%s' % (field, lang[0])):
+                empty_langs[field].append(lang[0])
+    #TODO make message in all languages
+    text = "Content not avalible in this language."
+    for field in fields:
+        for lang in empty_langs[field]:
+            setattr(instance, '%s_%s' % (field, lang), text)

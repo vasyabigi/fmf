@@ -1,4 +1,3 @@
-import uu
 import uuid
 from django.core.urlresolvers import reverse
 from django.db import models
@@ -12,6 +11,8 @@ from sorl.thumbnail.fields import ImageField
 from sorl.thumbnail.helpers import ThumbnailError
 from sorl.thumbnail.shortcuts import get_thumbnail
 from positions import PositionField
+
+from core.models import fill_empty_languages
 
 
 class News(models.Model):
@@ -50,6 +51,16 @@ class News(models.Model):
     thumb.short_description = _('Image')
     thumb.allow_tags = True
 
+@receiver(pre_save, sender=News)
+def news_slug(sender, instance, **kwargs):
+    if News.objects.exclude(pk=instance.pk).filter(slug=instance.slug):
+        instance.slug += unicode(uuid.uuid4())[:5]
+
+@receiver(pre_save, sender=News)
+def news_empty_languages(sender, instance, **kwargs):
+    fill_empty_languages(instance, ('description', 'short_description'))
+
+
 
 class NewsImage(models.Model):
     news = models.ForeignKey(News, verbose_name=_("News"), related_name='images')
@@ -67,12 +78,6 @@ class NewsImage(models.Model):
             return _('image for %(news_title)s - %(title)s') % {'news_title':self.news.title, 'title':self.title}
         else:
             return _('image for %s') % self.news.title
-
-
-@receiver(pre_save, sender=News)
-def news_slug(sender, instance, **kwargs):
-    if News.objects.exclude(pk=instance.pk).filter(slug=instance.slug):
-        instance.slug += unicode(uuid.uuid4())[:5]
 
 
 class Event(models.Model):
@@ -116,3 +121,7 @@ class Event(models.Model):
 def put_date_to(sender, instance, **kwargs):
     if not instance.date_to:
         instance.date_to = instance.date_from
+
+@receiver(pre_save, sender=Event)
+def news_empty_languages(sender, instance, **kwargs):
+    fill_empty_languages(instance, ('description', 'short_description'))

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-23 00:10+0200\n"
-"PO-Revision-Date: 2011-12-23 00:12\n"
+"POT-Creation-Date: 2011-12-24 14:05+0200\n"
+"PO-Revision-Date: 2011-12-24 14:07\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -47,35 +47,39 @@ msgstr ""
 "Це значення повинне містити тільки літери, цифри, крапки, "
 "підкреслення, тире, слеши або тильди."
 
-#: apps/core/models.py:16
+#: apps/core/models.py:17
 msgid "Page"
 msgstr "Сторінка"
 
-#: apps/core/models.py:17 apps/core/models.py:42 apps/news/models.py:50
-#: apps/news/models.py:57 apps/news/models.py:62 apps/news/models.py:111
+#: apps/core/models.py:18 apps/core/models.py:43 apps/news/models.py:51
+#: apps/news/models.py:68 apps/news/models.py:73 apps/news/models.py:116
 msgid "Image"
 msgstr "Зображення"
 
-#: apps/core/models.py:19 apps/news/models.py:25 apps/news/models.py:86
+#: apps/core/models.py:20 apps/news/models.py:26 apps/news/models.py:91
 msgid "Active"
 msgstr "Активне"
 
-#: apps/core/models.py:24
+#: apps/core/models.py:25
 msgid "Image for slider"
 msgstr "Зображення для слайдера"
 
-#: apps/core/models.py:25
+#: apps/core/models.py:26
 msgid "Images for slider"
 msgstr "Зображення для слайдера"
 
-#: apps/core/models.py:28
+#: apps/core/models.py:29
 #, python-format
 msgid "Image for %s"
 msgstr "зображення для %s"
 
-#: apps/core/models.py:40 apps/news/models.py:48 apps/news/models.py:109
+#: apps/core/models.py:41 apps/news/models.py:49 apps/news/models.py:114
 msgid "No image"
 msgstr "Немає зображення"
+
+#: apps/core/models.py:57
+msgid "Content not avalible in this language."
+msgstr "Вміст недоступний українською."
 
 #: apps/core/templates/core/index_view.html:24
 msgid "Upcoming events"
@@ -133,8 +137,8 @@ msgstr "Extra для простої сторінки"
 msgid "Extra flat pages"
 msgstr "Extra для простих сторінок"
 
-#: apps/flatpages_extra/models.py:24 apps/news/models.py:18
-#: apps/news/models.py:56 apps/news/models.py:79
+#: apps/flatpages_extra/models.py:24 apps/news/models.py:19
+#: apps/news/models.py:67 apps/news/models.py:84
 msgid "Title"
 msgstr "Назва"
 
@@ -146,82 +150,82 @@ msgstr "Extra картинка"
 msgid "Extra flat page images"
 msgstr "Extra картинки"
 
-#: apps/news/models.py:19 apps/news/models.py:80
+#: apps/news/models.py:20 apps/news/models.py:85
 msgid "Slug"
 msgstr "Посилання"
 
-#: apps/news/models.py:20 apps/news/models.py:83
+#: apps/news/models.py:21 apps/news/models.py:88
 msgid "Main image"
 msgstr "Основне зображення"
 
-#: apps/news/models.py:21 apps/news/models.py:84
+#: apps/news/models.py:22 apps/news/models.py:89
 msgid "Short Description"
 msgstr "Короткий опис"
 
-#: apps/news/models.py:22 apps/news/models.py:85
+#: apps/news/models.py:23 apps/news/models.py:90
 msgid "Description"
 msgstr "Опис"
 
-#: apps/news/models.py:23
+#: apps/news/models.py:24
 msgid "Date"
 msgstr "Дата"
 
-#: apps/news/models.py:24 apps/news/models.py:58
+#: apps/news/models.py:25 apps/news/models.py:69
 msgid "Position"
 msgstr "Позиція"
 
-#: apps/news/models.py:26 apps/news/models.py:87
+#: apps/news/models.py:27 apps/news/models.py:92
 msgid "Created"
 msgstr "Створено"
 
-#: apps/news/models.py:27 apps/news/models.py:88
+#: apps/news/models.py:28 apps/news/models.py:93
 msgid "Meta keywords"
 msgstr "meta-keywords"
 
-#: apps/news/models.py:28 apps/news/models.py:89
+#: apps/news/models.py:29 apps/news/models.py:94
 msgid "Meta description"
 msgstr "meta-description"
 
-#: apps/news/models.py:32 apps/news/models.py:33 apps/news/models.py:55
+#: apps/news/models.py:33 apps/news/models.py:34 apps/news/models.py:66
 #: apps/news/templates/news/news_details.html:18
 #: apps/news/templates/news/news_list.html:5
 #: apps/news/templates/news/news_list.html:9
 msgid "News"
 msgstr "Новини"
 
-#: apps/news/models.py:63
+#: apps/news/models.py:74
 msgid "Images"
 msgstr "Зображення"
 
-#: apps/news/models.py:67
+#: apps/news/models.py:78
 #, python-format
 msgid "image for %(news_title)s - %(title)s"
 msgstr "зображення для %(news_title)s  - %(title)s"
 
-#: apps/news/models.py:69
+#: apps/news/models.py:80
 #, python-format
 msgid "image for %s"
 msgstr "зображення для %s"
 
-#: apps/news/models.py:81
+#: apps/news/models.py:86
 msgid "Date from"
 msgstr "З"
 
-#: apps/news/models.py:81
+#: apps/news/models.py:86
 msgid "If date only one - put it just here"
 msgstr ""
 "Якщо подія на одну дату - постав дату в це поле, наступне залиш "
 "пустим."
 
-#: apps/news/models.py:82
+#: apps/news/models.py:87
 msgid "Date to"
 msgstr "По"
 
-#: apps/news/models.py:93
+#: apps/news/models.py:98
 msgid "Event"
 msgstr "Подія"
 
-#: apps/news/models.py:94 apps/news/templates/event/event_detail.html:18
+#: apps/news/models.py:99 apps/news/templates/event/event_detail.html:18
 #: apps/news/templates/event/event_list.html:5
 #: apps/news/templates/event/event_list.html:9
 #: apps/news/templates/event/event_list_past.html:5
