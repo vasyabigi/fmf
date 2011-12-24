@@ -59,7 +59,7 @@
               </a>
               <figcaption>
                 <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
-                <p class="short_description">{{ news.short_description }}</p>
+                <p class="short_description">{{ news.short_description|truncatewords:20 }}</p>
               </figcaption>
             </figure>
           </td>

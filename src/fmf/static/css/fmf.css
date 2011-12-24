@@ -346,7 +346,7 @@ body #page > article {
   -webkit-transition:all 0.2s ease-in;
 }
 #news figcaption a, #tab_content li > p:first-child a, .events ul li a{
-  font-size: 18px;
+  font-size: 1.2em;
   font-style: italic;
   font-family: "DejaVu Sans" arial sans-serif;
   -webkit-transition:all 0.2s ease-in;
@@ -586,7 +586,7 @@ body #page > article {
   color:#333;
 }
 .flatpage table,.flatpage table tbody,.flatpage table tr,.flatpage table td {
-  text-align: center;
+  text-align: left;
   border-color: #bbb;
 }
 .flatpage p strong {
@@ -689,7 +689,7 @@ footer {
 .toTop_button .toTop {
   position: fixed;
   display: none;
-  top:50px;
+  bottom:50px;
   right:15px;
   width: 100px;
   height: 35px;
