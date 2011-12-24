@@ -4,6 +4,22 @@
 
 {% block title %}{{ event.title }}{% endblock %}
 
+{% block extra-head %}
+  <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?45"></script>
+  <script type="text/javascript">
+    VK.init({apiId: 2731286, onlyWidgets: true});
+  </script>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=107790869310294";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{% endblock %}
+
 {% block meta-information %}
   {% if event.meta_keywords %}
     <meta name="keywords" content="{{ event.meta_keywords }}"/>
@@ -20,7 +36,16 @@
 {% endblock %}
 
 {% block content %}
+  <div id="fb-root"></div>
   <section class="container bordered">
+    <div class="social_likes">
+      <div id="vk_like"></div>
+      <script type="text/javascript">
+        VK.Widgets.Like("vk_like", {type: "mini"});
+      </script>
+      <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="true" data-font="lucida grande"></div>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="fmfkpiua" data-related="fmfkpiua">Tweet</a>
+    </div>
     <p class="title">{{ event.title }}</p>
     <p class="date">
       {% ifequal event.date_from event.date_to %}{{ event.date_from }}
