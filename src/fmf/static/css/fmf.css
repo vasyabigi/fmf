@@ -884,3 +884,11 @@ footer li a:hover {
 #electron_2 {
   display: none;
 }
+
+.social_likes {
+  overflow: hidden;
+}
+
+.social_likes div {
+  float: left;
+}
