@@ -4,6 +4,13 @@
 
 {% block title %}{{ news.title }}{% endblock %}
 
+{% block extra-head %}
+  <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?45"></script>
+  <script type="text/javascript">
+    VK.init({apiId: 2731286, onlyWidgets: true});
+  </script>
+{% endblock %}
+
 {% block meta-information %}
   {% if news.meta_keywords %}
     <meta name="keywords" content="{{ news.meta_keywords }}"/>
@@ -47,6 +54,10 @@
           {% endif %}
         {% endwith %}
       </div>
+      <div id="vk_like"></div>
+      <script type="text/javascript">
+        VK.Widgets.Like("vk_like", {type: "vertical"});
+      </script>
   </section>
 {% endblock %}
 
