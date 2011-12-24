@@ -115,7 +115,7 @@ button, input, select, textarea {margin: 0;}
   visibility: hidden;
   font-size: 0;
 }
-.clearfix { zoom: 1; }  
+.clearfix { zoom: 1; }
 .clear {
   clear:both;
   height: 0;

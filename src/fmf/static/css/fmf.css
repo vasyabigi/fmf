@@ -855,9 +855,32 @@ footer li a:hover {
   border:1px solid;
   border-color: #527d35;
 }
-#logo {
+#main_logo_bg {
   position: absolute;
   left:0;
   margin-top:-18px;
   z-index: 9;
+}
+#logo {
+  position: absolute;
+  left:0;
+  z-index: 11;
+}
+#electron_1_box, #electron_2_box  {
+  position: absolute;
+  left:-10px;
+  top:30px;
+  overflow: visible !important;
+  -webkit-transform: rotate(-15deg);
+  z-index: 9;
+}
+
+#electron_1, #electron_2 {
+  position:absolute;
+  left:47px;
+  top:0;
+  z-index: 11;
+}
+#electron_2 {
+  display: none;
 }

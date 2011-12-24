@@ -115,6 +115,25 @@ var Fmf = (function(){
             });
         },
 
+//        Circulate: function(){
+//            $("#electron_box").circulate({
+//                sizeAdjustment: 100,
+//                speed: 500,
+//                width: 0,
+//                height:0,
+//                loop: true,
+//                zIndexValues: [10, 12, 12, 10]
+//            });
+//            $("#electron_1, #electron_2").circulate({
+//                sizeAdjustment: 160,
+//                speed: 500,
+//                width: -90,
+//                height: 25,
+//                loop: true,
+//                zIndexValues: [10, 12, 12, 10]
+//            }).fadeIn();
+//        },
+
         NewsDetailsSldier: function(){
             $("#news_detail_images").sudoSlider({
                 autowidth:false,
@@ -141,6 +160,8 @@ $(document).ready(function(){
     Fmf.IndexTabs();
     Fmf.EntrantsSlider();
     Fmf.NewsDetailsSldier();
+    // Fmf.Circulate();
+
 
 });
 
@@ -206,3 +227,50 @@ $(function() {
 		}
 	});
 });
+
+$(window).load(function() {
+
+    function startBox1(){
+        $("#electron_1_box").circulate({
+            speed: 250,
+            width: 0,
+            height: 0,
+            loop: true,
+            zIndexValues: [10, 12, 12, 10]
+        });
+    }
+    function startBox2(){
+        $("#electron_2_box").circulate({
+            speed: 250,
+            width: 0,
+            height: 0,
+            loop: true,
+            zIndexValues: [12, 10, 10, 12]
+        });
+    }
+    function startBallOne() {
+        $("#electron_1").circulate({
+            sizeAdjustment: 150,
+            speed: 250,
+            width: -90,
+            height: 25,
+            loop: true
+        });
+    }
+
+    function startBallTwo() {
+        $("#electron_2").circulate({
+            sizeAdjustment: 150,
+            speed: 250,
+            width: -90,
+            height: 25,
+            loop: true
+        }).fadeIn('fast');
+    }
+
+    startBox1();
+    startBox2();
+    startBallOne();
+    setTimeout(startBallTwo, 1250);
+});
+
