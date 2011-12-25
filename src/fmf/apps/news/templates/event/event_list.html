@@ -16,9 +16,14 @@
       {% for event in events %}
         <li>
           {% thumbnail event.image "200x150" crop="center" as im %}
-            <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" />
+            <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" width="{{ im.width }}" height="{{ im.height }}" />
           {% endthumbnail %}
           <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
+          <p class="date">
+            {% ifequal event.date_from event.date_to %}{{ event.date_from }}
+            {% else %}{{ event.date_from }} - {{ event.date_to }}
+            {% endifequal %}
+          </p>
           {% if event.date %}
             <p class="date">{{ event.date }}</p>
           {% endif %}

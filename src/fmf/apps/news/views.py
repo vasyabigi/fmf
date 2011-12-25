@@ -32,7 +32,7 @@ class EventList(ListView):
     context_object_name = 'events'
 
     def get_queryset(self):
-        return Event.objects.filter(is_active=True, date_from__gte=datetime.datetime.today()).order_by('date_from')
+        return Event.objects.filter(is_active=True, date_to__gte=datetime.datetime.today()).order_by('-date_to')
 
 
 class EventPastList(ListView):
@@ -40,7 +40,7 @@ class EventPastList(ListView):
     context_object_name = 'events'
 
     def get_queryset(self):
-        return Event.objects.filter(is_active=True, date_from__lt=datetime.datetime.today()).order_by('-date_from')
+        return Event.objects.filter(is_active=True, date_to__lt=datetime.datetime.today()).order_by('date_to')
 
 
 def event_details(request, slug):
