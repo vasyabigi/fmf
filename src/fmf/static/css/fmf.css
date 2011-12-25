@@ -896,10 +896,3 @@ footer li a:hover {
 .social_likes div {
   float: left;
 }
-.fb_edge_comment_widget {
-  top: 25px !important;
-  left: -200px !important;
-}
-#facebook .nub {
-  left: 210px !important;
-}
