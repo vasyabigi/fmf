@@ -16,7 +16,7 @@
       {% for news in news_list %}
         <li>
           {% thumbnail news.main_image "200x150" crop="center" as im %}
-            <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" />
+            <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" width="{{ im.width }}" height="{{ im.height }}" />
           {% endthumbnail %}
           <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
           {% if news.date %}
