@@ -168,36 +168,36 @@ html {
   height: 100%;
   padding: 0 !important;
   font:13px "lucida grande",tahoma,verdana,arial,sans-serif;
+}
 
-  body {
+body {
+  height: 100%;
+  padding: 0 !important;
+
+  #page {
+    min-height: 100%;
+    height: auto !important;
     height: 100%;
-    padding: 0 !important;
+    margin: 0 auto -100px;
+    background: @background;
 
-    #page {
-      min-height: 100%;
-      height: auto !important;
-      height: 100%;
-      margin: 0 auto -100px;
-      background: @background;
+    header {
+      border-bottom: 1px solid #bababa;
 
-      header {
-        border-bottom: 1px solid #bababa;
-
-        nav {
-          .vertical(#313131,#575757);
-          & > ul {
-            .centered;
-            .size(80%);
-          }
+      nav {
+        .vertical(#313131,#575757);
+        & > ul {
+          .centered;
+          .size(80%);
         }
       }
-
-      article {
-        .vertical(#fff,0%,#000,100%);
-      }
     }
-    footer {
 
+    article {
+      .vertical(#fff,0%,#000,100%);
     }
+  }
+  footer {
+
   }
 }
