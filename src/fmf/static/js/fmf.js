@@ -232,7 +232,7 @@ $(window).load(function() {
 
     function startBox1(){
         $("#electron_1_box").circulate({
-            speed: 500,
+            speed: 750,
             width: 0,
             height: 0,
             loop: true,
@@ -241,7 +241,7 @@ $(window).load(function() {
     }
     function startBox2(){
         $("#electron_2_box").circulate({
-            speed: 500,
+            speed: 750,
             width: 0,
             height: 0,
             loop: true,
@@ -251,26 +251,26 @@ $(window).load(function() {
     function startBallOne() {
         $("#electron_1").circulate({
             sizeAdjustment: 150,
-            speed: 500,
+            speed: 750,
             width: -90,
             height: 25,
             loop: true
-        });
+        }).css('display','block');
     }
 
     function startBallTwo() {
         $("#electron_2").circulate({
             sizeAdjustment: 150,
-            speed: 500,
+            speed: 750,
             width: -90,
             height: 25,
             loop: true
-        }).fadeIn('fast');
+        }).css('display','block');
     }
 
     startBox1();
     startBox2();
     startBallOne();
-    setTimeout(startBallTwo, 2750);
+    setTimeout(startBallTwo,1500);
 });
 

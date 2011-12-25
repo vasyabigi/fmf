@@ -565,7 +565,6 @@ body #page > article {
 
  /*Flatpages*/
 .flatpage {
-  overflow: hidden;
   background: url("../images/logo_bg.png") 90% 50px  #f4f4f4 no-repeat;
 }
 .flatpage p, .flatpage ul, .text, .text p {
@@ -875,17 +874,14 @@ footer li a:hover {
 }
 
 #electron_1, #electron_2 {
+  display: none;
   position:absolute;
   left:47px;
   top:0;
   z-index: 11;
 }
-#electron_2 {
-  display: none;
-}
 .social_likes_box {
   height: 37px;
-  overflow: hidden;
 }
 .social_likes {
   display: inline-block;
@@ -899,4 +895,11 @@ footer li a:hover {
 }
 .social_likes div {
   float: left;
+}
+.fb_edge_comment_widget {
+  top: 25px !important;
+  left: -200px !important;
+}
+#facebook .nub {
+  left: 210px !important;
 }
