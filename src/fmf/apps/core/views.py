@@ -17,3 +17,11 @@ class IndexView(TemplateView):
             'events': Event.objects.filter(is_active=True, date_to__gte=datetime.datetime.today()).order_by('-date_to')[:3]
         })
         return context
+
+
+class Test404(TemplateView):
+    template_name = '404.html'
+
+
+class Test500(TemplateView):
+    template_name = '500.html'

@@ -40,24 +40,25 @@
     <div id="page">
       <!--header-->
       <header id="main_header">
-          <!--navigation-->
-          <nav class="clearfix">
-            {% block nav %}
-              {% with 'home' as active %}
-                {% include 'core/nav.html' %}
-              {% endwith %}
-            {% endblock %}
-            <div id="lang">
-              {% for lang in LANGUAGES %}
-                {% ifequal lang.0 LANGUAGE_CODE %}
-                  <a class="selected" href="#">{{ lang.1 }}</a>
-                {% else %}
-                  <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
-                {% endifequal %}
-              {% endfor %}
-            </div>
-          </nav>
-          <!--end navigation-->
+        <!--navigation-->
+        <nav class="clearfix">
+          {% block nav %}
+            {% with 'home' as active %}
+              {% include 'core/nav.html' %}
+            {% endwith %}
+          {% endblock %}
+          <div id="lang">
+            {% for lang in LANGUAGES %}
+              {% ifequal lang.0 LANGUAGE_CODE %}
+                <a class="selected" href="#">{{ lang.1 }}</a>
+              {% else %}
+                <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
+              {% endifequal %}
+            {% endfor %}
+          </div>
+        </nav>
+        <!--end navigation-->
+        {% block logo %}
           <section class="page_info">
             <div class="container">
               {% block breadcrumbs %}
@@ -69,6 +70,7 @@
               <div id="electron_2_box"><img id="electron_2" src="{{ STATIC_URL }}images/electron_2.png" alt="electron"></div>
             </div>
           </section>
+        {% endblock %}
       </header>
       <!--end header-->
 

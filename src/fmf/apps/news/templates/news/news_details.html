@@ -6,6 +6,11 @@
 
 {% block extra-head %}
   {% include 'includes/social_scripts.html' %}
+  <meta property="og:title" content="{{ news.title }}" />
+  <meta property="og:type" content="university" />
+  {% thumbnail news.main_image "156x156" as im %}
+    <meta property="og:image" content="http://{{ request.get_host }}{{ im.url }}" />
+  {% endthumbnail %}
 {% endblock %}
 
 {% block meta-information %}
