@@ -1,0 +1,203 @@
+/* Variables
+-------------------------------------------------- */
+
+// Links
+@link:              #8A6741;
+@link_hover:    darken(@link, 10);
+//@link_hover:        #943415;
+
+// Grays
+@white:             #fff;
+@grayLighter:       #ccc;
+@grayLight:         #777;
+@gray:              #555;
+@grayDark:          #333;
+@black:             #000;
+
+// Accent Colors
+@blue:              #08b5fb;
+@green:             #46a546;
+@red:               #9d261d;
+@yellow:            #ffc40d;
+@orange:            #f89406;
+@pink:              #c3325f;
+@purple:            #7a43b6;
+
+//Background Colors
+@background:        #d7d7d7;
+
+
+/* Mixins
+-------------------------------------------------- */
+
+// Clearfix for clearing floats like a boss
+.clearfix {
+  zoom: 1;
+	&:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    content: ".";
+	}
+}
+
+// Center-align a block level element
+.center-block {
+	display: block;
+  margin: 0 auto;
+}
+
+// Sizing shortcuts
+.size(@x: inherit, @y: inherit) {
+	width: @x;
+	height: @y;
+}
+
+// Border Radius
+.border-radius(@radius: 5px) {
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// Drop shadows
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+// Transitions
+.transition(@transition) {
+     -webkit-transition: @transition;
+        -moz-transition: @transition;
+         -ms-transition: @transition;
+          -o-transition: @transition;
+             transition: @transition;
+}
+
+// Opacity
+.opacity(@opacity: 100) {
+  filter: e(%("alpha(opacity=%d)", @opacity));
+  -khtml-opacity: @opacity / 100;
+    -moz-opacity: @opacity / 100;
+         opacity: @opacity / 100;
+}
+
+// Gradients
+
+//  .horizontal (@enterColor: #555, @exitColor: #333) {
+//    background-color: @exitColor;
+//    background-repeat: repeat-x;
+//    background-image: -khtml-gradient(linear, left top, right top, from(@enterColor), to(@exitColor)); /* Konqueror */
+//    background-image: -moz-linear-gradient(left, @enterColor, @exitColor); /* FF 3.6+ */
+//    background-image: -ms-linear-gradient(left, @enterColor, @exitColor); /* IE10 */
+//    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @enterColor), color-stop(100%, @exitColor)); /* Safari 4+, Chrome 2+ */
+//    background-image: -webkit-linear-gradient(left, @enterColor, @exitColor); /* Safari 5.1+, Chrome 10+ */
+//    background-image: -o-linear-gradient(left, @enterColor, @exitColor); /* Opera 11.10 */
+//    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@enterColor,@exitColor)); /* IE6 & IE7 */
+//    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@enterColor,@exitColor); /* IE8+ */
+//    background-image: linear-gradient(left, @enterColor, @exitColor); /* the standard */
+//  }
+  .vertical (@enterColor: #000, @exitColor: #fff, @colorStart: 0%, @colorStop: 100%) {
+    background-color: @enterColor;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left @colorStart, left @colorStop, from(@enterColor), to(@exitColor)); /* Konqueror */
+    background-image: -moz-linear-gradient(@enterColor @colorStart, @exitColor @colorStop); /* FF 3.6+ */
+    background-image: -ms-linear-gradient(@enterColor @colorStart, @exitColor @colorStop); /* IE10 */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @enterColor), color-stop(100%, @exitColor)); /* Safari 4+, Chrome 2+ */
+    background-image: -webkit-linear-gradient(@enterColor @colorStart, @exitColor @colorStop); /* Safari 5.1+, Chrome 10+ */
+    background-image: -o-linear-gradient(@enterColor @colorStart, @exitColor @colorStop); /* Opera 11.10 */
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@enterColor,@exitColor)); /* IE6 & IE7 */
+    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@enterColor,@exitColor); /* IE8+ */
+    background-image: linear-gradient(@enterColor @colorStart, @exitColor @colorStop); /* the standard */
+  }
+//  .directional (@enterColor: #555, @exitColor: #333, @deg: 45deg) {
+//    background-color: @exitColor;
+//    background-repeat: repeat-x;
+//    background-image: -moz-linear-gradient(@deg, @enterColor, @exitColor); /* FF 3.6+ */
+//    background-image: -ms-linear-gradient(@deg, @enterColor, @exitColor); /* IE10 */
+//    background-image: -webkit-linear-gradient(@deg, @enterColor, @exitColor); /* Safari 5.1+, Chrome 10+ */
+//    background-image: -o-linear-gradient(@deg, @enterColor, @exitColor); /* Opera 11.10 */
+//    background-image: linear-gradient(@deg, @enterColor, @exitColor); /* the standard */
+//  }
+//  .vertical-three-colors(@enterColor: #00b3ee, @midColor: #7a43b6, @colorStop: 0.5, @exitColor: #c3325f) {
+//    background-color: @exitColor;
+//    background-repeat: no-repeat;
+//    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@enterColor), color-stop(@colorStop, @midColor), to(@exitColor));
+//    background-image: -webkit-linear-gradient(@enterColor, color-stop(@colorStop, @midColor), @exitColor);
+//    background-image: -moz-linear-gradient(@enterColor, color-stop(@midColor, @colorStop), @exitColor);
+//  }
+
+//Global styles
+
+.centered {
+  display: block;
+  margin:0 auto;
+}
+.container {
+  position: relative;
+  .size(80%);
+  .centered;
+}
+.bordered {
+  position: relative;
+  padding: 10px;
+  background:#F4F4F4;
+  border:1px solid #BBB;
+  box-shadow: inset 0 0 0 1px #FFF, 1px 1px 0 0 #bbb;
+}
+.bordered {
+  position: relative;
+  padding: 10px;
+  background:#F4F4F4;
+  border:1px solid #BBB;
+  box-shadow: inset 0 0 0 1px #FFF, 1px 1px 0 0 #bbb;
+}
+a {
+  color:@link;
+   &:hover {
+     color:@link_hover;
+   }
+}
+
+
+// DOM
+
+html {
+  height: 100%;
+  padding: 0 !important;
+  font:13px "lucida grande",tahoma,verdana,arial,sans-serif;
+
+  body {
+    height: 100%;
+    padding: 0 !important;
+
+    #page {
+      min-height: 100%;
+      height: auto !important;
+      height: 100%;
+      margin: 0 auto -100px;
+      background: @background;
+
+      header {
+        border-bottom: 1px solid #bababa;
+
+        nav {
+          .vertical(#313131,#575757);
+          & > ul {
+            .centered;
+            .size(80%);
+          }
+        }
+      }
+
+      article {
+        .vertical(#fff,0%,#000,100%);
+      }
+    }
+    footer {
+
+    }
+  }
+}

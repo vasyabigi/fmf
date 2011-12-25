@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/style_sudo.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/fmf.css">
+    <!--<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}css/fmf.less">-->
     <title>
       {% block title %}{% trans "Faculty of Physics and Mathematics" %}{% endblock %}
     </title>
@@ -38,7 +39,7 @@
   <body>
     <div id="page">
       <!--header-->
-      <header>
+      <header id="main_header">
           <!--navigation-->
           <nav class="clearfix">
             {% block nav %}
@@ -56,7 +57,6 @@
               {% endfor %}
             </div>
           </nav>
-          <div class="clear"></div>
           <!--end navigation-->
           <section class="page_info">
             <div class="container">
@@ -98,6 +98,7 @@
     </footer>
     <div>
       <!--scripts-->
+     <!-- <script src="{{ STATIC_URL }}js/less.js"></script>-->
       <script src="{{ STATIC_URL }}js/jquery.js"></script>
       <script src="{{ STATIC_URL }}js/fmf.js"></script>
       <!--<script src="{{ STATIC_URL }}js/snowstorm.js"></script>-->

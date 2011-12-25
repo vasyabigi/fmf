@@ -44,9 +44,8 @@
   </div>
   <div class="clearfix"></div>
   <!--news-->
-  <section id="news" class="container">
-    <p class="news_title bordered">{% trans "Last news" %}:<span class="ornamental">yzyzyzyzy</span></p>
-    <div class="bordered">
+  <section id="news" class="container bordered">
+    <p class="title_list">{% trans "Last news" %}:</p>
       <table cellspacing="0" cellpadding="0" class="list">
         <tr>
           {% for news in news_list %}
@@ -69,7 +68,6 @@
       <div class="show_all">
         <a href="{% url news-list %}">{% trans "All news" %} »</a>
       </div>
-    </div>
   </section><!--end news-->
 {% endblock %}
 

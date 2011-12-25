@@ -133,7 +133,7 @@ button, input, select, textarea {margin: 0;}
 	Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ */
 
 /* we like off-black for text */
-body, select, input, textarea {color: #666;}
+body, select, input, textarea, p {color: #666;}
 p {
   margin: 10px;
   /*color: #666;*/

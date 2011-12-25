@@ -23,7 +23,6 @@ html, body {
   background:#F4F4F4;
   border:1px solid #BBB;
   box-shadow: inset 0 0 0 1px #FFF, 1px 1px 0 0 #bbb;
-  behavior: url(/static/js/PIE.htc);
 }
 /*Header*/
 header {
@@ -31,7 +30,7 @@ header {
   background: #d7d7d7;
 }
   /*Main navigation*/
-nav, nav > ul > li,footer, .download:after {
+nav,footer, .download:after {
   background: #313131; /* Old browsers */
   background: -moz-linear-gradient(top, #313131 0%, #575757 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#313131), color-stop(100%,#575757)); /* Chrome,Safari4+ */
@@ -90,7 +89,6 @@ nav > ul ul {
   box-shadow: 3px 3px 1px 0 rgba(35, 35, 35, 0.1);
   z-index: 3;
   -webkit-transition:opacity 0.2s ease-in;
-  behavior: url(/static/js/PIE.htc);
 }
 nav > ul ul li {
   position: relative;
@@ -158,13 +156,13 @@ nav ul ul ul {
   border-radius: 5px 0 0 5px;
   margin-right:0;
   padding-left: 10px;
-  behavior: url(/static/js/PIE.htc);
+
 }
 #lang > a:last-child {
   border-radius: 0 5px 5px 0;
   margin-left:-4px;
   padding-right: 10px;
-  behavior: url(/static/js/PIE.htc);
+
 }
 #lang a {
   display: inline-block;
@@ -184,7 +182,7 @@ nav ul ul ul {
   font-size:13px;
   line-height: 17px;
   text-align: center;
-  behavior: url(/static/js/PIE.htc);
+
 }
 #lang a:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d7d7d), color-stop(100%, #636363));
@@ -194,7 +192,7 @@ nav ul ul ul {
   background: linear-gradient(#7d7d7d,#636363);
   -pie-background: linear-gradient(#7d7d7d,#636363);
   border-color: #545454;
-  behavior: url(/static/js/PIE.htc);
+
 }
 #lang a:active, #lang .selected, #lang .selected:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #636363), color-stop(100%, #7d7d7d));
@@ -205,7 +203,7 @@ nav ul ul ul {
   -pie-background: linear-gradient(#636363,#7d7d7d);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1) inset;
   color:#ccc;
-  behavior: url(/static/js/PIE.htc);
+
 }
 #lang a.selected, .active > a{
   cursor: default;
@@ -254,7 +252,7 @@ body #page > article {
   background: -o-linear-gradient(#E3E3E2 0%,#D2D1D0 100px);
   background: linear-gradient(#E3E3E2 0%,#D2D1D0 100px);
   -pie-background: linear-gradient(#eaeaea 0%,#d7d7d7 100px);
-  behavior: url(/static/js/PIE.htc);
+
 }
 
   /*Slider*/
@@ -293,7 +291,7 @@ body #page > article {
   zoom: 1;
   background: rgb(50, 50, 50);
   background:rgba(0,0,0,0.5);
-  behavior: url(/static/js/PIE.htc);
+
 }
 .caption a {
   display: block;
@@ -311,36 +309,23 @@ body #page > article {
   /*News*/
 #news {
   overflow: hidden;
-  margin-top: -20px;
   margin-bottom:15px;
-  padding: 0;
+  padding: 3px 0 5px;
 }
 #news > .bordered {
   overflow: hidden;
   margin:0 1px 1px 0;
 }
-#news .news_title {
-  position: relative;
-  max-width: 600px;
-  margin:0 1px -2px 0;
-  padding:5px 10px 0;
-  border-bottom: none;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 35px;
-  text-shadow: 0 1px #fff;
-  box-shadow: inset 0 1px 0 1px #FFF, 1px 0 0 0 #bbb;
-  z-index: 2;
-}
 .show_all {
   float:right;
   display: inline-block;
-  margin: 5px 15px 0;
+  margin: 0 15px;
   padding: 5px 15px;
   font-weight: bold;
   -webkit-transition:all 0.2s ease-in;
 }
 .show_all a {
+  padding: 5px 0;
   font-size: 14px;
   text-shadow: 0 1px #fff;
   -webkit-transition:all 0.2s ease-in;
@@ -353,6 +338,7 @@ body #page > article {
 }
 #news table {
   border-collapse: separate;
+  margin:0 10px;
 }
 #main_news article {
   margin: 20px 10px;
@@ -448,18 +434,20 @@ body #page > article {
   /*Events*/
 .events {
   min-width: 285px;
-  height: 340px;
+  height: 315px;
   margin-left: 640px;
+  padding: 3px 10px 5px;
 }
-.events > p:first-child {
+.title_list {
   margin: 0;
-  padding:0 5px 5px;
+  padding:5px 10px;
   font-size: 14px;
   font-weight: bold;
   text-shadow: 0 1px #fff;
 }
 .events ul li {
-   height: 75px;
+  height: 75px;
+  padding: 5px;
  }
 .events ul li a {
   font-size: 15px;
@@ -476,6 +464,9 @@ body #page > article {
   line-height: 16px;
 }
 #events_list {
+  overflow: hidden;
+}
+#events {
   overflow: hidden;
 }
 /*#tab_nav {
@@ -517,7 +508,7 @@ body #page > article {
 #tab_content, #tab_nav li a.active {
   background: #e5e5e5;
   box-shadow: inset 2px 2px #bbb;
-  behavior: url(/static/js/PIE.htc);
+
 }
 #tab_content li {
   overflow-y:auto;
@@ -575,7 +566,7 @@ body #page > article {
  /*Flatpages*/
 .flatpage {
   overflow: hidden;
-  background: url("../images/logo_bg.png") 90% 30px  #f4f4f4 no-repeat;
+  background: url("../images/logo_bg.png") 90% 50px  #f4f4f4 no-repeat;
 }
 .flatpage p, .flatpage ul, .text, .text p {
 
@@ -696,7 +687,7 @@ footer {
   background: url("../images/toTop.png") 0 0 no-repeat;
   z-index: 999;
   opacity: .6;
-  behavior: url(/static/js/PIE.htc);
+
 }
 .toTop_button .toTop:hover {
   opacity: 1;
@@ -767,7 +758,7 @@ footer li p {
 footer li p strong {
   font-size: 1.1em;
 }
-footer li a {
+footer li a, footer li p {
   color: #bbb;
 }
 footer li a:hover {
@@ -789,10 +780,10 @@ footer li a:hover {
 }
 /*MEDIAQUERIES*/
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1220px) {
   nav > ul > li a {
   padding: 8px 10px;
-  color: #C5C5C5;
+  color: #DDD;
   }
 }
 /*Fonts*/
@@ -835,7 +826,8 @@ footer li a:hover {
 .ornamental {
   float:right;
   color: #d1d2d0;
-  font: 30px 'NymphetteRegular' sans-serif;
+  font: 30px 'NymphetteRegular' Arial sans-serif;
+  height: 35px;
 }
 .download {
   position: relative;
@@ -848,17 +840,17 @@ footer li a:hover {
   top:-10px;
   right:-80px;
   border-radius: 4px;
-  font-size: 25px;
+  font-size: 15px;
   color:#d1d2d0;
   text-shadow: 1px 1px white, -1px -1px #444;
-  padding:5px 20px;
+  padding:3px 10px;
   border:1px solid;
   border-color: #527d35;
 }
 #main_logo_bg {
   position: absolute;
   left:0;
-  margin-top:-18px;
+  margin-top:-16px;
   z-index: 9;
 }
 #logo {
@@ -869,9 +861,16 @@ footer li a:hover {
 #electron_1_box, #electron_2_box  {
   position: absolute;
   left:-10px;
-  top:30px;
+  top:12px;
+  height: 0;
+  border: none;
+  width: 120px;
   overflow: visible !important;
-  -webkit-transform: rotate(-15deg);
+  -webkit-transform: rotate(-24deg);
+  -moz-transform: rotate(-24deg);
+  -o-transform: rotate(-24deg);
+  -o-transform: rotate(-24deg);
+  -ms-transform: rotate(24deg);
   z-index: 9;
 }
 
@@ -884,7 +883,20 @@ footer li a:hover {
 #electron_2 {
   display: none;
 }
-
+.social_likes_box {
+  height: 37px;
+  overflow: hidden;
+}
+.social_likes {
+  display: inline-block;
+  float:right;
+  width: 315px;
+  height: 23px;
+  padding: 5px 10px;
+  background: #d7d7d7;
+  border:1px solid #bababa;
+  box-shadow: 0 0 0 1px white;
+}
 .social_likes div {
   float: left;
 }

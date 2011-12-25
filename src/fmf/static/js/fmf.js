@@ -232,7 +232,7 @@ $(window).load(function() {
 
     function startBox1(){
         $("#electron_1_box").circulate({
-            speed: 250,
+            speed: 500,
             width: 0,
             height: 0,
             loop: true,
@@ -241,7 +241,7 @@ $(window).load(function() {
     }
     function startBox2(){
         $("#electron_2_box").circulate({
-            speed: 250,
+            speed: 500,
             width: 0,
             height: 0,
             loop: true,
@@ -251,7 +251,7 @@ $(window).load(function() {
     function startBallOne() {
         $("#electron_1").circulate({
             sizeAdjustment: 150,
-            speed: 250,
+            speed: 500,
             width: -90,
             height: 25,
             loop: true
@@ -261,7 +261,7 @@ $(window).load(function() {
     function startBallTwo() {
         $("#electron_2").circulate({
             sizeAdjustment: 150,
-            speed: 250,
+            speed: 500,
             width: -90,
             height: 25,
             loop: true
@@ -271,6 +271,6 @@ $(window).load(function() {
     startBox1();
     startBox2();
     startBallOne();
-    setTimeout(startBallTwo, 1250);
+    setTimeout(startBallTwo, 2750);
 });
 
