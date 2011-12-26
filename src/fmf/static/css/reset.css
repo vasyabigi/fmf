@@ -91,11 +91,7 @@ sub {bottom: -0.25em;}
 pre, code, kbd, samp {font-family: monospace, sans-serif;}
 
 /* hand cursor on clickable elements */
-.clickable,
-label, 
-input[type=button], 
-input[type=submit], 
-button {cursor: pointer;}
+.clickable,label, input[type=button], input[type=submit], button {cursor: pointer;}
 
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
 button, input, select, textarea {margin: 0;}
@@ -104,8 +100,9 @@ button, input, select, textarea {margin: 0;}
 .ie7 img {-ms-interpolation-mode: bicubic;}
 
 /* prevent BG image flicker upon hover */
-.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+.ie6 {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
 
+/*.ie9 {filter: none;}*/
 /* let's clear some floats */
 .clearfix:before, .clearfix:after {
   clear: both;

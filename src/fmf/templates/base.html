@@ -5,23 +5,22 @@
 <!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9"> <![endif]-->
+<!--[if gte IE 9 ]>    <html class="ie ie9"> <![endif]-->
 
 <html>
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="">
     <meta name="description" content="">
-    <!-- Google will often use this as its description of your page/site. Make it good. -->
     <meta name="google-site-verification" content="">
-    <!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
     <meta name="author" content="Vasya&Seroga">
     <meta name="Copyright" content="Copyright V&S 2011. All Rights Reserved.">
     <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
     <!--Styles-->
     <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css">
@@ -39,7 +38,7 @@
   <body>
     <div id="page">
       <!--header-->
-      <header id="main_header">
+      <header>
         <!--navigation-->
         <nav class="clearfix">
           {% block nav %}
@@ -68,6 +67,7 @@
               <img id="main_logo_bg" src="{{ STATIC_URL }}images/main_logo_bg.png" alt="hi5">
               <div id="electron_1_box"><img id="electron_1" src="{{ STATIC_URL }}images/electron_1.png" alt="electron"></div>
               <div id="electron_2_box"><img id="electron_2" src="{{ STATIC_URL }}images/electron_2.png" alt="electron"></div>
+              <span class="dev">*Сайт знаходиться на стадії розробки</span>
             </div>
           </section>
         {% endblock %}
