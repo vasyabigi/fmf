@@ -1,10 +1,15 @@
 from django import forms
 from django.contrib import admin
-from flatpages_my.models import FlatPage
+from flatpages_my.models import FlatPage, FlatPageImage
 from django.utils.translation import ugettext_lazy as _
-from core.admin import BaseTranslationAdmin
+from core.admin import BaseTranslationAdmin, BaseTranslationTabularInLine
 from django.core.urlresolvers import reverse
 from tinymce.widgets import TinyMCE
+
+
+class FlatPageImageInLine(BaseTranslationTabularInLine):
+    model = FlatPageImage
+    extra = 1
 
 
 class FlatpageForm(forms.ModelForm):
@@ -20,6 +25,9 @@ class FlatpageForm(forms.ModelForm):
 
 class FlatPageAdmin(BaseTranslationAdmin):
     form = FlatpageForm
+
+    inlines = (FlatPageImageInLine,)
+
     fieldsets = (
         (None, {'fields': ('title', 'url', 'content',)}),
         (_("Meta information"), {'fields': ('meta_keywords', 'meta_description')}),

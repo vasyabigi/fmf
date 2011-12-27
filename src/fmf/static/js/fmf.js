@@ -10,7 +10,7 @@ var Fmf = (function(){
             })
         },
 
-        NewsSlider : function(){
+        IndexSlider : function(){
             var oldt = 0;
             var sudoSlider = $("#slider").sudoSlider({
                 customLink: '.custom',
@@ -138,7 +138,6 @@ var Fmf = (function(){
             $("#news_detail_images").sudoSlider({
                 autowidth:false,
                 slideCount:5,
-                continuous: true,
                 speed: '300'
             });
 
@@ -156,7 +155,7 @@ var Fmf = (function(){
 
 $(document).ready(function(){
     Fmf.init();
-    Fmf.NewsSlider();
+    Fmf.IndexSlider();
     Fmf.IndexTabs();
     Fmf.EntrantsSlider();
     Fmf.NewsDetailsSldier();

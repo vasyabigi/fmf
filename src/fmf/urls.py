@@ -32,8 +32,3 @@ if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
         url(r'^rosetta/', include('rosetta.urls')),
     )
-
-
-urlpatterns += patterns('',
-    url(r'^(?P<url>.*)$', 'flatpages_extra.views.custom_flatpage', name='flatpage_extra'),
-)

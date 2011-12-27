@@ -1,0 +1,39 @@
+{% extends "flatpages/entrants.html" %}
+
+{% load i18n flatpages thumbnail %}
+
+{% block flatpage_content %}
+  <div class="cool_text">{{ flatpage.content|safe }}</div>
+  {% with flatpage.images.all as images %}
+    {% if images %}
+      <div class="entrants_images_box">
+        <div id="slider">
+          <ul>
+            {% for image in images %}
+              <li>
+                {% thumbnail image.image "600x450" crop="center" as im %}
+                  <img src="{{ im.url }}" alt="{{ page.page.title }}" />
+                {% endthumbnail %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div id="entrants_images_nav">
+        <div class="customBox">
+          {% for image in images %}
+          <a class="custom" rel="{{ forloop.counter }}">
+            {% thumbnail image.image "160x120" crop="center" as im %}
+            <img src="{{ im.url }}" alt="{{ page.page.title }}" />
+            {% endthumbnail %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% endwith %}
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{{ STATIC_URL }}js/jquery.sudoSlider.js"></script>
+{% endblock %}

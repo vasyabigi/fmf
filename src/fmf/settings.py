@@ -118,7 +118,6 @@ INSTALLED_APPS = (
     #apps
     'core',
     'news',
-    'flatpages_extra',
     'flatpages_my',
 
 )

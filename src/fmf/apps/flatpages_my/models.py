@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
+from positions.fields import PositionField
+from sorl.thumbnail.fields import ImageField
 
 
 class FlatPage(models.Model):
@@ -26,3 +28,18 @@ class FlatPage(models.Model):
 
     def get_absolute_url(self):
         return self.url
+
+
+class FlatPageImage(models.Model):
+    page = models.ForeignKey(FlatPage, related_name='images')
+    title = models.CharField(_("Title"), max_length=256, blank=True, null=True)
+    image = ImageField(upload_to='images/flatpages', verbose_name=_("Image"))
+    position = PositionField(collection='page')
+
+    class Meta:
+        verbose_name = _("flat page image")
+        verbose_name_plural = _("flat page images")
+        ordering = ('position',)
+
+    def __unicode__(self):
+        return 'image for %s' % unicode(self.page)
