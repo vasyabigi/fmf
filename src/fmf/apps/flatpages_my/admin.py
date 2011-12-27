@@ -30,7 +30,7 @@ class FlatPageAdmin(BaseTranslationAdmin):
 
     fieldsets = (
         (None, {'fields': ('title', 'url', 'content',)}),
-        (_("Meta information"), {'fields': ('meta_keywords', 'meta_description')}),
+        (_("Meta information"), {'fields': ('meta_keywords', 'meta_description', 'meta_title')}),
         (_('Advanced options'), {'classes': ('collapse',), 'fields': ('template_name', 'sites')}),
     )
     list_display = ('title', 'url')

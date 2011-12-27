@@ -18,7 +18,7 @@ class ChunkTranslationOptions(TranslationOptions):
     fields = ('content',)
 
 class FlatPageTranslationOptions(TranslationOptions):
-    fields = ('title', 'content', 'meta_keywords', 'meta_description')
+    fields = ('title', 'content', 'meta_keywords', 'meta_description', 'meta_title')
 
 class FlatPageImageTranslationOptions(TranslationOptions):
     fields = ('title',)
