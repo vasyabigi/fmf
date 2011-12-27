@@ -10,6 +10,15 @@
   {% include 'includes/social_scripts.html' %}
 {% endblock %}
 
+{% block meta-information %}
+  {% if news.meta_keywords %}
+    <meta name="keywords" content="{{ flatpage.meta_keywords }}"/>
+    <meta name="description" content="{{ flatpage.meta_description }}"/>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "Home" %}</a> > </span>
   <span>{{ flatpage.title }}</span>

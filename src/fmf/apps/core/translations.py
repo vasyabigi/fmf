@@ -1,6 +1,6 @@
 from modeltranslation.translator import translator, TranslationOptions
 from news.models import News, NewsImage, Event
-from django.contrib.flatpages.models import FlatPage
+from flatpages_my.models import FlatPage
 from chunks.models import Chunk
 from flatpages_extra.models import ExtraFlatPageImage
 
@@ -14,7 +14,7 @@ class EventTranslationOptions(TranslationOptions):
     fields = ('title', 'short_description', 'description', 'meta_keywords', 'meta_description')
 
 class FlatPageTranslationOptions(TranslationOptions):
-    fields = ('title', 'content',)
+    fields = ('title', 'content', 'meta_keywords', 'meta_description')
 
 class ChunkTranslationOptions(TranslationOptions):
     fields = ('content',)

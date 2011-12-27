@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.flatpages.models import FlatPage
+from flatpages_my.models import FlatPage
 from django.utils.translation import ugettext_lazy as _
 
 

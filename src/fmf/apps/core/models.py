@@ -1,4 +1,4 @@
-from django.contrib.flatpages.models import FlatPage
+from flatpages_my.models import FlatPage
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.base import Template

@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.flatpages.models import FlatPage
+from flatpages_my.models import FlatPage
 from positions.fields import PositionField
 from sorl.thumbnail.fields import ImageField
 

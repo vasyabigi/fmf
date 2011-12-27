@@ -1,4 +1,4 @@
-from django.contrib.flatpages.views import flatpage
+from flatpages_my.views import flatpage
 from django.http import Http404
 from django.template.base import TemplateDoesNotExist
 from django.template.loader import find_template
