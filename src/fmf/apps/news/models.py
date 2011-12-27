@@ -116,12 +116,11 @@ class Event(models.Model):
     thumb.short_description = _('Image')
     thumb.allow_tags = True
 
-
 @receiver(pre_save, sender=Event)
 def put_date_to(sender, instance, **kwargs):
     if not instance.date_to:
         instance.date_to = instance.date_from
 
 @receiver(pre_save, sender=Event)
-def news_empty_languages(sender, instance, **kwargs):
+def events_empty_languages(sender, instance, **kwargs):
     fill_empty_languages(instance, ('description', 'short_description'))

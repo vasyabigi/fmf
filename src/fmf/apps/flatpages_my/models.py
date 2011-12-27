@@ -22,7 +22,7 @@ class FlatPage(models.Model):
         ordering = ('title',)
 
     def __unicode__(self):
-        return u"%s -- %s" % (self.url, self.title)
+        return u"%s -- %s" % (self.title, self.url)
 
     def get_absolute_url(self):
         return self.url

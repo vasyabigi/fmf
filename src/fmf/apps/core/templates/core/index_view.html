@@ -32,7 +32,7 @@
               {% endifequal %}
             </p>
             <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
-            <p class="short_description">{{ event.short_description }}</p>
+            <p class="short_description">{{ event.short_description|truncatewords:10 }}</p>
           </li>
         {% endfor %}
       </ul>
@@ -58,7 +58,7 @@
               </a>
               <figcaption>
                 <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
-                <p class="short_description">{{ news.short_description|truncatewords:20 }}</p>
+                <p class="short_description">{{ news.short_description|truncatewords:15 }}</p>
               </figcaption>
             </figure>
           </td>
