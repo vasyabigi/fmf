@@ -55,6 +55,7 @@ nav > ul > li {
   vertical-align: middle;
   border-left: 1px solid #5a5a5a;
   border-right: 1px solid #2a2a2a;
+  border-top: 1px solid #2a2a2a
 }
 nav > ul > li:first-child, .page_info span:first-child {
   margin-left:95px;
@@ -147,7 +148,7 @@ nav ul ul ul {
 #lang {
   position: absolute;
   left:90%;
-  top:2px;
+  top:27px;
   border: 1px solid;
   border-color: #2B2B2B #2B2B2B #494949 #494949;
   font-size: 12px;
@@ -560,7 +561,7 @@ body #page > article {
  /*Flatpages*/
 .flatpage {
   overflow: hidden;
-  background: url("../images/logo_bg.png") 90% 50px  #f4f4f4 no-repeat;
+  background: url("/static/images/logo_bg.png") 90% 50px  #f4f4f4 no-repeat;
 }
 .flatpage p, .flatpage ul, .text, .text p {
 
@@ -675,10 +676,10 @@ footer {
   position: fixed;
   display: none;
   bottom:50px;
-  right:15px;
-  width: 100px;
-  height: 35px;
-  background: url("../images/toTop.png") 0 0 no-repeat;
+  right:30px;
+  width: 70px;
+  height: 25px;
+  background: url("/static/images/toTop.png") 0 0 no-repeat;
   z-index: 999;
   opacity: .6;
 
@@ -687,7 +688,7 @@ footer {
   opacity: 1;
 }
 .toTop_button .eng {
-  background-position: -100px 0;
+  background-position: -70px 0;
 }
 footer .social {
   position: absolute;
@@ -703,13 +704,13 @@ footer .social a {
   margin: 5px;
   border-radius: 6px;
   text-indent:-9999px;
-  background: url("../images/soc/social.png") no-repeat;
+  background: url("/static/images/soc/social.png") no-repeat;
   -webkit-transition:all 0.2s ease-in;
 }
 .social a span {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
-  background: url("../images/soc/social.png") no-repeat;
+  background: url("/static/images/soc/social.png") no-repeat;
   background-position: -50px 0;
   opacity: 0;
   -webkit-transition: opacity 0.2s;
@@ -784,29 +785,29 @@ footer li a:hover {
 
 @font-face {
   font-family: 'Reverance';
-  src: url('../fonts/reverance.eot');
-  src: url('../fonts/reverance.eot?#iefix') format('eot'),
-  url('../fonts/reverance.woff') format('woff'),
-  url('../fonts/reverance.ttf') format('truetype');
+  src: url('/static/fonts/reverance.eot');
+  src: url('/static/fonts/reverance.eot?#iefix') format('eot'),
+  url('/static/fonts/reverance.woff') format('woff'),
+  url('/static/fonts/reverance.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Anastasiascript';
-  src: url('../fonts/anastasiascript.eot');
-  src: url('../fonts/anastasiascript.eot?#iefix') format('eot'),
-  url('../fonts/anastasiascript.woff') format('woff'),
-  url('../fonts/anastasiascript.ttf') format('truetype');
+  src: url('/static/fonts/anastasiascript.eot');
+  src: url('/static/fonts/anastasiascript.eot?#iefix') format('eot'),
+  url('/static/fonts/anastasiascript.woff') format('woff'),
+  url('/static/fonts/anastasiascript.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'NymphetteRegular';
-  src: url('../fonts/Nymphette-webfont.eot');
-  src: url('../fonts/Nymphette-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Nymphette-webfont.woff') format('woff'),
-  url('../fonts/Nymphette-webfont.ttf') format('truetype'),
-  url('../fonts/Nymphette-webfont.svg#NymphetteRegular') format('svg');
+  src: url('/static/fonts/Nymphette-webfont.eot');
+  src: url('/static/fonts/Nymphette-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/static/fonts/Nymphette-webfont.woff') format('woff'),
+  url('/static/fonts/Nymphette-webfont.ttf') format('truetype'),
+  url('/static/fonts/Nymphette-webfont.svg#NymphetteRegular') format('svg');
   font-weight: normal;
   font-style: normal;
 
@@ -896,7 +897,17 @@ footer li a:hover {
   float:right;
   top:-20px;
 }
-.dev {
-  display: block;
-  float: right;
+#name {
+  height: 25px;
+  background: #313131;
+}
+#name h1 {
+  font:bold 15px/25px Georgia serif;
+  color:#ccc;
+}
+#dev {
+  position: absolute;
+  top:0;
+  right:15%;
+  margin:5px 0;
 }
