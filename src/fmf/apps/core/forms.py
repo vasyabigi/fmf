@@ -13,3 +13,9 @@ class FlatpageForm(forms.ModelForm):
 
     class Meta:
         model = FlatPage
+
+
+class ContactForm(forms.Form):
+    email = forms.EmailField()
+    name = forms.CharField(max_length=256)
+    content = forms.CharField(max_length=2048, widget=forms.Textarea)

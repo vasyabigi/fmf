@@ -11,61 +11,63 @@ var Fmf = (function(){
         },
 
         IndexSlider : function(){
-            var oldt = 0;
-            var sudoSlider = $("#slider").sudoSlider({
-                customLink: '.custom',
-                fade:true,
-                numeric:true,
-                auto:true,
-                continuous: true,
-                fadespeed: '1000',
-                speed:'4000',
-                resumePause:'5000',
-                updateBefore: true,
-                beforeAniFunc: function(t){
-                    $(this).children('.caption').hide();
+            if ($("#slider").length) {
+                var oldt = 0;
+                var sudoSlider = $("#slider").sudoSlider({
+                    customLink: '.custom',
+                    fade:true,
+                    numeric:true,
+                    auto:true,
+                    continuous: true,
+                    fadespeed: '1000',
+                    speed:'4000',
+                    resumePause:'5000',
+                    updateBefore: true,
+                    beforeAniFunc: function(t){
+                        $(this).children('.caption').hide();
 
-                    var scroll = -t+3;
-                    if (scroll > -1) scroll = 0;
-                    if (scroll < -6) scroll = -6;
-                    var scroll = scroll * $('.custom').eq(0).outerWidth(true);
+                        var scroll = -t+3;
+                        if (scroll > -1) scroll = 0;
+                        if (scroll < -6) scroll = -6;
+                        var scroll = scroll * $('.custom').eq(0).outerWidth(true);
 
-                    var diff = Math.sqrt(Math.abs(oldt-t));
-                    var speed = parseInt(diff*800);
+                        var diff = Math.sqrt(Math.abs(oldt-t));
+                        var speed = parseInt(diff*800);
 
-                    $('.customBox').animate(
-                            { marginLeft: scroll },
-                            {
-                                queue:true,
-                                duration:speed
-                            }
-                    );
-                    oldt = t;
-                },
-                afterAniFunc: function(t){
-                    $(this).children('.caption').slideDown(200);
-                }
-            });
+                        $('.customBox').animate(
+                                { marginLeft: scroll },
+                                {
+                                    queue:true,
+                                    duration:speed
+                                }
+                        );
+                        oldt = t;
+                    },
+                    afterAniFunc: function(t){
+                        $(this).children('.caption').slideDown(200);
+                    }
+                });
 
-            $(".prevBtn, .nextBtn, #slider").hover(
-                function () {
-                    // Mouse in
-                    $(".prevBtn, .nextBtn").stop().fadeTo(200, 1);
-                },
-                function () {
-                    //Mouse out
-                    $(".prevBtn, .nextBtn").stop().fadeTo(200, 0);
-                }
-            );
+                $(".prevBtn, .nextBtn, #slider").hover(
+                    function () {
+                        // Mouse in
+                        $(".prevBtn, .nextBtn").stop().fadeTo(200, 1);
+                    },
+                    function () {
+                        //Mouse out
+                        $(".prevBtn, .nextBtn").stop().fadeTo(200, 0);
+                    }
+                );
 
-            $(".prevBtn, .nextBtn").stop().fadeTo(0, 0);
-            $('#slider_box').mouseenter(function() {
-                auto = sudoSlider.getValue('autoAnimation');
-                sudoSlider.stopAuto();
-            });
-            $('#slider_box').mouseleave(function() {
-                sudoSlider.startAuto();
-            });
+                $(".prevBtn, .nextBtn").stop().fadeTo(0, 0);
+                $('#slider_box').mouseenter(function() {
+                    auto = sudoSlider.getValue('autoAnimation');
+                    sudoSlider.stopAuto();
+                });
+                $('#slider_box').mouseleave(function() {
+                    sudoSlider.startAuto();
+                });
+            }
         }, //End of NewsSlider
 
         IndexTabs : function(){
@@ -85,34 +87,36 @@ var Fmf = (function(){
         },
 
         EntrantsSlider : function(){
-            var oldt = 0;
-            var sudoSlider = $("#entrants_images").sudoSlider({
-                customLink: '.custom',
-                fade:true,
-                continuous: true,
-                fadespeed: '1000',
-                speed:'4000',
-                resumePause:'5000',
-                updateBefore: true,
-                beforeAniFunc: function(t){
-                    var scroll = -t+2;
-                    if (scroll == 1) scroll = 0;
-                    if (scroll < -2) scroll = -2;
-                    var scroll = scroll * $('.custom').eq(0).outerWidth(true);
+            if ($("#entrants_images").length) {
+                var oldt = 0;
+                var sudoSlider = $("#entrants_images").sudoSlider({
+                    customLink: '.custom',
+                    fade:true,
+                    continuous: true,
+                    fadespeed: '1000',
+                    speed:'4000',
+                    resumePause:'5000',
+                    updateBefore: true,
+                    beforeAniFunc: function(t){
+                        var scroll = -t+2;
+                        if (scroll == 1) scroll = 0;
+                        if (scroll < -2) scroll = -2;
+                        var scroll = scroll * $('.custom').eq(0).outerWidth(true);
 
-                    var diff = Math.sqrt(Math.abs(oldt-t));
-                    var speed = parseInt(diff*800);
+                        var diff = Math.sqrt(Math.abs(oldt-t));
+                        var speed = parseInt(diff*800);
 
-                    $('.customBox').animate(
-                            { marginLeft: scroll },
-                            {
-                                queue:true,
-                                duration:speed
-                            }
-                    );
-                    oldt = t;
-                }
-            });
+                        $('.customBox').animate(
+                                { marginLeft: scroll },
+                                {
+                                    queue:true,
+                                    duration:speed
+                                }
+                        );
+                        oldt = t;
+                    }
+                });
+            }
         },
 
 //        Circulate: function(){
@@ -135,19 +139,21 @@ var Fmf = (function(){
 //        },
 
         NewsDetailsSldier: function(){
-            $("#news_detail_images").sudoSlider({
-                autowidth:false,
-                slideCount:5,
-                speed: '300'
-            });
-
-            if ($(".fancybox").length > 0)
-                $(".fancybox").fancybox({
-                    nextEffect: 'fade',
-                    prevEffect: 'fade',
-                    nextSpeed: 'slow',
-                    prevSpeed: 'slow'
+            if ($("#news_detail_images").length) {
+                $("#news_detail_images").sudoSlider({
+                    autowidth:false,
+                    slideCount:5,
+                    speed: '300'
                 });
+
+                if ($(".fancybox").length > 0)
+                    $(".fancybox").fancybox({
+                        nextEffect: 'fade',
+                        prevEffect: 'fade',
+                        nextSpeed: 'slow',
+                        prevSpeed: 'slow'
+                    });
+            }
         }
     }
 })($);

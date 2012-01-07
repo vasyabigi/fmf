@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, url
-from views import IndexView, Test404, Test500
+from views import IndexView, Test404, Test500, contacts
 from news.feeds import LatestNewsFeed, LatestEventsFeed
 
 urlpatterns = patterns('',
@@ -9,4 +9,5 @@ urlpatterns = patterns('',
 
     url(r'^404/$', Test404.as_view(), name='404'),
     url(r'^500/$', Test500.as_view(), name='500'),
+    url(r'^contacts/$', contacts, name='contacts'),
 )

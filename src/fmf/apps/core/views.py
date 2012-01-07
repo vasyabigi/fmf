@@ -1,9 +1,10 @@
+import datetime
+from django.template.response import TemplateResponse
 from django.views.generic.base import TemplateView
 
 from models import IndexSliderImage
+from forms import ContactForm
 from news.models import News, Event
-
-import datetime
 
 
 class IndexView(TemplateView):
@@ -25,3 +26,12 @@ class Test404(TemplateView):
 
 class Test500(TemplateView):
     template_name = '500.html'
+
+def contacts(request):
+    form = ContactForm(request.POST or None)
+    if request.POST:
+        pass
+    context = {
+        'form': form,
+    }
+    return TemplateResponse(request, 'core/contacts.html', context)
