@@ -14,3 +14,4 @@ django-filebrowser-no-grappelli
 django-tinymce
 psycopg2
 django-chunks
+gunicorn

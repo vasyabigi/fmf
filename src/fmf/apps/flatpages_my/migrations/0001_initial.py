@@ -21,12 +21,15 @@ class Migration(SchemaMigration):
             ('enable_comments', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('template_name', self.gf('django.db.models.fields.CharField')(max_length=70, blank=True)),
             ('registration_required', self.gf('django.db.models.fields.BooleanField')(default=False)),
-            ('meta_keywords', self.gf('django.db.models.fields.CharField')(max_length=128, null=True, blank=True)),
-            ('meta_keywords_uk', self.gf('django.db.models.fields.CharField')(max_length=128, null=True, blank=True)),
-            ('meta_keywords_en', self.gf('django.db.models.fields.CharField')(max_length=128, null=True, blank=True)),
+            ('meta_title', self.gf('django.db.models.fields.CharField')(max_length=128, null=True, blank=True)),
+            ('meta_title_uk', self.gf('django.db.models.fields.CharField')(max_length=128, null=True, blank=True)),
+            ('meta_title_en', self.gf('django.db.models.fields.CharField')(max_length=128, null=True, blank=True)),
             ('meta_description', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('meta_description_uk', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('meta_description_en', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
+            ('meta_keywords', self.gf('django.db.models.fields.CharField')(max_length=128, null=True, blank=True)),
+            ('meta_keywords_uk', self.gf('django.db.models.fields.CharField')(max_length=128, null=True, blank=True)),
+            ('meta_keywords_en', self.gf('django.db.models.fields.CharField')(max_length=128, null=True, blank=True)),
         ))
         db.send_create_signal('flatpages_my', ['FlatPage'])
 
@@ -77,6 +80,9 @@ class Migration(SchemaMigration):
             'meta_keywords': ('django.db.models.fields.CharField', [], {'max_length': '128', 'null': 'True', 'blank': 'True'}),
             'meta_keywords_en': ('django.db.models.fields.CharField', [], {'max_length': '128', 'null': 'True', 'blank': 'True'}),
             'meta_keywords_uk': ('django.db.models.fields.CharField', [], {'max_length': '128', 'null': 'True', 'blank': 'True'}),
+            'meta_title': ('django.db.models.fields.CharField', [], {'max_length': '128', 'null': 'True', 'blank': 'True'}),
+            'meta_title_en': ('django.db.models.fields.CharField', [], {'max_length': '128', 'null': 'True', 'blank': 'True'}),
+            'meta_title_uk': ('django.db.models.fields.CharField', [], {'max_length': '128', 'null': 'True', 'blank': 'True'}),
             'registration_required': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'sites': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['sites.Site']", 'symmetrical': 'False'}),
             'template_name': ('django.db.models.fields.CharField', [], {'max_length': '70', 'blank': 'True'}),
