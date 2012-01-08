@@ -2,56 +2,70 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-24 14:05+0200\n"
-"PO-Revision-Date: 2011-12-24 14:07\n"
+"POT-Creation-Date: 2012-01-09 00:55+0200\n"
+"PO-Revision-Date: 2012-01-08 22:51\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Translated-Using: django-rosetta 0.6.2\n"
 
-#: settings.py:31
+#: settings.py:34
 msgid "Ukrainian"
 msgstr "Укр"
 
-#: settings.py:32
+#: settings.py:35
 msgid "English"
 msgstr "Eng"
 
-#: apps/core/forms.py:8
+#: apps/core/forms.py:8 apps/flatpages_my/admin.py:16
+#: apps/flatpages_my/models.py:9
 msgid "URL"
 msgstr "URL"
 
-#: apps/core/forms.py:9
+#: apps/core/forms.py:9 apps/flatpages_my/admin.py:17
 msgid ""
-"Example: '/about/contact/'. Make sure to have leading and trailing "
-"slashes."
+"Example: '/about/contact/'. Make sure to have leading and trailing slashes."
 msgstr ""
-"Приклад: '/about/contact/'.  Переконайтеся, щоб мати початкові і "
-"кінцеві слеши."
+"Приклад: '/about/contact/'.  Переконайтеся, щоб мати початкові і кінцеві "
+"слеши."
 
-#: apps/core/forms.py:11
+#: apps/core/forms.py:11 apps/flatpages_my/admin.py:19
 msgid ""
-"This value must contain only letters, numbers, dots, underscores, "
-"dashes, slashes or tildes."
+"This value must contain only letters, numbers, dots, underscores, dashes, "
+"slashes or tildes."
 msgstr ""
-"Це значення повинне містити тільки літери, цифри, крапки, "
-"підкреслення, тире, слеши або тильди."
+"Це значення повинне містити тільки літери, цифри, крапки, підкреслення, "
+"тире, слеши або тильди."
+
+#: apps/core/forms.py:19 apps/core/forms.py:22
+msgid "Email"
+msgstr "Email"
+
+#: apps/core/forms.py:24 apps/core/forms.py:26
+msgid "Name"
+msgstr "Ім'я"
+
+#: apps/core/forms.py:28 apps/core/forms.py:30
+msgid "Message"
+msgstr "Повідомлення"
 
 #: apps/core/models.py:17
 msgid "Page"
 msgstr "Сторінка"
 
-#: apps/core/models.py:18 apps/core/models.py:43 apps/news/models.py:51
+#: apps/core/models.py:18 apps/core/models.py:43
+#: apps/flatpages_my/models.py:38 apps/news/models.py:51
 #: apps/news/models.py:68 apps/news/models.py:73 apps/news/models.py:116
 msgid "Image"
 msgstr "Зображення"
@@ -77,9 +91,38 @@ msgstr "зображення для %s"
 msgid "No image"
 msgstr "Немає зображення"
 
-#: apps/core/models.py:57
-msgid "Content not avalible in this language."
-msgstr "Вміст недоступний українською."
+#: apps/core/views.py:45
+#, python-format
+msgid "Contact %(name)s(%(email)s)"
+msgstr "Контакт %(name)s(%(email)s)"
+
+#: apps/core/templates/contacts/ajax_not_valid_response.html:3
+msgid "Try one more time with valid values."
+msgstr ""
+
+#: apps/core/templates/contacts/ajax_response.html:3
+#: apps/core/templates/contacts/thank_you.html:8
+msgid "Thank you. We got your message."
+msgstr "Дякую. Ми отримали Ваше повідомлення."
+
+#: apps/core/templates/contacts/contacts.html:9
+msgid "Send"
+msgstr "Відправити"
+
+#: apps/core/templates/contacts/manager_message.html:2
+#, fuzzy
+msgid "Name: "
+msgstr "Ім'я"
+
+#: apps/core/templates/contacts/manager_message.html:3
+#, fuzzy
+msgid "Email: "
+msgstr "Email"
+
+#: apps/core/templates/contacts/manager_message.html:4
+#, fuzzy
+msgid "Content: "
+msgstr "Зміст"
 
 #: apps/core/templates/core/index_view.html:24
 msgid "Upcoming events"
@@ -93,17 +136,17 @@ msgstr "Анонси подій"
 msgid "Last news"
 msgstr "Останні новини"
 
-#: apps/core/templates/core/index_view.html:70
+#: apps/core/templates/core/index_view.html:69
 msgid "All news"
 msgstr "Усі новини"
 
 #: apps/core/templates/core/nav.html:4
-#: apps/news/templates/event/event_detail.html:17
+#: apps/news/templates/event/event_detail.html:21
 #: apps/news/templates/event/event_list.html:8
 #: apps/news/templates/event/event_list_past.html:8
-#: apps/news/templates/news/news_details.html:17
+#: apps/news/templates/news/news_details.html:27
 #: apps/news/templates/news/news_list.html:8 templates/flatpages/about.html:12
-#: templates/flatpages/cooperation.html:12 templates/flatpages/default.html:10
+#: templates/flatpages/cooperation.html:12 templates/flatpages/default.html:23
 #: templates/flatpages/entrants.html:12 templates/flatpages/students.html:12
 msgid "Home"
 msgstr "Головна"
@@ -125,29 +168,87 @@ msgstr "Абітурієнтам"
 msgid "Cooperation"
 msgstr "Співробітництво"
 
-#: apps/flatpages_extra/models.py:9
-msgid "Flatpage"
+#: apps/flatpages_my/admin.py:33
+#, fuzzy
+msgid "Meta information"
+msgstr "meta-description"
+
+#: apps/flatpages_my/admin.py:34
+msgid "Advanced options"
+msgstr "Додаткові опції"
+
+#: apps/flatpages_my/models.py:10
+#, fuzzy
+msgid "title"
+msgstr "Назва"
+
+#: apps/flatpages_my/models.py:11
+#, fuzzy
+msgid "content"
+msgstr "Зміст"
+
+#: apps/flatpages_my/models.py:12
+msgid "enable comments"
+msgstr "Вмикнути коментарі"
+
+#: apps/flatpages_my/models.py:13
+msgid "template name"
+msgstr "Назва шаблону"
+
+#: apps/flatpages_my/models.py:14
+msgid ""
+"Example: 'flatpages/contact_page.html'. If this isn't provided, the system "
+"will use 'flatpages/default.html'."
+msgstr ""
+"Наприклад: 'flatpages/contact_page.html'. Якщо це не задано, система "
+"використовуватиме 'flatpages/default.html'."
+
+#: apps/flatpages_my/models.py:15
+msgid "registration required"
+msgstr "Необхідна реєстрація"
+
+#: apps/flatpages_my/models.py:15
+msgid "If this is checked, only logged-in users will be able to view the page."
+msgstr ""
+"Якщо це відмічено, лише зареєстровані користувачі зможуть побачити сторінку."
+
+#: apps/flatpages_my/models.py:17
+msgid "Meta title"
+msgstr "Meta title"
+
+#: apps/flatpages_my/models.py:18 apps/news/models.py:29
+#: apps/news/models.py:94
+msgid "Meta description"
+msgstr "meta-description"
+
+#: apps/flatpages_my/models.py:19 apps/news/models.py:28
+#: apps/news/models.py:93
+msgid "Meta keywords"
+msgstr "meta-keywords"
+
+#: apps/flatpages_my/models.py:24
+#, fuzzy
+msgid "flat page"
 msgstr "Проста сторінка"
 
-#: apps/flatpages_extra/models.py:12
-msgid "Extra flat page"
-msgstr "Extra для простої сторінки"
+#: apps/flatpages_my/models.py:25
+#, fuzzy
+msgid "flat pages"
+msgstr "Проста сторінка"
 
-#: apps/flatpages_extra/models.py:13
-msgid "Extra flat pages"
-msgstr "Extra для простих сторінок"
-
-#: apps/flatpages_extra/models.py:24 apps/news/models.py:19
+#: apps/flatpages_my/models.py:37 apps/news/models.py:19
 #: apps/news/models.py:67 apps/news/models.py:84
 msgid "Title"
 msgstr "Назва"
 
-#: apps/flatpages_extra/models.py:29
-msgid "Extra flat page image"
+#: apps/flatpages_my/models.py:42
+#, fuzzy
+msgid "flat page image"
 msgstr "Extra картинка"
 
-#: apps/flatpages_extra/models.py:30
-msgid "Extra flat page images"
+#: apps/flatpages_my/models.py:43
+#, fuzzy
+msgid "flat page images"
 msgstr "Extra картинки"
 
 #: apps/news/models.py:20 apps/news/models.py:85
@@ -178,16 +279,8 @@ msgstr "Позиція"
 msgid "Created"
 msgstr "Створено"
 
-#: apps/news/models.py:28 apps/news/models.py:93
-msgid "Meta keywords"
-msgstr "meta-keywords"
-
-#: apps/news/models.py:29 apps/news/models.py:94
-msgid "Meta description"
-msgstr "meta-description"
-
 #: apps/news/models.py:33 apps/news/models.py:34 apps/news/models.py:66
-#: apps/news/templates/news/news_details.html:18
+#: apps/news/templates/news/news_details.html:28
 #: apps/news/templates/news/news_list.html:5
 #: apps/news/templates/news/news_list.html:9
 msgid "News"
@@ -214,8 +307,7 @@ msgstr "З"
 #: apps/news/models.py:86
 msgid "If date only one - put it just here"
 msgstr ""
-"Якщо подія на одну дату - постав дату в це поле, наступне залиш "
-"пустим."
+"Якщо подія на одну дату - постав дату в це поле, наступне залиш пустим."
 
 #: apps/news/models.py:87
 msgid "Date to"
@@ -225,26 +317,30 @@ msgstr "По"
 msgid "Event"
 msgstr "Подія"
 
-#: apps/news/models.py:99 apps/news/templates/event/event_detail.html:18
+#: apps/news/models.py:99 apps/news/templates/event/event_detail.html:22
 #: apps/news/templates/event/event_list.html:5
 #: apps/news/templates/event/event_list.html:9
 #: apps/news/templates/event/event_list_past.html:5
 msgid "Events"
 msgstr "Події"
 
-#: apps/news/templates/event/event_list.html:29
+#: apps/news/templates/event/event_list.html:37
 #: apps/news/templates/event/event_list_past.html:9
 #: apps/news/templates/event/event_list_past.html:14
 msgid "Past events"
 msgstr "Минулі події"
 
-#: apps/news/templates/event/event_list_past.html:30
+#: apps/news/templates/event/event_list_past.html:33
 msgid "Back to future events"
 msgstr "Назад до майбутніх подій"
 
-#: templates/base.html:31 templates/base.html.py:63
+#: templates/base.html:31 templates/base.html.py:67
 msgid "Faculty of Physics and Mathematics"
 msgstr "Фізико Математичний Факультет"
+
+#: templates/flatpages/default.html:6
+msgid "FPM"
+msgstr "ФМФ"
 
 #: templates/pagination/pagination.html:5
 #: templates/pagination/pagination.html:7
@@ -256,11 +352,17 @@ msgstr "попередня"
 msgid "next"
 msgstr "наступна"
 
+#~ msgid "Content not avalible in this language."
+#~ msgstr "Вміст недоступний українською."
+
+#~ msgid "Extra flat page"
+#~ msgstr "Extra для простої сторінки"
+
+#~ msgid "Extra flat pages"
+#~ msgstr "Extra для простих сторінок"
+
 #~ msgid "Is on main page"
 #~ msgstr "На головній сторінці"
-
-#~ msgid "Content"
-#~ msgstr "Зміст"
 
 #~ msgid "Index tab"
 #~ msgstr "Таб на головній"
@@ -270,9 +372,6 @@ msgstr "наступна"
 
 #~ msgid "List of all events"
 #~ msgstr "Список усіх подій"
-
-#~ msgid "FPM"
-#~ msgstr "ФМФ"
 
 #~ msgid "News list"
 #~ msgstr "Список новин"

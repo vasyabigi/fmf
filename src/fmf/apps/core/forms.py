@@ -16,6 +16,16 @@ class FlatpageForm(forms.ModelForm):
 
 
 class ContactForm(forms.Form):
-    email = forms.EmailField()
-    name = forms.CharField(max_length=256)
-    content = forms.CharField(max_length=2048, widget=forms.Textarea)
+    email = forms.EmailField(label=_("Email"), widget=forms.TextInput(attrs={
+        'name':'email',
+        'class':'validate[required,custom[email]]',
+        'placeholder': _("Email"),
+    }))
+    name = forms.CharField(max_length=256, label=_("Name"), widget=forms.TextInput(attrs={
+        'class':'validate[required]',
+        'placeholder': _("Name"),
+    }))
+    content = forms.CharField(max_length=2048, label=_("Message"), widget=forms.Textarea(attrs={
+        'class':'validate[required]',
+        'placeholder': _("Message"),
+    }))

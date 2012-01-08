@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block content %}
   <div id="map_canvas" style="width:250px;height:250px;float:left;"></div>
-  <div>
-  {{ form.as_p }}
+  <div id="contact">
+    {% trans "Thank you. We got your message." %}
   </div>
 {% endblock %}
 

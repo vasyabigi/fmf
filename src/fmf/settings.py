@@ -15,7 +15,9 @@ ADMINS = (
     ('Traceback Me', '606ozfuayi@traceback.me'),
 )
 
-MANAGERS = ADMINS
+MANAGERS = (
+    ('Vasyl Stanislavchuk', 'vasyl.stanislavchuk@gmail.com'),
+)
 
 DATABASES = {
     'default': {
