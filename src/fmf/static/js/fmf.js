@@ -138,21 +138,23 @@ var Fmf = (function(){
         },
 
         ContactForm: function(){
-            $('#contact').validationEngine();
-            $('#contact input[type=submit]').click(function(event){
-                event.preventDefault();
-                var form = $('#contact');
-                if (form.validationEngine('validate'))
-                    //TODO make ajax loader
-                    $.ajax(form.attr('action'), {
-                        type: 'post',
-                        data: form.serialize(),
-                        dataType: 'json',
-                        success: function(data){
-                            form.replaceWith(data.content);
-                        }
-                    });
-            })
+            if ($('#contact').length) {
+                $('#contact').validationEngine();
+                $('#contact input[type=submit]').click(function(event){
+                    event.preventDefault();
+                    var form = $('#contact');
+                    if (form.validationEngine('validate'))
+                        //TODO make ajax loader
+                        $.ajax(form.attr('action'), {
+                            type: 'post',
+                            data: form.serialize(),
+                            dataType: 'json',
+                            success: function(data){
+                                form.replaceWith(data.content);
+                            }
+                        });
+                })
+            }
         }
     }
 })($);

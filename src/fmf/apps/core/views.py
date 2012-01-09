@@ -41,12 +41,12 @@ def contacts(request):
     }
     if request.method == 'POST':
         if form.is_valid():
-            # Mail managers
-#            subject = _("Contact %(name)s(%(email)s)" %
-#                {'name': form.cleaned_data['name'], 'email': form.cleaned_data['email']})
-#            message = form.cleaned_data['content']
-#            html_message = render_to_string('contacts/manager_message.html', form.cleaned_data)
-#            mail_managers(subject, message, html_message=html_message)
+            #Mail managers
+            subject = _("Contact %(name)s(%(email)s)" %
+                {'name': form.cleaned_data['name'], 'email': form.cleaned_data['email']})
+            message = form.cleaned_data['content']
+            html_message = render_to_string('contacts/manager_message.html', form.cleaned_data)
+            mail_managers(subject, message, html_message=html_message)
 
             #TODO Mail person
 
