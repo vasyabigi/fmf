@@ -140,7 +140,7 @@ var Fmf = (function(){
         ContactForm: function(){
             var form = $('#contact');
             if (form.length) {
-                form.validationEngine();
+                form.validationEngine({'scroll':false});
                 form.find('input[type=submit]').click(function(event){
                     event.preventDefault();
                     if (form.validationEngine('validate'))
