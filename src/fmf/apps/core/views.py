@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 import datetime
+import logging
 from django.core.mail import mail_managers
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -12,6 +14,9 @@ from django.core.cache import cache
 from models import IndexSliderImage
 from forms import ContactForm
 from news.models import News, Event
+
+
+logger = logging.getLogger("fmf.%s" % __name__)
 
 
 class IndexView(TemplateView):
@@ -47,15 +52,15 @@ def contacts(request):
     if request.method == 'POST':
         if form.is_valid():
             #Mail managers
-            subject = _("Contact %(name)s(%(email)s)" %
-                {'name': form.cleaned_data['name'], 'email': form.cleaned_data['email']})
+            subject = "Contact: %s (%s)" % (form.cleaned_data['name'], form.cleaned_data['email'])
             message = form.cleaned_data['content']
             html_message = render_to_string('contacts/manager_message.html', form.cleaned_data)
             mail_managers(subject, message, html_message=html_message)
 
             #TODO Mail person
 
-            #TODO Log to file
+            #Log to file
+            logger.info(subject)
 
             if request.is_ajax():
                 response = render_to_string('contacts/ajax_response.html')

@@ -136,11 +136,28 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(module)s %(message)s'
+        },
+    },
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler'
-        }
+        },
+        'file_logger': {
+            'filename': os.path.join(PROJECT_PATH, 'logs', 'fmf.log'),
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'when': 'midnight',
+            'interval': 1,
+            'backupCount': 0,
+            'level': 'INFO',
+            'formatter': 'verbose'
+        },
     },
     'loggers': {
         'django.request': {
@@ -148,6 +165,10 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'fmf': {
+             'handlers':['file_logger'],
+             'level': 'INFO',
+         },
     }
 }
 
