@@ -15,3 +15,4 @@ django-tinymce
 psycopg2
 django-chunks
 gunicorn
+django-memcache-status

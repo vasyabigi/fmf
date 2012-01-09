@@ -26,6 +26,13 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
 TIME_ZONE = 'Europe/Kiev'
 
 LANGUAGE_CODE = 'uk'
@@ -117,6 +124,7 @@ INSTALLED_APPS = (
     'filebrowser',
     'tinymce',
     'chunks',
+    'memcache_status',
 
     #apps
     'core',

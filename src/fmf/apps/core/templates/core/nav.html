@@ -1,25 +1,33 @@
-{% load i18n chunks %}
+{% load i18n chunks cache %}
 
 <ul>
   <li {% if active == 'home' %}class="active"{% endif %}><a href="{% url index-view %}">{% trans "Home" %}</a></li>
   <li {% if active == 'about' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/about-the-faculty/">{% trans "About the faculty" %}</a>
     <ul>
-    {% chunk "about_menu" %}
+      {% cache 500 about_menu %}
+        {% chunk "about_menu" %}
+      {% endcache %}
     </ul>
   </li>
   <li {% if active == 'students' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/students/">{% trans "Students" %}</a>
     <ul>
-    {% chunk "students_menu" %}
+      {% cache 500 students_menu %}
+        {% chunk "students_menu" %}
+      {% endcache %}
     </ul>
   </li>
   <li {% if active == 'entrants' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/entrants/">{% trans "Entrants" %}</a>
     <ul>
-      {% chunk "entarnts_menu" %}
+      {% cache 500 entarnts_menu %}
+        {% chunk "entarnts_menu" %}
+      {% endcache %}
     </ul>
   </li>
   <li {% if active == 'cooperation' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/cooperation/">{% trans "Cooperation" %}</a>
     <ul>
-      {% chunk "international_menu" %}
+      {% cache 500 international_menu %}
+        {% chunk "international_menu" %}
+      {% endcache %}
     </ul>
   </li>
 </ul>

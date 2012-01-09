@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-{% load i18n localeurl_tags chunks %}
+{% load i18n localeurl_tags chunks cache %}
 
 <!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7"> <![endif]-->
@@ -30,9 +30,11 @@
     <title>
       {% block title %}{% trans "Faculty of Physics and Mathematics" %}{% endblock %}
     </title>
-    {% block meta-information %}
-      {% chunk "meta_information" %}
-    {% endblock %}
+    {% cache 500 meta_information LANGUAGE_CODE %}
+      {% block meta-information %}
+        {% chunk "meta_information" %}
+      {% endblock %}
+    {% endcache %}
     {% block extra-head %}{% endblock %}
   </head>
   <body>
@@ -95,7 +97,9 @@
       </div>
       <div class="container">
         {% block footer %}
-          {% chunk "footer" %}
+          {% cache 500 footer LANGUAGE_CODE %}
+            {% chunk "footer" %}
+          {% endcache %}
         {% endblock %}
       </div>
     </footer>

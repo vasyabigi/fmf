@@ -7,6 +7,7 @@ from django.template.response import TemplateResponse
 from django.utils import simplejson
 from django.views.generic.base import TemplateView
 from django.utils.translation import ugettext_lazy as _
+from django.core.cache import cache
 
 from models import IndexSliderImage
 from forms import ContactForm
@@ -18,8 +19,12 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
+        images = cache.get('images', None)
+        if not images:
+            images = IndexSliderImage.objects.filter(is_active=True)
+            cache.set('images', images)
         context.update({
-            'images': IndexSliderImage.objects.filter(is_active=True),
+            'images': images,
             'news_list': News.objects.filter(is_active=True)[:3],
             'events': Event.objects.filter(is_active=True, date_to__gte=datetime.datetime.today()).order_by('-date_to')[:3]
         })
