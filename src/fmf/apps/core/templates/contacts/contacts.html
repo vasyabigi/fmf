@@ -13,7 +13,9 @@
     <input type="submit" value="{% trans 'Send' %}">
     <div id="loading"><img src="{{ STATIC_URL }}images/loading-big.gif" alt=""></div>
   </form>
-  <div id="map_canvas"></div>
+  <div id="map">
+    <div id="map_canvas"></div>
+  </div>
 </section>
 {% endblock %}
 
@@ -33,7 +35,6 @@
         });
       }});
       $('#loading')
-        .hide()  // hide it initially
         .ajaxStart(function() {
           $(this).show();
         })
