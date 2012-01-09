@@ -9,7 +9,7 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -100px;
+  margin: 0 auto -120px;
   background: #d2d1d0;
 }
 .container {
@@ -62,8 +62,8 @@ nav > ul > li:first-child, .page_info span:first-child {
 }
 nav > ul > li.active, nav > ul > li.active:hover {
   background: #D7D7D7 !important;
-  border-left-color: #ddd;
-  border-right-color: #ddd;
+  border-color: #ddd;
+  border-bottom-color: transparent;
 }
 nav > ul li:hover {
   position: relative;
@@ -71,6 +71,7 @@ nav > ul li:hover {
   background: #e8e8e8;
   border-left-color: #fff;
   border-right-color: #eee;
+  border-top-color: #ddd;
   opacity: 1;
 }
 
@@ -148,7 +149,7 @@ nav ul ul ul {
 #lang {
   position: absolute;
   left:90%;
-  top:27px;
+  top:3px;
   border: 1px solid;
   border-color: #2B2B2B #2B2B2B #494949 #494949;
   font-size: 12px;
@@ -242,7 +243,7 @@ nav ul ul ul {
 body #page > article {
   position: relative;
   height: 1%;
-  padding: 20px 0 120px;
+  padding: 20px 0 140px;
   border-top: 1px solid white;
   overflow: hidden;
   background: -webkit-gradient(linear, 50% 0%, 50% 100, color-stop(0%, #E3E3E2), color-stop(100%, #D2D1D0));
@@ -575,8 +576,8 @@ body #page > article {
   text-align: left;
   border-color: #bbb;
 }
-.flatpage p strong {
-
+.flatpage > p > img {
+  margin: 0 15px;
 }
 .flatpage ul {
   padding-left:40px;
@@ -898,6 +899,7 @@ footer li a:hover {
   top:-20px;
 }
 #name {
+  display: none;
   height: 25px;
   background: #313131;
 }
@@ -905,9 +907,30 @@ footer li a:hover {
   font:bold 15px/25px Georgia serif;
   color:#ccc;
 }
-#dev {
+
+/*Contacts*/
+#contact {
+  min-width: 375px;
+  position: relative;
+  float:left;
+  margin-right:20px;
+}
+#contact table tr td {
+  padding: 5px 0;
+}
+#contact input[type='submit'] {
   position: absolute;
-  top:0;
-  right:15%;
-  margin:5px 0;
+  left: 50%;
+}
+#loading {
+  position: absolute;
+  top: 6px;
+  left: 300px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 0 10px 5px #fff;
+}
+#map_canvas {
+  height:400px;
+  border:5px solid #313131;
 }
