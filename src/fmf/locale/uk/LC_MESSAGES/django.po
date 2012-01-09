@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-09 03:00+0200\n"
-"PO-Revision-Date: 2012-01-09 03:00\n"
+"POT-Creation-Date: 2012-01-09 18:41+0200\n"
+"PO-Revision-Date: 2012-01-09 18:41\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -48,17 +48,15 @@ msgstr ""
 "Це значення повинне містити тільки літери, цифри, крапки, "
 "підкреслення, тире, слеши або тильди."
 
-#: apps/core/forms.py:19 apps/core/forms.py:22
-#: apps/core/templates/contacts/manager_message.html:3
+#: apps/core/forms.py:22 apps/core/templates/contacts/manager_message.html:3
 msgid "Email"
 msgstr "Email"
 
-#: apps/core/forms.py:24 apps/core/forms.py:26
-#: apps/core/templates/contacts/manager_message.html:2
+#: apps/core/forms.py:26 apps/core/templates/contacts/manager_message.html:2
 msgid "Name"
 msgstr "Ім'я"
 
-#: apps/core/forms.py:28 apps/core/forms.py:30
+#: apps/core/forms.py:30
 msgid "Message"
 msgstr "Повідомлення"
 
@@ -107,9 +105,18 @@ msgstr "Спробуй ще раз з правильними значенням�
 msgid "Thank you. We got your message."
 msgstr "Дякую. Ми отримали Ваше повідомлення."
 
-#: apps/core/templates/contacts/contacts.html:9
+#: apps/core/templates/contacts/contacts.html:8
+msgid "You can contact us here:"
+msgstr "Ви можете зв'язатись з нами тут:"
+
+#: apps/core/templates/contacts/contacts.html:14
 msgid "Send"
 msgstr "Відправити"
+
+#: apps/core/templates/contacts/contacts.html:36 templates/base.html:31
+#: templates/base.html.py:67
+msgid "Faculty of Physics and Mathematics"
+msgstr "Фізико Математичний Факультет"
 
 #: apps/core/templates/contacts/manager_message.html:4
 msgid "Content"
@@ -319,10 +326,6 @@ msgstr "Минулі події"
 #: apps/news/templates/event/event_list_past.html:33
 msgid "Back to future events"
 msgstr "Назад до майбутніх подій"
-
-#: templates/base.html:31 templates/base.html.py:67
-msgid "Faculty of Physics and Mathematics"
-msgstr "Фізико Математичний Факультет"
 
 #: templates/flatpages/default.html:6
 msgid "FPM"

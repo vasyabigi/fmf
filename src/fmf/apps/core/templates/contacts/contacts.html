@@ -5,12 +5,20 @@
 {% block content %}
 <section class="container">
   <form id="contact" action="." method="post">{% csrf_token %}
+    <p>{% trans "You can contact us here:" %}</p>
     <table>
       {{ form.as_table }}
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" value="{% trans 'Send' %}">
+        </td>
+      </tr>
     </table>
-    <input type="submit" value="{% trans 'Send' %}">
   </form>
-  <div id="map_canvas"></div>
+  <div id="map">
+    <div id="map_canvas"></div>
+  </div>
 </section>
 {% endblock %}
 
