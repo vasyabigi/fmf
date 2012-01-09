@@ -138,13 +138,12 @@ var Fmf = (function(){
         },
 
         ContactForm: function(){
-            if ($('#contact').length) {
-                $('#contact').validationEngine();
-                $('#contact input[type=submit]').click(function(event){
+            var form = $('#contact');
+            if (form.length) {
+                form.validationEngine();
+                form.find('input[type=submit]').click(function(event){
                     event.preventDefault();
-                    var form = $('#contact');
                     if (form.validationEngine('validate'))
-                        //TODO make ajax loader
                         $.ajax(form.attr('action'), {
                             type: 'post',
                             data: form.serialize(),
@@ -153,6 +152,10 @@ var Fmf = (function(){
                                 form.replaceWith(data.content);
                             }
                         });
+                });
+
+                form.ajaxStart(function() {
+                    form.html('<div id="loading"><img src="/static/images/loading-big.gif" alt="loading"></div>');
                 })
             }
         }

@@ -910,27 +910,13 @@ footer li a:hover {
 
 /*Contacts*/
 #contact {
-  min-width: 375px;
-  position: relative;
   float:left;
   margin-right:20px;
 }
 #contact table tr td {
   padding: 5px 0;
 }
-#contact input[type='submit'] {
-  position: absolute;
-  left: 50%;
-}
-#loading {
-  display:none;
-  position: absolute;
-  top: 6px;
-  left: 300px;
-  background: white;
-  border-radius: 24px;
-  box-shadow: 0 0 10px 5px #fff;
-}
+
 #map {
   margin-left: 395px;
 }
