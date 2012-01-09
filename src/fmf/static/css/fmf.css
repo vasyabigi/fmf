@@ -688,7 +688,10 @@ footer {
 .toTop_button .toTop:hover {
   opacity: 1;
 }
-.toTop_button .eng {
+.toTop_button .uk {
+  background-position: 0 0;
+}
+.toTop_button .en {
   background-position: -70px 0;
 }
 footer .social {

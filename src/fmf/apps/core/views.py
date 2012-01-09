@@ -8,7 +8,6 @@ from django.template.loader import render_to_string
 from django.template.response import TemplateResponse
 from django.utils import simplejson
 from django.views.generic.base import TemplateView
-from django.utils.translation import ugettext_lazy as _
 from django.core.cache import cache
 
 from models import IndexSliderImage
@@ -60,7 +59,7 @@ def contacts(request):
             #TODO Mail person
 
             #Log to file
-            logger.info(subject)
+            logger.info('%s %s' % (subject, message))
 
             if request.is_ajax():
                 response = render_to_string('contacts/ajax_response.html')
