@@ -44,9 +44,8 @@ nav > ul {
   width: 80%;
   margin: 0 auto;
   position: relative;
-  font-weight: bold;
-  font-size: 17px;
-  line-height: 40px;
+  font-size: 18px;
+  line-height: 35px;
 }
 nav > ul > li {
   position: relative;
@@ -61,14 +60,11 @@ nav > ul > li:first-child, .page_info span:first-child {
   margin-left:95px;
 }
 nav > ul > li.active, nav > ul > li.active:hover {
-  background: #D7D7D7 !important;
-  border-color: #ddd;
-  border-bottom-color: transparent;
+  border-color: #d7d7d7;
 }
 nav > ul li:hover {
   position: relative;
   cursor: default;
-  background: #e8e8e8;
   border-left-color: #fff;
   border-right-color: #eee;
   border-top-color: #ddd;
@@ -84,9 +80,8 @@ nav > ul ul {
   margin-top: -1px;
   border: 1px solid;
   border-color: #fff #ddd #ddd #fff ;
-  font-weight: bold;
-  font-size: 11px;
-  line-height: 17px;
+  font-size: 12px;
+  line-height: 14px;
   opacity: 0;
   box-shadow: 3px 3px 1px 0 rgba(35, 35, 35, 0.1);
   z-index: 3;
@@ -108,7 +103,7 @@ nav > ul ul a:hover, nav > ul ul li:hover > a {
   border-top-color: #fff;
   border-bottom-color: #fff;
   cursor: pointer;
-  background: #d7d7d7;
+  background: #bbd9ee;
   color: #333;
 }
 nav > ul li:hover > ul {
@@ -116,7 +111,7 @@ nav > ul li:hover > ul {
   opacity: 1;
 }
 nav > ul > li > a {
-  padding: 10px 30px;
+  padding: 7px 30px;
   color: #ddd;
   text-shadow: 0 -1px #000;
 }
@@ -127,16 +122,17 @@ nav > ul > li:hover > a, nav ul > li.active > a{
 }
 nav ul > li.active > a{
   background: #d7d7d7;
+  box-shadow:inset 0 5px 10px -6px #000;
 }
 nav > ul ul li a {
   display:block;
   margin-left:-1px;
-  padding:8px;
-  background: #eee;
+  padding:7px;
+  background-color: #eee;
   border: 1px solid transparent;
   color:#666;
   text-shadow:none;
-  -webkit-transition:opacity 0.2s ease-in;
+  -webkit-transition: opacity 0.2s ease-in;
 }
 nav ul ul ul {
   position: absolute;
@@ -170,7 +166,7 @@ nav ul ul ul {
   display: inline-block;
   position: relative;
   margin: 2px;
-  padding: 0.5em;
+  padding: 4px;
   border: 1px solid #616161;
   background: #707070;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8a8a8a), color-stop(100%, #707070));
@@ -212,6 +208,9 @@ nav ul ul ul {
   /*END Main navigation*/
 
   /*Page_info*/
+.page_info {
+  height: 51px;
+}
 .page_info span, .title {
   margin: 0 2px;
   font-weight:bold;
@@ -222,6 +221,7 @@ nav ul ul ul {
   -webkit-transition:all 0.2s ease-in;
 }
 .page_info span:first-child {
+  font-family: Georgia, sans-serif;
   font-size: 20px;
 }
 
@@ -263,6 +263,7 @@ body #page > article {
 #slider {
   z-index: 2;
   width:600px;
+  height: 300px;
 }
 #slider img{
   border:none;
@@ -288,6 +289,10 @@ body #page > article {
   background:rgba(0,0,0,0.5);
  /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);*/
   zoom: 1;
+  -webkit-transition:background 0.2s ease-in;
+}
+.caption:hover {
+  background: rgba(0,0,0,0.8);
 }
 .caption a {
   display: block;
@@ -577,7 +582,7 @@ body #page > article {
   border-color: #bbb;
 }
 .flatpage > p > img {
-  margin: 0 15px;
+  margin: 5px 25px;
 }
 .flatpage ul {
   padding-left:40px;
@@ -849,7 +854,7 @@ footer li a:hover {
 #main_logo_bg {
   position: absolute;
   left:0;
-  margin-top:-18px;
+  margin-top:-17px;
   z-index: 9;
 }
 #logo {
@@ -910,7 +915,14 @@ footer li a:hover {
   font:bold 15px/25px Georgia serif;
   color:#ccc;
 }
-
+#stop_snow {
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 10%;
+  padding: 10px;
+  background: #0099FF;
+}
 /*Contacts*/
 #contact {
   float:left;
