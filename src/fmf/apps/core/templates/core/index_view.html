@@ -46,10 +46,9 @@
   <!--news-->
   <section id="news" class="container bordered">
     <p class="title_list">{% trans "Last news" %}:</p>
-      <table cellspacing="0" cellpadding="0" class="list">
-        <tr>
+      <ul class="list">
           {% for news in news_list %}
-          <td>
+          <li>
             <figure>
               <a href="{{ news.get_absolute_url }}">
                 {% thumbnail news.main_image '100x100' crop='center' as im %}
@@ -61,10 +60,9 @@
                 <p class="short_description">{{ news.short_description|truncatewords:15 }}</p>
               </figcaption>
             </figure>
-          </td>
+          </li>
           {% endfor %}
-        </tr>
-      </table>
+      </ul>
       <div class="show_all">
         <a href="{% url news-list %}">{% trans "All news" %} »</a>
       </div>

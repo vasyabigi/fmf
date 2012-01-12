@@ -65,6 +65,7 @@ nav > ul > li.active, nav > ul > li.active:hover {
 nav > ul li:hover {
   position: relative;
   cursor: default;
+  background-color: #E8E8E8;
   border-left-color: #fff;
   border-right-color: #eee;
   border-top-color: #ddd;
@@ -337,46 +338,38 @@ body #page > article {
   font-family: "DejaVu Sans" arial sans-serif;
   -webkit-transition:all 0.2s ease-in;
 }
-#news table {
-  border-collapse: separate;
+
+.list li {
+overflow: hidden;
+text-overflow:ellipsis;
+padding: 10px;
+border: 1px solid;
+border-color: #fff #fff #D5D5D5 #D5D5D5;
+background: #eee;
+-webkit-transition:all 0.2s ease-in;
+ }
+.list li p  {
+  margin-left:0;
+}
+#news .list, #news .list figcaption {
   margin:0 10px;
 }
 #main_news article {
   margin: 20px 10px;
 }
-
-.list li, .list td {
-  overflow: hidden;
-  text-overflow:ellipsis;
-  padding: 10px;
-  border: 1px solid;
-  border-color: #fff #fff #D5D5D5 #D5D5D5;
-  background: #eee;
-  -webkit-transition:all 0.2s ease-in;
-}
-.list li p  {
-  margin-left:0;
-}
-#news tr td {
+#news .list li {
+  float: left;
   width: 33%;
   padding:10px 0;
 }
-#news tr td figure {
+#news .list li figure {
   overflow: hidden;
   height: 130px;
-}
-#news tr td figure > a {
-  display: block;
-  margin:0 10px;
-  float: left;
 }
 #news figcaption > p:first-child {
   margin-top: 0;
 }
-#news figcaption .short_description {
-
-}
-.list li:hover, .list tr td:hover {
+.list li:hover {
   background: #e5e5e5;
 }
 #news_list ul li img,.list li img {

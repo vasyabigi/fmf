@@ -19,7 +19,7 @@
             <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" width="{{ im.width }}" height="{{ im.height }}" />
           {% empty %}
             {# TODO Need to add specific image #}
-            <img src="/static/images/logo_bg.png" alt="{{ product.feed.title|title }}" width="200" height="150">
+            <img src="{{ STATIC_URL }}images/logo_bg.png" alt="{{ product.feed.title|title }}" width="200" height="150">
           {% endthumbnail %}
           <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
           <p class="date">
