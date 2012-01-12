@@ -338,7 +338,6 @@ body #page > article {
   font-family: "DejaVu Sans" arial sans-serif;
   -webkit-transition:all 0.2s ease-in;
 }
-
 .list li {
 overflow: hidden;
 text-overflow:ellipsis;
@@ -393,6 +392,13 @@ background: #eee;
 .short_description_large{
   font-size: 16px;
   color: #555;
+}
+.details {
+  overflow: hidden;
+}
+.details > img {
+  float: left;
+  margin-right: 10px;
 }
   /*News slider*/
 .news_detail_images_box {

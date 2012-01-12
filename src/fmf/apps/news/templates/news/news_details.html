@@ -30,9 +30,15 @@
 {% endblock %}
 
 {% block content %}
-  <section class="container bordered">
+  <section class="container bordered details">
     {% include 'includes/social_html.html' %}
     <p class="title">{{ news.title }}</p>
+    {% if news.main_image %}
+      {% thumbnail news.main_image "250x200" crop="center" as im %}
+        <img src="{{ im.url }}" alt="{{ news.title }}" width="{{ im.width }}" height="{{ im.height }}" />
+      {% endthumbnail %}
+    {% endif %}
+
     {% if news.date %}
       <p class="date">{{ news.date }}</p>
     {% endif %}
