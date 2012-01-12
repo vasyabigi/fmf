@@ -27,6 +27,11 @@
   <section class="container bordered">
     {% include 'includes/social_html.html' %}
     <p class="title">{{ event.title }}</p>
+    {% if event.image %}
+      {% thumbnail event.image "250x200" crop="center" as im %}
+        <img src="{{ im.url }}" alt="{{ event.title }}" width="{{ im.width }}" height="{{ im.height }}" />
+      {% endthumbnail %}
+    {% endif %}
     <p class="date">
       {% ifequal event.date_from event.date_to %}{{ event.date_from }}
         {% else %}{{ event.date_from }} - {{ event.date_to }}
