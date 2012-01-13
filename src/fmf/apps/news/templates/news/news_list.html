@@ -15,14 +15,22 @@
       {% autopaginate news_list 10 %}
       {% for news in news_list %}
         <li>
-          {% thumbnail news.main_image "200x150" crop="center" as im %}
-            <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" width="{{ im.width }}" height="{{ im.height }}" />
-          {% endthumbnail %}
-          <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
-          {% if news.date %}
-            <p class="date">{{ news.date }}</p>
-          {% endif %}
-          <p class="short_description_large">{{ news.short_description }}</p>
+          <div class="date_stamp">
+            <div>
+              січ<br/>
+              <span>10</span>
+            </div>
+          </div>
+          <div class="img_descr">
+            {% thumbnail news.main_image "200x150" crop="center" as im %}
+              <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" width="{{ im.width }}" height="{{ im.height }}" />
+            {% endthumbnail %}
+              <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+            {% if news.date %}
+              <p class="date">{{ news.date }}</p>
+            {% endif %}
+              <p class="short_description_large">{{ news.short_description }}</p>
+          </div>
         </li>
       {% endfor %}
     </ul>

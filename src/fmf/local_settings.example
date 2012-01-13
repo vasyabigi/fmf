@@ -15,3 +15,8 @@ DATABASES = {
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
