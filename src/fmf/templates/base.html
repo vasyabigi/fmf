@@ -39,43 +39,43 @@
   </head>
   <body>
     <div id="page">
+      <div id="name">
+        <div class="container"><h1>Фізико-математичний факультет НТУУ"КПІ"</h1></div>
+      </div>
+      <!--navigation-->
+      <nav class="clearfix">
+        {% block nav %}
+        {% with 'home' as active %}
+        {% include 'core/nav.html' %}
+        {% endwith %}
+        {% endblock %}
+        <div id="lang">
+          {% for lang in LANGUAGES %}
+          {% ifequal lang.0 LANGUAGE_CODE %}
+          <a class="selected" href="#">{{ lang.1 }}</a>
+          {% else %}
+          <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
+          {% endifequal %}
+          {% endfor %}
+        </div>
+      </nav>
+      <!--end navigation-->
       <!--header-->
       <header>
-        <!--navigation-->
-        <div id="name">
-          <div class="container"><h1>Фізико-математичний факультет НТУУ"КПІ"</h1></div>
-        </div>
-        <nav class="clearfix">
-          {% block nav %}
-            {% with 'home' as active %}
-              {% include 'core/nav.html' %}
-            {% endwith %}
-          {% endblock %}
-          <div id="lang">
-            {% for lang in LANGUAGES %}
-              {% ifequal lang.0 LANGUAGE_CODE %}
-                <a class="selected" href="#">{{ lang.1 }}</a>
-              {% else %}
-                <a href="{{ request.path|chlocale:lang.0 }}" title="{{ lang.1 }}">{{ lang.1 }}</a>
-              {% endifequal %}
-            {% endfor %}
-          </div>
-        </nav>
-        <!--end navigation-->
         {% block logo %}
-          <section class="page_info">
-            <div class="container">
-              {% block breadcrumbs %}
-                <span>{% trans "Faculty of Physics and Mathematics" %}</span>
-              {% endblock %}
-              <a href="#"><img id="logo" src="{{ STATIC_URL }}images/emblem_84x56.png" alt="hi5"></a>
-              <img id="main_logo_bg" src="{{ STATIC_URL }}images/main_logo_bg.png" alt="hi5">
-<!--
-              <div id="electron_1_box"><img id="electron_1" src="{{ STATIC_URL }}images/electron_1.png" alt="electron"></div>
-              <div id="electron_2_box"><img id="electron_2" src="{{ STATIC_URL }}images/electron_2.png" alt="electron"></div>
--->
-            </div>
-          </section>
+        <section class="page_info">
+          <div class="container">
+            {% block breadcrumbs %}
+              <span>{% trans "Faculty of Physics and Mathematics" %}</span>
+            {% endblock %}
+            <a href="#"><img id="logo" src="{{ STATIC_URL }}images/emblem_84x56.png" alt="hi5"></a>
+            <img id="main_logo_bg" src="{{ STATIC_URL }}images/main_logo_bg.png" alt="hi5">
+  <!--
+            <div id="electron_1_box"><img id="electron_1" src="{{ STATIC_URL }}images/electron_1.png" alt="electron"></div>
+            <div id="electron_2_box"><img id="electron_2" src="{{ STATIC_URL }}images/electron_2.png" alt="electron"></div>
+  -->
+          </div>
+        </section>
         {% endblock %}
       </header>
       <!--end header-->
@@ -85,9 +85,9 @@
         {% endblock %}
         <div class="toTop_button">
           <a href="#" class="toTop {{ LANGUAGE_CODE }}"></a>
-              <!--if eng
-                <a href="#" class="toTop en"></a>
-              -->
+          <!--if eng
+            <a href="#" class="toTop en"></a>
+          -->
         </div>
       </article>
     </div>

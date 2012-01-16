@@ -308,18 +308,55 @@ body #page > article {
 
   /*END Slider*/
 
+  /*Why_fmf*/
+#why_fmf {
+  padding: 0;
+  float:left;
+  width: 620px;
+  background: url("/static/images/logo_bg.png") 530px 70px no-repeat #F4F4F4;;
+  background-size:80px 54px ;
+}
+#why_fmf > p{
+  margin-right: 80px;
+}
+.title_arrow {
+  position: relative;
+  width: 100%;
+  margin:-5px 0 0 -5px;
+  padding: 5px ;
+  background: #bbd9ee;
+  border:1px solid;
+  border-color: #a2bccf #c8e9ff #c8e9ff #a2bccf;
+  font: bold 20px/25px Georgia, sans-serif;
+}
+.title_arrow .arrow {
+  position: absolute;
+  right:30px;
+  top:14px;
+  width:40px;
+  height:40px;
+  background: #bbd9ee;
+  border:1px solid;
+  border-color: transparent #c8e9ff #a2bccf transparent;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+  /*END Why_fmf*/
+
   /*News*/
 #news {
-  overflow: hidden;
+  margin-top: 10px;
   margin-bottom:15px;
-  padding: 3px 0 5px;
+  padding: 3px 0 30px;
 }
 #news > .bordered {
   overflow: hidden;
   margin:0 1px 1px 0;
 }
 .show_all {
-  float:right;
+  position: absolute;
+  right: 15px;
   display: inline-block;
   margin: 0 15px;
   padding: 5px 15px;
@@ -361,13 +398,15 @@ body #page > article {
   margin: 20px 10px;
 }
 #news .list li {
+/*
   float: left;
   width: 33%;
+*/
   padding:10px 0;
 }
 #news .list li figure {
   overflow: hidden;
-  height: 130px;
+
 }
 #news figcaption > p:first-child {
   margin-top: 0;
@@ -464,11 +503,12 @@ body #page > article {
     /*END News slider*/
   /*END News*/
   /*Events*/
-.events {
+aside {
   min-width: 285px;
-  height: 315px;
   margin-left: 640px;
-  padding: 3px 10px 5px;
+}
+.events {
+  padding: 3px 10px 30px;
 }
 .title_list {
   margin: 0;
@@ -497,6 +537,7 @@ body #page > article {
 }
 #events_list {
   overflow: hidden;
+  padding-bottom: 30px;
 }
 #events {
   overflow: hidden;
@@ -819,6 +860,9 @@ footer li a:hover {
   nav > ul > li a {
   padding: 8px 10px;
   color: #DDD;
+  }
+  .container {
+    width: 90%;
   }
 }
 /*Fonts*/
