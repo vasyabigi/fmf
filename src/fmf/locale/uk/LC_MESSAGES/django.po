@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-09 18:41+0200\n"
-"PO-Revision-Date: 2012-01-09 18:41\n"
+"POT-Creation-Date: 2012-01-18 22:57+0200\n"
+"PO-Revision-Date: 2012-01-18 23:00\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,22 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Translated-Using: django-rosetta 0.6.2\n"
+"X-Translated-Using: django-rosetta 0.6.3\n"
 
-#: settings.py:34
+#: dashboard.py:28
+msgid "Quick links"
+msgstr "Швидкі посилання"
+
+#: dashboard.py:34
+msgid "Return to site"
+msgstr "Повернутись до сайту"
+
+#: dashboard.py:35
+msgid "Change password"
+msgstr "Змінити пароль"
+
+#: dashboard.py:37
+msgid "Log out"
+msgstr "Вийти"
+
+#: dashboard.py:43 menu.py:25
+msgid "Applications"
+msgstr "Додатки"
+
+#: dashboard.py:49 menu.py:29
+msgid "Administration"
+msgstr "Адміністрування"
+
+#: dashboard.py:54 dashboard.py:72
+msgid "Recent Actions"
+msgstr "Останні дії"
+
+#: menu.py:22
+msgid "Dashboard"
+msgstr "Дошка"
+
+#: settings.py:41
 msgid "Ukrainian"
 msgstr "Укр"
 
-#: settings.py:35
+#: settings.py:42
 msgid "English"
 msgstr "Eng"
 
-#: apps/core/forms.py:8 apps/flatpages_my/admin.py:16
+#: apps/core/forms.py:8 apps/flatpages_my/admin.py:18
 #: apps/flatpages_my/models.py:9
 msgid "URL"
 msgstr "URL"
 
-#: apps/core/forms.py:9 apps/flatpages_my/admin.py:17
+#: apps/core/forms.py:9 apps/flatpages_my/admin.py:19
 msgid ""
 "Example: '/about/contact/'. Make sure to have leading and trailing "
 "slashes."
@@ -40,7 +72,7 @@ msgstr ""
 "Приклад: '/about/contact/'.  Переконайтеся, щоб мати початкові і "
 "кінцеві слеши."
 
-#: apps/core/forms.py:11 apps/flatpages_my/admin.py:19
+#: apps/core/forms.py:11 apps/flatpages_my/admin.py:21
 msgid ""
 "This value must contain only letters, numbers, dots, underscores, "
 "dashes, slashes or tildes."
@@ -60,41 +92,36 @@ msgstr "Ім'я"
 msgid "Message"
 msgstr "Повідомлення"
 
-#: apps/core/models.py:17
+#: apps/core/models.py:16
 msgid "Page"
 msgstr "Сторінка"
 
-#: apps/core/models.py:18 apps/core/models.py:43
+#: apps/core/models.py:17 apps/core/models.py:42
 #: apps/flatpages_my/models.py:38 apps/news/models.py:51
 #: apps/news/models.py:68 apps/news/models.py:73 apps/news/models.py:116
 msgid "Image"
 msgstr "Зображення"
 
-#: apps/core/models.py:20 apps/news/models.py:26 apps/news/models.py:91
+#: apps/core/models.py:19 apps/news/models.py:26 apps/news/models.py:91
 msgid "Active"
 msgstr "Активне"
 
-#: apps/core/models.py:25
+#: apps/core/models.py:24
 msgid "Image for slider"
 msgstr "Зображення для слайдера"
 
-#: apps/core/models.py:26
+#: apps/core/models.py:25
 msgid "Images for slider"
 msgstr "Зображення для слайдера"
 
-#: apps/core/models.py:29
+#: apps/core/models.py:28
 #, python-format
 msgid "Image for %s"
 msgstr "зображення для %s"
 
-#: apps/core/models.py:41 apps/news/models.py:49 apps/news/models.py:114
+#: apps/core/models.py:40 apps/news/models.py:49 apps/news/models.py:114
 msgid "No image"
 msgstr "Немає зображення"
-
-#: apps/core/views.py:45
-#, python-format
-msgid "Contact %(name)s(%(email)s)"
-msgstr "Контакт %(name)s(%(email)s)"
 
 #: apps/core/templates/contacts/ajax_not_valid_response.html:3
 msgid "Try one more time with valid values."
@@ -113,8 +140,8 @@ msgstr "Ви можете зв'язатись з нами тут:"
 msgid "Send"
 msgstr "Відправити"
 
-#: apps/core/templates/contacts/contacts.html:36 templates/base.html:31
-#: templates/base.html.py:67
+#: apps/core/templates/contacts/contacts.html:38 templates/base.html:31
+#: templates/base.html.py:69
 msgid "Faculty of Physics and Mathematics"
 msgstr "Фізико Математичний Факультет"
 
@@ -122,19 +149,19 @@ msgstr "Фізико Математичний Факультет"
 msgid "Content"
 msgstr "Повідомлення"
 
-#: apps/core/templates/core/index_view.html:24
+#: apps/core/templates/core/index_view.html:35
 msgid "Upcoming events"
 msgstr "Найближчі події"
 
-#: apps/core/templates/core/index_view.html:42
+#: apps/core/templates/core/index_view.html:53
 msgid "Announcements"
 msgstr "Анонси подій"
 
-#: apps/core/templates/core/index_view.html:48
+#: apps/core/templates/core/index_view.html:57
 msgid "Last news"
 msgstr "Останні новини"
 
-#: apps/core/templates/core/index_view.html:69
+#: apps/core/templates/core/index_view.html:76
 msgid "All news"
 msgstr "Усі новини"
 
@@ -153,24 +180,24 @@ msgstr "Головна"
 msgid "About the faculty"
 msgstr "Про факультет"
 
-#: apps/core/templates/core/nav.html:10 templates/flatpages/students.html:16
+#: apps/core/templates/core/nav.html:12 templates/flatpages/students.html:16
 msgid "Students"
 msgstr "Студентам"
 
-#: apps/core/templates/core/nav.html:15 templates/flatpages/entrants.html:16
+#: apps/core/templates/core/nav.html:19 templates/flatpages/entrants.html:16
 msgid "Entrants"
 msgstr "Абітурієнтам"
 
-#: apps/core/templates/core/nav.html:20
+#: apps/core/templates/core/nav.html:26
 #: templates/flatpages/cooperation.html:16
 msgid "Cooperation"
 msgstr "Співробітництво"
 
-#: apps/flatpages_my/admin.py:33
+#: apps/flatpages_my/admin.py:37
 msgid "Meta information"
 msgstr "Пошукова інформація"
 
-#: apps/flatpages_my/admin.py:34
+#: apps/flatpages_my/admin.py:38
 msgid "Advanced options"
 msgstr "Додаткові опції"
 
@@ -317,13 +344,13 @@ msgstr "Подія"
 msgid "Events"
 msgstr "Події"
 
-#: apps/news/templates/event/event_list.html:37
+#: apps/news/templates/event/event_list.html:47
 #: apps/news/templates/event/event_list_past.html:9
 #: apps/news/templates/event/event_list_past.html:14
 msgid "Past events"
 msgstr "Минулі події"
 
-#: apps/news/templates/event/event_list_past.html:33
+#: apps/news/templates/event/event_list_past.html:43
 msgid "Back to future events"
 msgstr "Назад до майбутніх подій"
 
@@ -340,6 +367,9 @@ msgstr "попередня"
 #: templates/pagination/pagination.html:23
 msgid "next"
 msgstr "наступна"
+
+#~ msgid "Contact %(name)s(%(email)s)"
+#~ msgstr "Контакт %(name)s(%(email)s)"
 
 #~ msgid "Name: "
 #~ msgstr "Ім'я"

@@ -1,11 +1,10 @@
-from flatpages_my.models import FlatPage
-from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.base import Template
 from django.template.context import Context
-from django.template.loader import render_to_string
-from django.utils.translation import ugettext_lazy as _, activate
+from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
+
+from flatpages_my.models import FlatPage
 
 from positions.fields import PositionField
 from sorl.thumbnail.fields import ImageField
@@ -29,7 +28,7 @@ class IndexSliderImage(models.Model):
         return _('Image for %s') % self.page
 
     def get_url(self):
-        return reverse('flatpage_extra', args=(self.page.url,))
+        return self.page.url
 
     def thumb(self):
         try:

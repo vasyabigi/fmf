@@ -29,3 +29,7 @@ class ContactForm(forms.Form):
         'class':'validate[required]',
         'placeholder': _("Message"),
     }))
+
+
+class QuestionForm(forms.Form):
+    answer = forms.ChoiceField(widget=forms.RadioSelect, choices=((1,1), (2,2), (3,3)))

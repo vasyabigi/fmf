@@ -11,8 +11,9 @@ from django.views.generic.base import TemplateView
 from django.core.cache import cache
 
 from models import IndexSliderImage
-from forms import ContactForm
+from forms import ContactForm, QuestionForm
 from news.models import News, Event
+
 
 
 logger = logging.getLogger("fmf.%s" % __name__)
@@ -71,3 +72,22 @@ def contacts(request):
 
 def contanct_thank_you(request):
     return TemplateResponse(request, 'contacts/thank_you.html')
+
+
+def question(request):
+    question_form = QuestionForm(request.POST or None)
+    if request.method == "POST":
+        if question_form.is_valid():
+            answer = question_form.cleaned_data['answer']
+            if int(answer) == 3:
+               result = 'Вітаю'
+            else:
+                result = 'Помилка'
+            context = {
+                'result': result,
+            }
+            return TemplateResponse(request, 'core/question.html', context)
+    context = {
+        'question_form': question_form,
+    }
+    return TemplateResponse(request, 'core/question.html', context)

@@ -1,9 +1,11 @@
 from django import forms
 from django.contrib import admin
-from flatpages_my.models import FlatPage, FlatPageImage
 from django.utils.translation import ugettext_lazy as _
-from core.admin import BaseTranslationAdmin, BaseTranslationTabularInLine
 from django.core.urlresolvers import reverse
+
+from core.admin import BaseTranslationAdmin, BaseTranslationTabularInLine
+from models import FlatPage, FlatPageImage
+
 from tinymce.widgets import TinyMCE
 
 
@@ -26,6 +28,8 @@ class FlatpageForm(forms.ModelForm):
 class FlatPageAdmin(BaseTranslationAdmin):
     form = FlatpageForm
 
+    list_display = ('title', 'url')
+
     inlines = (FlatPageImageInLine,)
 
     fieldsets = (
@@ -33,8 +37,7 @@ class FlatPageAdmin(BaseTranslationAdmin):
         (_("Meta information"), {'fields': ('meta_keywords', 'meta_description', 'meta_title')}),
         (_('Advanced options'), {'classes': ('collapse',), 'fields': ('template_name', 'sites')}),
     )
-    list_display = ('title', 'url')
-    search_fields = ('url', 'title')
+
 
     def formfield_for_dbfield(self, db_field, **kwargs):
         if db_field.name.startswith('content_'):

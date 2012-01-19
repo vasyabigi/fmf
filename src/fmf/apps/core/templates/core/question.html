@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+{#  {% if result %}#}
+{#    {{ result }}#}
+{#  {% else %}#}
+      <p>Скільки буде 1+1?</p>
+{#      <form action="." method="post">{% csrf_token %}#}
+{#        {{ question_form }}#}
+{#        <input type="submit" value="Send">#}
+{#      </form>#}
+{#  {% endif %}#}
+
+  <form action=".">
+    <ul>
+      <li><label for="id_answer_0"><input type="radio" id="id_answer_0" value="1" name="answer"> 1</label></li>
+      <li><label for="id_answer_1"><input type="radio" id="id_answer_1" value="2" name="answer"> 2</label></li>
+      <li><label for="id_answer_2"><input type="radio" id="id_answer_2" value="3" name="answer"> 3</label></li>
+    </ul>
+  </form>
+{% endblock %}
+
+{% block extra_js %}
+  <script type="text/javascript">
+    $('input').click(function(){
+      if ($(this).val()==2) {
+        $(this).parents('form').html('DONE');
+      }
+      else {
+        $(this).parents('label').replaceWith('wrong');
+      }
+    })
+
+  </script>
+{% endblock %}

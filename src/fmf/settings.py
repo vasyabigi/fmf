@@ -26,12 +26,12 @@ DATABASES = {
     }
 }
 
-#CACHES = {
-#    'default': {
-#        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-#        'LOCATION': '127.0.0.1:11211',
-#    }
-#}
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
 
 TIME_ZONE = 'Europe/Kiev'
 
@@ -107,6 +107,10 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     'localeurl',
+    'admin_tools',
+    'admin_tools.theming',
+    'admin_tools.menu',
+    'admin_tools.dashboard',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -124,7 +128,8 @@ INSTALLED_APPS = (
     'filebrowser',
     'tinymce',
     'chunks',
-#    'memcache_status',
+    'memcache_status',
+    'admin_tools',
 
     #apps
     'core',
@@ -195,3 +200,8 @@ try:
     MIDDLEWARE_CLASSES += DEBUG_MIDDLEWARE_CLASSES
 except ImportError:
     print "LOCAL SETTINGS COULD NOT BE FOUND!"
+
+
+ADMIN_TOOLS_MENU = 'fmf.menu.CustomMenu'
+ADMIN_TOOLS_INDEX_DASHBOARD = 'fmf.dashboard.CustomIndexDashboard'
+ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fmf.dashboard.CustomAppIndexDashboard'
