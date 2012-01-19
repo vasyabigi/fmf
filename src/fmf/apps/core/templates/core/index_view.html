@@ -23,16 +23,17 @@
 
     <!--why_fmf?-->
       <section id="why_fmf" class="bordered">
-        <div class="title_arrow">
+        <div class="title_arrow"><div class="arrow"></div>
           <h5>Чому ФМФ?</h5>
-          <div class="arrow"></div>
         </div>
        <p>Навчання Фізико-Математичному Факультеті є відмінним вибором в якості відправної точки процвітаючою професійної кар'єри. Студенти та аспіранти Математики і Фізики мають творчі, оригінальні і гнучкі розуми. Отже, вони є успішним і популярним в багатьох сферах діяльності, таких як наукові дослідження, освіту, промисловість та фінанси.</p>
       </section>
     <!--end why_fmf?-->
     <aside>
       <section class="events bordered">
-        <p class="title_list">{% trans "Upcoming events" %}:</p>
+        <div class="title_arrow"><div class="arrow"></div>
+          <h3 class="title_list">{% trans "Upcoming events" %}:</h3>
+        </div>
         {% if events %}
         <ul class="list">
           {% for event in events %}
@@ -54,7 +55,9 @@
       </section>
       <!--news-->
       <section id="news" class="bordered">
-        <h3 class="title_list">{% trans "Last news" %}:</h3>
+        <div class="title_arrow"><div class="arrow"></div>
+          <h3 class="title_list">{% trans "Last news" %}:</h3>
+        </div>
         <ul class="list">
           {% for news in news_list %}
           <li>

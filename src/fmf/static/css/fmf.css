@@ -19,7 +19,6 @@ html, body {
 }
 .bordered {
   position: relative;
-  padding: 10px;
   background:#F4F4F4;
   border:1px solid #BBB;
   box-shadow: inset 0 0 0 1px #FFF, 1px 1px 0 0 #bbb;
@@ -322,25 +321,47 @@ body #page > article {
 .title_arrow {
   position: relative;
   width: 100%;
-  margin:-5px 0 0 -5px;
-  padding: 5px ;
+  margin:-5px 0 0 -11px;
+  padding: 5px 10px;
   background: #bbd9ee;
   border:1px solid;
   border-color: #a2bccf #c8e9ff #c8e9ff #a2bccf;
-  font: bold 20px/25px Georgia, sans-serif;
+  font: bold 18px/20px Georgia, sans-serif;
+}
+.title_arrow:before, .title_arrow:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-color: transparent;
+  bottom: -11px;
+}
+.title_arrow:before
+{ border-width: 0 10px 10px 0;
+  border-right-color: #a2bccf;
+  left: 0;
+}
+.title_arrow:after {
+  border-width: 0 0 10px 10px;
+  border-left-color: #a2bccf;
+  right: 0;
 }
 .title_arrow .arrow {
   position: absolute;
   right:30px;
-  top:14px;
-  width:40px;
-  height:40px;
+  top:17px;
+  width:25px;
+  height:25px;
   background: #bbd9ee;
   border:1px solid;
   border-color: transparent #c8e9ff #a2bccf transparent;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   transform: rotate(45deg);
+  z-index: 3;
+  -webkit-transition: all 0.2s ease-in;
+}
+.title_arrow .arrow:hover {
+  -webkit-transform: scale(1.4) rotate(45deg);
 }
   /*END Why_fmf*/
 
@@ -375,6 +396,9 @@ body #page > article {
   font-family: "DejaVu Sans" arial sans-serif;
   -webkit-transition:all 0.2s ease-in;
 }
+.list {
+  margin:20px 10px 0;
+}
 .list li {
   position: relative;
   text-overflow:ellipsis;
@@ -390,9 +414,6 @@ body #page > article {
 }
 .list li p  {
   margin-left:10px;
-}
-#news .list, #news .list figcaption {
-  margin:0 10px;
 }
 #main_news article {
   margin: 20px 10px;
@@ -508,11 +529,11 @@ aside {
   margin-left: 640px;
 }
 .events {
-  padding: 3px 10px 30px;
+  padding: 0 0 30px;
 }
 .title_list {
   margin: 0;
-  padding:5px 10px;
+  padding:0 10px;
   font-size: 14px;
   font-weight: bold;
   text-shadow: 0 1px #fff;
@@ -639,6 +660,7 @@ aside {
  /*Flatpages*/
 .flatpage {
   overflow: hidden;
+  padding: 10px;
   background: url("/static/images/logo_bg.png") 90% 50px  #f4f4f4 no-repeat;
 }
 .flatpage p, .flatpage ul, .text, .text p {
