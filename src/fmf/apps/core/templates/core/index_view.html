@@ -22,15 +22,17 @@
     <!--end slider-->
 
     <!--why_fmf?-->
-      <section id="why_fmf" class="bordered">
-        <div class="title_arrow"><div class="arrow"></div>
-          <h5>Чому ФМФ?</h5>
-        </div>
-       <p>Навчання Фізико-Математичному Факультеті є відмінним вибором в якості відправної точки процвітаючою професійної кар'єри. Студенти та аспіранти Математики і Фізики мають творчі, оригінальні і гнучкі розуми. Отже, вони є успішним і популярним в багатьох сферах діяльності, таких як наукові дослідження, освіту, промисловість та фінанси.</p>
-      </section>
+    <section id="why_fmf" class="bordered">
+      <div class="title_arrow"><div class="arrow"></div>
+        <h5>Чому ФМФ?</h5>
+      </div>
+     <p>Навчання Фізико-Математичному Факультеті є відмінним вибором в якості відправної точки процвітаючою професійної кар'єри. Студенти та аспіранти Математики і Фізики мають творчі, оригінальні і гнучкі розуми. Отже, вони є успішними і популярними в багатьох сферах діяльності, таких як наукові дослідження, освіта, промисловість та фінанси.</p>
+    </section>
     <!--end why_fmf?-->
+
     <aside>
-      <section class="events bordered">
+      <!--events-->
+      <section class="streamer bordered">
         <div class="title_arrow"><div class="arrow"></div>
           <h3 class="title_list">{% trans "Upcoming events" %}:</h3>
         </div>
@@ -38,6 +40,9 @@
         <ul class="list">
           {% for event in events %}
           <li>
+            <!--TODO: if future event-->
+            <div class="bookmark"></div>
+
             <p class="date">
               {% ifequal event.date_from event.date_to %}{{ event.date_from }}
               {% else %}{{ event.date_from }} - {{ event.date_to }}
@@ -53,8 +58,9 @@
         {% endif %}
         <p class="show_all"><a href="{% url event-list %}">{% trans "Announcements" %} »</a></p>
       </section>
+      <!--end of events-->
       <!--news-->
-      <section id="news" class="bordered">
+      <section class="streamer bordered">
         <div class="title_arrow"><div class="arrow"></div>
           <h3 class="title_list">{% trans "Last news" %}:</h3>
         </div>
@@ -66,17 +72,15 @@
         <ul class="list">
           {% for news in news_list %}
           <li>
-            <figure>
+            <div class="img_descr">
               <a href="{{ news.get_absolute_url }}">
                 {% thumbnail news.main_image '100x100' crop='center' as im %}
                 <img src="{{ im.url }}" alt="{{ news.title }}">
                 {% endthumbnail %}
               </a>
-              <figcaption>
-                <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
-                <p class="short_description">{{ news.short_description|truncatewords:15 }}</p>
-              </figcaption>
-            </figure>
+              <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+              <p class="short_description">{{ news.short_description|truncatewords:15 }}</p>
+            </div>
           </li>
           {% endfor %}
         </ul>

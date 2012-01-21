@@ -33,19 +33,21 @@
   <section class="container bordered details">
     {% include 'includes/social_html.html' %}
     <p class="title">{{ news.title }}</p>
-    {% if news.main_image %}
-      {% thumbnail news.main_image "250x200" crop="center" as im %}
-        <img src="{{ im.url }}" alt="{{ news.title }}" width="{{ im.width }}" height="{{ im.height }}" />
-      {% endthumbnail %}
-    {% endif %}
+    <div class="img_descr">
+      {% if news.main_image %}
+        {% thumbnail news.main_image "250x200" crop="center" as im %}
+          <img src="{{ im.url }}" alt="{{ news.title }}" width="{{ im.width }}" height="{{ im.height }}" />
+        {% endthumbnail %}
+      {% endif %}
 
-    {% if news.date %}
-      <p class="date">{{ news.date }}</p>
-    {% endif %}
-    <p class="text">{{ news.description|safe }}</p>
-    <div class="news_detail_images_box">
-      {% with news.images.all as images %}
-        {% if images %}
+      {% if news.date %}
+        <p class="date">{{ news.date }}</p>
+      {% endif %}
+      <p class="text">{{ news.description|safe }}</p>
+    </div>
+    {% with news.images.all as images %}
+      {% if images %}
+        <div class="news_detail_images_box">
           <div id="news_detail_images">
             <ul>
               {% for image in images %}
@@ -61,9 +63,9 @@
               {% endfor %}
             </ul>
           </div>
-        {% endif %}
-      {% endwith %}
-    </div>
+        </div>
+      {% endif %}
+    {% endwith %}
   </section>
 {% endblock %}
 
