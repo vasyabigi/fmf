@@ -15,6 +15,7 @@ class FeedbackQuestionInline(BaseTranslationStackedInLine):
 
 class FeedbackAdmin(BaseTranslationAdmin):
     inlines = (FeedbackQuestionInline,)
+    prepopulated_fields = {"slug":("name",)}
 
 
 admin.site.register(Question, QuestionAdmin)

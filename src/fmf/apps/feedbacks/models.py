@@ -18,6 +18,7 @@ class Question(models.Model):
 
 class Feedback(models.Model):
     name = models.CharField(_("Name"), max_length=255)
+    slug = models.SlugField(_("Slug"), max_length=255)
     image = ImageField(_("Image"), upload_to='images/feedback/', blank=True, null=True)
     description = models.TextField(_("Description"))
 
@@ -27,6 +28,10 @@ class Feedback(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'feedback-detail', (self.slug,)
 
 
 class FeedbackQuestion(models.Model):
@@ -39,6 +44,7 @@ class FeedbackQuestion(models.Model):
     class Meta:
         verbose_name = _("Feedback question")
         verbose_name_plural = _("Feedback questions")
+        unique_together = (('feedback', 'question'),)
 
     def __unicode__(self):
-        return '%s - %s' % (self.feedback, self.question)
+        return u'%s - %s' % (self.feedback, self.question)
