@@ -1,9 +1,9 @@
 from modeltranslation.translator import translator, TranslationOptions
-
 from chunks.models import Chunk
 from news.models import News, NewsImage, Event
 from flatpages_my.models import FlatPage, FlatPageImage
 from feedbacks.models import Question, Feedback, FeedbackQuestion
+from seo.models import Seo
 
 
 class NewsTranslationOptions(TranslationOptions):
@@ -33,6 +33,8 @@ class FeedbackTranslationOptions(TranslationOptions):
 class FeedbackQuestionTranslationOptions(TranslationOptions):
     fields = ('answer',)
 
+class SeoTranslationOptions(TranslationOptions):
+    fields = ('title', 'description', 'keywords')
 
 
 translator.register(News, NewsTranslationOptions)
@@ -44,3 +46,4 @@ translator.register(FlatPageImage, FlatPageImageTranslationOptions)
 translator.register(Question, QuestionTranslationOptions)
 translator.register(Feedback, FeedbackTranslationOptions)
 translator.register(FeedbackQuestion, FeedbackQuestionTranslationOptions)
+translator.register(Seo, SeoTranslationOptions)
