@@ -3,6 +3,7 @@ from modeltranslation.translator import translator, TranslationOptions
 from chunks.models import Chunk
 from news.models import News, NewsImage, Event
 from flatpages_my.models import FlatPage, FlatPageImage
+from feedbacks.models import Question, Feedback, FeedbackQuestion
 
 
 class NewsTranslationOptions(TranslationOptions):
@@ -23,9 +24,23 @@ class FlatPageTranslationOptions(TranslationOptions):
 class FlatPageImageTranslationOptions(TranslationOptions):
     fields = ('title',)
 
+class QuestionTranslationOptions(TranslationOptions):
+    fields = ('question',)
+
+class FeedbackTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
+class FeedbackQuestionTranslationOptions(TranslationOptions):
+    fields = ('answer',)
+
+
+
 translator.register(News, NewsTranslationOptions)
 translator.register(NewsImage, NewsImageTranslationOptions)
 translator.register(Event, EventTranslationOptions)
 translator.register(Chunk, ChunkTranslationOptions)
 translator.register(FlatPage, FlatPageTranslationOptions)
 translator.register(FlatPageImage, FlatPageImageTranslationOptions)
+translator.register(Question, QuestionTranslationOptions)
+translator.register(Feedback, FeedbackTranslationOptions)
+translator.register(FeedbackQuestion, FeedbackQuestionTranslationOptions)

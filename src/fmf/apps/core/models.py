@@ -14,7 +14,7 @@ from sorl.thumbnail.shortcuts import get_thumbnail
 
 class IndexSliderImage(models.Model):
     page = models.OneToOneField(FlatPage, verbose_name=_("Page"), unique=True)
-    image = ImageField(_("Image"), upload_to='index/images/')
+    image = ImageField(_("Image"), upload_to='images/index/')
     position = PositionField()
     is_active = models.BooleanField(_("Active"), default=True)
 

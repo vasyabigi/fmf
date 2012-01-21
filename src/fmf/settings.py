@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'core',
     'news',
     'flatpages_my',
+    'feedbacks',
 
 )
 

@@ -65,7 +65,7 @@ def news_empty_languages(sender, instance, **kwargs):
 class NewsImage(models.Model):
     news = models.ForeignKey(News, verbose_name=_("News"), related_name='images')
     title = models.CharField(_("Title"), max_length=256, blank=True, null=True)
-    image = ImageField(upload_to='news/images/', verbose_name=_("Image"))
+    image = ImageField(upload_to='images/news/', verbose_name=_("Image"))
     position = PositionField(_("Position"), collection='news')
 
     class Meta:
@@ -85,7 +85,7 @@ class Event(models.Model):
     slug = models.SlugField(_("Slug"), max_length=256)
     date_from = models.DateField(_("Date from"), help_text=_("If date only one - put it just here"))
     date_to = models.DateField(_("Date to"), blank=True, null=True)
-    image = ImageField(upload_to='events/images/', verbose_name=_("Main image"), blank=True, null=True)
+    image = ImageField(upload_to='images/events/', verbose_name=_("Main image"), blank=True, null=True)
     short_description = models.TextField(_("Short Description"))
     description = models.TextField(_("Description"))
     is_active = models.BooleanField(_("Active"), default=True)
