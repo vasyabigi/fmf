@@ -59,4 +59,4 @@ def do_date_range(parser, token):
         format = ""
     return DateRangeNode(chunks[1],chunks[2],format)
 
-register.tag('date_range',do_date_range)
+register.tag('date_range', do_date_range)

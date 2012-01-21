@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n thumbnail flatpages %}
+{% load i18n thumbnail flatpages core_tags %}
 
 {% block content %}
   <div class="container">
@@ -58,6 +58,11 @@
         <div class="title_arrow"><div class="arrow"></div>
           <h3 class="title_list">{% trans "Last news" %}:</h3>
         </div>
+{#        {% for feedback in feedbacks %}#}
+{#          {% with feedback|get_random_question as result %}#}
+{#            {{ result.question }} - {{ result.answer }}#}
+{#          {% endwith %}#}
+{#        {% endfor %}#}
         <ul class="list">
           {% for news in news_list %}
           <li>

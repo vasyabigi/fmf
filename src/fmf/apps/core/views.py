@@ -13,7 +13,7 @@ from django.core.cache import cache
 from models import IndexSliderImage
 from forms import ContactForm, QuestionForm
 from news.models import News, Event
-
+from feedbacks.models import Feedback
 
 
 logger = logging.getLogger("fmf.%s" % __name__)
@@ -28,10 +28,13 @@ class IndexView(TemplateView):
         if not images:
             images = IndexSliderImage.objects.filter(is_active=True)
             cache.set('images', images)
+
+        feedbacks = Feedback.objects.all().order_by('?')[:3]
         context.update({
             'images': images,
             'news_list': News.objects.filter(is_active=True)[:3],
-            'events': Event.objects.filter(is_active=True, date_to__gte=datetime.datetime.today()).order_by('-date_to')[:3]
+            'events': Event.objects.filter(is_active=True, date_to__gte=datetime.datetime.today()).order_by('-date_to')[:3],
+            'feedbacks': feedbacks,
         })
         return context
 

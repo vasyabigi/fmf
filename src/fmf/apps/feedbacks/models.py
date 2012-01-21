@@ -35,7 +35,7 @@ class Feedback(models.Model):
 
 
 class FeedbackQuestion(models.Model):
-    feedback = models.ForeignKey(Feedback, verbose_name=_("Feedback"))
+    feedback = models.ForeignKey(Feedback, verbose_name=_("Feedback"), related_name='questions')
     question = models.ForeignKey(Question, verbose_name=_("Question"))
     answer = models.TextField(_("Answer"))
     is_on_main = models.BooleanField(_("Can be main page?"), default=True)
