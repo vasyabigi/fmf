@@ -158,6 +158,23 @@ var Fmf = (function(){
                     form.html('<div id="loading"><img src="/static/images/loading-big.gif" alt="loading"></div>');
                 })
             }
+        },
+
+        ScaleArrow: function(){
+            $('.show_all a').hover(
+                function(){
+                    $(this).parent().siblings('.arrow').stop(true,true).toggleClass('arrow_scaled');
+                }
+
+            )
+        },
+
+        FloatFooter: function(){
+            var contentH = ($('body > article').height()+207);
+            var windowH = $(window).height();
+            if (contentH < windowH){
+                $('footer').addClass('fixed_footer');
+            }
         }
     }
 })($);
@@ -170,6 +187,8 @@ $(document).ready(function(){
     Fmf.EntrantsSlider();
     Fmf.NewsDetailsSldier();
     Fmf.ContactForm();
+    Fmf.ScaleArrow();
+    Fmf.FloatFooter();
     // Fmf.Circulate();
 
 

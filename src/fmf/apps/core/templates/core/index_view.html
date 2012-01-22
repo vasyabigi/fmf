@@ -2,8 +2,13 @@
 
 {% load i18n thumbnail flatpages core_tags %}
 
-{% block content %}
-  <div class="container">
+
+{% block article %}
+
+<!--left column-->
+  <article class="left_column">
+
+  {% block content %}
   <!--slider-->
     <section id="slider_box" class="bordered">
       <div id="slider">
@@ -28,24 +33,48 @@
       </div>
      <p>Навчання Фізико-Математичному Факультеті є відмінним вибором в якості відправної точки процвітаючою професійної кар'єри. Студенти та аспіранти Математики і Фізики мають творчі, оригінальні і гнучкі розуми. Отже, вони є успішними і популярними в багатьох сферах діяльності, таких як наукові дослідження, освіта, промисловість та фінанси.</p>
     </section>
-    <section id="feedbacks">
-      {% for feedback in feedbacks %}
-        {{ feedback.name }}
-        {{ feedback.description }}
-        {% thumbnail feedback.image '200x100' crop='center' as im %}
-          <img src="{{ im.url }}" alt="{{ image.page.title }}">
-        {% endthumbnail %}
-        {% with feedback|get_random_question as result %}
-          {{ result.question }} - {{ result.answer }}
-        {% endwith %}
-      {% endfor %}
-    </section>
     <!--end why_fmf?-->
+
+    <!--feedbacks-->
+    <section id="feedbacks" class="bordered">
+      <div class="title_arrow"><div class="arrow"></div>
+        <h3 class="title_list">Відгуки:</h3>
+        <p class="show_all"><a href="{% url feedback-list %}">Всі відгуки »</a></p>
+      </div>
+      <div class="img_descr">
+        {% for feedback in feedbacks %}
+        <a href="#">
+          {% thumbnail feedback.image '80x100' crop='center' as im %}
+          <img src="{{ im.url }}" alt="{{ image.page.title }}">
+          {% endthumbnail %}
+        </a>
+        <a href class="name">{{ feedback.name }}</a><br/>
+        <span class="status"><i>&nbsp&nbsp {{ feedback.description }}</i></span>
+        {% with feedback|get_random_question as result %}
+        <p>-{{ result.question }} : <br/>
+           <i>"{{ result.answer }}"</i>
+        </p>
+        {% endwith %}
+        {% endfor %}
+      </div>
+    </section>
+    <!--END feedbacks-->
+  {% endblock %}
+  </article>
+<!--END left column-->
+
+{% endblock %}
+
+{% block aside %}
+
+<!--right column-->
     <aside>
+
       <!--events-->
       <section class="streamer bordered">
         <div class="title_arrow"><div class="arrow"></div>
           <h3 class="title_list">{% trans "Upcoming events" %}:</h3>
+          <p class="show_all"><a href="{% url event-list %}">{% trans "Announcements" %} »</a></p>
         </div>
         {% if events %}
         <ul class="list">
@@ -53,7 +82,6 @@
           <li>
             <!--TODO: if future event-->
             <div class="bookmark"></div>
-
             <p class="date">
               {% ifequal event.date_from event.date_to %}{{ event.date_from }}
               {% else %}{{ event.date_from }} - {{ event.date_to }}
@@ -67,13 +95,15 @@
         {% else %}
         <p>Put something here if no events</p>
         {% endif %}
-        <p class="show_all"><a href="{% url event-list %}">{% trans "Announcements" %} »</a></p>
       </section>
       <!--end of events-->
+
       <!--news-->
       <section class="streamer bordered">
-        <div class="title_arrow"><div class="arrow"></div>
+        <div class="title_arrow">
+          <div class="arrow"></div>
           <h3 class="title_list">{% trans "Last news" %}:</h3>
+          <p class="show_all"><a href="{% url news-list %}">{% trans "All news" %} »</a></p>
         </div>
         <ul class="list">
           {% for news in news_list %}
@@ -90,15 +120,14 @@
           </li>
           {% endfor %}
         </ul>
-        <div class="show_all">
-          <a href="{% url news-list %}">{% trans "All news" %} »</a>
-        </div>
-      </section><!--end news-->
+      </section>
+      <!--end news-->
 
     </aside>
-  </div>
-  <div class="clearfix"></div>
+
+<!--END right column-->
 {% endblock %}
+
 
 {% block extra_js %}
   <script src="{{ STATIC_URL }}js/jquery.sudoSlider.js"></script>
