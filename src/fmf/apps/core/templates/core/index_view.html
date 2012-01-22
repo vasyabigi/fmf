@@ -39,16 +39,16 @@
     <section id="feedbacks" class="bordered">
       <div class="title_arrow"><div class="arrow"></div>
         <h3 class="title_list">Відгуки:</h3>
-        <p class="show_all"><a href="{% url feedback-list %}">Всі відгуки »</a></p>
+        <p class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></p>
       </div>
       <div class="img_descr">
         {% for feedback in feedbacks %}
-        <a href="#">
+        <a href="{{ feedback.get_absolute_url }}">
           {% thumbnail feedback.image '80x100' crop='center' as im %}
           <img src="{{ im.url }}" alt="{{ image.page.title }}">
           {% endthumbnail %}
         </a>
-        <a href class="name">{{ feedback.name }}</a><br/>
+        <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
         <span class="status"><i>&nbsp&nbsp {{ feedback.description }}</i></span>
         {% with feedback|get_random_question as result %}
         <p>-{{ result.question }} : <br/>
@@ -74,7 +74,7 @@
       <section class="streamer bordered">
         <div class="title_arrow"><div class="arrow"></div>
           <h3 class="title_list">{% trans "Upcoming events" %}:</h3>
-          <p class="show_all"><a href="{% url event-list %}">{% trans "Announcements" %} »</a></p>
+          <p class="show_all"><a href="{% url event-list %}">{% trans "All" %} »</a></p>
         </div>
         {% if events %}
         <ul class="list">
@@ -103,7 +103,7 @@
         <div class="title_arrow">
           <div class="arrow"></div>
           <h3 class="title_list">{% trans "Last news" %}:</h3>
-          <p class="show_all"><a href="{% url news-list %}">{% trans "All news" %} »</a></p>
+          <p class="show_all"><a href="{% url news-list %}">{% trans "All" %} »</a></p>
         </div>
         <ul class="list">
           {% for news in news_list %}

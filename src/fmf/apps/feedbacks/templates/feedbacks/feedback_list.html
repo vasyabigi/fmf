@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
+{% block breadcrumbs %}
+  <span><a href="{% url index-view %}">{% trans "Home" %}</a> ></span>
+  <span>{% trans "Feedbacks" %}</span>
+{% endblock %}
+
 {% block content %}
-  <p>Ololo</p>
+  <ul>
+    {% for feedback in feedbacks %}
+      <li><a href="{{ feedback.get_absolute_url }}">{{ feedback.name }}</a></li>
+    {% endfor %}
+  </ul>
 {% endblock %}
