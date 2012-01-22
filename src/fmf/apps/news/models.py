@@ -25,8 +25,6 @@ class News(models.Model):
     position = PositionField(_("Position"), default=0)
     is_active = models.BooleanField(_("Active"), default=True)
     created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
-    meta_keywords = models.CharField(_("Meta keywords"), max_length=128, blank=True, null=True)
-    meta_description = models.TextField(_("Meta description"), blank=True, null=True)
 
     class Meta:
         ordering = ('position',)
@@ -90,8 +88,6 @@ class Event(models.Model):
     description = models.TextField(_("Description"))
     is_active = models.BooleanField(_("Active"), default=True)
     created = models.DateTimeField(_("Created"), auto_now_add=True, editable=False)
-    meta_keywords = models.CharField(_("Meta keywords"), max_length=128, blank=True, null=True)
-    meta_description = models.TextField(_("Meta description"), blank=True, null=True)
 
     class Meta:
         ordering = ('-date_to',)

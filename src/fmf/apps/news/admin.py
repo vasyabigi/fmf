@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext_lazy as _
 
 from core.admin import BaseTranslationAdmin, BaseTranslationTabularInLine
 from models import News, NewsImage, Event

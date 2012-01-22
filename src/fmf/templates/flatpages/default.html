@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 
-{% load i18n thumbnail %}
+{% load i18n thumbnail cache seo_tags %}
+
+{% block meta_information %}
+  {% cache 500 meta_information LANGUAGE_CODE %}
+    <meta name="description" content="{% seo description for flatpage %}" />
+    <meta name="keywords" content="{% seo keywords for flatpage %}" />
+    <meta name="title" content="{% seo title for flatpage %}">
+  {% endcache %}
+{% endblock %}
 
 {% block title %}
    {% trans "FPM" %} - {{ flatpage.title }}
@@ -8,15 +16,6 @@
 
 {% block extra-head %}
 
-{% endblock %}
-
-{% block meta-information %}
-  {% if news.meta_keywords %}
-    <meta name="keywords" content="{{ flatpage.meta_keywords }}"/>
-    <meta name="description" content="{{ flatpage.meta_description }}"/>
-  {% else %}
-    {{ block.super }}
-  {% endif %}
 {% endblock %}
 
 {% block breadcrumbs %}

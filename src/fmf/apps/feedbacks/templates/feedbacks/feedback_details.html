@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
+{% load cache i18n seo_tags %}
+
+{% block meta_information %}
+  {% cache 500 meta_information LANGUAGE_CODE %}
+    <meta name="description" content="{% seo description for feedback %}" />
+    <meta name="keywords" content="{% seo keywords for feedback %}" />
+    <meta name="title" content="{% seo title for feedback %}">
+  {% endcache %}
+{% endblock %}
+
+{% block title %}{{ feedback }}{% endblock %}
+
 {% block content %}
   <p>{{ feedback }}</p>
 {% endblock %}

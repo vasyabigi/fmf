@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
 
-{% load thumbnail i18n %}
+{% load thumbnail i18n seo_tags cache %}
+
+{% block meta_information %}
+  {% cache 500 meta_information LANGUAGE_CODE %}
+    <meta name="description" content="{% seo description for event %}" />
+    <meta name="keywords" content="{% seo keywords for event %}" />
+    <meta name="title" content="{% seo title for event %}">
+  {% endcache %}
+{% endblock %}
 
 {% block title %}{{ event.title }}{% endblock %}
 
 {% block extra-head %}
   {% include 'includes/social_scripts.html' %}
-{% endblock %}
-
-{% block meta-information %}
-  {% if event.meta_keywords %}
-    <meta name="keywords" content="{{ event.meta_keywords }}"/>
-    <meta name="description" content="{{ event.meta_description }}"/>
-  {% else %}
-    {{ block.super }}
-  {% endif %}
 {% endblock %}
 
 {% block breadcrumbs %}

@@ -105,6 +105,16 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'templates'),
 )
 
+PROJECT_APPS = (
+    'core',
+    'news',
+    'flatpages_my',
+    'feedbacks',
+
+    #Need to be last
+    'seo',
+)
+
 INSTALLED_APPS = (
     'localeurl',
     'admin_tools',
@@ -131,13 +141,7 @@ INSTALLED_APPS = (
     'memcache_status',
     'admin_tools',
 
-    #apps
-    'core',
-    'news',
-    'flatpages_my',
-    'feedbacks',
-
-)
+) + PROJECT_APPS
 
 LOGGING = {
     'version': 1,
@@ -203,6 +207,15 @@ except ImportError:
     print "LOCAL SETTINGS COULD NOT BE FOUND!"
 
 
+#admin_tools
 ADMIN_TOOLS_MENU = 'fmf.menu.CustomMenu'
 ADMIN_TOOLS_INDEX_DASHBOARD = 'fmf.dashboard.CustomIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fmf.dashboard.CustomAppIndexDashboard'
+
+#seo
+SEO_FOR_MODELS = [
+    'news.models.News',
+    'news.models.Event',
+    'flatpages_my.models.FlatPage',
+    'feedbacks.models.Feedback',
+]

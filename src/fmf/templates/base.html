@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-{% load i18n localeurl_tags chunks cache %}
+{% load i18n localeurl_tags chunks cache seo_tags %}
 
 <!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7"> <![endif]-->
@@ -12,11 +12,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="">
-    <meta name="description" content="">
+    {% block meta_information %}
+      {% cache 500 meta_information LANGUAGE_CODE %}
+        <meta name="description" content="{% seo description %}" />
+        <meta name="keywords" content="{% seo keywords %}" />
+        <meta name="title" content="{% seo title %}">
+      {% endcache %}
+    {% endblock %}
     <meta name="google-site-verification" content="">
     <meta name="author" content="Vasya&Seroga">
-    <meta name="Copyright" content="Copyright V&S 2011. All Rights Reserved.">
+    <meta name="Copyright" content="Copyright V&S 2012. All Rights Reserved.">
     <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon1.ico">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,11 +35,6 @@
     <title>
       {% block title %}{% trans "Faculty of Physics and Mathematics" %}{% endblock %}
     </title>
-    {% cache 500 meta_information LANGUAGE_CODE %}
-      {% block meta-information %}
-        {% chunk "meta_information" %}
-      {% endblock %}
-    {% endcache %}
     {% block extra-head %}{% endblock %}
   </head>
   <body>
