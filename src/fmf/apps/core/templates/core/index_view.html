@@ -36,28 +36,30 @@
     <!--end why_fmf?-->
 
     <!--feedbacks-->
-    <section id="feedbacks" class="bordered">
-      <div class="title_arrow"><div class="arrow"></div>
-        <h3 class="title_list">Відгуки:</h3>
-        <p class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></p>
-      </div>
-      <div class="img_descr">
-        {% for feedback in feedbacks %}
-        <a href="{{ feedback.get_absolute_url }}">
-          {% thumbnail feedback.image '80x100' crop='center' as im %}
-          <img src="{{ im.url }}" alt="{{ image.page.title }}">
-          {% endthumbnail %}
-        </a>
-        <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
-        <span class="status"><i>&nbsp&nbsp {{ feedback.description }}</i></span>
-        {% with feedback|get_random_question as result %}
-        <p>-{{ result.question }} : <br/>
-           <i>"{{ result.answer }}"</i>
-        </p>
-        {% endwith %}
-        {% endfor %}
-      </div>
-    </section>
+    {% if feedbacks %}
+      <section id="feedbacks" class="bordered">
+        <div class="title_arrow"><div class="arrow"></div>
+          <h3 class="title_list">Відгуки:</h3>
+          <p class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></p>
+        </div>
+        <div class="img_descr">
+          {% for feedback in feedbacks %}
+          <a href="{{ feedback.get_absolute_url }}">
+            {% thumbnail feedback.image '80x100' crop='center' as im %}
+            <img src="{{ im.url }}" alt="{{ image.page.title }}">
+            {% endthumbnail %}
+          </a>
+          <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
+          <span class="status"><i>&nbsp&nbsp {{ feedback.description }}</i></span>
+          {% with feedback|get_random_question as result %}
+          <p>-{{ result.question }} : <br/>
+             <i>"{{ result.answer }}"</i>
+          </p>
+          {% endwith %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
     <!--END feedbacks-->
   {% endblock %}
   </article>

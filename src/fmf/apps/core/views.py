@@ -75,22 +75,3 @@ def contacts(request):
 
 def contanct_thank_you(request):
     return TemplateResponse(request, 'contacts/thank_you.html')
-
-
-def question(request):
-    question_form = QuestionForm(request.POST or None)
-    if request.method == "POST":
-        if question_form.is_valid():
-            answer = question_form.cleaned_data['answer']
-            if int(answer) == 3:
-               result = 'Вітаю'
-            else:
-                result = 'Помилка'
-            context = {
-                'result': result,
-            }
-            return TemplateResponse(request, 'core/question.html', context)
-    context = {
-        'question_form': question_form,
-    }
-    return TemplateResponse(request, 'core/question.html', context)
