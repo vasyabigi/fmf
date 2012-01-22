@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
-{% load thumbnail i18n %}
+{% load thumbnail i18n cache seo_tags %}
+
+{% block meta_information %}
+  {% cache 500 meta_information LANGUAGE_CODE %}
+    <meta name="description" content="{% seo description for news %}" />
+    <meta name="keywords" content="{% seo keywords for news %}" />
+    <meta name="title" content="{% seo title for news %}">
+  {% endcache %}
+{% endblock %}
 
 {% block title %}{{ news.title }}{% endblock %}
 
@@ -12,15 +20,6 @@
   {% thumbnail news.main_image "156x156" as im %}
     <meta property="og:image" content="http://{{ request.get_host }}{{ im.url }}" />
   {% endthumbnail %}
-{% endblock %}
-
-{% block meta-information %}
-  {% if news.meta_keywords %}
-    <meta name="keywords" content="{{ news.meta_keywords }}"/>
-    <meta name="description" content="{{ news.meta_description }}"/>
-  {% else %}
-    {{ block.super }}
-  {% endif %}
 {% endblock %}
 
 {% block breadcrumbs %}
