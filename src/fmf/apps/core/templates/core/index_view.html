@@ -83,7 +83,7 @@
           {% for event in events %}
           <li>
             <!--TODO: if future event-->
-            <div class="bookmark"></div>
+{#            <div class="bookmark"></div>#}
             <p class="date">
               {% ifequal event.date_from event.date_to %}{{ event.date_from }}
               {% else %}{{ event.date_from }} - {{ event.date_to }}
