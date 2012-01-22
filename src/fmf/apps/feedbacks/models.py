@@ -19,7 +19,7 @@ class Question(models.Model):
 class Feedback(models.Model):
     name = models.CharField(_("Name"), max_length=255)
     slug = models.SlugField(_("Slug"), max_length=255)
-    image = ImageField(_("Image"), upload_to='images/feedback/', blank=True, null=True)
+    image = ImageField(_("Image"), upload_to='images/feedbacks/', blank=True, null=True)
     description = models.TextField(_("Description"))
 
     class Meta:

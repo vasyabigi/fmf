@@ -7,19 +7,19 @@ from seo.models import Seo
 
 
 class NewsTranslationOptions(TranslationOptions):
-    fields = ('title', 'short_description', 'description', 'meta_keywords', 'meta_description')
+    fields = ('title', 'short_description', 'description',)
 
 class NewsImageTranslationOptions(TranslationOptions):
     fields = ('title',)
 
 class EventTranslationOptions(TranslationOptions):
-    fields = ('title', 'short_description', 'description', 'meta_keywords', 'meta_description')
+    fields = ('title', 'short_description', 'description',)
 
 class ChunkTranslationOptions(TranslationOptions):
     fields = ('content',)
 
 class FlatPageTranslationOptions(TranslationOptions):
-    fields = ('title', 'content', 'meta_keywords', 'meta_description', 'meta_title')
+    fields = ('title', 'content')
 
 class FlatPageImageTranslationOptions(TranslationOptions):
     fields = ('title',)

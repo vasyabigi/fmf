@@ -26,13 +26,13 @@ class IndexView(TemplateView):
         context = super(IndexView, self).get_context_data(**kwargs)
         images = cache.get('images', None)
         if not images:
-            images = IndexSliderImage.objects.filter(is_active=True)
+            images = IndexSliderImage.objects.filter(is_active=True).select_related()
             cache.set('images', images)
 
-        feedbacks = Feedback.objects.all().order_by('?')[:3]
+        feedbacks = Feedback.objects.order_by('?').select_related()[:3]
         context.update({
             'images': images,
-            'news_list': News.objects.filter(is_active=True)[:3],
+            'news_list': News.objects.filter(is_active=True).select_related()[:3],
             'events': Event.objects.filter(is_active=True, date_to__gte=datetime.datetime.today()).order_by('-date_to')[:3],
             'feedbacks': feedbacks,
         })
