@@ -28,7 +28,7 @@
     <!--end slider-->
 
     <!--why_fmf?-->
-    <section id="why_fmf" class="bordered">
+    <section id="why_fmf" class="bordered main_sect">
       <div class="title_arrow"><div class="arrow"></div>
         <h5>Чому ФМФ?</h5>
       </div>
@@ -38,10 +38,10 @@
 
     <!--feedbacks-->
     {% if feedbacks %}
-      <section id="feedbacks" class="bordered">
+      <section id="feedbacks" class="bordered main_sect">
         <div class="title_arrow"><div class="arrow"></div>
           <h3 class="title_list">Відгуки:</h3>
-          <p class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></p>
+          <span class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></span>
         </div>
         <div class="img_descr">
           {% for feedback in feedbacks %}
