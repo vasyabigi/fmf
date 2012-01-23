@@ -313,17 +313,12 @@ article.left_column {
   float:left;
   margin-left:10%;
 }
-
-#content {
-  position: relative;
-  padding:20px 0;
-  border-top:1px solid #fff;
-  background: -webkit-gradient(linear, 50% 36, 50% 136, color-stop(0%, #E3E3E2), color-stop(100%, #d7d7d7));
-  background: -moz-linear-gradient(#E3E3E2 36px,#d7d7d7 136px);
-  background: -o-linear-gradient(#E3E3E2 36px,#d7d7d7 136px);
-  background: linear-gradient(#E3E3E2 36px,#d7d7d7 136px);
+article .main_sect img, #feedback_list ul li img {
+  padding: 4px;
+  background: #d7d7d7;
+  border: 1px solid #bbb;
+  box-shadow: inset 1px 1px 0 #bbb;
 }
-
   /*Slider*/
 
 #slider_box {
@@ -462,10 +457,49 @@ article.left_column {
 
 }
 #feedbacks .img_descr {
-  margin:10px;
+  margin:10px 0;
+  padding: 0 10px 5px;
+  border-bottom: 1px solid #d5d5d5;
+  box-shadow:0 1px 0 #fff;
 }
-#feedbacks .status {
+.status {
+  padding: 0 20px;
   color: #888;
+}
+.name_status {
+  margin-top:0;
+}
+#feedbacks .img_descr:nth-child(odd) img {
+  float:right;
+}
+#feedbacks .img_descr:nth-child(odd) .name_status {
+  text-align:right;
+}
+
+#feedback_list ul {
+  position: relative;
+  margin: 0 0 10px;
+  overflow: hidden;
+}
+#feedback_list ul li {
+  float: left;
+  width: 29%;
+  min-width: 220px;
+  margin-left: 1%;
+  margin-top: 1px;
+  padding: 20px 10px;
+  margin-bottom: -20000px;
+  padding-bottom: 20000px;
+  background:#f4f4f4;
+  border: 1px solid #CDCDCD;
+  box-shadow:1px -1px 0 #bbb;
+}
+#feedback_list ul li > a {
+  display: block;
+  text-align: center;
+}
+#feedback_list ul li > a img {
+  box-shadow: inset 1px -1px 0 #bbb;
 }
   /*END Feedbacks*/
 
@@ -494,7 +528,7 @@ article.left_column {
   -webkit-transition:all 0.2s ease-in;
 }
 .streamer ul li a, .name {
-  margin-right: 30px;
+  margin-right: 10px;
   font-size: 1.2em;
   font-style: italic;
   font-family: "dejavu sans", arial, sans-serif;
@@ -518,10 +552,14 @@ article.left_column {
 .img_descr {
   overflow: hidden;
 }
-.img_descr img, .img_descr img {
-float:left;
-margin-right: 10px;
-  }
+.img_descr p {
+  margin-top:0;
+}
+.img_descr img {
+  float:left;
+  margin-right: 10px;
+  margin-bottom: 1px;
+}
 .list li p  {
   margin-left:10px;
 }
