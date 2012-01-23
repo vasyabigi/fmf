@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-18 22:57+0200\n"
-"PO-Revision-Date: 2012-01-18 23:00\n"
+"POT-Creation-Date: 2012-01-23 00:26+0200\n"
+"PO-Revision-Date: 2012-01-23 00:30\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgid "English"
 msgstr "Eng"
 
 #: apps/core/forms.py:8 apps/flatpages_my/admin.py:18
-#: apps/flatpages_my/models.py:9
+#: apps/flatpages_my/models.py:9 apps/seo/models.py:29 apps/seo/models.py:33
 msgid "URL"
 msgstr "URL"
 
@@ -85,6 +85,7 @@ msgid "Email"
 msgstr "Email"
 
 #: apps/core/forms.py:26 apps/core/templates/contacts/manager_message.html:2
+#: apps/feedbacks/models.py:20
 msgid "Name"
 msgstr "Ім'я"
 
@@ -96,13 +97,13 @@ msgstr "Повідомлення"
 msgid "Page"
 msgstr "Сторінка"
 
-#: apps/core/models.py:17 apps/core/models.py:42
-#: apps/flatpages_my/models.py:38 apps/news/models.py:51
-#: apps/news/models.py:68 apps/news/models.py:73 apps/news/models.py:116
+#: apps/core/models.py:17 apps/core/models.py:42 apps/feedbacks/models.py:22
+#: apps/flatpages_my/models.py:35 apps/news/models.py:49
+#: apps/news/models.py:66 apps/news/models.py:71 apps/news/models.py:112
 msgid "Image"
 msgstr "Зображення"
 
-#: apps/core/models.py:19 apps/news/models.py:26 apps/news/models.py:91
+#: apps/core/models.py:19 apps/news/models.py:26 apps/news/models.py:89
 msgid "Active"
 msgstr "Активне"
 
@@ -119,7 +120,7 @@ msgstr "Зображення для слайдера"
 msgid "Image for %s"
 msgstr "зображення для %s"
 
-#: apps/core/models.py:40 apps/news/models.py:49 apps/news/models.py:114
+#: apps/core/models.py:40 apps/news/models.py:47 apps/news/models.py:110
 msgid "No image"
 msgstr "Немає зображення"
 
@@ -140,8 +141,8 @@ msgstr "Ви можете зв'язатись з нами тут:"
 msgid "Send"
 msgstr "Відправити"
 
-#: apps/core/templates/contacts/contacts.html:38 templates/base.html:31
-#: templates/base.html.py:69
+#: apps/core/templates/contacts/contacts.html:38 templates/base.html:36
+#: templates/base.html.py:48
 msgid "Faculty of Physics and Mathematics"
 msgstr "Фізико Математичний Факультет"
 
@@ -149,29 +150,29 @@ msgstr "Фізико Математичний Факультет"
 msgid "Content"
 msgstr "Повідомлення"
 
-#: apps/core/templates/core/index_view.html:35
+#: apps/core/templates/core/index_view.html:43
+#: apps/core/templates/core/index_view.html:79
+#: apps/core/templates/core/index_view.html:108
+msgid "All"
+msgstr "Усі"
+
+#: apps/core/templates/core/index_view.html:78
 msgid "Upcoming events"
 msgstr "Найближчі події"
 
-#: apps/core/templates/core/index_view.html:53
-msgid "Announcements"
-msgstr "Анонси подій"
-
-#: apps/core/templates/core/index_view.html:57
+#: apps/core/templates/core/index_view.html:107
 msgid "Last news"
 msgstr "Останні новини"
 
-#: apps/core/templates/core/index_view.html:76
-msgid "All news"
-msgstr "Усі новини"
-
 #: apps/core/templates/core/nav.html:4
-#: apps/news/templates/event/event_detail.html:21
+#: apps/feedbacks/templates/feedbacks/feedback_details.html:6
+#: apps/feedbacks/templates/feedbacks/feedback_list.html:6
+#: apps/news/templates/event/event_detail.html:20
 #: apps/news/templates/event/event_list.html:8
 #: apps/news/templates/event/event_list_past.html:8
-#: apps/news/templates/news/news_details.html:27
+#: apps/news/templates/news/news_details.html:26
 #: apps/news/templates/news/news_list.html:8 templates/flatpages/about.html:12
-#: templates/flatpages/cooperation.html:12 templates/flatpages/default.html:23
+#: templates/flatpages/cooperation.html:12 templates/flatpages/default.html:22
 #: templates/flatpages/entrants.html:12 templates/flatpages/students.html:12
 msgid "Home"
 msgstr "Головна"
@@ -193,11 +194,54 @@ msgstr "Абітурієнтам"
 msgid "Cooperation"
 msgstr "Співробітництво"
 
-#: apps/flatpages_my/admin.py:37
-msgid "Meta information"
-msgstr "Пошукова інформація"
+#: apps/feedbacks/models.py:9
+msgid "question"
+msgstr "Питання"
 
-#: apps/flatpages_my/admin.py:38
+#: apps/feedbacks/models.py:12 apps/feedbacks/models.py:39
+msgid "Question"
+msgstr "Питання"
+
+#: apps/feedbacks/models.py:13
+msgid "Questions"
+msgstr "Питання"
+
+#: apps/feedbacks/models.py:21 apps/news/models.py:20 apps/news/models.py:83
+msgid "Slug"
+msgstr "Посилання"
+
+#: apps/feedbacks/models.py:23 apps/news/models.py:23 apps/news/models.py:88
+#: apps/seo/models.py:12
+msgid "Description"
+msgstr "Опис"
+
+#: apps/feedbacks/models.py:26 apps/feedbacks/models.py:38
+msgid "Feedback"
+msgstr "Відгук"
+
+#: apps/feedbacks/models.py:27
+#: apps/feedbacks/templates/feedbacks/feedback_details.html:7
+#: apps/feedbacks/templates/feedbacks/feedback_list.html:7
+msgid "Feedbacks"
+msgstr "Відгуки"
+
+#: apps/feedbacks/models.py:40
+msgid "Answer"
+msgstr "Відповідь"
+
+#: apps/feedbacks/models.py:41
+msgid "Can be main page?"
+msgstr "Може бути на головній?"
+
+#: apps/feedbacks/models.py:45
+msgid "Feedback question"
+msgstr "Питання"
+
+#: apps/feedbacks/models.py:46
+msgid "Feedback questions"
+msgstr "Питання"
+
+#: apps/flatpages_my/admin.py:37
 msgid "Advanced options"
 msgstr "Додаткові опції"
 
@@ -235,109 +279,87 @@ msgstr ""
 "Якщо це відмічено, лише зареєстровані користувачі зможуть побачити "
 "сторінку."
 
-#: apps/flatpages_my/models.py:17
-msgid "Meta title"
-msgstr "Meta title"
-
-#: apps/flatpages_my/models.py:18 apps/news/models.py:29
-#: apps/news/models.py:94
-msgid "Meta description"
-msgstr "meta-description"
-
-#: apps/flatpages_my/models.py:19 apps/news/models.py:28
-#: apps/news/models.py:93
-msgid "Meta keywords"
-msgstr "meta-keywords"
-
-#: apps/flatpages_my/models.py:24
+#: apps/flatpages_my/models.py:21
 msgid "flat page"
 msgstr "Проста сторінка"
 
-#: apps/flatpages_my/models.py:25
+#: apps/flatpages_my/models.py:22
 msgid "flat pages"
 msgstr "Прості сторінки"
 
-#: apps/flatpages_my/models.py:37 apps/news/models.py:19
-#: apps/news/models.py:67 apps/news/models.py:84
+#: apps/flatpages_my/models.py:34 apps/news/models.py:19
+#: apps/news/models.py:65 apps/news/models.py:82 apps/seo/models.py:11
 msgid "Title"
 msgstr "Назва"
 
-#: apps/flatpages_my/models.py:42
+#: apps/flatpages_my/models.py:39
 msgid "flat page image"
 msgstr "Картинка"
 
-#: apps/flatpages_my/models.py:43
+#: apps/flatpages_my/models.py:40
 msgid "flat page images"
 msgstr "Картинки"
 
-#: apps/news/models.py:20 apps/news/models.py:85
-msgid "Slug"
-msgstr "Посилання"
-
-#: apps/news/models.py:21 apps/news/models.py:88
+#: apps/news/models.py:21 apps/news/models.py:86
 msgid "Main image"
 msgstr "Основне зображення"
 
-#: apps/news/models.py:22 apps/news/models.py:89
+#: apps/news/models.py:22 apps/news/models.py:87
 msgid "Short Description"
 msgstr "Короткий опис"
-
-#: apps/news/models.py:23 apps/news/models.py:90
-msgid "Description"
-msgstr "Опис"
 
 #: apps/news/models.py:24
 msgid "Date"
 msgstr "Дата"
 
-#: apps/news/models.py:25 apps/news/models.py:69
+#: apps/news/models.py:25 apps/news/models.py:67
 msgid "Position"
 msgstr "Позиція"
 
-#: apps/news/models.py:27 apps/news/models.py:92
+#: apps/news/models.py:27 apps/news/models.py:90
 msgid "Created"
 msgstr "Створено"
 
-#: apps/news/models.py:33 apps/news/models.py:34 apps/news/models.py:66
-#: apps/news/templates/news/news_details.html:28
+#: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:64
+#: apps/news/templates/news/news_details.html:27
 #: apps/news/templates/news/news_list.html:5
 #: apps/news/templates/news/news_list.html:9
 msgid "News"
 msgstr "Новини"
 
-#: apps/news/models.py:74
+#: apps/news/models.py:72
 msgid "Images"
 msgstr "Зображення"
 
-#: apps/news/models.py:78
+#: apps/news/models.py:76
 #, python-format
 msgid "image for %(news_title)s - %(title)s"
 msgstr "зображення для %(news_title)s  - %(title)s"
 
-#: apps/news/models.py:80
+#: apps/news/models.py:78
 #, python-format
 msgid "image for %s"
 msgstr "зображення для %s"
 
-#: apps/news/models.py:86
+#: apps/news/models.py:84
 msgid "Date from"
 msgstr "З"
 
-#: apps/news/models.py:86
+#: apps/news/models.py:84
 msgid "If date only one - put it just here"
 msgstr ""
 "Якщо подія на одну дату - постав дату в це поле, наступне залиш "
 "пустим."
 
-#: apps/news/models.py:87
+#: apps/news/models.py:85
 msgid "Date to"
 msgstr "По"
 
-#: apps/news/models.py:98
+#: apps/news/models.py:94
 msgid "Event"
 msgstr "Подія"
 
-#: apps/news/models.py:99 apps/news/templates/event/event_detail.html:22
+#: apps/news/models.py:95 apps/news/templates/event/event_detail.html:21
 #: apps/news/templates/event/event_list.html:5
 #: apps/news/templates/event/event_list.html:9
 #: apps/news/templates/event/event_list_past.html:5
@@ -354,7 +376,25 @@ msgstr "Минулі події"
 msgid "Back to future events"
 msgstr "Назад до майбутніх подій"
 
-#: templates/flatpages/default.html:6
+#: apps/seo/models.py:13
+msgid "Keywords"
+msgstr "Ключові слова"
+
+#: apps/seo/models.py:20 apps/seo/models.py:21
+msgid "SEO fields"
+msgstr "SEO"
+
+#: apps/seo/models.py:30
+msgid ""
+"This should be an absolute path, excluding the domain name. Example: "
+"'/events/search/'."
+msgstr "Абсолютний шлях без доменного імені. Приклад: '/events/search/'."
+
+#: apps/seo/models.py:34
+msgid "URLs"
+msgstr "URLs"
+
+#: templates/flatpages/default.html:14
 msgid "FPM"
 msgstr "ФМФ"
 
@@ -367,6 +407,21 @@ msgstr "попередня"
 #: templates/pagination/pagination.html:23
 msgid "next"
 msgstr "наступна"
+
+#~ msgid "Announcements"
+#~ msgstr "Анонси подій"
+
+#~ msgid "All news"
+#~ msgstr "Усі новини"
+
+#~ msgid "Meta information"
+#~ msgstr "Пошукова інформація"
+
+#~ msgid "Meta title"
+#~ msgstr "Meta title"
+
+#~ msgid "Meta description"
+#~ msgstr "meta-description"
 
 #~ msgid "Contact %(name)s(%(email)s)"
 #~ msgstr "Контакт %(name)s(%(email)s)"
@@ -385,9 +440,6 @@ msgstr "наступна"
 
 #~ msgid "Extra flat pages"
 #~ msgstr "Extra для простих сторінок"
-
-#~ msgid "Is on main page"
-#~ msgstr "На головній сторінці"
 
 #~ msgid "Index tab"
 #~ msgstr "Таб на головній"
