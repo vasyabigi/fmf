@@ -43,27 +43,29 @@
           <h3 class="title_list">Відгуки:</h3>
           <span class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></span>
         </div>
+        {% for feedback in feedbacks %}
         <div class="img_descr">
-          {% for feedback in feedbacks %}
           <a href="{{ feedback.get_absolute_url }}">
             {% thumbnail feedback.image '80x100' crop='center' as im %}
             <img src="{{ im.url }}" alt="{{ image.page.title }}">
             {% endthumbnail %}
           </a>
-          <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
-          <span class="status"><i>&nbsp&nbsp {{ feedback.description }}</i></span>
+          <p class="name_status">
+            <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
+            <i class="status">{{ feedback.description }}</i>
+          </p>
           {% with feedback|get_random_question as result %}
           <p>-{{ result.question }} : <br/>
              <i>"{{ result.answer }}"</i>
           </p>
           {% endwith %}
-          {% endfor %}
         </div>
+        {% endfor %}
       </section>
     {% endif %}
     <!--END feedbacks-->
   {% endblock %}
-    <div class="push_top"></div>
+    <div class="push_bottom"></div>
   </article>
 <!--END left column-->
 
