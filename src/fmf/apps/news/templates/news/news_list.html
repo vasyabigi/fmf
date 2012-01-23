@@ -15,12 +15,17 @@
       {% autopaginate news_list 10 %}
       {% for news in news_list %}
         <li>
-          <div class="date_stamp">
-            <div>
-              січ<br/>
-              <span>10</span>
-            </div>
-          </div>
+          {% with news.date as news_date %}
+            {% if news_date %}
+              <div class="date_stamp">
+                <div>
+                  {{ news_date|date:"M" }}
+                  <br/>
+                  <span>{{ news_date|date:"d" }}</span>
+                </div>
+              </div>
+            {% endif %}
+          {% endwith %}
           <div class="img_descr">
             {% thumbnail news.main_image "200x150" crop="center" as im %}
             <a href="{{ news.get_absolute_url }}">

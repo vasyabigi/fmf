@@ -16,12 +16,17 @@
       {% for event in events %}
         <li>
           <div class="img_descr">
-            <div class="date_stamp">
-              <div>
-                січ<br/>
-                <span>10</span>
-              </div>
-            </div>
+            {% with event.date_to as event_date %}
+              {% if event_date %}
+                <div class="date_stamp">
+                  <div>
+                    {{ event_date|date:"M" }}
+                    <br/>
+                    <span>{{ event_date|date:"d" }}</span>
+                  </div>
+                </div>
+              {% endif %}
+            {% endwith %}
             {% thumbnail event.image "200x150" crop="center" as im %}
             <a href="{{ event.get_absolute_url }}">
               <img src="{{ im.url }}" alt="{{ product.feed.title|title }}" width="{{ im.width }}" height="{{ im.height }}" />
