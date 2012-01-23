@@ -298,7 +298,11 @@ nav ul ul ul {
 
 /*Content*/
 body > article {
-  margin-bottom: 20px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -120px;
+  margin-top:-108px;
 }
 body > article > section {
   position: relative;
@@ -416,6 +420,8 @@ article.left_column {
 }
 .title_arrow .arrow {
   position: absolute;
+  display:block;
+  content:'';
   right:30px;
   top:17px;
   width:25px;
@@ -773,6 +779,14 @@ footer {
 .fixed_footer {
   position: fixed;
   bottom: 0;
+}
+.push_top {
+  height: 108px;
+  clear:both;
+}
+.push_bottom {
+  height: 140px;
+  clear:both;
 }
 .toTop_button .toTop {
   position: fixed;

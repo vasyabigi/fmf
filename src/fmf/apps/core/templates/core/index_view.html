@@ -7,6 +7,7 @@
 
 <!--left column-->
   <article class="left_column">
+    <div class="push_top"></div>
 
   {% block content %}
   <!--slider-->
@@ -62,6 +63,7 @@
     {% endif %}
     <!--END feedbacks-->
   {% endblock %}
+    <div class="push_top"></div>
   </article>
 <!--END left column-->
 
@@ -82,8 +84,7 @@
         <ul class="list">
           {% for event in events %}
           <li>
-            <!--TODO: if future event-->
-{#            <div class="bookmark"></div>#}
+{#          <div class="bookmark"></div>#}
             <p class="date">
               {% ifequal event.date_from event.date_to %}{{ event.date_from }}
               {% else %}{{ event.date_from }} - {{ event.date_to }}

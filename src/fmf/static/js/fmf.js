@@ -167,14 +167,6 @@ var Fmf = (function(){
                 }
 
             )
-        },
-
-        FloatFooter: function(){
-            var contentH = ($('body > article').height()+207);
-            var windowH = $(window).height();
-            if (contentH < windowH){
-                $('footer').addClass('fixed_footer');
-            }
         }
     }
 })($);
@@ -188,7 +180,6 @@ $(document).ready(function(){
     Fmf.NewsDetailsSldier();
     Fmf.ContactForm();
     Fmf.ScaleArrow();
-    Fmf.FloatFooter();
     // Fmf.Circulate();
 
 
