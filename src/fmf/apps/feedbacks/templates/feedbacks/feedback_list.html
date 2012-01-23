@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load i18n core_tags thumbnail %}
 
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "Home" %}</a> ></span>
@@ -18,31 +18,17 @@
           <i class="status">{{ feedback.description }}</i>
         </p>
         <a href="{{ feedback.get_absolute_url }}">
-          <img src="{{ STATIC_URL }}images/logo_bg.png" alt="" width="200" height="150">
+          {% thumbnail feedback.image '200x150' crop='center' as im %}
+            <img src="{{ im.url }}" alt="{{ image.page.title }}">
+          {% empty %}
+            <img src="{{ STATIC_URL }}images/logo_bg.png" alt="" width="200" height="150">
+          {% endthumbnail %}
         </a>
-
-        <p>- FeedbackQuestion ?<br/>
-          <i>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut"</i>
-        </p>
-      </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-  {% if feedbacks %}
-  <ul>
-    {% for feedback in feedbacks %}
-      <li>
-        <a href="{{ feedback.get_absolute_url }}">
-          <img src="{{ STATIC_URL }}images/logo_bg.png" alt="" width="200" height="150">
-        </a>
-        <p class="name_status">
-          <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
-          <i class="status">{{ feedback.description }}</i>
-        </p>
-
-        <p>- FeedbackQuestion ?<br/>
-          <i>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut"</i>
-        </p>
+        {% with feedback|get_random_question as result %}
+          <p>-{{ result.question }}<br/>
+             <i>"{{ result.answer }}"</i>
+          </p>
+        {% endwith %}
       </li>
     {% endfor %}
   </ul>

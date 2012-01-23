@@ -55,7 +55,7 @@
             <i class="status">{{ feedback.description }}</i>
           </p>
           {% with feedback|get_random_question as result %}
-          <p>-{{ result.question }} : <br/>
+          <p>-{{ result.question }}<br/>
              <i>"{{ result.answer }}"</i>
           </p>
           {% endwith %}
