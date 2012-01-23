@@ -599,7 +599,7 @@ article .main_sect img, #feedback_list ul li img {
   padding-bottom: 30px;
 }
 #news_list ul li a, #events_list ul li a {
-  font:bold italic 20px/25px "DejaVu Sans", arial, sans-serif;
+  font:bold italic 16px/25px "DejaVu Sans", arial, sans-serif;
 }
 .date{
   color: #BB9D59;
@@ -636,7 +636,7 @@ article .main_sect img, #feedback_list ul li img {
   color: #7D7D7D;
 }
 .short_description_large{
-  font-size: 16px;
+  font-size: 15px;
   color: #555;
 }
 .details {
