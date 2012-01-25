@@ -4,28 +4,28 @@
   <li {% if active == 'home' %}class="active"{% endif %}><a href="{% url index-view %}">{% trans "Home" %}</a></li>
   <li {% if active == 'about' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/about-the-faculty/">{% trans "About the faculty" %}</a>
     <ul>
-      {% cache 500 about_menu %}
+      {% cache 500 about_menu LANGUAGE_CODE %}
         {% chunk "about_menu" %}
       {% endcache %}
     </ul>
   </li>
   <li {% if active == 'students' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/students/">{% trans "Students" %}</a>
     <ul>
-      {% cache 500 students_menu %}
+      {% cache 500 students_menu LANGUAGE_CODE %}
         {% chunk "students_menu" %}
       {% endcache %}
     </ul>
   </li>
   <li {% if active == 'entrants' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/entrants/">{% trans "Entrants" %}</a>
     <ul>
-      {% cache 500 entarnts_menu %}
+      {% cache 500 entarnts_menu LANGUAGE_CODE %}
         {% chunk "entarnts_menu" %}
       {% endcache %}
     </ul>
   </li>
   <li {% if active == 'cooperation' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/cooperation/">{% trans "Cooperation" %}</a>
     <ul>
-      {% cache 500 international_menu %}
+      {% cache 500 international_menu LANGUAGE_CODE %}
         {% chunk "international_menu" %}
       {% endcache %}
     </ul>

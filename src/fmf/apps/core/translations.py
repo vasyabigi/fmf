@@ -28,7 +28,7 @@ class QuestionTranslationOptions(TranslationOptions):
     fields = ('question',)
 
 class FeedbackTranslationOptions(TranslationOptions):
-    fields = ('name',)
+    fields = ('name', 'description')
 
 class FeedbackQuestionTranslationOptions(TranslationOptions):
     fields = ('answer',)

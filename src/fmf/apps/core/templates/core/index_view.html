@@ -40,7 +40,7 @@
     {% if feedbacks %}
       <section id="feedbacks" class="bordered main_sect">
         <div class="title_arrow"><div class="arrow"></div>
-          <h3 class="title_list">Відгуки:</h3>
+          <h3 class="title_list">{% trans "Feedbacks" %}:</h3>
           <span class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></span>
         </div>
         {% for feedback in feedbacks %}
@@ -52,11 +52,12 @@
           </a>
           <p class="name_status">
             <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
-            <i class="status">{{ feedback.description }}</i>
+            <i class="status">{{ feedback.description|truncatewords:15 }}</i>
           </p>
           {% with feedback|get_random_question as result %}
           <p>-{{ result.question }}<br/>
-             <i>"{{ result.answer }}"</i>
+            <i>"{{ result.answer|truncatewords:15 }}"</i>
+            <a href="{{ feedback.get_absolute_url }}">{% trans "more" %}</a>
           </p>
           {% endwith %}
         </div>
