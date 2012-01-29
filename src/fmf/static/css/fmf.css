@@ -1,17 +1,17 @@
 /*Our css file*/
 
 html, body {
-  height: 100%;
   padding: 0 !important;
-  background: #d7d7d7;
+  background: #acacac;
   font:13px "lucida grande",tahoma,verdana,arial,sans-serif;
 }
 body {
-/*  background: -webkit-gradient(linear, 50% 36, 50% 136, color-stop(0%, #E3E3E2), color-stop(100%, #d7d7d7));*/
-  background: -webkit-linear-gradient(#d7d7d7 0%,#d7d7d7 89px,#E3E3E2 89px,#d7d7d7 136px);
-  background: -moz-linear-gradient(#d7d7d7 0%,#d7d7d7 89px,#E3E3E2 89px,#d7d7d7 136px);
-  background: -o-linear-gradient(#d7d7d7 0%,#d7d7d7 89px,#E3E3E2 89px,#d7d7d7 136px);
-  background: linear-gradient(#d7d7d7 0%,#d7d7d7 89px,#E3E3E2 89px,#d7d7d7 136px);
+  background: #acacac;
+ /* background: -webkit-gradient(linear, 50% 202, 50% 136, color-stop(0%, #E3E3E2), color-stop(100%, #d7d7d7));*/
+  background: -webkit-linear-gradient(#acacac 0%,#acacac 222px,#f3f3f3 300px,#f3f3f3 100%);
+  background: -moz-linear-gradient(#acacac 0%,#acacac 222px,#f3f3f3 300px,#f3f3f3 100%);
+  background: -o-linear-gradient(#acacac 0%,#acacac 222px,#f3f3f3 300px,#f3f3f3 100%);
+  background: linear-gradient(#acacac 0%,#acacac 222px,#f3f3f3 300px,#f3f3f3 100%);
 }
 .container {
   position: relative;
@@ -20,81 +20,93 @@ body {
 }
 .bordered {
   position: relative;
-  background:#F4F4F4;
+  background:#fafafa;
   border:1px solid #BBB;
   box-shadow: inset 0 0 0 1px #FFF, 1px 1px 0 0 #bbb;
 }
 /*Header*/
 body > header {
   position: relative;
-  height: 51px;
-  margin-bottom:20px;
-  padding-top: 36px;
-  border-bottom: 1px solid #bababa;
+  height: 90px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #777;
+  border-top: 4px solid #555;
+  box-shadow: inset 0 4px 4px #ddd, 0 0 1px 0 #555;
+  background: #fdfdfd; /* Old browsers */
+  background: -moz-linear-gradient(left, #f4f4f4 0%, #f4f4f4 30%, #fdfdfd 50%, #f4f4f4 70%, #f4f4f4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f4f4f4), color-stop(30%,#f4f4f4), color-stop(50%,#fdfdfd), color-stop(70%,#f4f4f4), color-stop(100%,#f4f4f4));  /*Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #f4f4f4 0%, #f4f4f4 30%, #fdfdfd 50%, #f4f4f4 70%, #f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #f4f4f4 0%, #f4f4f4 30%, #fdfdfd 50%, #f4f4f4 70%, #f4f4f4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #f4f4f4 0%, #f4f4f4 30%, #fdfdfd 50%, #f4f4f4 70%, #f4f4f4 100%); /* IE10+ */
+  background: linear-gradient(top, #fdfdfd 0%,#f8f8f8 100%); /* W3C */
 }
 body > header:after {
-  position: absolute;
-  display:block;
-  content:'';
-  width: 100%;
-  height:0px;
-  bottom:-2px;
-  border-bottom: 1px solid #fff;
+
 }
 
   /*Main navigation*/
 nav {
-  position: absolute;
-  top: 0;
+  position: relative;
   width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 0 20px;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid black;
+  background: #373737;
 }
-nav,footer, .download:after {
-  background: #313131; /* Old browsers */
-  background: -moz-linear-gradient(top, #313131 0%, #575757 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#313131), color-stop(100%,#575757)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #313131 0%,#575757 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #313131 0%,#575757 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #313131 0%,#575757 100%); /* IE10+ */
-  background: linear-gradient(top, #313131 0%,#575757 100%); /* W3C */
-  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313131', endColorstr='#575757',GradientType=0 );*/ /* IE6-9 */
+nav:after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+}
+.download:after {
+  background: #313131;
+  background: -moz-linear-gradient(top, #313131 0%, #575757 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#313131), color-stop(100%,#575757));
+  background: -webkit-linear-gradient(top, #313131 0%,#575757 100%);
+  background: -o-linear-gradient(top, #313131 0%,#575757 100%);
+  background: -ms-linear-gradient(top, #313131 0%,#575757 100%);
+  background: linear-gradient(top, #313131 0%,#575757 100%);
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313131', endColorstr='#f8f8f8',GradientType=0 );*/ /* IE6-9 */
 }
 nav > ul {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  height: 36px;
   position: relative;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 35px;
+  background: #f0f0f0;
+  background: -moz-linear-gradient(top, #fafafa 0%, #d4d4d4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#d4d4d4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #fafafa 0%,#d4d4d4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fafafa 0%,#d4d4d4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fafafa 0%,#d4d4d4 100%); /* IE10+ */
+  background: linear-gradient(top, #fafafa 0%,#d4d4d4 100%); /* W3C */
+  box-shadow: 0 1px 3px 0 #333;
 }
 nav > ul > li {
   position: relative;
   display: inline-block;
   float:left;
   vertical-align: middle;
-  border-left: 1px solid #5a5a5a;
-  border-right: 1px solid #2a2a2a;
-  border-top: 1px solid #2a2a2a
+  border-left: 1px solid #fff;
+  border-right: 1px solid #bbb;
 }
-nav > ul > li:first-child, .page_info span:first-child {
-  margin-left:95px;
-}
-nav > ul > li.active, nav > ul > li.active:hover {
-  border-color: #d7d7d7;
-  background: #d7d7d7;
+nav > ul > li:first-child {
+  margin-left:10%;
 }
 nav > ul li:hover {
-  position: relative;
-  cursor: default;
-  background-color: #E8E8E8;
-  border-left-color: #fff;
-  border-right-color: #eee;
-  border-top-color: #ddd;
   opacity: 1;
 }
 
 nav > ul ul {
   visibility: hidden;
   position: absolute;
-  top: 95%;
+  top: 36px;
   left:-1px;
   width:100%;
   margin-top: -1px;
@@ -137,17 +149,27 @@ nav > ul li:hover > ul {
   opacity: 1;
 }
 nav > ul > li > a {
-  padding: 7px 30px;
-  color: #eee;
-  text-shadow: 0 -1px #000;
+  margin: 5px 30px;
+  padding: 5px 8px;
+  border:1px solid transparent;
+  color: #999;
+  font-weight: bold;
+  text-shadow: 0 1px #F4F4F4;
 }
-nav > ul > li:hover > a, nav ul > li.active > a{
+nav > ul > li:hover > a, nav ul > li.active > a {
+  border-color: #999 #fff #fff #ccc;
+  box-shadow: inset 0 1px 1px #999;
+  color: #888;
+  background: #ddd;
+  background: -moz-linear-gradient(top, #f0f0f0 0%, #c2c2c2 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(100%,#c2c2c2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f0f0f0 0%,#c2c2c2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f0f0f0 0%,#c2c2c2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f0f0f0 0%,#c2c2c2 100%); /* IE10+ */
+  background: linear-gradient(top, #f0f0f0 0%,#c2c2c2 100%); /* W3C */
+}
+nav ul > li.active > a {
   color: #333;
-  background: #e8e8e8;
-  text-shadow: 0 1px #e7e7e7;
-}
-nav ul > li.active > a{
-  background: #d7d7d7;
 }
 nav > ul ul li a {
   display:block;
@@ -172,7 +194,7 @@ nav ul ul ul {
 
 #lang {
   position: absolute;
-  left:90%;
+  right: 30px;
   top:3px;
   border: 1px solid;
   border-color: #2B2B2B #2B2B2B #494949 #494949;
@@ -214,7 +236,7 @@ nav ul ul ul {
   background: -webkit-linear-gradient(#7d7d7d,#636363);
   background: -moz-linear-gradient(#7d7d7d,#636363);
   background: -o-linear-gradient(#7d7d7d,#636363);
-  background: linear-gradient(#7d7d7d,#636363);;
+  background: linear-gradient(#7d7d7d,#636363);
   border-color: #545454;
 
 }
@@ -225,7 +247,7 @@ nav ul ul ul {
   background: -o-linear-gradient(#636363,#7d7d7d);
   background: linear-gradient(#636363,#7d7d7d);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1) inset;
-  color:#ccc;
+  color: #ccc;
 
 }
 #lang a.selected, .active > a{
@@ -235,14 +257,8 @@ nav ul ul ul {
 
   /*END Main navigation*/
 
-  /*Page_info*/
-.page_info {
-
-}
-.page_info, .page_info > .container {
-
-}
-.page_info span, .title {
+  /*LOGO*/
+.logo_name, .breadcrumbs span, .title {
   margin: 0 2px;
   font-weight:bold;
   font-size:15px;
@@ -251,20 +267,22 @@ nav ul ul ul {
   text-shadow:0 1px #e7e7e7;
   -webkit-transition:all 0.2s ease-in;
 }
-.page_info span:first-child {
+.logo_name {
+  margin-left:95px;
+  color: #505050;
   font-family: Georgia, sans-serif;
   font-size: 20px;
 }
-
-.page_info span a:hover {
+.breadcrumbs span a:hover {
   text-shadow: 0 0 10px #fff;
+}
+.breadcrumbs {
+  height: 50px;
 }
 #logo_block {
   position: absolute;
-  top:-17px;
+  top:0;
   height: 90px;
-  width: 90px;
-  overflow: hidden;
 }
 #logo_bg {
   position: relative;
@@ -292,7 +310,7 @@ nav ul ul ul {
 #logo {
   margin-top:15px;
 }
-  /*End Page_info*/
+  /*End LOGO*/
 
 /*END Header*/
 
@@ -818,6 +836,7 @@ footer {
   height:100px;
   width: 100%;
   padding: 20px 0 0;
+  background: #282828;
   color: #837E76;
   z-index:2;
   clear: both;
@@ -934,8 +953,10 @@ footer li a:hover {
 
 @media screen and (max-width: 1220px) {
   nav > ul > li a {
-  padding: 8px 10px;
-  color: #DDD;
+  margin: 5px 10px;
+  }
+  nav > ul > li:first-child {
+    margin-left:5%;
   }
   .container {
     width: 90%;
