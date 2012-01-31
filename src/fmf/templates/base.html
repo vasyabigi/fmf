@@ -63,9 +63,7 @@
   <!--navigation-->
     <nav class="clearfix">
       {% block nav %}
-      {% with 'home' as active %}
-      {% include 'core/nav.html' %}
-      {% endwith %}
+        {% include 'core/nav.html' %}
       {% endblock %}
       <div id="lang">
         {% for lang in LANGUAGES %}

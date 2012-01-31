@@ -1,7 +1,6 @@
 {% load i18n chunks cache %}
 
 <ul>
-  <li {% if active == 'home' %}class="active"{% endif %}><a href="{% url index-view %}">{% trans "Home" %}</a></li>
   <li {% if active == 'about' %}class="active"{% endif %}><a href="/{{ LANGUAGE_CODE }}/about-the-faculty/">{% trans "About the faculty" %}</a>
     <ul>
       {% cache 500 about_menu LANGUAGE_CODE %}

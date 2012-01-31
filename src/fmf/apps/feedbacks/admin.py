@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
 
 from core.admin import BaseTranslationAdmin, BaseTranslationStackedInLine
 from models import Question, Feedback, FeedbackQuestion
