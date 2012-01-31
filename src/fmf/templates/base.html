@@ -43,7 +43,7 @@
     <header>
       {% block logo %}
         <div class="container">
-          <span class="logo_name">{% trans "Faculty of Physics and Mathematics" %}</span>
+          <h1 class="logo_name">{% trans "Faculty of Physics and Mathematics" %}</h1>
           <div id="logo_block">
               <a href="{% url index-view %}"><img id="logo" src="{{ STATIC_URL }}images/emblem_84x56.png" alt="hi5"></a>
           </div>
@@ -64,9 +64,7 @@
   <!--navigation-->
     <nav>
       {% block nav %}
-      {% with 'home' as active %}
-      {% include 'core/nav.html' %}
-      {% endwith %}
+        {% include 'core/nav.html' %}
       {% endblock %}
       <div class="container breadcrumbs">
         {% block breadcrumbs %}

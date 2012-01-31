@@ -1,22 +1,23 @@
 /*Our css file*/
-
+html {
+  background: url("/static/images/logo_bg.png")  5% 200px fixed #f0f0f0 no-repeat;
+}
 html, body {
+  position: relative;
+  height: 100%;
   padding: 0 !important;
-  background: #acacac;
   font:13px "lucida grande",tahoma,verdana,arial,sans-serif;
 }
 body {
-  background: #acacac;
+
  /* background: -webkit-gradient(linear, 50% 202, 50% 136, color-stop(0%, #E3E3E2), color-stop(100%, #d7d7d7));*/
-  background: -webkit-linear-gradient(#acacac 0%,#acacac 222px,#f3f3f3 300px,#f3f3f3 100%);
-  background: -moz-linear-gradient(#acacac 0%,#acacac 222px,#f3f3f3 300px,#f3f3f3 100%);
-  background: -o-linear-gradient(#acacac 0%,#acacac 222px,#f3f3f3 300px,#f3f3f3 100%);
-  background: linear-gradient(#acacac 0%,#acacac 222px,#f3f3f3 300px,#f3f3f3 100%);
+
 }
 .container {
   position: relative;
   width: 80%;
   margin: 0 auto;
+
 }
 .bordered {
   position: relative;
@@ -28,17 +29,7 @@ body {
 body > header {
   position: relative;
   height: 90px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #777;
-  border-top: 4px solid #555;
-  box-shadow: inset 0 4px 4px #ddd, 0 0 1px 0 #555;
-  background: #fdfdfd; /* Old browsers */
-  background: -moz-linear-gradient(left, #f4f4f4 0%, #f4f4f4 30%, #fdfdfd 50%, #f4f4f4 70%, #f4f4f4 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f4f4f4), color-stop(30%,#f4f4f4), color-stop(50%,#fdfdfd), color-stop(70%,#f4f4f4), color-stop(100%,#f4f4f4));  /*Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #f4f4f4 0%, #f4f4f4 30%, #fdfdfd 50%, #f4f4f4 70%, #f4f4f4 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #f4f4f4 0%, #f4f4f4 30%, #fdfdfd 50%, #f4f4f4 70%, #f4f4f4 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #f4f4f4 0%, #f4f4f4 30%, #fdfdfd 50%, #f4f4f4 70%, #f4f4f4 100%); /* IE10+ */
-  background: linear-gradient(top, #fdfdfd 0%,#f8f8f8 100%); /* W3C */
+  background: #fdfdfd;
 }
 body > header:after {
 
@@ -49,10 +40,16 @@ nav {
   position: relative;
   width: 100%;
   margin-bottom: 20px;
-  padding: 10px 0 20px;
-  border-top: 1px solid #999;
+  padding: 0 0 20px;
   border-bottom: 1px solid black;
   background: #373737;
+  background: rgba(0, 0, 0, 0.77);
+  background: -moz-linear-gradient(top, #313131 0%, #575757 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#313131), color-stop(100%,#575757));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.78) 0%, rgba(20, 20, 20, 0.77) 100%);
+  background: -o-linear-gradient(top, #313131 0%,#575757 100%);
+  background: -ms-linear-gradient(top, #313131 0%,#575757 100%);
+  background: linear-gradient(top, #313131 0%,#575757 100%);
 }
 nav:after {
   display: block;
@@ -75,29 +72,24 @@ nav:after {
 }
 nav > ul {
   width: 100%;
-  height: 36px;
+  height: 35px;
   position: relative;
   font-size: 14px;
   line-height: 35px;
-  background: #f0f0f0;
-  background: -moz-linear-gradient(top, #fafafa 0%, #d4d4d4 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#d4d4d4)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #fafafa 0%,#d4d4d4 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #fafafa 0%,#d4d4d4 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #fafafa 0%,#d4d4d4 100%); /* IE10+ */
-  background: linear-gradient(top, #fafafa 0%,#d4d4d4 100%); /* W3C */
-  box-shadow: 0 1px 3px 0 #333;
+  border-bottom: 1px solid #fff;
+  background: #fdfdfd;
 }
 nav > ul > li {
   position: relative;
   display: inline-block;
   float:left;
   vertical-align: middle;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #bbb;
 }
 nav > ul > li:first-child {
   margin-left:10%;
+}
+nav > ul > li:last-child {
+  border-right: 1px solid #bbb;
 }
 nav > ul li:hover {
   opacity: 1;
@@ -106,12 +98,10 @@ nav > ul li:hover {
 nav > ul ul {
   visibility: hidden;
   position: absolute;
-  top: 36px;
-  left:-1px;
-  width:100%;
-  margin-top: -1px;
+  top: 35px;
+  width:150px;
   border: 1px solid;
-  border-color: #fff #ddd #ddd #fff ;
+  border-color: transparent #bbb #bbb #fff ;
   font-size: 12px;
   line-height: 14px;
   opacity: 0;
@@ -124,18 +114,7 @@ nav > ul ul {
 }
 nav > ul ul li {
   position: relative;
-  display: block;
-  float: none;
-  padding: 0;
-  background: #eee;
-  border: 1px solid transparent;
-  border-right: none;
-  opacity: .95;
   z-index: 3;
-  -webkit-transition:opacity 0.2s ease-in;
-  -moz-transition:opacity 0.2s ease-in;
-  -o-transition:opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
 }
 nav > ul ul a:hover, nav > ul ul li:hover > a {
   border-top-color: #fff;
@@ -149,31 +128,35 @@ nav > ul li:hover > ul {
   opacity: 1;
 }
 nav > ul > li > a {
-  margin: 5px 30px;
-  padding: 5px 8px;
-  border:1px solid transparent;
+  display: block;
+  margin:0;
+  padding:0 15px;
+  border-top: 1px solid transparent;
+  border-left: 1px solid #bbb;
   color: #999;
   font-weight: bold;
-  text-shadow: 0 1px #F4F4F4;
-}
-nav > ul > li:hover > a, nav ul > li.active > a {
-  border-color: #999 #fff #fff #ccc;
-  box-shadow: inset 0 1px 1px #999;
-  color: #888;
-  background: #ddd;
-  background: -moz-linear-gradient(top, #f0f0f0 0%, #c2c2c2 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(100%,#c2c2c2)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #f0f0f0 0%,#c2c2c2 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #f0f0f0 0%,#c2c2c2 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #f0f0f0 0%,#c2c2c2 100%); /* IE10+ */
-  background: linear-gradient(top, #f0f0f0 0%,#c2c2c2 100%); /* W3C */
+  text-shadow: 0 1px #fff;
+  -webkit-transition: background 0.2s ease-in;
+  -moz-transition: background 0.2s ease-in;
+  -o-transition: background 0.2s ease-in;
+  transition: background 0.2s ease-in;
 }
 nav ul > li.active > a {
-  color: #333;
+  background: #373737;
+  border-top-color:#bbb;
+  border-left-color: #fff;
+  color: #f4f4f4;
+  text-shadow: 0 1px #111;
+}
+nav > ul > li:hover > a {
+  background: #eee;
+  border-top-color:#fff;
+  border-left-color:#fff;
+  color: #666;
+  text-shadow: 0 1px #fff;
 }
 nav > ul ul li a {
   display:block;
-  margin-left:-1px;
   padding:7px;
   background-color: #eee;
   border: 1px solid transparent;
@@ -263,8 +246,9 @@ nav ul ul ul {
   font-weight:bold;
   font-size:15px;
   line-height: 50px;
-  color:#333;
-  text-shadow:0 1px #e7e7e7;
+  color: #6A8CB0;
+  text-transform: uppercase;
+  font-weight: bold;
   -webkit-transition:all 0.2s ease-in;
 }
 .logo_name {
@@ -272,12 +256,23 @@ nav ul ul ul {
   color: #505050;
   font-family: Georgia, sans-serif;
   font-size: 20px;
+  line-height: 50px;
+}
+.breadcrumbs {
+  height: 150px;
+  margin-top: 2px;
+}
+.breadcrumbs span:last-child{
+  display: block;
+
+}
+.breadcrumbs span a {
+  color: #6A8CB0;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .breadcrumbs span a:hover {
   text-shadow: 0 0 10px #fff;
-}
-.breadcrumbs {
-  height: 50px;
 }
 #logo_block {
   position: absolute;
@@ -320,9 +315,9 @@ body > article {
   height: auto !important;
   height: 100%;
   margin-bottom: -120px;
-  margin-top:-108px;
+  margin-top:-220px;
 }
-body > article > section {
+body > article.left_column > section {
   position: relative;
   width: 620px;
   margin-bottom: 10px;
@@ -729,7 +724,14 @@ aside > section {
 .flatpage {
   overflow: hidden;
   padding: 10px;
-  background: url("/static/images/logo_bg.png") 90% 50px  #f4f4f4 no-repeat;
+  background: rgba(255,255,255,.7);
+/*  background: -moz-linear-gradient(top, #313131 0%, #575757 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#313131), color-stop(100%,#575757));
+  background: -webkit-linear-gradient(top, #313131 0%,#575757 100%);
+  background: -o-linear-gradient(top, #313131 0%,#575757 100%);
+  background: -ms-linear-gradient(top, #313131 0%,#575757 100%);
+  background: linear-gradient(top, #313131 0%,#575757 100%);*/
+
 }
 .flatpage p, .flatpage ul, .text, .text p {
 
@@ -846,7 +848,7 @@ footer {
   bottom: 0;
 }
 .push_top {
-  height: 108px;
+  height: 220px;
   clear:both;
 }
 .push_bottom {

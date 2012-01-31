@@ -167,6 +167,23 @@ var Fmf = (function(){
                 }
 
             )
+        },
+
+        Scroll: function(){
+            $(window).scroll(function() {
+                var scroll = $(this).scrollTop();
+
+                if(scroll > 300) {
+                    $('.toTop').fadeIn();
+                } else {
+                    $('.toTop').fadeOut();
+                }
+
+            });
+
+            $('.toTop').click(function() {
+                $('body,html').animate({scrollTop:0},'slow');
+            });
         }
     }
 })($);
@@ -180,22 +197,11 @@ $(document).ready(function(){
     Fmf.NewsDetailsSldier();
     Fmf.ContactForm();
     Fmf.ScaleArrow();
+    Fmf.Scroll();
     // Fmf.Circulate();
 
 
 });
-
-    $(window).scroll(function() {
-        if($(this).scrollTop() > 300) {
-            $('.toTop').fadeIn();
-        } else {
-            $('.toTop').fadeOut();
-        }
-    });
-
-    $('.toTop').click(function() {
-        $('body,html').animate({scrollTop:0},'slow');
-    });
 
 
 (function($) {
