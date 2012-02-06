@@ -5,8 +5,8 @@
 {% block title %}{% trans "News" %} - {{ block.super }}{% endblock %}
 
 {% block breadcrumbs %}
-  <span><a href="{% url index-view %}">{% trans "Home" %}</a> ></span>
-  <span>{% trans "News" %}</span>
+  <span><a href="{% url index-view %}">{% trans "Home" %}</a> /</span>
+  <h2>{% trans "News" %}</h2>
 {% endblock %}
 
 {% block content %}

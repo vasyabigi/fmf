@@ -3,9 +3,9 @@
 {% load cache i18n seo_tags %}
 
 {% block breadcrumbs %}
-  <span><a href="{% url index-view %}">{% trans "Home" %}</a> ></span>
-  <span><a href="{% url feedback-list %}">{% trans "Feedbacks" %}</a> ></span>
-  <span>{{ feedback.name }}</span>
+  <span><a href="{% url index-view %}">{% trans "Home" %}</a> /</span>
+  <span><a href="{% url feedback-list %}">{% trans "Feedbacks" %}</a> /</span>
+  <h2>{{ feedback.name }}</h2>
 {% endblock %}
 
 {% block meta_information %}

@@ -20,7 +20,7 @@
 
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "Home" %}</a> > </span>
-  <span>{{ flatpage.title }}</span>
+  <h2>{{ flatpage.title }}</h2>
 {% endblock %}
 
 
@@ -31,7 +31,7 @@
 {% endblock %}
 
 {% block content %}
-  <section id="{{ flatpage.title_en|slugify }}" class="flatpage container bordered">
+  <section id="{{ flatpage.title_en|slugify }}" class="flatpage bordered">
     {% include 'includes/social_html.html' %}
     {% block flatpage_content %}
       {{ flatpage.content }}
@@ -61,6 +61,17 @@
     {% endblock %}
   </section>
 {% endblock %}
+
+{% block aside %}
+  <aside class="left_sidebar">
+    <section class="streamer bordered">
+      <div class="title_arrow">
+        <h3 class="title_list">Менюшко:</h3>
+      </div>
+    </section>
+  </aside>
+{% endblock %}
+
 
 {% block extra_js %}
   {% if flatpage.images.all %}

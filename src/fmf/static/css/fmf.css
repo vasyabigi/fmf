@@ -1,6 +1,6 @@
 /*Our css file*/
 html {
-  background: url("/static/images/logo_bg.png")  5% 200px fixed #f0f0f0 no-repeat;
+  background: url("/static/images/logo_bg_1.png") fixed  10% 150px #f0f0f0 no-repeat;
 }
 html, body {
   position: relative;
@@ -8,16 +8,10 @@ html, body {
   padding: 0 !important;
   font:13px "lucida grande",tahoma,verdana,arial,sans-serif;
 }
-body {
-
- /* background: -webkit-gradient(linear, 50% 202, 50% 136, color-stop(0%, #E3E3E2), color-stop(100%, #d7d7d7));*/
-
-}
 .container {
   position: relative;
   width: 80%;
   margin: 0 auto;
-
 }
 .bordered {
   position: relative;
@@ -29,36 +23,25 @@ body {
 body > header {
   position: relative;
   height: 90px;
-  background: #fdfdfd;
-}
-body > header:after {
-
+  padding-top: 10px;
+  background: url("/static/images/header_pattern.png") #fff repeat-x;
 }
 
   /*Main navigation*/
 nav {
   position: relative;
-  width: 100%;
   margin-bottom: 20px;
-  padding: 0 0 20px;
-  border-bottom: 1px solid black;
   background: #373737;
   background: rgba(0, 0, 0, 0.77);
   background: -moz-linear-gradient(top, #313131 0%, #575757 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#313131), color-stop(100%,#575757));
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.78) 0%, rgba(20, 20, 20, 0.77) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.70) 100%);
   background: -o-linear-gradient(top, #313131 0%,#575757 100%);
   background: -ms-linear-gradient(top, #313131 0%,#575757 100%);
   background: linear-gradient(top, #313131 0%,#575757 100%);
-}
-nav:after {
-  display: block;
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  width: 100%;
-  height: 1px;
-  background: #fff;
+  -moz-box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.3);
 }
 .download:after {
   background: #313131;
@@ -71,13 +54,13 @@ nav:after {
   /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313131', endColorstr='#f8f8f8',GradientType=0 );*/ /* IE6-9 */
 }
 nav > ul {
-  width: 100%;
-  height: 35px;
   position: relative;
+  height: 35px;
+  padding-left: 10%;
   font-size: 14px;
   line-height: 35px;
   border-bottom: 1px solid #fff;
-  background: #fdfdfd;
+  background: url("/static/images/header_pattern.png") bottom left #fff repeat-x;
 }
 nav > ul > li {
   position: relative;
@@ -86,7 +69,7 @@ nav > ul > li {
   vertical-align: middle;
 }
 nav > ul > li:first-child {
-  margin-left:10%;
+  margin-left:95px;
 }
 nav > ul > li:last-child {
   border-right: 1px solid #bbb;
@@ -101,24 +84,24 @@ nav > ul ul {
   top: 35px;
   width:150px;
   border: 1px solid;
-  border-color: transparent #bbb #bbb #fff ;
+  border-color:#bbb ;
   font-size: 12px;
   line-height: 14px;
   opacity: 0;
   box-shadow: 3px 3px 1px 0 rgba(35, 35, 35, 0.1);
-  z-index: 3;
   -webkit-transition:opacity 0.2s ease-in;
   -moz-transition:opacity 0.2s ease-in;
   -o-transition:opacity 0.2s ease-in;
   transition:opacity 0.2s ease-in;
+  z-index: 3;
 }
 nav > ul ul li {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 }
 nav > ul ul a:hover, nav > ul ul li:hover > a {
   border-top-color: #fff;
-  border-bottom-color: #fff;
+  border-bottom-color: #bbb;
   cursor: pointer;
   background: #bbd9ee;
   color: #333;
@@ -133,7 +116,7 @@ nav > ul > li > a {
   padding:0 15px;
   border-top: 1px solid transparent;
   border-left: 1px solid #bbb;
-  color: #999;
+  color: #666;
   font-weight: bold;
   text-shadow: 0 1px #fff;
   -webkit-transition: background 0.2s ease-in;
@@ -142,23 +125,24 @@ nav > ul > li > a {
   transition: background 0.2s ease-in;
 }
 nav ul > li.active > a {
-  background: #373737;
+  background: #3b3b3b;
   border-top-color:#bbb;
   border-left-color: #fff;
   color: #f4f4f4;
   text-shadow: 0 1px #111;
 }
 nav > ul > li:hover > a {
-  background: #eee;
-  border-top-color:#fff;
-  border-left-color:#fff;
-  color: #666;
+  position: relative;
+  background: #fafafa;
+  border-color: #bbb;
+  color: #6A8CB0;
   text-shadow: 0 1px #fff;
+  z-index: 4;
 }
 nav > ul ul li a {
   display:block;
   padding:7px;
-  background-color: #eee;
+  background-color: #fafafa;
   border: 1px solid transparent;
   color:#666;
   text-shadow:none;
@@ -241,69 +225,37 @@ nav ul ul ul {
   /*END Main navigation*/
 
   /*LOGO*/
-.logo_name, .breadcrumbs span, .title {
-  margin: 0 2px;
-  font-weight:bold;
-  font-size:15px;
-  line-height: 50px;
-  color: #6A8CB0;
-  text-transform: uppercase;
-  font-weight: bold;
-  -webkit-transition:all 0.2s ease-in;
-}
-.logo_name {
-  margin-left:95px;
+.logo {
+  display: block;
+  height: 60px;
+  width: 400px;
+  padding-left:95px;
   color: #505050;
-  font-family: Georgia, sans-serif;
-  font-size: 20px;
-  line-height: 50px;
+  font:bold 20px/50px Georgia, sans-serif;
+  background: url("/static/images/emblem_84x56.png") top left no-repeat;
+}
+.logo:hover {
+  color: #505050;
 }
 .breadcrumbs {
-  height: 150px;
-  margin-top: 2px;
-}
-.breadcrumbs span:last-child{
-  display: block;
 
 }
 .breadcrumbs span a {
-  color: #6A8CB0;
-  text-transform: uppercase;
+  margin: 0 2px;
+  font-size:12px;
   font-weight: bold;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #6A8CB0;
+  -webkit-transition:all 0.2s ease-in;
 }
 .breadcrumbs span a:hover {
-  text-shadow: 0 0 10px #fff;
+  text-shadow: 0 0 2px #666;
 }
-#logo_block {
-  position: absolute;
-  top:0;
-  height: 90px;
-}
-#logo_bg {
-  position: relative;
-  width: 110px;
-  height: 84px;
-  margin-left:-10px;
-  margin-right:-10px;
-  background: #d7d7d7;
-  border-bottom:1px solid #bababa;
-  border-radius: 60px/43px;
-  text-align: center;
-  z-index: 9;
-}
-#logo_bg:after {
-  display: block;
-  content:'';
-  position: absolute;
-  top:1px;
-  width: 100%;
-  height: 100%;
-  border-bottom:1px solid #fff;
-  border-radius: 60px/43px;
-  z-index: -1;
-}
-#logo {
-  margin-top:15px;
+.breadcrumbs h2 {
+  padding-bottom: 50px;
+  color: #fff;
+  font: normal 24px Georgia, 'Times New Roman', serif;
 }
   /*End LOGO*/
 
@@ -317,16 +269,18 @@ body > article {
   margin-bottom: -120px;
   margin-top:-220px;
 }
-body > article.left_column > section {
+body > article#left_column > section {
   position: relative;
   width: 620px;
   margin-bottom: 10px;
+
 }
-article.left_column {
+article#left_column {
   float:left;
+  margin-top: -130px;
   margin-left:10%;
 }
-article .main_sect img, #feedback_list ul li img {
+article .main_sect img, .img_descr img {
   padding: 4px;
   background: #d7d7d7;
   border: 1px solid #bbb;
@@ -335,7 +289,7 @@ article .main_sect img, #feedback_list ul li img {
   /*Slider*/
 
 #slider_box {
-  width: 600px;
+  width: 600px !important;
   margin: 0 20px 20px 0;
   padding: 10px;
 }
@@ -392,7 +346,7 @@ article .main_sect img, #feedback_list ul li img {
   /*Why_fmf*/
 #why_fmf {
   padding: 0;
-  background: url("/static/images/logo_bg.png") 530px 50px no-repeat #F4F4F4;;
+  background: url("/static/images/logo_bg_1.png") 530px 50px no-repeat #F4F4F4;;
   background-size:80px 54px ;
 }
 #why_fmf > p{
@@ -401,12 +355,16 @@ article .main_sect img, #feedback_list ul li img {
 .title_arrow {
   position: relative;
   width: 100%;
-  margin:-5px 0 0 -11px;
-  padding: 5px 10px;
-  background: #bbd9ee;
+  margin:-5px 0 0 -7px;
+  padding: 5px 6px;
+  background: #303550;
+  background: -webkit-linear-gradient(#303550,#404570);
+  background: -moz-linear-gradient(#7d7d7d,#636363);
+  background: -o-linear-gradient(#7d7d7d,#636363);
+  background: linear-gradient(#7d7d7d,#636363);
   border:1px solid;
-  border-color:#c8e9ff #a2bccf #a2bccf #c8e9ff ;
-  color: #333;
+  border-color:#506085 #202535 #202535 #506085 ;
+  color: #fff;
   font: bold 18px/20px Georgia, sans-serif;
 }
 .title_arrow:before, .title_arrow:after {
@@ -416,14 +374,14 @@ article .main_sect img, #feedback_list ul li img {
   border-color: transparent;
   bottom: -11px;
 }
-.title_arrow:before
-{ border-width: 0 10px 10px 0;
-  border-right-color: #a2bccf;
+.title_arrow:before {
+  border-width: 0 6px 10px 0;
+  border-right-color: #202535;
   left: 0;
 }
 .title_arrow:after {
-  border-width: 0 0 10px 10px;
-  border-left-color: #a2bccf;
+  border-width: 0 0 10px 6px;
+  border-left-color: #202535;
   right: 0;
 }
 .title_arrow .arrow {
@@ -432,9 +390,9 @@ article .main_sect img, #feedback_list ul li img {
   right:30px;
   width: 36px;
   height: 0;
-  background: #bbd9ee;;
-  border-left:1px solid #c8e9ff;
-  border-right:1px solid #a2bccf;
+  background: #404570;
+  border-left:1px solid #506085;
+  border-right:1px solid #202535;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -448,9 +406,9 @@ article .main_sect img, #feedback_list ul li img {
   right:5px;
   width:25px;
   height:25px;
-  background: #bbd9ee;
+  background: #404570;
   border:1px solid;
-  border-color: transparent #a2bccf #c8e9ff transparent;
+  border-color: transparent #202535 #506085 transparent;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -467,9 +425,16 @@ article .main_sect img, #feedback_list ul li img {
 
   /*Feedbacks*/
 #feedbacks {
-
+  background: rgba(255,255,255,.6);
+}
+#feedbacks .streamer_slider{
+  height: 265px !important;
+  width: 620px !important;
+  overflow: hidden;
 }
 #feedbacks .img_descr {
+  width: 600px;
+  height: 117px;
   margin:10px 0;
   padding: 0 10px 5px;
   border-bottom: 1px solid #d5d5d5;
@@ -482,10 +447,10 @@ article .main_sect img, #feedback_list ul li img {
 .name_status {
   margin-top:0;
 }
-#feedbacks .img_descr:nth-child(odd) img {
+#feedbacks ul .img_descr:nth-child(even) img {
   float:right;
 }
-#feedbacks .img_descr:nth-child(odd) .name_status {
+#feedbacks ul .img_descr:nth-child(even) .name_status {
   text-align:right;
 }
 
@@ -631,9 +596,9 @@ article .main_sect img, #feedback_list ul li img {
   height: 35px;
   width: 45px;
   padding: 3px 0 0;
-  background-color: #bbd9ee;
+  background-color: #4384C4;
   border: 1px solid;
-  border-color:#c8e9ff #a2bccf #a2bccf #c8e9ff;
+  border-color:#4f9ae3 #306294 #306294 #4f9ae3;
   text-align: center;
   color: white;
   text-transform: uppercase;
@@ -713,7 +678,7 @@ aside > section {
   padding:0 10px;
   font-size: 14px;
   font-weight: bold;
-  text-shadow: 0 1px 1px #eee;
+  text-shadow: 0 1px 1px #000;
 }
 #events {
   overflow: hidden;
@@ -723,18 +688,16 @@ aside > section {
  /*Flatpages*/
 .flatpage {
   overflow: hidden;
+  margin-left:450px;
+  margin-right: 10%;
   padding: 10px;
-  background: rgba(255,255,255,.7);
+  background: url("/static/images/logo_bg_1.png") fixed  10% 150px #fafafa no-repeat;
 /*  background: -moz-linear-gradient(top, #313131 0%, #575757 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#313131), color-stop(100%,#575757));
   background: -webkit-linear-gradient(top, #313131 0%,#575757 100%);
   background: -o-linear-gradient(top, #313131 0%,#575757 100%);
   background: -ms-linear-gradient(top, #313131 0%,#575757 100%);
   background: linear-gradient(top, #313131 0%,#575757 100%);*/
-
-}
-.flatpage p, .flatpage ul, .text, .text p {
-
 }
 .flatpage table{
   margin: 20px;
@@ -752,7 +715,18 @@ aside > section {
   padding-left:40px;
   list-style-type: disc;
 }
-
+.left_sidebar {
+  position: absolute;
+  top:315px;
+  width: 250px;
+}
+.left_sidebar > section {
+  margin: 0;
+}
+.fixed_sidebar {
+  position: fixed;
+  top:50px;
+}
 .entrants_images_box {
   position: relative;
   width: 600px;
@@ -843,12 +817,8 @@ footer {
   z-index:2;
   clear: both;
 }
-.fixed_footer {
-  position: fixed;
-  bottom: 0;
-}
 .push_top {
-  height: 220px;
+  height: 130px;
   clear:both;
 }
 .push_bottom {
@@ -865,7 +835,10 @@ footer {
   background: url("/static/images/toTop.png") 0 0 no-repeat;
   z-index: 999;
   opacity: .6;
-
+}
+.toTop_button .toTop.toTop_fixed {
+  position: absolute;
+  bottom:140px;
 }
 .toTop_button .toTop:hover {
   opacity: 1;
@@ -954,8 +927,12 @@ footer li a:hover {
 /*MEDIAQUERIES*/
 
 @media screen and (max-width: 1220px) {
-  nav > ul > li a {
-  margin: 5px 10px;
+  .flatpage {
+    min-width: 480px;
+    margin-left: 400px;
+    margin-right: 5%;
+    padding: 10px;
+    background: url("/static/images/logo_bg_1.png") fixed 10% 150px #FAFAFA no-repeat;
   }
   nav > ul > li:first-child {
     margin-left:5%;
@@ -966,7 +943,7 @@ footer li a:hover {
   aside {
     margin:0 5%;
   }
-  article.left_column {
+  article#left_column {
     margin-left: 5%;
   }
 }

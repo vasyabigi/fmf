@@ -9,11 +9,11 @@
 {% endblock %}
 
 {% block breadcrumbs %}
-  <span><a href="{% url index-view %}">{% trans "Home" %}</a> ></span>
+  <span><a href="{% url index-view %}">{% trans "Home" %}</a> /</span>
   {% ifequal '/cooperation/' flatpage.url %}
-    <span>{{ flatpage.title }}</span>
+    <h2>{{ flatpage.title }}</h2>
   {% else %}
-    <span><a href="/{{ LANGUAGE_CODE }}/cooperation/">{% trans "Cooperation" %}</a> ></span>
-    <span>{{ flatpage.title }}</span>
+    <span><a href="/{{ LANGUAGE_CODE }}/cooperation/">{% trans "Cooperation" %}</a> /</span>
+    <h2>{{ flatpage.title }}</h2>
   {% endifequal %}
 {% endblock %}

@@ -3,17 +3,18 @@
 {% load i18n thumbnail flatpages core_tags %}
 
 
+
 {% block article %}
 
 <!--left column-->
-  <article class="left_column">
+  <article id="left_column">
     <div class="push_top"></div>
 
   {% block content %}
   <!--slider-->
     <section id="slider_box" class="bordered">
       <div id="slider">
-        <ul class="news-slider">
+        <ul>
           {% for image in images %}
             <li>
               {% thumbnail image.image '600x300' crop='center' as im %}
@@ -29,7 +30,7 @@
 
     <!--why_fmf?-->
     <section id="why_fmf" class="bordered main_sect">
-      <div class="title_arrow"><div class="arrow"></div>
+      <div class="title_arrow">
         <h5>Чому ФМФ?</h5>
       </div>
      <p>Навчання Фізико-Математичному Факультеті є відмінним вибором в якості відправної точки процвітаючою професійної кар'єри. Студенти та аспіранти Математики і Фізики мають творчі, оригінальні і гнучкі розуми. Отже, вони є успішними і популярними в багатьох сферах діяльності, таких як наукові дослідження, освіта, промисловість та фінанси.</p>
@@ -43,25 +44,29 @@
           <h3 class="title_list">{% trans "Feedbacks" %}:</h3>
           <span class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></span>
         </div>
-        {% for feedback in feedbacks %}
-        <div class="img_descr">
-          <a href="{{ feedback.get_absolute_url }}">
-            {% thumbnail feedback.image '80x100' crop='center' as im %}
-            <img src="{{ im.url }}" alt="{{ image.page.title }}">
-            {% endthumbnail %}
-          </a>
-          <p class="name_status">
-            <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
-            <i class="status">{{ feedback.description|truncatewords:15 }}</i>
-          </p>
-          {% with feedback|get_random_question as result %}
-          <p>-{{ result.question }}<br/>
-            <i>"{{ result.answer|truncatewords:15 }}"</i>
-            <a href="{{ feedback.get_absolute_url }}">{% trans "more" %}</a>
-          </p>
-          {% endwith %}
+        <div class="streamer_slider">
+          <ul>
+          {% for feedback in feedbacks %}
+            <li class="img_descr">
+              <a href="{{ feedback.get_absolute_url }}">
+                {% thumbnail feedback.image '80x100' crop='center' as im %}
+                <img src="{{ im.url }}" alt="{{ image.page.title }}">
+                {% endthumbnail %}
+              </a>
+              <p class="name_status">
+                <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
+                <i class="status">{{ feedback.description|truncatewords:15 }}</i>
+              </p>
+              {% with feedback|get_random_question as result %}
+              <p>-{{ result.question }}<br/>
+                <i>"{{ result.answer|truncatewords:15 }}"</i>
+                <a href="{{ feedback.get_absolute_url }}">{% trans "more" %}</a>
+              </p>
+              {% endwith %}
+            </li>
+          {% endfor %}
+          </ul>
         </div>
-        {% endfor %}
       </section>
     {% endif %}
     <!--END feedbacks-->

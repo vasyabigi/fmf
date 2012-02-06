@@ -22,7 +22,7 @@
     <meta name="google-site-verification" content="">
     <meta name="author" content="Vasya&Seroga">
     <meta name="Copyright" content="Copyright V&S 2012. All Rights Reserved.">
-    <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon1.ico">
+    <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -43,10 +43,7 @@
     <header>
       {% block logo %}
         <div class="container">
-          <h1 class="logo_name">{% trans "Faculty of Physics and Mathematics" %}</h1>
-          <div id="logo_block">
-              <a href="{% url index-view %}"><img id="logo" src="{{ STATIC_URL }}images/emblem_84x56.png" alt="hi5"></a>
-          </div>
+          <h1><a class="logo" href="{% url index-view %}">{% trans "Faculty of Physics and Mathematics" %}</a></h1>
         </div>
       {% endblock %}
       <div id="lang">
@@ -105,6 +102,7 @@
     <div id="scripts">
       <!--scripts-->
       <script src="{{ STATIC_URL }}js/jquery.js"></script>
+      <script src="{{ STATIC_URL }}js/bgpos.js"></script>
       <!--<script src="{{ STATIC_URL }}js/less.js"></script>-->
       <!--<script src="{{ STATIC_URL }}js/snowstorm.js"></script>-->
       <!--<script src="{{ STATIC_URL }}js/jquery.circulate.js"></script>-->
