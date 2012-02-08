@@ -170,19 +170,20 @@ var Fmf = (function(){
                 var scrollBottom = $(document).height() - $(window).height() - scrollTop;
                 var header_height = $('header').outerHeight() + $('nav').outerHeight();
 
+                /*ToTop_button*/
                 if(scrollTop > 300) {
                     $('.toTop').fadeIn();
                 } else {
                     $('.toTop').fadeOut();
                 }
-
+                /*ToTop_button fixing*/
                 if(scrollBottom < 100) {
                     $('.toTop').addClass('toTop_fixed');
                 } else {
                     $('.toTop').removeClass('toTop_fixed');
                 }
-
-                if (scrollTop > header_height) {
+                /*Sidebar fixing*/
+                if (scrollTop > 180) {
                     $('.left_sidebar').addClass('fixed_sidebar');
                 } else {
                     $('.left_sidebar').removeClass('fixed_sidebar');
@@ -192,7 +193,31 @@ var Fmf = (function(){
             $('.toTop').click(function() {
                 $('body,html').animate({scrollTop:0},'slow');
             });
+        },
+
+        TextNav: function(){
+            $(window).scroll(function(arr) {
+                var scrollTop = $(this).scrollTop();
+                var val = $('a[name]').length;
+
+                for (i=1; i<=val; i++) {
+
+                    if (scrollTop > $('a[name='+i+']').offset().top-1 && scrollTop < $('a[name='+(i+1)+']').offset().top-1 && scrollTop < $('a[name='+val+']').offset().top+300) {
+                        $("#textnav > ul > li > a").removeClass('selected');
+                        $("a#"+i).addClass('selected');
+                    }
+                    else if (scrollTop < $('a[name=1]').offset().top-1 || scrollTop > $('a[name='+(val)+']').offset().top+300) {
+                        $("#textnav > ul > li > a").removeClass('selected');
+                    }
+                }
+            });
+
+
+            $("#textnav > ul > li > a").click(function() {
+                $('html,body').stop().animate({scrollTop: $('a[name='+$(this).attr("id")+']').offset().top},'slow');
+            });
         }
+
     }
 })($);
 
@@ -205,6 +230,7 @@ $(document).ready(function(){
     Fmf.ContactForm();
     Fmf.ScaleArrow();
     Fmf.Scroll();
+    Fmf.TextNav();
 });
 
 
