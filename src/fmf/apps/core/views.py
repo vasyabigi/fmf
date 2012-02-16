@@ -29,7 +29,7 @@ class IndexView(TemplateView):
             images = IndexSliderImage.objects.filter(is_active=True).select_related()
             cache.set('images', images)
 
-        feedbacks = Feedback.objects.order_by('?').select_related()[:3]
+        feedbacks = Feedback.objects.order_by('?').select_related()[:4]
         context.update({
             'images': images,
             'news_list': News.objects.filter(is_active=True).select_related()[:3],

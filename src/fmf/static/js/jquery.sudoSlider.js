@@ -35,7 +35,7 @@
 			continuous:        falsev, /* option[11]/*continuous*/
 			prevNext:          truev, /* option[12]/*prevNext*/
 			numeric:           falsev, /* option[13]/*numeric*/
-			numericAttr:       'class="controls"', /* option[14]/*numericAttr*/
+			numericAttr:       'class="control"', /* option[14]/*numericAttr*/
 			numericText:       [], /* option[15]/*numericText*/
 			clickableAni:      falsev, /* option[16]/*clickableAni*/
 			history:           falsev, /* option[17]/*history*/
@@ -58,7 +58,7 @@
 			nextHtml:          '<a href="#" class="nextBtn"> next </a>', /* option[34]/*nextHtml*/
 			loadingText:       'Loading Content...', /* option[35]/*loadingText*/
 			firstHtml:         '<a href="#" class="firstBtn"> first </a>', /* option[36]/*firstHtml*/
-			controlsAttr:      'id="controls"', /* option[37]/*controlsAttr*/
+			controlsAttr:      'class="controls"', /* option[37]/*controlsAttr*/
 			lastHtml:          '<a href="#" class="lastBtn"> last </a>', /* option[38]/*lastHtml*/
 			autowidth:         truev, /*  option[39]/*autowidth*/
 			slideCount:        1, /*  option[40]/*slideCount*/
@@ -890,7 +890,7 @@
 								// I clone the target, and fade it in, then hide the cloned element while adjusting the slider to show the real target.
 								var clone = li.eq(getRealPos(a)).clone().prependTo(obj);
 								if (isFunc(option[29]/*beforeAniFunc*/)) option[29]/*beforeAniFunc*/.call(clone, getRealPos(a)+1);
-								clone.css({'z-index' : '100000', 'position' : 'absolute', 'list-style' : 'none', 'top' : option[6]/*vertical*/ ? push : 0, 'left' : option[6]/*vertical*/ ? 0 : push}).
+								clone.css({'z-index' : '100', 'position' : 'absolute', 'list-style' : 'none', 'top' : option[6]/*vertical*/ ? push : 0, 'left' : option[6]/*vertical*/ ? 0 : push}).
 								// Lets fade it in. 
 								hide().fadeIn(option[23]/*fadespeed*/, option[8]/*ease*/, function() {
 									fixClearType(this);

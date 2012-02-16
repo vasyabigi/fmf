@@ -48,18 +48,18 @@ var Fmf = (function(){
                     }
                 });
 
-                $(".prevBtn, .nextBtn, #slider").hover(
+                $("#slider_box").hover(
                     function () {
                         // Mouse in
-                        $(".prevBtn, .nextBtn").stop().fadeTo(200, 1);
+                        $("#slider_box .prevBtn, #slider_box .nextBtn").stop().fadeTo(200, 1);
                     },
                     function () {
                         //Mouse out
-                        $(".prevBtn, .nextBtn").stop().fadeTo(200, 0);
+                        $("#slider_box .prevBtn, #slider_box .nextBtn").stop().fadeTo(200, 0);
                     }
                 );
 
-                $(".prevBtn, .nextBtn").stop().fadeTo(0, 0);
+                $("#slider_box .prevBtn, #slider_box .nextBtn").stop().fadeTo(0, 0);
                 $('#slider_box').mouseenter(function() {
                     auto = sudoSlider.getValue('autoAnimation');
                     sudoSlider.stopAuto();
@@ -128,7 +128,7 @@ var Fmf = (function(){
                     slideCount:2,
                     autowidth:false,
                     autoheight:false,
-                    continuous:true
+                    speed: 400
                 });
             }
         },
@@ -203,21 +203,26 @@ var Fmf = (function(){
                 for (i=1; i<=val; i++) {
 
                     if (scrollTop > $('a[name='+i+']').offset().top-1 && scrollTop < $('a[name='+(i+1)+']').offset().top-1 && scrollTop < $('a[name='+val+']').offset().top+300) {
-                        $("#textnav > ul > li > a").removeClass('selected');
+                        $(".side_nav > ul ul > li > a").removeClass('selected');
                         $("a#"+i).addClass('selected');
                     }
                     else if (scrollTop < $('a[name=1]').offset().top-1 || scrollTop > $('a[name='+(val)+']').offset().top+300) {
-                        $("#textnav > ul > li > a").removeClass('selected');
+                        $(".side_nav > ul ul > li > a").removeClass('selected');
                     }
                 }
             });
 
 
-            $("#textnav > ul > li > a").click(function() {
+            $(".side_nav > ul ul > li > a").click(function() {
                 $('html,body').stop().animate({scrollTop: $('a[name='+$(this).attr("id")+']').offset().top},'slow');
             });
-        }
+        },
 
+        LazyLoad: function(){
+            $("img").lazyload({
+                effect : "fadeIn"
+            });
+        }
     }
 })($);
 
@@ -231,6 +236,8 @@ $(document).ready(function(){
     Fmf.ScaleArrow();
     Fmf.Scroll();
     Fmf.TextNav();
+    Fmf.StreamerSlider();
+    Fmf.LazyLoad();
 });
 
 

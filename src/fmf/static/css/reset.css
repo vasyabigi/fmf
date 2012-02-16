@@ -62,10 +62,10 @@ hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 
 input, select {vertical-align: middle;}
 
 pre {
-	white-space: pre;  CSS2
-	white-space: pre-wrap;  CSS 2.1
-	white-space: pre-line;  CSS 3 (and 2.1 as well, actually)
-	word-wrap: break-word;  IE
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: pre-line;
+	word-wrap: break-word;
 }
 
 input[type="radio"] {vertical-align: text-bottom;}
@@ -105,6 +105,7 @@ button, input, select, textarea {margin: 0;}
 
 .ie9 {filter: none;}
 /* let's clear some floats */
+
 .clearfix:before, .clearfix:after {
   clear: both;
   content: ".";
@@ -113,7 +114,10 @@ button, input, select, textarea {margin: 0;}
   visibility: hidden;
   font-size: 0;
 }
-.clearfix { zoom: 1; }
+.clearfix {
+  zoom: 1;
+
+}
 .clear {
   clear:both;
   height: 0;

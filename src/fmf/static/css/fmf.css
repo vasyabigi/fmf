@@ -28,9 +28,8 @@ body > header {
 }
 
   /*Main navigation*/
-nav {
+nav.main {
   position: relative;
-  margin-bottom: -60px;
   background: #373737;
   background: rgba(0, 0, 0, 0.77);
   background: -moz-linear-gradient(top, #313131 0%, #575757 100%);
@@ -53,32 +52,32 @@ nav {
   background: linear-gradient(top, #313131 0%,#575757 100%);
   /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313131', endColorstr='#f8f8f8',GradientType=0 );*/ /* IE6-9 */
 }
-nav > ul {
+nav.main > ul {
   position: relative;
   height: 35px;
   padding-left: 10%;
   font-size: 14px;
   line-height: 35px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #bbb;
   background: url("/static/images/header_pattern.png") bottom left #fff repeat-x;
 }
-nav > ul > li {
+nav.main > ul > li {
   position: relative;
   display: inline-block;
   float:left;
   vertical-align: middle;
 }
-nav > ul > li:first-child {
+nav.main > ul > li:first-child {
   margin-left:95px;
 }
-nav > ul > li:last-child {
+nav.main > ul > li:last-child {
   border-right: 1px solid #bbb;
 }
-nav > ul li:hover {
+nav.main > ul li:hover {
   opacity: 1;
 }
 
-nav > ul ul {
+nav.main > ul ul {
   visibility: hidden;
   position: absolute;
   top: 35px;
@@ -95,22 +94,22 @@ nav > ul ul {
   transition:opacity 0.2s ease-in;
   z-index: 3;
 }
-nav > ul ul li {
+nav.main > ul ul li {
   position: relative;
   z-index: 4;
 }
-nav > ul ul a:hover, nav > ul ul li:hover > a {
+nav.main > ul ul a:hover, nav.main > ul ul li:hover > a {
   border-top-color: #fff;
   border-bottom-color: #bbb;
   cursor: pointer;
   background: #bbd9ee;
   color: #333;
 }
-nav > ul li:hover > ul {
+nav.main > ul li:hover > ul {
   visibility: visible;
   opacity: 1;
 }
-nav > ul > li > a {
+nav.main > ul > li > a {
   display: block;
   margin:0;
   padding:0 15px;
@@ -124,14 +123,14 @@ nav > ul > li > a {
   -o-transition: background 0.2s ease-in;
   transition: background 0.2s ease-in;
 }
-nav ul > li.active > a {
+nav.main ul > li.active > a {
   background: #3b3b3b;
   border-top-color:#bbb;
   border-left-color: #fff;
   color: #f4f4f4;
   text-shadow: 0 1px #111;
 }
-nav > ul > li:hover > a {
+nav.main > ul > li:hover > a {
   position: relative;
   background: #fafafa;
   border-color: #bbb;
@@ -139,7 +138,7 @@ nav > ul > li:hover > a {
   text-shadow: 0 1px #fff;
   z-index: 4;
 }
-nav > ul ul li a {
+nav.main > ul ul li a {
   display:block;
   padding:7px;
   background-color: #fafafa;
@@ -151,7 +150,7 @@ nav > ul ul li a {
   -o-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
 }
-nav ul ul ul {
+nav.main ul ul ul {
   position: absolute;
   left:100%;
   top:0;
@@ -272,7 +271,7 @@ body > article#left_column > section {
 }
 article#left_column {
   float:left;
-  margin: 80px 10% 0;
+  margin: 20px 10% 0;
   margin-right: 0 !important;
 }
 article .main_sect img, .img_descr img {
@@ -292,19 +291,6 @@ article .main_sect img, .img_descr img {
   z-index: 2;
   width:600px;
   height: 300px;
-}
-#slider img{
-  border:none;
-}
-#slider ul, #slider li{
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-#slider li {
-  width:600px;
-  overflow:hidden;
-  position: relative;
 }
 .caption {
   position:absolute;
@@ -423,9 +409,11 @@ article .main_sect img, .img_descr img {
   background: rgba(255,255,255,.6);
 }
 #feedbacks .streamer_slider{
-  height: 265px !important;
-  width: 620px !important;
-  overflow: hidden;
+  height: 275px;
+  width: 620px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #D5D5D5;
+  box-shadow: 0 1px 0 #fff;
 }
 #feedbacks .img_descr {
   width: 600px;
@@ -654,13 +642,14 @@ article .main_sect img, .img_descr img {
   /*END News*/
   /*Events*/
 aside {
-  margin:80px 10% 0;
+  margin:20px 10% 0;
 }
 aside > section {
   min-width: 285px;
   margin-left:640px;
 }
 .streamer {
+  position: relative;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
@@ -705,7 +694,7 @@ aside > section {
 .left_sidebar {
   float: left;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: -60px;
 }
 .left_sidebar > section {
   width: 290px;
@@ -716,6 +705,7 @@ aside > section {
 .fixed_sidebar {
   position: fixed;
   top:50px;
+  margin-top: 0;
 }
 .selected {
   color:green;
@@ -974,14 +964,14 @@ footer li a:hover {
   border-color: #527d35;
 }
 .social_likes_box {
+  position: relative;
   height: 37px;
 }
 .social_likes {
-  display: inline-block;
-  float:right;
+  position: absolute;
   width: 315px;
   height: 23px;
-  margin-right: 60px;
+  right: 60px;
   padding: 5px 10px;
   background: #d7d7d7;
   border:1px solid #bababa;
