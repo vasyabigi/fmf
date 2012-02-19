@@ -110,6 +110,7 @@ PROJECT_APPS = (
     'news',
     'flatpages_my',
     'feedbacks',
+    'sections',
 
     #Need to be last
     'seo',
