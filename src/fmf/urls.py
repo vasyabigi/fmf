@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin/filebrowser/', include('filebrowser.urls')),
+    url(r'^imperavi/', include('imperavi.urls')),
     (r'^tinymce/', include('tinymce.urls')),
 
     url(r'^', include('core.urls')),

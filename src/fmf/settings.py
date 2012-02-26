@@ -97,8 +97,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 
-
-
 ROOT_URLCONF = 'fmf.urls'
 
 TEMPLATE_DIRS = (
@@ -141,6 +139,7 @@ INSTALLED_APPS = (
     'chunks',
     'memcache_status',
     'admin_tools',
+    'imperavi',
 
 ) + PROJECT_APPS
 
@@ -177,7 +176,7 @@ LOGGING = {
             'propagate': True,
         },
         'fmf': {
-             'handlers':['file_logger'],
+             'handlers': ['file_logger'],
              'level': 'INFO',
          },
     }
@@ -192,11 +191,11 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme': "advanced",
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 10,
-    'theme_advanced_toolbar_location' : "top",
-    'theme_advanced_toolbar_align' : "left",
-    'theme_advanced_buttons1' : "fullscreen,|,undo,redo,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,|,outdent,indent,|,bullist,numlist,|,anchor,link,unlink,image,|,preview,code,|,cleanup,removeformat,|,pastetext,pasteword",
-    'theme_advanced_buttons2' : "formatselect,tablecontrols",
-    'theme_advanced_buttons3' : "",
+    'theme_advanced_toolbar_location': "top",
+    'theme_advanced_toolbar_align': "left",
+    'theme_advanced_buttons1': "fullscreen,|,undo,redo,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,|,outdent,indent,|,bullist,numlist,|,anchor,link,unlink,image,|,preview,code,|,cleanup,removeformat,|,pastetext,pasteword",
+    'theme_advanced_buttons2': "formatselect,tablecontrols",
+    'theme_advanced_buttons3': "",
 }
 
 try:
@@ -219,4 +218,5 @@ SEO_FOR_MODELS = [
     'news.models.Event',
     'flatpages_my.models.FlatPage',
     'feedbacks.models.Feedback',
+    'sections.models.Section',
 ]
