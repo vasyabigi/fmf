@@ -6,8 +6,8 @@ from sorl.thumbnail.fields import ImageField
 
 class Section(models.Model):
     title = models.CharField(_('title'), max_length=256)
-    content = models.TextField(_('content'), blank=True)
-    position = PositionField()
+    content = models.TextField(_('content'), blank=True, null=True)
+    position = PositionField(default=0)
 
     class Meta:
         verbose_name = _('Section')
@@ -21,9 +21,8 @@ class Section(models.Model):
 class Article(models.Model):
     section = models.ForeignKey(Section, verbose_name=_("Section"))
     title = models.CharField(_('title'), max_length=256)
-    content = models.TextField(_('content'), blank=True)
-    position = PositionField()
-
+    content = models.TextField(_('content'), blank=True, null=True)
+    position = PositionField(collection='section', default=0)
 
     class Meta:
         verbose_name = _('Article')
@@ -38,7 +37,7 @@ class ArticleImage(models.Model):
     article = models.ForeignKey(Article, related_name='images', verbose_name=_("Article"))
     title = models.CharField(_("Title"), max_length=256, blank=True, null=True)
     image = ImageField(upload_to='images/articles', verbose_name=_("Image"))
-    position = PositionField(collection='page')
+    position = PositionField(collection='article')
 
     class Meta:
         verbose_name = _("Image")

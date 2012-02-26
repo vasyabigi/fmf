@@ -14,10 +14,10 @@ class Migration(SchemaMigration):
             ('title', self.gf('django.db.models.fields.CharField')(max_length=256)),
             ('title_uk', self.gf('django.db.models.fields.CharField')(max_length=256, null=True, blank=True)),
             ('title_en', self.gf('django.db.models.fields.CharField')(max_length=256, null=True, blank=True)),
-            ('content', self.gf('django.db.models.fields.TextField')(blank=True)),
+            ('content', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('content_uk', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('content_en', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
-            ('position', self.gf('django.db.models.fields.IntegerField')(default=-1)),
+            ('position', self.gf('django.db.models.fields.IntegerField')(default=0)),
         ))
         db.send_create_signal('sections', ['Section'])
 
@@ -28,10 +28,10 @@ class Migration(SchemaMigration):
             ('title', self.gf('django.db.models.fields.CharField')(max_length=256)),
             ('title_uk', self.gf('django.db.models.fields.CharField')(max_length=256, null=True, blank=True)),
             ('title_en', self.gf('django.db.models.fields.CharField')(max_length=256, null=True, blank=True)),
-            ('content', self.gf('django.db.models.fields.TextField')(blank=True)),
+            ('content', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('content_uk', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('content_en', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
-            ('position', self.gf('django.db.models.fields.IntegerField')(default=-1)),
+            ('position', self.gf('django.db.models.fields.IntegerField')(default=0)),
         ))
         db.send_create_signal('sections', ['Article'])
 
@@ -61,11 +61,11 @@ class Migration(SchemaMigration):
     models = {
         'sections.article': {
             'Meta': {'ordering': "('position',)", 'object_name': 'Article'},
-            'content': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
+            'content': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'content_en': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'content_uk': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'position': ('django.db.models.fields.IntegerField', [], {'default': '-1'}),
+            'position': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'section': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['sections.Section']"}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '256'}),
             'title_en': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'}),
@@ -81,11 +81,11 @@ class Migration(SchemaMigration):
         },
         'sections.section': {
             'Meta': {'ordering': "('position',)", 'object_name': 'Section'},
-            'content': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
+            'content': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'content_en': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'content_uk': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'position': ('django.db.models.fields.IntegerField', [], {'default': '-1'}),
+            'position': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '256'}),
             'title_en': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'}),
             'title_uk': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'})
