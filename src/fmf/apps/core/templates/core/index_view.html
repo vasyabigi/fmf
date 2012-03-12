@@ -29,17 +29,15 @@
 
     <!--why_fmf?-->
     <section id="why_fmf" class="bordered main_sect">
-      <div class="title_arrow">
-        <h5>Чому ФМФ?</h5>
-      </div>
-     <p>Навчання Фізико-Математичному Факультеті є відмінним вибором в якості відправної точки процвітаючою професійної кар'єри. Студенти та аспіранти Математики і Фізики мають творчі, оригінальні і гнучкі розуми. Отже, вони є успішними і популярними в багатьох сферах діяльності, таких як наукові дослідження, освіта, промисловість та фінанси.</p>
+      <h5>Чому ФМФ?</h5>
+      <p>Навчання Фізико-Математичному Факультеті є відмінним вибором в якості відправної точки процвітаючою професійної кар'єри. Студенти та аспіранти Математики і Фізики мають творчі, оригінальні і гнучкі розуми. Отже, вони є успішними і популярними в багатьох сферах діяльності, таких як наукові дослідження, освіта, промисловість та фінанси.</p>
     </section>
     <!--end why_fmf?-->
 
     <!--feedbacks-->
     {% if feedbacks %}
       <section id="feedbacks" class="bordered main_sect">
-        <div class="title_arrow"><div class="arrow"></div>
+        <div class="title_arrow red"><div class="arrow"></div>
           <h3 class="title_list">{% trans "Feedbacks" %}:</h3>
           <span class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></span>
         </div>
@@ -85,7 +83,7 @@
 
       <!--events-->
       <section class="streamer bordered">
-        <div class="title_arrow"><div class="arrow"></div>
+        <div class="title_arrow blue"><div class="arrow"></div>
           <h3 class="title_list">{% trans "Upcoming events" %}:</h3>
           <p class="show_all"><a href="{% url event-list %}">{% trans "All" %} »</a></p>
         </div>
@@ -112,7 +110,7 @@
 
       <!--news-->
       <section class="streamer bordered">
-        <div class="title_arrow">
+        <div class="title_arrow green">
           <div class="arrow"></div>
           <h3 class="title_list">{% trans "Last news" %}:</h3>
           <p class="show_all"><a href="{% url news-list %}">{% trans "All" %} »</a></p>
