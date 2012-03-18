@@ -17,7 +17,9 @@ admin.site.register(Section, SectionAdmin)
 
 
 class ArticleAdmin(ImperaviModelAdmin, BaseTranslationAdmin):
+    list_display = ('__unicode__', 'position',)
     inlines = (ArticleImageAdmin,)
     prepopulated_fields = {'slug': ('title',)}
+    list_filter = ('section',)
 
 admin.site.register(Article, ArticleAdmin)
