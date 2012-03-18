@@ -20,7 +20,7 @@
 
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "Home" %}</a> / </span>
-  <span><a href="{{ section.get_absolute_url }}">{{ article.section }}</a></span>
+  <span><a href="{{ article.section.get_absolute_url }}">{{ article.section }}</a></span>
   <h2>{{ article.title }}</h2>
 {% endblock %}
 
@@ -34,12 +34,13 @@
 {% block aside_left %}
   <aside class="left_sidebar">
     <section id="textnav" class="streamer bordered">
-      <div class="title_arrow"></div>
+      <div class="title_arrow">
+        <h3 class="title_list">{{ article.section }}:</h3>
+      </div>
       <nav class="side_nav">
         <ul>
-          <li class="active_article"><a href="#">active</a></li>
-          {% for article in article.section.articles.all %}
-            <li><a href="{{ article.get_absolute_url }}">{{ article }}</a></li>
+          {% for art in article.section.articles.all %}
+            <li {% ifequal article art %} class="active_article"{% endifequal %}><a href="{{ art.get_absolute_url }}">{{ art }}</a></li>
           {% endfor %}
         </ul>
       </nav>
