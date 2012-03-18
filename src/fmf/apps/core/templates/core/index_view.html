@@ -29,7 +29,9 @@
 
     <!--why_fmf?-->
     <section id="why_fmf" class="bordered main_sect">
-      <h5>Чому ФМФ?</h5>
+      <div class="title_arrow">
+        <h5>Чому ФМФ?</h5>
+      </div>
       <p>Навчання Фізико-Математичному Факультеті є відмінним вибором в якості відправної точки процвітаючою професійної кар'єри. Студенти та аспіранти Математики і Фізики мають творчі, оригінальні і гнучкі розуми. Отже, вони є успішними і популярними в багатьох сферах діяльності, таких як наукові дослідження, освіта, промисловість та фінанси.</p>
     </section>
     <!--end why_fmf?-->
@@ -37,7 +39,7 @@
     <!--feedbacks-->
     {% if feedbacks %}
       <section id="feedbacks" class="bordered main_sect">
-        <div class="title_arrow red"><div class="arrow"></div>
+        <div class="title_arrow red">
           <h3 class="title_list">{% trans "Feedbacks" %}:</h3>
           <span class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></span>
         </div>

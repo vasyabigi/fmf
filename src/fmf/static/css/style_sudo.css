@@ -21,8 +21,8 @@ ol.control li a:focus, .prevBtn a:focus, .nextBtn a:focus{outline:none;}
 #slider_box .prevBtn, #slider_box .nextBtn {display:block;width:39px;height:50px;position:absolute;top:110px;z-index:101;background:url(../images/arrows_.png) no-repeat 0 0;cursor:pointer;}
 #slider_box .nextBtn {right:10px; background-position: -50px -39px;}
 
-.streamer .prevBtn,.streamer .nextBtn {display:block;width:50px;height:39px;position:absolute;right:0;bottom:0;z-index:101;background:url(../images/arrows_.png) no-repeat -39px 0;cursor:pointer;}
-.streamer .nextBtn {right:39px; background-position:0 -50px;}
+.streamer .prevBtn,.streamer .nextBtn {display:block;width:50px;height:39px;position:absolute;right:0;bottom:-10px;z-index:101;background:url(../images/arrows_.png) no-repeat -39px 0;cursor:pointer;}
+.streamer .nextBtn {right:50px; background-position:0 -50px;}
 
 /* Some demos use this line */
 #slider2 ul, #slider2 li{margin:0;padding:0;list-style:none;position:relative;display:block;} #slider2, #slider2 li {width:100%;overflow:hidden;}
