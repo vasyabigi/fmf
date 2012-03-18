@@ -24,7 +24,9 @@ class Section(models.Model):
 
 
 class Article(models.Model):
-    section = models.ForeignKey(Section, verbose_name=_("Section"), related_name='articles')
+    section = models.ForeignKey(Section, verbose_name=_("Section"),
+        related_name='articles', blank=True, null=True
+    )
     title = models.CharField(_('Title'), max_length=256)
     slug = models.SlugField(_('Slug'))
     content = models.TextField(_('Content'), blank=True, null=True)
