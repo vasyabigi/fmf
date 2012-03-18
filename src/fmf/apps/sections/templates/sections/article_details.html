@@ -11,27 +11,44 @@
 {% endblock %}
 
 {% block title %}
-   {% trans "FPM" %}|{{ article.title }}
+   {% trans "FPM" %}-{{ article.title }}
 {% endblock %}
 
 {% block extra_head %}
-  {% include 'includes/social_scripts.html' %}
+{#  {% include 'includes/social_scripts.html' %}#}
 {% endblock %}
 
 {% block breadcrumbs %}
-  <span><a href="{% url index-view %}">{% trans "Home" %}</a> > </span>
-  <span>{{ article.title }}</span>
+  <span><a href="{% url index-view %}">{% trans "Home" %}</a> / </span>
+  <span><a href="{{ section.get_absolute_url }}">{{ article.section }}</a></span>
+  <h2>{{ article.title }}</h2>
 {% endblock %}
 
 
 {% block nav %}
-  {% with 'home' as active %}
+  {% with article.section.slug as active %}
     {% include 'core/nav.html' %}
   {% endwith %}
 {% endblock %}
 
+{% block aside_left %}
+  <aside class="left_sidebar">
+    <section id="textnav" class="streamer bordered">
+      <div class="title_arrow"></div>
+      <nav class="side_nav">
+        <ul>
+          <li class="active_article"><a href="#">active</a></li>
+          {% for article in article.section.articles.all %}
+            <li><a href="{{ article.get_absolute_url }}">{{ article }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </section>
+  </aside>
+{% endblock %}
+
 {% block content %}
-  <section id="{{ section.title_en|slugify }}" class="section container bordered">
+  <section id="{{ section.title_en|slugify }}" class="flatpage bordered">
     {% include 'includes/social_html.html' %}
     {% block section_content %}
       {{ article.content|safe }}

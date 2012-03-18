@@ -98,10 +98,9 @@ nav.main > ul ul li {
   position: relative;
   z-index: 4;
 }
-nav.main > ul ul a:hover, nav.main > ul ul li:hover > a {
+nav.main > ul ul a:hover, nav.main > ul ul li:hover > a, .left_sidebar .side_nav ul li.active_article  {
   border-top-color: #fff;
   border-bottom-color: #bbb;
-  cursor: pointer;
   background: #bbd9ee;
   color: #333;
 }
@@ -155,6 +154,9 @@ nav.main ul ul ul {
   left:100%;
   top:0;
   width: auto;
+}
+nav.main .breadcrumbs {
+
 }
   /*Language buttons*/
 
@@ -645,12 +647,18 @@ aside > section {
   margin-right: 20px;
   margin-bottom: 20px;
 }
+.left_sidebar .side_nav ul li{
+  padding: 2px 5px;
+}
+.left_sidebar .side_nav ul li.active_article {
+
+}
 .fixed_sidebar {
   position: fixed;
   top:50px;
   margin-top: 0;
 }
-.selected {
+.selected_title {
   color:green;
   background: #aaa;
 }
