@@ -55,4 +55,4 @@ class ArticleImage(models.Model):
         ordering = ('position',)
 
     def __unicode__(self):
-        return 'image for %s' % self.article
+        return u'image for %s' % self.article.title
