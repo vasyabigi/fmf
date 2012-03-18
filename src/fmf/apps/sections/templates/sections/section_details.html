@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block extra_head %}
-
+  {% include 'includes/social_scripts.html' %}
 {% endblock %}
 
 {% block breadcrumbs %}
@@ -35,11 +35,6 @@
     {% include 'includes/social_html.html' %}
     {% block section_content %}
       {{ section.content|safe }}
-      <ul>
-        {% for article in section.articles.all %}
-          <li><a href="{{ article.get_absolute_url }}">{{ article }}</a></li>
-        {% endfor %}
-      </ul>
     {% endblock %}
     {% block section_images %}
       {% with section.images.all as images %}
