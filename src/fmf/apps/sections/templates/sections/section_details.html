@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% load i18n thumbnail cache seo_tags %}
+
+{% block meta_information %}
+  {% cache 500 meta_information LANGUAGE_CODE %}
+    <meta name="description" content="{% seo description for section %}" />
+    <meta name="keywords" content="{% seo keywords for section %}" />
+    <meta name="title" content="{% seo title for section %}">
+  {% endcache %}
+{% endblock %}
+
+{% block title %}
+   {% trans "FPM" %}|{{ section.title }}
+{% endblock %}
+
+{% block extra_head %}
+  {% include 'includes/social_scripts.html' %}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <span><a href="{% url index-view %}">{% trans "Home" %}</a> > </span>
+  <span>{{ section.title }}</span>
+{% endblock %}
+
+
+{% block nav %}
+  {% with 'home' as active %}
+    {% include 'core/nav.html' %}
+  {% endwith %}
+{% endblock %}
+
+{% block content %}
+  <section id="{{ section.title_en|slugify }}" class="section container bordered">
+    {% include 'includes/social_html.html' %}
+    {% block section_content %}
+      {{ section.content|safe }}
+    {% endblock %}
+    {% block section_images %}
+      {% with section.images.all as images %}
+        {% if images %}
+          <div class="news_detail_images_box">
+            <div id="news_detail_images">
+              <ul>
+                {% for image in images %}
+                  <li>
+                    {% thumbnail image.image "800x500" as im_big %}
+                      <a class="fancybox" rel="gallery" href="{{ im_big.url }}" title="{{ image.title|default:section.title }}">
+                        {% thumbnail image.image "150x100" crop="center" as im %}
+                          <img src="{{ im.url }}" alt="{{ image.title|default:section.title }}" width="{{ im.width }}" height="{{ im.height }}" />
+                        {% endthumbnail %}
+                      </a>
+                    {% endthumbnail %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endif %}
+      {% endwith %}
+    {% endblock %}
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+  {% if section.images.all %}
+    <script src="{{ STATIC_URL }}js/jquery.sudoSlider.js"></script>
+
+    <script src="{{ STATIC_URL }}js/fancybox/jquery.easing-1.3.pack.js"></script>
+    <script src="{{ STATIC_URL }}js/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.fancybox.css?v=2.0.3" type="text/css" media="screen" />
+    <script src="{{ STATIC_URL }}js/fancybox/jquery.fancybox.pack.js?v=2.0.3"></script>
+  {% endif %}
+{% endblock %}

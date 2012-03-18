@@ -11,7 +11,7 @@ from django.views.generic.base import TemplateView
 from django.core.cache import cache
 
 from models import IndexSliderImage
-from forms import ContactForm, QuestionForm
+from forms import ContactForm
 from news.models import News, Event
 from feedbacks.models import Feedback
 

@@ -7,3 +7,4 @@ src/fmf/.idea/
 static_collected/
 other/
 logs/
+fabfile.py
