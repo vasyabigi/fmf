@@ -5,8 +5,9 @@ from sorl.thumbnail.fields import ImageField
 
 
 class Section(models.Model):
-    title = models.CharField(_('title'), max_length=256)
-    content = models.TextField(_('content'), blank=True, null=True)
+    title = models.CharField(_('Title'), max_length=256)
+    slug = models.SlugField(_('Slug'))
+    content = models.TextField(_('Content'), blank=True, null=True)
     position = PositionField(default=0)
 
     class Meta:
@@ -17,11 +18,16 @@ class Section(models.Model):
     def __unicode__(self):
         return self.title
 
+    @models.permalink
+    def get_absolute_url(self):
+        return 'section-details', (self.slug,)
+
 
 class Article(models.Model):
-    section = models.ForeignKey(Section, verbose_name=_("Section"))
-    title = models.CharField(_('title'), max_length=256)
-    content = models.TextField(_('content'), blank=True, null=True)
+    section = models.ForeignKey(Section, verbose_name=_("Section"), related_name='articles')
+    title = models.CharField(_('Title'), max_length=256)
+    slug = models.SlugField(_('Slug'))
+    content = models.TextField(_('Content'), blank=True, null=True)
     position = PositionField(collection='section', default=0)
 
     class Meta:
@@ -31,6 +37,10 @@ class Article(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'article-details', (self.section.slug, self.slug)
 
 
 class ArticleImage(models.Model):

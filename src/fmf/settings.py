@@ -219,4 +219,5 @@ SEO_FOR_MODELS = [
     'flatpages_my.models.FlatPage',
     'feedbacks.models.Feedback',
     'sections.models.Section',
+    'sections.models.Article',
 ]

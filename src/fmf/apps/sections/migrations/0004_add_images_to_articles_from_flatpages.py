@@ -1,24 +1,22 @@
 # encoding: utf-8
 from south.v2 import DataMigration
-from django.conf import settings
 
 
 class Migration(DataMigration):
 
     def forwards(self, orm):
-        default_section = orm.Section()
-        default_section.title = 'Default section'
-        default_section.save()
         for page in orm.models['flatpages_my.flatpage'].objects.all():
-            article = orm.Article()
-            field_attrs = ('title', 'content')
-            for field_attr in field_attrs:
-                for lang in settings.LANGUAGES:
-                    right_attr = '%s_%s' % (field_attr, lang[0])
-                    content = getattr(page, right_attr)
-                    setattr(article, right_attr, content)
-            article.section = default_section
-            article.save()
+            images = page.images.all()
+            if images:
+                article = orm.Article.objects.get(title_en=page.title_en)
+                for image in images:
+                    article_image = orm.ArticleImage()
+                    article_image.article = article
+                    article_image.image = image.image
+                    article_image.title_en = image.title_en
+                    article_image.title_uk = image.title_uk
+                    article_image.position = image.position
+                    article_image.save()
 
     def backwards(self, orm):
         pass
@@ -67,7 +65,9 @@ class Migration(DataMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'image': ('sorl.thumbnail.fields.ImageField', [], {'max_length': '100'}),
             'position': ('django.db.models.fields.IntegerField', [], {'default': '-1'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'})
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'}),
+            'title_en': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'}),
+            'title_uk': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'})
         },
         'sections.section': {
             'Meta': {'ordering': "('position',)", 'object_name': 'Section'},

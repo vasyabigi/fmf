@@ -11,9 +11,10 @@ from django.views.generic.base import TemplateView
 from django.core.cache import cache
 
 from models import IndexSliderImage
-from forms import ContactForm, QuestionForm
+from forms import ContactForm
 from news.models import News, Event
 from feedbacks.models import Feedback
+from sections.models import Section
 
 
 logger = logging.getLogger("fmf.%s" % __name__)
@@ -30,11 +31,13 @@ class IndexView(TemplateView):
             cache.set('images', images)
 
         feedbacks = Feedback.objects.order_by('?').select_related()[:3]
+        sections = Section.objects.all()
         context.update({
             'images': images,
             'news_list': News.objects.filter(is_active=True).select_related()[:3],
             'events': Event.objects.filter(is_active=True, date_to__gte=datetime.datetime.today()).order_by('-date_to')[:3],
             'feedbacks': feedbacks,
+            'sections': sections,
         })
         return context
 

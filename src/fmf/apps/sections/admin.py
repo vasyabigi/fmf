@@ -7,15 +7,17 @@ from imperavi.admin import ImperaviModelAdmin
 
 class ArticleImageAdmin(BaseTranslationTabularInLine):
     model = ArticleImage
+    extra = 0
 
 
 class SectionAdmin(ImperaviModelAdmin, BaseTranslationAdmin):
-    pass
+    prepopulated_fields = {'slug': ('title',)}
 
 admin.site.register(Section, SectionAdmin)
 
 
 class ArticleAdmin(ImperaviModelAdmin, BaseTranslationAdmin):
     inlines = (ArticleImageAdmin,)
+    prepopulated_fields = {'slug': ('title',)}
 
 admin.site.register(Article, ArticleAdmin)
