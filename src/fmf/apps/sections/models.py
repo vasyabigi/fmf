@@ -50,7 +50,7 @@ class Article(models.Model):
     class Meta:
         verbose_name = _('Article')
         verbose_name_plural = _('Articles')
-        ordering = ('position',)
+        ordering = ('title_uk',)
 
     def __unicode__(self):
         return self.title

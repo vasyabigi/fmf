@@ -4,7 +4,7 @@ from django.template.context import Context
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
-from flatpages_my.models import FlatPage
+from sections.models import Article
 
 from positions.fields import PositionField
 from sorl.thumbnail.fields import ImageField
@@ -13,7 +13,8 @@ from sorl.thumbnail.shortcuts import get_thumbnail
 
 
 class IndexSliderImage(models.Model):
-    page = models.OneToOneField(FlatPage, verbose_name=_("Page"), unique=True)
+    page = models.OneToOneField(Article, verbose_name=_("Page"),
+        unique=True, blank=True, null=True)
     image = ImageField(_("Image"), upload_to='images/index/')
     position = PositionField()
     is_active = models.BooleanField(_("Active"), default=True)
