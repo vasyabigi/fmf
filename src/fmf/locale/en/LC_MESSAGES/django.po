@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-24 14:05+0200\n"
+"POT-Creation-Date: 2012-03-18 22:01+0200\n"
 "PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,224 +18,421 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.6.2\n"
 
-#: settings.py:31
+#: dashboard.py:28
+msgid "Quick links"
+msgstr ""
+
+#: dashboard.py:34
+msgid "Return to site"
+msgstr ""
+
+#: dashboard.py:35
+msgid "Change password"
+msgstr ""
+
+#: dashboard.py:37
+msgid "Log out"
+msgstr ""
+
+#: dashboard.py:43 menu.py:25
+msgid "Applications"
+msgstr ""
+
+#: dashboard.py:49 menu.py:29
+msgid "Administration"
+msgstr ""
+
+#: dashboard.py:54 dashboard.py:72
+msgid "Recent Actions"
+msgstr ""
+
+#: menu.py:22
+msgid "Dashboard"
+msgstr ""
+
+#: settings.py:41
 msgid "Ukrainian"
 msgstr "Укр"
 
-#: settings.py:32
+#: settings.py:42
 msgid "English"
 msgstr "Eng"
 
-#: apps/core/forms.py:8
+#: apps/core/forms.py:8 apps/flatpages_my/admin.py:18
+#: apps/flatpages_my/models.py:9 apps/seo/models.py:29 apps/seo/models.py:33
 msgid "URL"
 msgstr ""
 
-#: apps/core/forms.py:9
+#: apps/core/forms.py:9 apps/flatpages_my/admin.py:19
 msgid ""
 "Example: '/about/contact/'. Make sure to have leading and trailing slashes."
 msgstr ""
 
-#: apps/core/forms.py:11
+#: apps/core/forms.py:11 apps/flatpages_my/admin.py:21
 msgid ""
 "This value must contain only letters, numbers, dots, underscores, dashes, "
 "slashes or tildes."
 msgstr ""
 
-#: apps/core/models.py:17
+#: apps/core/forms.py:22 apps/core/templates/contacts/manager_message.html:3
+msgid "Email"
+msgstr ""
+
+#: apps/core/forms.py:26 apps/core/templates/contacts/manager_message.html:2
+#: apps/feedbacks/models.py:20
+msgid "Name"
+msgstr ""
+
+#: apps/core/forms.py:30
+msgid "Message"
+msgstr ""
+
+#: apps/core/models.py:16
 msgid "Page"
 msgstr ""
 
-#: apps/core/models.py:18 apps/core/models.py:43 apps/news/models.py:51
-#: apps/news/models.py:68 apps/news/models.py:73 apps/news/models.py:116
+#: apps/core/models.py:17 apps/core/models.py:41 apps/feedbacks/models.py:22
+#: apps/flatpages_my/models.py:34 apps/news/models.py:49
+#: apps/news/models.py:66 apps/news/models.py:71 apps/news/models.py:112
+#: apps/sections/models.py:29 apps/sections/models.py:33
+#: apps/sections/models.py:66 apps/sections/models.py:70
 msgid "Image"
 msgstr ""
 
-#: apps/core/models.py:20 apps/news/models.py:26 apps/news/models.py:91
+#: apps/core/models.py:19 apps/news/models.py:26 apps/news/models.py:89
 msgid "Active"
 msgstr ""
 
-#: apps/core/models.py:25
+#: apps/core/models.py:23
 msgid "Image for slider"
 msgstr ""
 
-#: apps/core/models.py:26
+#: apps/core/models.py:24
 msgid "Images for slider"
 msgstr ""
 
-#: apps/core/models.py:29
+#: apps/core/models.py:27
 #, python-format
 msgid "Image for %s"
 msgstr ""
 
-#: apps/core/models.py:41 apps/news/models.py:49 apps/news/models.py:114
+#: apps/core/models.py:39 apps/news/models.py:47 apps/news/models.py:110
 msgid "No image"
 msgstr ""
 
-#: apps/core/models.py:57
-msgid "Content not avalible in this language."
+#: apps/core/templates/contacts/ajax_not_valid_response.html:3
+msgid "Try one more time with valid values."
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:24
+#: apps/core/templates/contacts/ajax_response.html:3
+#: apps/core/templates/contacts/thank_you.html:8
+msgid "Thank you. We got your message."
+msgstr ""
+
+#: apps/core/templates/contacts/contacts.html:8
+msgid "You can contact us here:"
+msgstr ""
+
+#: apps/core/templates/contacts/contacts.html:14
+msgid "Send"
+msgstr ""
+
+#: apps/core/templates/contacts/contacts.html:38 templates/base.html:36
+#: templates/base.html.py:46
+msgid "Faculty of Physics and Mathematics"
+msgstr ""
+
+#: apps/core/templates/contacts/manager_message.html:4
+#: apps/sections/models.py:10 apps/sections/models.py:47
+msgid "Content"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:33
+msgid "Why FPM?"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:35
+msgid ""
+"The Faculty of Physics and Mathematics provides training of professionals in "
+"fundamental and applied problems of various fields of modern physics and "
+"mathematics. They extend from the aero-and hydrodynamics to the physics of "
+"atomic nuclei and elementary particles, involve using methods of "
+"mathematical modeling and computer simulation, training in economic analysis "
+"and forecasting economic subjects activity, construction and calculation of "
+"mathematical models of commercial and financial structures."
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:43 apps/feedbacks/models.py:27
+#: apps/feedbacks/templates/feedbacks/feedback_details.html:7
+#: apps/feedbacks/templates/feedbacks/feedback_list.html:7
+msgid "Feedbacks"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:44
+#: apps/core/templates/core/index_view.html:90
+#: apps/core/templates/core/index_view.html:118
+msgid "All"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:63
+msgid "more"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:89
 msgid "Upcoming events"
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:42
-msgid "Announcements"
-msgstr ""
-
-#: apps/core/templates/core/index_view.html:48
+#: apps/core/templates/core/index_view.html:117
 msgid "Last news"
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:70
-msgid "All news"
+#: apps/feedbacks/models.py:9
+msgid "question"
 msgstr ""
 
-#: apps/core/templates/core/nav.html:4
-#: apps/news/templates/event/event_detail.html:17
-#: apps/news/templates/event/event_list.html:8
-#: apps/news/templates/event/event_list_past.html:8
-#: apps/news/templates/news/news_details.html:17
-#: apps/news/templates/news/news_list.html:8 templates/flatpages/about.html:12
-#: templates/flatpages/cooperation.html:12 templates/flatpages/default.html:10
-#: templates/flatpages/entrants.html:12 templates/flatpages/students.html:12
-msgid "Home"
+#: apps/feedbacks/models.py:12 apps/feedbacks/models.py:39
+msgid "Question"
 msgstr ""
 
-#: apps/core/templates/core/nav.html:5 templates/flatpages/about.html:16
-msgid "About the faculty"
+#: apps/feedbacks/models.py:13
+msgid "Questions"
 msgstr ""
 
-#: apps/core/templates/core/nav.html:10 templates/flatpages/students.html:16
-msgid "Students"
-msgstr ""
-
-#: apps/core/templates/core/nav.html:15 templates/flatpages/entrants.html:16
-msgid "Entrants"
-msgstr ""
-
-#: apps/core/templates/core/nav.html:20
-#: templates/flatpages/cooperation.html:16
-msgid "Cooperation"
-msgstr ""
-
-#: apps/flatpages_extra/models.py:9
-msgid "Flatpage"
-msgstr ""
-
-#: apps/flatpages_extra/models.py:12
-msgid "Extra flat page"
-msgstr ""
-
-#: apps/flatpages_extra/models.py:13
-msgid "Extra flat pages"
-msgstr ""
-
-#: apps/flatpages_extra/models.py:24 apps/news/models.py:19
-#: apps/news/models.py:67 apps/news/models.py:84
-msgid "Title"
-msgstr ""
-
-#: apps/flatpages_extra/models.py:29
-msgid "Extra flat page image"
-msgstr ""
-
-#: apps/flatpages_extra/models.py:30
-msgid "Extra flat page images"
-msgstr ""
-
-#: apps/news/models.py:20 apps/news/models.py:85
+#: apps/feedbacks/models.py:21 apps/news/models.py:20 apps/news/models.py:83
+#: apps/sections/models.py:9 apps/sections/models.py:46
 msgid "Slug"
 msgstr ""
 
-#: apps/news/models.py:21 apps/news/models.py:88
+#: apps/feedbacks/models.py:23 apps/news/models.py:23 apps/news/models.py:88
+#: apps/seo/models.py:12
+msgid "Description"
+msgstr ""
+
+#: apps/feedbacks/models.py:26 apps/feedbacks/models.py:38
+msgid "Feedback"
+msgstr ""
+
+#: apps/feedbacks/models.py:40
+msgid "Answer"
+msgstr ""
+
+#: apps/feedbacks/models.py:41
+msgid "Can be main page?"
+msgstr ""
+
+#: apps/feedbacks/models.py:45
+msgid "Feedback question"
+msgstr ""
+
+#: apps/feedbacks/models.py:46
+msgid "Feedback questions"
+msgstr ""
+
+#: apps/feedbacks/templates/feedbacks/feedback_details.html:6
+#: apps/feedbacks/templates/feedbacks/feedback_list.html:6
+#: apps/news/templates/event/event_detail.html:20
+#: apps/news/templates/event/event_list.html:8
+#: apps/news/templates/event/event_list_past.html:8
+#: apps/news/templates/news/news_details.html:26
+#: apps/news/templates/news/news_list.html:8
+#: apps/sections/templates/sections/article_details.html:22
+#: apps/sections/templates/sections/section_details.html:22
+#: templates/flatpages/about.html:12 templates/flatpages/cooperation.html:12
+#: templates/flatpages/default.html:22 templates/flatpages/entrants.html:12
+#: templates/flatpages/students.html:12
+msgid "Home"
+msgstr ""
+
+#: apps/flatpages_my/admin.py:37
+msgid "Advanced options"
+msgstr ""
+
+#: apps/flatpages_my/models.py:10
+msgid "title"
+msgstr ""
+
+#: apps/flatpages_my/models.py:11
+msgid "content"
+msgstr ""
+
+#: apps/flatpages_my/models.py:12
+msgid "enable comments"
+msgstr ""
+
+#: apps/flatpages_my/models.py:13
+msgid "template name"
+msgstr ""
+
+#: apps/flatpages_my/models.py:14
+msgid ""
+"Example: 'flatpages/contact_page.html'. If this isn't provided, the system "
+"will use 'flatpages/default.html'."
+msgstr ""
+
+#: apps/flatpages_my/models.py:15
+msgid "registration required"
+msgstr ""
+
+#: apps/flatpages_my/models.py:15
+msgid "If this is checked, only logged-in users will be able to view the page."
+msgstr ""
+
+#: apps/flatpages_my/models.py:20
+msgid "flat page"
+msgstr ""
+
+#: apps/flatpages_my/models.py:21
+msgid "flat pages"
+msgstr ""
+
+#: apps/flatpages_my/models.py:33 apps/news/models.py:19
+#: apps/news/models.py:65 apps/news/models.py:82 apps/sections/models.py:8
+#: apps/sections/models.py:28 apps/sections/models.py:45
+#: apps/sections/models.py:65 apps/seo/models.py:11
+msgid "Title"
+msgstr ""
+
+#: apps/flatpages_my/models.py:38
+msgid "flat page image"
+msgstr ""
+
+#: apps/flatpages_my/models.py:39
+msgid "flat page images"
+msgstr ""
+
+#: apps/news/models.py:21 apps/news/models.py:86
 msgid "Main image"
 msgstr ""
 
-#: apps/news/models.py:22 apps/news/models.py:89
+#: apps/news/models.py:22 apps/news/models.py:87
 msgid "Short Description"
-msgstr ""
-
-#: apps/news/models.py:23 apps/news/models.py:90
-msgid "Description"
 msgstr ""
 
 #: apps/news/models.py:24
 msgid "Date"
 msgstr ""
 
-#: apps/news/models.py:25 apps/news/models.py:69
+#: apps/news/models.py:25 apps/news/models.py:67
 msgid "Position"
 msgstr ""
 
-#: apps/news/models.py:27 apps/news/models.py:92
+#: apps/news/models.py:27 apps/news/models.py:90
 msgid "Created"
 msgstr ""
 
-#: apps/news/models.py:28 apps/news/models.py:93
-msgid "Meta keywords"
-msgstr ""
-
-#: apps/news/models.py:29 apps/news/models.py:94
-msgid "Meta description"
-msgstr ""
-
-#: apps/news/models.py:33 apps/news/models.py:34 apps/news/models.py:66
-#: apps/news/templates/news/news_details.html:18
+#: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:64
+#: apps/news/templates/news/news_details.html:27
 #: apps/news/templates/news/news_list.html:5
 #: apps/news/templates/news/news_list.html:9
 msgid "News"
 msgstr ""
 
-#: apps/news/models.py:74
+#: apps/news/models.py:72 apps/sections/models.py:34
+#: apps/sections/models.py:71
 msgid "Images"
 msgstr ""
 
-#: apps/news/models.py:78
+#: apps/news/models.py:76
 #, python-format
 msgid "image for %(news_title)s - %(title)s"
 msgstr ""
 
-#: apps/news/models.py:80
+#: apps/news/models.py:78
 #, python-format
 msgid "image for %s"
 msgstr ""
 
-#: apps/news/models.py:86
+#: apps/news/models.py:84
 msgid "Date from"
 msgstr ""
 
-#: apps/news/models.py:86
+#: apps/news/models.py:84
 msgid "If date only one - put it just here"
 msgstr ""
 
-#: apps/news/models.py:87
+#: apps/news/models.py:85
 msgid "Date to"
 msgstr ""
 
-#: apps/news/models.py:98
+#: apps/news/models.py:94
 msgid "Event"
 msgstr ""
 
-#: apps/news/models.py:99 apps/news/templates/event/event_detail.html:18
+#: apps/news/models.py:95 apps/news/templates/event/event_detail.html:21
 #: apps/news/templates/event/event_list.html:5
 #: apps/news/templates/event/event_list.html:9
 #: apps/news/templates/event/event_list_past.html:5
 msgid "Events"
 msgstr ""
 
-#: apps/news/templates/event/event_list.html:29
+#: apps/news/templates/event/event_list.html:51
 #: apps/news/templates/event/event_list_past.html:9
 #: apps/news/templates/event/event_list_past.html:14
 msgid "Past events"
 msgstr ""
 
-#: apps/news/templates/event/event_list_past.html:30
+#: apps/news/templates/event/event_list_past.html:48
 msgid "Back to future events"
 msgstr ""
 
-#: templates/base.html:31 templates/base.html.py:63
-msgid "Faculty of Physics and Mathematics"
+#: apps/sections/models.py:14 apps/sections/models.py:42
+msgid "Section"
+msgstr ""
+
+#: apps/sections/models.py:15
+msgid "Sections"
+msgstr ""
+
+#: apps/sections/models.py:27
+msgid "section"
+msgstr ""
+
+#: apps/sections/models.py:51 apps/sections/models.py:64
+msgid "Article"
+msgstr ""
+
+#: apps/sections/models.py:52
+msgid "Articles"
+msgstr ""
+
+#: apps/sections/templates/sections/article_details.html:14
+#: apps/sections/templates/sections/section_details.html:14
+#: templates/flatpages/default.html:14
+msgid "FPM"
+msgstr ""
+
+#: apps/seo/models.py:13
+msgid "Keywords"
+msgstr ""
+
+#: apps/seo/models.py:20 apps/seo/models.py:21
+msgid "SEO fields"
+msgstr ""
+
+#: apps/seo/models.py:30
+msgid ""
+"This should be an absolute path, excluding the domain name. Example: '/"
+"events/search/'."
+msgstr ""
+
+#: apps/seo/models.py:34
+msgid "URLs"
+msgstr ""
+
+#: templates/flatpages/about.html:16
+msgid "About the faculty"
+msgstr ""
+
+#: templates/flatpages/cooperation.html:16
+msgid "Cooperation"
+msgstr ""
+
+#: templates/flatpages/entrants.html:16
+msgid "Entrants"
+msgstr ""
+
+#: templates/flatpages/students.html:16
+msgid "Students"
 msgstr ""
 
 #: templates/pagination/pagination.html:5
