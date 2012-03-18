@@ -18,7 +18,6 @@ class IndexSliderImage(models.Model):
     position = PositionField()
     is_active = models.BooleanField(_("Active"), default=True)
 
-
     class Meta:
         ordering = ('position',)
         verbose_name = _("Image for slider")
@@ -34,7 +33,7 @@ class IndexSliderImage(models.Model):
         try:
             im = get_thumbnail(self.image, '50x50', crop='center')
             t = Template('<img src="{{ image.url }}" alt="{{ alt }}" />')
-            c = Context({"image": im, 'alt': self.page })
+            c = Context({"image": im, 'alt': self.page, })
             thum = t.render(c)
         except ThumbnailError:
             thum = _('No image')

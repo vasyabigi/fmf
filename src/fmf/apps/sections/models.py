@@ -23,6 +23,21 @@ class Section(models.Model):
         return 'section-details', (self.slug,)
 
 
+class SectionImage(models.Model):
+    section = models.ForeignKey(Section, related_name='images', verbose_name=_("section"))
+    title = models.CharField(_("Title"), max_length=256, blank=True, null=True)
+    image = ImageField(upload_to='images/sections', verbose_name=_("Image"))
+    position = PositionField(collection='section')
+
+    class Meta:
+        verbose_name = _("Image")
+        verbose_name_plural = _("Images")
+        ordering = ('position',)
+
+    def __unicode__(self):
+        return u'image for %s' % self.section.title
+
+
 class Article(models.Model):
     section = models.ForeignKey(Section, verbose_name=_("Section"),
         related_name='articles', blank=True, null=True

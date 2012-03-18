@@ -4,7 +4,7 @@ from news.models import News, NewsImage, Event
 from flatpages_my.models import FlatPage, FlatPageImage
 from feedbacks.models import Question, Feedback, FeedbackQuestion
 from seo.models import Seo
-from sections.models import Section, Article, ArticleImage
+from sections.models import Section, Article, ArticleImage, SectionImage
 
 
 class NewsTranslationOptions(TranslationOptions):
@@ -51,6 +51,10 @@ class SectionTranslationOptions(TranslationOptions):
     fields = ('title', 'content',)
 
 
+class SectionImageTranslationOptions(TranslationOptions):
+    fields = ('title',)
+
+
 class ArticleTranslationOptions(TranslationOptions):
     fields = ('title', 'content',)
 
@@ -76,3 +80,4 @@ translator.register(Section, SectionTranslationOptions)
 translator.register(Article, ArticleTranslationOptions)
 translator.register(Seo, SeoTranslationOptions)
 translator.register(ArticleImage, ArticleImageTranslationOptions)
+translator.register(SectionImage, SectionImageTranslationOptions)
