@@ -19,7 +19,6 @@
         <meta name="title" content="{% seo title %}">
       {% endcache %}
     {% endblock %}
-    <meta name="google-site-verification" content="">
     <meta name="author" content="Vasya&Seroga">
     <meta name="Copyright" content="Copyright V&S 2012. All Rights Reserved.">
     <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
@@ -36,6 +35,17 @@
       {% block title %}{% trans "Faculty of Physics and Mathematics" %}{% endblock %}
     </title>
     {% block extra_head %}{% endblock %}
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30135528-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </head>
   <body>
 
