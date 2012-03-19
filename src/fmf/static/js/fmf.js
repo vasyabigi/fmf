@@ -125,7 +125,7 @@ var Fmf = (function(){
             if ($(".streamer_slider").length) {
                 $(".streamer_slider").sudoSlider({
                     vertical:true,
-                    slideCount:2,
+                    slideCount:3,
                     autowidth:false,
                     autoheight:false,
                     speed: 400
@@ -154,14 +154,6 @@ var Fmf = (function(){
                     form.html('<div id="loading"><img src="/static/images/loading-big.gif" alt="loading"></div>');
                 })
             }
-        },
-
-        ScaleArrow: function(){
-            $('.show_all a').hover(
-                function(){
-                    $(this).parent().siblings('.arrow').stop(true,true).toggleClass('arrow_scaled');
-                }
-            )
         },
 
         Scroll: function(){
@@ -233,7 +225,6 @@ $(document).ready(function(){
     Fmf.EntrantsSlider();
     Fmf.NewsDetailsSldier();
     Fmf.ContactForm();
-    Fmf.ScaleArrow();
     Fmf.Scroll();
     Fmf.TextNav();
     Fmf.StreamerSlider();

@@ -32,10 +32,7 @@
 
 {% block aside_left %}
   <aside class="left_sidebar">
-    <section id="textnav" class="streamer bordered">
-      <div class="title_arrow">
-        <h3 class="title_list">{{ section }}:</h3>
-      </div>
+    <section class="bordered">
       <nav class="side_nav">
         <ul>
           {% for article in section.articles.all %}

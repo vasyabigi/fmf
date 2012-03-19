@@ -31,7 +31,7 @@
 {% block content %}
   <section class="container bordered details">
     {% include 'includes/social_html.html' %}
-    <p class="title">{{ news.title }}</p>
+    <h2 class="title">{{ news.title }}</h2>
     <div class="img_descr">
       {% if news.main_image %}
         {% thumbnail news.main_image "250x200" crop="center" as im %}

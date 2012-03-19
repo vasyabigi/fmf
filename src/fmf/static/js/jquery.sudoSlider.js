@@ -236,7 +236,7 @@
 				
 				// Now that the slide content is in place, some adjustments can be made. 
 				// First i make sure that i have enough room in the <ul> (Through testing, i found out that the max supported size (height or width) in Firefox is 17895697px, Chrome supports up to 134217726px, and i didn't find any limits in IE (6/7/8/9)). 
-				ul[option[6]/*vertical*/ ? 'height' : 'width'](10000000); // That gives room for about 14000 slides of 700px each. 
+				//ul[option[6]/*vertical*/ ? 'height' : 'width'](10000000);  That gives room for about 14000 slides of 700px each.
 				
 				// And i can make this variable for later use. 
 				// The variable contains every <li> element. 

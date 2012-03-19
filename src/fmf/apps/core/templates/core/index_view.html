@@ -60,11 +60,12 @@
                 {% with feedback|get_random_question as result %}
                 <p>-{{ result.question }}<br/>
                   <i>"{{ result.answer|truncatewords:15 }}"</i>
-                  <a href="{{ feedback.get_absolute_url }}">{% trans "more" %}</a>
+                  <a href="{{ feedback.get_absolute_url }}">...{% trans "more" %}»</a>
                 </p>
                 {% endwith %}
               </li>
             {% endfor %}
+              <li class="img_descr"></li>
             </ul>
           </div>
         </div>
@@ -84,26 +85,30 @@
     <aside>
 
       <!--events-->
-      <section class="streamer bordered">
-        <div class="title_arrow blue"><div class="arrow"></div>
+      <section id="events" class="bordered main_sect">
+        <div class="title_arrow blue">
           <h3 class="title_list">{% trans "Upcoming events" %}:</h3>
           <p class="show_all"><a href="{% url event-list %}">{% trans "All" %} »</a></p>
         </div>
         {% if events %}
-        <ul class="list">
-          {% for event in events %}
-          <li>
-{#          <div class="bookmark"></div>#}
-            <p class="date">
-              {% ifequal event.date_from event.date_to %}{{ event.date_from }}
-              {% else %}{{ event.date_from }} - {{ event.date_to }}
-              {% endifequal %}
-            </p>
-            <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
-            <p class="short_description">{{ event.short_description|truncatewords:10 }}</p>
-          </li>
-          {% endfor %}
-        </ul>
+          <div class="streamer">
+            <div class="streamer_slider">
+              <ul>
+                {% for event in events %}
+                  <li class="img_descr">
+                    {#          <div class="bookmark"></div>#}
+                    <p class="date">
+                      {% ifequal event.date_from event.date_to %}{{ event.date_from }}
+                        {% else %}{{ event.date_from }} - {{ event.date_to }}
+                      {% endifequal %}
+                    </p>
+                    <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
+                    <p class="short_description">{{ event.short_description }}</p>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
         {% else %}
         <p>Put something here if no events</p>
         {% endif %}
@@ -111,27 +116,28 @@
       <!--end of events-->
 
       <!--news-->
-      <section class="streamer bordered">
+      <section id="news" class="bordered main_sect">
         <div class="title_arrow green">
-          <div class="arrow"></div>
           <h3 class="title_list">{% trans "Last news" %}:</h3>
           <p class="show_all"><a href="{% url news-list %}">{% trans "All" %} »</a></p>
         </div>
-        <ul class="list">
-          {% for news in news_list %}
-          <li>
-            <div class="img_descr">
-              <a href="{{ news.get_absolute_url }}">
-                {% thumbnail news.main_image '100x100' crop='center' as im %}
-                <img src="{{ im.url }}" alt="{{ news.title }}">
-                {% endthumbnail %}
-              </a>
-              <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
-              <p class="short_description">{{ news.short_description|truncatewords:15 }}</p>
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
+        <div class="streamer">
+          <div class="streamer_slider">
+            <ul>
+              {% for news in news_list %}
+                <li class="img_descr">
+                  <a href="{{ news.get_absolute_url }}">
+                    {% thumbnail news.main_image '75x75' crop='center' as im %}
+                      <img src="{{ im.url }}" alt="{{ news.title }}">
+                    {% endthumbnail %}
+                  </a>
+                  <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                  <p class="short_description">{{ news.short_description }}</p>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
       </section>
       <!--end news-->
 
