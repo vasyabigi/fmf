@@ -258,6 +258,9 @@ body > article#left_column > section {
   width: 620px;
   margin-bottom: 10px;
 }
+article#single {
+  margin: -250px 10% -70px 10%;
+}
 article#left_column {
   float:left;
   margin: 20px 10% 0;
@@ -672,6 +675,7 @@ aside > section {
 
  /*Flatpages*/
 .flatpage {
+  overflow: hidden;
   margin-left: 310px;
   padding: 10px;
   background: url("/static/images/logo_bg_1.png") fixed  10% 150px #fafafa no-repeat;
@@ -1032,6 +1036,7 @@ footer li a:hover {
   padding: 5px 0;
 }
 #map {
+  min-width: 300px;
   margin-left: 395px;
 }
 #map_canvas {
