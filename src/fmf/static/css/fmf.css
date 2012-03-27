@@ -251,7 +251,7 @@ body > article {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: -345px 10% -70px 10%;
+  margin: -345px 10% -70px 140px;
 }
 body > article#left_column > section {
   position: relative;
@@ -266,7 +266,7 @@ article#left_column {
   margin: 20px 10% 0;
   margin-right: 0 !important;
 }
-article .main_sect img, .img_descr img {
+article .main_sect img, .img_descr img, #feedback_list img {
   padding: 4px;
   background: #d7d7d7;
   border: 1px solid #bbb;
@@ -337,9 +337,9 @@ article .main_sect img, .img_descr img {
   font: bold 18px/20px Georgia, sans-serif;
   box-shadow:0 3px 6px -3px rgba(0, 0, 0, 1);
 }
-.title_arrow.red {background: #a51c30}
-.title_arrow.green {background: #52854c}
-.title_arrow.blue {background: #223952}
+.title_arrow.red {background: #c53c50}
+.title_arrow.green {background: #72a56c}
+.title_arrow.blue {background: #425972}
 
 
   /*END Why_fmf*/
@@ -381,6 +381,10 @@ article .main_sect img, .img_descr img {
   padding: 0 20px;
   color: #888;
 }
+#feedback_list .status {
+  display: block;
+  margin-top: -10px;
+}
 .name_status {
   margin-top:0;
 }
@@ -390,7 +394,6 @@ article .main_sect img, .img_descr img {
 #feedbacks ul .img_descr:nth-child(even) .name_status {
   text-align:right;
 }
-
 #feedback_list ul {
   position: relative;
   margin: 0 0 10px;
@@ -398,16 +401,16 @@ article .main_sect img, .img_descr img {
 }
 #feedback_list ul li {
   float: left;
+  height: 340px;
   width: 29%;
   min-width: 220px;
   margin-left: 1%;
-  margin-top: 1px;
+  margin-bottom: 20px;
   padding: 20px 10px;
-  margin-bottom: -20000px;
-  padding-bottom: 20000px;
   background:#f4f4f4;
   border: 1px solid #CDCDCD;
-  box-shadow:1px -1px 0 #bbb;
+  box-shadow:1px 1px 0 #bbb;
+  overflow: hidden;
 }
 #feedback_list ul li > a {
   display: block;
@@ -451,7 +454,7 @@ article .main_sect img, .img_descr img {
 }
 .main_sect .show_all a{
   border-left: 1px solid rgba(0,0,0,.3);
-  color: #ccc;
+  color: #eee;
 }
 .main_sect .show_all a:after {
   position: absolute;
@@ -463,7 +466,7 @@ article .main_sect img, .img_descr img {
   border-left: 1px solid rgba(255,255,255,.3);
 }
 .main_sect .show_all a:hover {
-  color: #ddd;
+  color: #fff;
   text-shadow: 0 1px #777;
 }
 .streamer ul li a, .name {
@@ -591,7 +594,7 @@ article .main_sect img, .img_descr img {
   margin-right: 10px;
 }
 .details .title {
-  margin: 0 0 20px;
+  margin: 10px 0 10px 20px;
   color: #363636;
   font: normal 1.7em/1.36 Georgia, "Times New Roman", serif;
 }
@@ -649,7 +652,7 @@ aside > section {
 .title_list {
   margin: 0;
   padding:0 10px;
-  color: #E6EAE2;
+  color: #f0f0f0;
   font-size: 14px;
   font-weight: bold;
   text-shadow: 0 1px 1px #555;

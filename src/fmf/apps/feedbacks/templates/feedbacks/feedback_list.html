@@ -15,7 +15,6 @@
       <li>
         <p class="name_status">
           <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
-          <i class="status">{{ feedback.description }}</i>
         </p>
         <a href="{{ feedback.get_absolute_url }}">
           {% thumbnail feedback.image '200x150' crop='center' as im %}
@@ -25,7 +24,9 @@
           {% endthumbnail %}
         </a>
         {% with feedback|get_random_question as result %}
-          <p>-{{ result.question }}<br/>
+          <p>
+            <i class="status">{{ feedback.description }}</i><br/>
+            -{{ result.question }}<br/>
              <i>"{{ result.answer }}"</i>
           </p>
         {% endwith %}
