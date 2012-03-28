@@ -17,19 +17,15 @@
           <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
         </p>
         <a href="{{ feedback.get_absolute_url }}">
-          {% thumbnail feedback.image '200x150' crop='center' as im %}
+          {% thumbnail feedback.image '200' as im %}
             <img src="{{ im.url }}" alt="{{ image.page.title }}">
           {% empty %}
             <img src="{{ STATIC_URL }}images/logo_bg.png" alt="" width="200" height="150">
           {% endthumbnail %}
         </a>
-        {% with feedback|get_random_question as result %}
           <p>
-            <i class="status">{{ feedback.description }}</i><br/>
-            -{{ result.question }}<br/>
-             <i>"{{ result.answer }}"</i>
+            <i>{{ feedback.description|truncatewords:30 }}</i>
           </p>
-        {% endwith %}
       </li>
     {% endfor %}
   </ul>

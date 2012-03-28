@@ -13,6 +13,7 @@ from sorl.thumbnail.shortcuts import get_thumbnail
 
 
 class IndexSliderImage(models.Model):
+
     page = models.OneToOneField(Article, verbose_name=_("Page"),
         unique=True, blank=True, null=True)
     image = ImageField(_("Image"), upload_to='images/index/')

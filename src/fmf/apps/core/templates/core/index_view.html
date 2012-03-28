@@ -55,14 +55,8 @@
                 </a>
                 <p class="name_status">
                   <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
-                  <i class="status">{{ feedback.description|truncatewords:15 }}</i>
+                  <i class="status">{{ feedback.description|truncatewords:40 }}</i>
                 </p>
-                {% with feedback|get_random_question as result %}
-                <p>-{{ result.question }}<br/>
-                  <i>"{{ result.answer|truncatewords:15 }}"</i>
-                  <a href="{{ feedback.get_absolute_url }}">...{% trans "more" %}»</a>
-                </p>
-                {% endwith %}
               </li>
             {% endfor %}
               <li class="img_descr"></li>
