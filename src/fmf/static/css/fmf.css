@@ -391,7 +391,9 @@ article .main_sect img, .img_descr img, #feedback_list img {
 #feedbacks ul .img_descr:nth-child(even) img {
   float:right;
 }
-#feedbacks ul .img_descr:nth-child(even) .name_status {
+#feedbacks ul .img_descr:nth-child(even) .name {
+  display: block;
+  margin-right: 120px;
   text-align:right;
 }
 #feedback_list ul {
