@@ -42,6 +42,8 @@ class IndexSliderImage(models.Model):
             return self.section.title
         elif self.page:
             return self.page.title
+        else:
+            return ''
 
     def thumb(self):
         try:
