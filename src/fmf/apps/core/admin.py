@@ -1,6 +1,5 @@
 from chunks.models import Chunk
 from django.contrib import admin
-from flatpages_my.models import FlatPage
 
 from models import IndexSliderImage
 
@@ -30,8 +29,8 @@ class BaseTranslationStackedInLine(AdminImageMixin, TranslationStackedInline):
 
 
 class IndexSliderImageAdmin(AdminImageMixin, admin.ModelAdmin):
-    list_display = ('thumb', 'page', 'position')
-    list_display_links = ('thumb', 'page')
+    list_display = ('thumb', '__unicode__', 'position')
+    list_display_links = ('thumb', '__unicode__')
 
 admin.site.register(IndexSliderImage, IndexSliderImageAdmin)
 

@@ -17,9 +17,9 @@
           {% for image in images %}
             <li>
               {% thumbnail image.image '600x300' crop='center' as im %}
-                <img src="{{ im.url }}" alt="{{ image.page.title }}">
+                <img src="{{ im.url }}" alt="{{ image.get_page_title }}">
               {% endthumbnail %}
-              <div class="caption"><a href="{{ image.page.get_absolute_url }}">{{ image.page.title }}</a></div>
+              <div class="caption"><a href="{{ image.get_page_url }}">{{ image.get_page_title }}</a></div>
             </li>
           {% endfor %}
         </ul>

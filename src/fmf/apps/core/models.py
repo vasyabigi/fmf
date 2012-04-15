@@ -4,7 +4,7 @@ from django.template.context import Context
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
-from sections.models import Article
+from sections.models import Article, Section
 
 from positions.fields import PositionField
 from sorl.thumbnail.fields import ImageField
@@ -16,6 +16,8 @@ class IndexSliderImage(models.Model):
 
     page = models.OneToOneField(Article, verbose_name=_("Page"),
         unique=True, blank=True, null=True)
+    section = models.OneToOneField(Section, verbose_name=_("Section"),
+        unique=True, blank=True, null=True)
     image = ImageField(_("Image"), upload_to='images/index/')
     position = PositionField()
     is_active = models.BooleanField(_("Active"), default=True)
@@ -26,10 +28,20 @@ class IndexSliderImage(models.Model):
         verbose_name_plural = _("Images for slider")
 
     def __unicode__(self):
-        return _('Image for %s') % self.page
+        return _('Image for %s') % self.get_page_title
 
-    def get_url(self):
-        return self.page.url
+    def get_page_url(self):
+        if self.section:
+            return self.section.get_absolute_url()
+        elif self.page:
+            return self.page.get_absolute_url()
+
+    @property
+    def get_page_title(self):
+        if self.section:
+            return self.section.title
+        elif self.page:
+            return self.page.title
 
     def thumb(self):
         try:
