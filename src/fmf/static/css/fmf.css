@@ -403,7 +403,6 @@ article .main_sect img, .img_descr img, #feedback_list img {
 }
 #feedback_list ul li {
   float: left;
-  height: 340px;
   width: 29%;
   min-width: 220px;
   margin-left: 1%;
