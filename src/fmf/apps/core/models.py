@@ -18,6 +18,7 @@ class IndexSliderImage(models.Model):
         unique=True, blank=True, null=True)
     section = models.OneToOneField(Section, verbose_name=_("Section"),
         unique=True, blank=True, null=True)
+    custom_name = models.CharField(_("Custom name"), max_length=255)
     image = ImageField(_("Image"), upload_to='images/index/')
     position = PositionField()
     is_active = models.BooleanField(_("Active"), default=True)
@@ -43,7 +44,7 @@ class IndexSliderImage(models.Model):
         elif self.page:
             return self.page.title
         else:
-            return ''
+            return self.custom_name
 
     def thumb(self):
         try:
