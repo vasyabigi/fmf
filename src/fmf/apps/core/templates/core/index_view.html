@@ -19,7 +19,7 @@
               {% thumbnail image.image '600x300' crop='center' as im %}
                 <img src="{{ im.url }}" alt="{{ image.get_page_title }}">
               {% endthumbnail %}
-              <div class="caption"><a href="{{ image.get_page_url }}">{{ image.get_page_title }}</a></div>
+              <div class="caption"><a href="{{ image.get_page_url|default:"#" }}">{{ image.get_page_title }}</a></div>
             </li>
           {% endfor %}
         </ul>
@@ -49,7 +49,7 @@
             {% for feedback in feedbacks %}
               <li class="img_descr">
                 <a href="{{ feedback.get_absolute_url }}">
-                  {% thumbnail feedback.image '80x100' crop='center' as im %}
+                  {% thumbnail feedback.image '80x100' crop='top' as im %}
                   <img src="{{ im.url }}" alt="{{ image.page.title }}">
                   {% endthumbnail %}
                 </a>
