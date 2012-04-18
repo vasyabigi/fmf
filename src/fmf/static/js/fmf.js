@@ -204,7 +204,6 @@ var Fmf = (function(){
                 }
             });
 
-
             $(".side_nav > ul ul > li > a").click(function() {
                 $('html,body').stop().animate({scrollTop: $('a[name='+$(this).attr("id")+']').offset().top},'slow');
             });

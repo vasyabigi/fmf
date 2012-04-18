@@ -711,10 +711,10 @@ aside > section {
   border-top: none;
   background: url("/static/images/logo_bg_1.png") fixed 10% 150px #FAFAFA no-repeat;
 }
-.left_sidebar .side_nav ul li a {
+.left_sidebar .side_nav > ul > li > a {
   display: block;
-  margin-bottom: 2px;
   padding: 10px;
+  border-top: 1px solid #ddd;
   font:bold 16px Helvetica, Arial, sans-serif;
   color:#777;
   -webkit-transition:all 0.2s ease-in;
@@ -722,15 +722,44 @@ aside > section {
   -o-transition:all 0.2s ease-in;
   transition:all 0.2s ease-in;
 }
-.left_sidebar .side_nav ul li a:hover {
+.left_sidebar .side_nav > ul > li > a:hover {
   background: rgba(0,0,0,.1);
 }
 .left_sidebar .side_nav {
   border-top: 4px solid #A51C30;
 }
-.left_sidebar .side_nav ul li.active_article a {
+.left_sidebar .side_nav > ul > li.active_article > a {
   background: #63212B;
   color: #eee;
+}
+.left_sidebar .side_nav ul ul {
+  border-bottom: 5px solid #63212B;
+  padding-bottom: 2px;
+  background: rgba(200, 100, 100, .05);
+}
+.left_sidebar .side_nav ul ul li {
+  padding-left: 30px;
+}
+.left_sidebar .side_nav ul ul li:last-child a {
+  border-bottom-color: transparent;
+}
+.left_sidebar .side_nav ul ul a {
+  display: block;
+  padding-left: 3px;
+  padding-right: 5px;
+  border-bottom: 1px solid #bbb;
+  color: #293352;
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
+  transition:all 0.2s ease-in;
+}
+.left_sidebar .side_nav ul ul a:hover {
+  background: #ddd;
+}
+.left_sidebar .side_nav ul ul .selected, .left_sidebar .side_nav ul ul .selected:hover {
+  color: #fff;
+  background: #887e75;
 }
 .fixed_sidebar {
   position: fixed;
