@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-18 22:01+0200\n"
+"POT-Creation-Date: 2012-04-19 12:27+0300\n"
 "PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,36 +87,45 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: apps/core/models.py:16
+#: apps/core/models.py:17
 msgid "Page"
 msgstr ""
 
-#: apps/core/models.py:17 apps/core/models.py:41 apps/feedbacks/models.py:22
+#: apps/core/models.py:19 apps/sections/models.py:14
+#: apps/sections/models.py:42
+msgid "Section"
+msgstr ""
+
+#: apps/core/models.py:21
+msgid "Custom name"
+msgstr ""
+
+#: apps/core/models.py:22 apps/core/models.py:58 apps/feedbacks/models.py:22
 #: apps/flatpages_my/models.py:34 apps/news/models.py:49
 #: apps/news/models.py:66 apps/news/models.py:71 apps/news/models.py:112
 #: apps/sections/models.py:29 apps/sections/models.py:33
-#: apps/sections/models.py:66 apps/sections/models.py:70
+#: apps/sections/models.py:67 apps/sections/models.py:71
 msgid "Image"
 msgstr ""
 
-#: apps/core/models.py:19 apps/news/models.py:26 apps/news/models.py:89
+#: apps/core/models.py:24 apps/news/models.py:26 apps/news/models.py:89
 msgid "Active"
 msgstr ""
 
-#: apps/core/models.py:23
+#: apps/core/models.py:28
 msgid "Image for slider"
 msgstr ""
 
-#: apps/core/models.py:24
+#: apps/core/models.py:29
 msgid "Images for slider"
 msgstr ""
 
-#: apps/core/models.py:27
+#: apps/core/models.py:32
 #, python-format
 msgid "Image for %s"
 msgstr ""
 
-#: apps/core/models.py:39 apps/news/models.py:47 apps/news/models.py:110
+#: apps/core/models.py:56 apps/news/models.py:47 apps/news/models.py:110
 msgid "No image"
 msgstr ""
 
@@ -129,17 +138,18 @@ msgstr ""
 msgid "Thank you. We got your message."
 msgstr ""
 
-#: apps/core/templates/contacts/contacts.html:8
+#: apps/core/templates/contacts/contacts.html:11
 msgid "You can contact us here:"
 msgstr ""
 
-#: apps/core/templates/contacts/contacts.html:14
+#: apps/core/templates/contacts/contacts.html:17
 msgid "Send"
 msgstr ""
 
-#: apps/core/templates/contacts/contacts.html:38 templates/base.html:36
-#: templates/base.html.py:46
-msgid "Faculty of Physics and Mathematics"
+#: apps/core/templates/contacts/contacts.html:43
+msgid ""
+"Faculty of Physics and Mathematics, 03056, Kiyv, Peremogy prospect, 37, "
+"corpys 7, audience 420"
 msgstr ""
 
 #: apps/core/templates/contacts/manager_message.html:4
@@ -169,20 +179,16 @@ msgid "Feedbacks"
 msgstr ""
 
 #: apps/core/templates/core/index_view.html:44
-#: apps/core/templates/core/index_view.html:90
-#: apps/core/templates/core/index_view.html:118
+#: apps/core/templates/core/index_view.html:85
+#: apps/core/templates/core/index_view.html:116
 msgid "All"
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:63
-msgid "more"
-msgstr ""
-
-#: apps/core/templates/core/index_view.html:89
+#: apps/core/templates/core/index_view.html:84
 msgid "Upcoming events"
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:117
+#: apps/core/templates/core/index_view.html:115
 msgid "Last news"
 msgstr ""
 
@@ -288,7 +294,7 @@ msgstr ""
 #: apps/flatpages_my/models.py:33 apps/news/models.py:19
 #: apps/news/models.py:65 apps/news/models.py:82 apps/sections/models.py:8
 #: apps/sections/models.py:28 apps/sections/models.py:45
-#: apps/sections/models.py:65 apps/seo/models.py:11
+#: apps/sections/models.py:66 apps/seo/models.py:11
 msgid "Title"
 msgstr ""
 
@@ -328,7 +334,7 @@ msgid "News"
 msgstr ""
 
 #: apps/news/models.py:72 apps/sections/models.py:34
-#: apps/sections/models.py:71
+#: apps/sections/models.py:72
 msgid "Images"
 msgstr ""
 
@@ -375,10 +381,6 @@ msgstr ""
 msgid "Back to future events"
 msgstr ""
 
-#: apps/sections/models.py:14 apps/sections/models.py:42
-msgid "Section"
-msgstr ""
-
 #: apps/sections/models.py:15
 msgid "Sections"
 msgstr ""
@@ -387,11 +389,15 @@ msgstr ""
 msgid "section"
 msgstr ""
 
-#: apps/sections/models.py:51 apps/sections/models.py:64
+#: apps/sections/models.py:48
+msgid "Additional menu"
+msgstr ""
+
+#: apps/sections/models.py:52 apps/sections/models.py:65
 msgid "Article"
 msgstr ""
 
-#: apps/sections/models.py:52
+#: apps/sections/models.py:53
 msgid "Articles"
 msgstr ""
 
@@ -417,6 +423,10 @@ msgstr ""
 
 #: apps/seo/models.py:34
 msgid "URLs"
+msgstr ""
+
+#: templates/base.html:35 templates/base.html.py:56
+msgid "Faculty of Physics and Mathematics"
 msgstr ""
 
 #: templates/flatpages/about.html:16

@@ -5,6 +5,7 @@ from flatpages_my.models import FlatPage, FlatPageImage
 from feedbacks.models import Question, Feedback, FeedbackQuestion
 from seo.models import Seo
 from sections.models import Section, Article, ArticleImage, SectionImage
+from core.models import IndexSliderImage
 
 
 class NewsTranslationOptions(TranslationOptions):
@@ -67,6 +68,10 @@ class SeoTranslationOptions(TranslationOptions):
     fields = ('title', 'description', 'keywords')
 
 
+class CoreImagesTranslationOptions(TranslationOptions):
+    fields = ('custom_name',)
+
+
 translator.register(News, NewsTranslationOptions)
 translator.register(NewsImage, NewsImageTranslationOptions)
 translator.register(Event, EventTranslationOptions)
@@ -81,3 +86,4 @@ translator.register(Article, ArticleTranslationOptions)
 translator.register(Seo, SeoTranslationOptions)
 translator.register(ArticleImage, ArticleImageTranslationOptions)
 translator.register(SectionImage, SectionImageTranslationOptions)
+translator.register(IndexSliderImage, CoreImagesTranslationOptions)

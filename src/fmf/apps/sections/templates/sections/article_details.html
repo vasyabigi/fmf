@@ -36,20 +36,9 @@
     <section class="bordered">
       <nav class="side_nav">
         <ul>
-
-          <li class="active_article">
-            <a href="#">Правила вступу</a>
-            <ul>
-              <li><a id="1" href="#1"><span>Загальні положення</span></a></li>
-              <li><a id="2" href="#2">Вимоги до рівня освіти вступників</a></li>
-              <li><a id="3" href="#3">Фінансування підготовки фахівців</a></li>
-              <li><a id="4" href="#4">Строки прийому</a></li>
-              <li><a id="5" href="#5">Порядок прийому документів для вступу</a></li>
-            </ul>
-          </li>
-
           {% for art in article.section.articles.all %}
-            <li {% ifequal article art %} class="active_article"{% endifequal %}><a href="{{ art.get_absolute_url }}">{{ art }}</a></li>
+            <li {% ifequal article art %} class="active_article"{% endifequal %}><a href="{{ art.get_absolute_url }}">{{ art }}</a>{% ifequal article art %}{{ art.additional_menu|default:""|safe }}{% endifequal %}
+            </li>
           {% endfor %}
         </ul>
       </nav>

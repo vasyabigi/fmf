@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-18 22:01+0200\n"
-"PO-Revision-Date: 2012-03-18 22:02\n"
+"POT-Creation-Date: 2012-04-19 12:27+0300\n"
+"PO-Revision-Date: 2012-04-19 12:30\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Translated-Using: django-rosetta 0.6.3\n"
+"X-Translated-Using: django-rosetta 0.6.5\n"
 
 #: dashboard.py:28
 msgid "Quick links"
@@ -66,19 +66,18 @@ msgstr "URL"
 
 #: apps/core/forms.py:9 apps/flatpages_my/admin.py:19
 msgid ""
-"Example: '/about/contact/'. Make sure to have leading and trailing "
-"slashes."
+"Example: '/about/contact/'. Make sure to have leading and trailing slashes."
 msgstr ""
-"Приклад: '/about/contact/'.  Переконайтеся, щоб мати початкові і "
-"кінцеві слеши."
+"Приклад: '/about/contact/'.  Переконайтеся, щоб мати початкові і кінцеві "
+"слеши."
 
 #: apps/core/forms.py:11 apps/flatpages_my/admin.py:21
 msgid ""
-"This value must contain only letters, numbers, dots, underscores, "
-"dashes, slashes or tildes."
+"This value must contain only letters, numbers, dots, underscores, dashes, "
+"slashes or tildes."
 msgstr ""
-"Це значення повинне містити тільки літери, цифри, крапки, "
-"підкреслення, тире, слеши або тильди."
+"Це значення повинне містити тільки літери, цифри, крапки, підкреслення, "
+"тире, слеши або тильди."
 
 #: apps/core/forms.py:22 apps/core/templates/contacts/manager_message.html:3
 msgid "Email"
@@ -93,36 +92,45 @@ msgstr "Ім'я"
 msgid "Message"
 msgstr "Повідомлення"
 
-#: apps/core/models.py:16
+#: apps/core/models.py:17
 msgid "Page"
 msgstr "Сторінка"
 
-#: apps/core/models.py:17 apps/core/models.py:41 apps/feedbacks/models.py:22
+#: apps/core/models.py:19 apps/sections/models.py:14
+#: apps/sections/models.py:42
+msgid "Section"
+msgstr "Секція"
+
+#: apps/core/models.py:21
+msgid "Custom name"
+msgstr "Кастомне ім'я"
+
+#: apps/core/models.py:22 apps/core/models.py:58 apps/feedbacks/models.py:22
 #: apps/flatpages_my/models.py:34 apps/news/models.py:49
 #: apps/news/models.py:66 apps/news/models.py:71 apps/news/models.py:112
 #: apps/sections/models.py:29 apps/sections/models.py:33
-#: apps/sections/models.py:66 apps/sections/models.py:70
+#: apps/sections/models.py:67 apps/sections/models.py:71
 msgid "Image"
 msgstr "Зображення"
 
-#: apps/core/models.py:19 apps/news/models.py:26 apps/news/models.py:89
+#: apps/core/models.py:24 apps/news/models.py:26 apps/news/models.py:89
 msgid "Active"
 msgstr "Активне"
 
-#: apps/core/models.py:23
+#: apps/core/models.py:28
 msgid "Image for slider"
 msgstr "Зображення для слайдера"
 
-#: apps/core/models.py:24
+#: apps/core/models.py:29
 msgid "Images for slider"
 msgstr "Зображення для слайдера"
 
-#: apps/core/models.py:27
+#: apps/core/models.py:32
 #, python-format
 msgid "Image for %s"
 msgstr "зображення для %s"
 
-#: apps/core/models.py:39 apps/news/models.py:47 apps/news/models.py:110
+#: apps/core/models.py:56 apps/news/models.py:47 apps/news/models.py:110
 msgid "No image"
 msgstr "Немає зображення"
 
@@ -135,18 +143,21 @@ msgstr "Спробуй ще раз з правильними значенням�
 msgid "Thank you. We got your message."
 msgstr "Дякую. Ми отримали Ваше повідомлення."
 
-#: apps/core/templates/contacts/contacts.html:8
+#: apps/core/templates/contacts/contacts.html:11
 msgid "You can contact us here:"
 msgstr "Ви можете зв'язатись з нами тут:"
 
-#: apps/core/templates/contacts/contacts.html:14
+#: apps/core/templates/contacts/contacts.html:17
 msgid "Send"
 msgstr "Відправити"
 
-#: apps/core/templates/contacts/contacts.html:38 templates/base.html:36
-#: templates/base.html.py:46
-msgid "Faculty of Physics and Mathematics"
-msgstr "Фізико Математичний Факультет"
+#: apps/core/templates/contacts/contacts.html:43
+msgid ""
+"Faculty of Physics and Mathematics, 03056, Kiyv, Peremogy prospect, 37, "
+"corpys 7, audience 420"
+msgstr ""
+"Фізико-математичний факультет, 03056, Київ, Проспект перемоги 37, корпус 7, "
+"аудиторія 420"
 
 #: apps/core/templates/contacts/manager_message.html:4
 #: apps/sections/models.py:10 apps/sections/models.py:47
@@ -159,23 +170,21 @@ msgstr "Чому ФМФ?"
 
 #: apps/core/templates/core/index_view.html:35
 msgid ""
-"The Faculty of Physics and Mathematics provides training of "
-"professionals in fundamental and applied problems of various fields of "
-"modern physics and mathematics. They extend from the aero-and "
-"hydrodynamics to the physics of atomic nuclei and elementary particles,"
-" involve using methods of mathematical modeling and computer "
-"simulation, training in economic analysis and forecasting economic "
-"subjects activity, construction and calculation of mathematical models "
-"of commercial and financial structures."
+"The Faculty of Physics and Mathematics provides training of professionals in"
+" fundamental and applied problems of various fields of modern physics and "
+"mathematics. They extend from the aero-and hydrodynamics to the physics of "
+"atomic nuclei and elementary particles, involve using methods of "
+"mathematical modeling and computer simulation, training in economic analysis"
+" and forecasting economic subjects activity, construction and calculation of"
+" mathematical models of commercial and financial structures."
 msgstr ""
-"Фізико-математичний факультет здійснює підготовку фахівців з "
-"фундаментальних та прикладних проблем у різних галузях сучасної фізики"
-" та математики, від аеро- та гідродинаміки до фізики атомного ядра та "
-"елементарних частинок – з використанням методів математичного та "
-"комп'ютерного моделювання, підготовка фахівців з аналізу та "
-"прогнозування економічної діяльнсті суб'єктів ринкової економіки, "
-"побудови та розрахунку математичних моделей комерційних і фінансових "
-"структур."
+"Фізико-математичний факультет здійснює підготовку фахівців з фундаментальних"
+" та прикладних проблем у різних галузях сучасної фізики та математики, від "
+"аеро- та гідродинаміки до фізики атомного ядра та елементарних частинок – з "
+"використанням методів математичного та комп'ютерного моделювання, підготовка"
+" фахівців з аналізу та прогнозування економічної діяльнсті суб'єктів "
+"ринкової економіки, побудови та розрахунку математичних моделей комерційних "
+"і фінансових структур."
 
 #: apps/core/templates/core/index_view.html:43 apps/feedbacks/models.py:27
 #: apps/feedbacks/templates/feedbacks/feedback_details.html:7
@@ -184,20 +193,16 @@ msgid "Feedbacks"
 msgstr "Відгуки"
 
 #: apps/core/templates/core/index_view.html:44
-#: apps/core/templates/core/index_view.html:90
-#: apps/core/templates/core/index_view.html:118
+#: apps/core/templates/core/index_view.html:85
+#: apps/core/templates/core/index_view.html:116
 msgid "All"
 msgstr "Усі"
 
-#: apps/core/templates/core/index_view.html:63
-msgid "more"
-msgstr "більше"
-
-#: apps/core/templates/core/index_view.html:89
+#: apps/core/templates/core/index_view.html:84
 msgid "Upcoming events"
 msgstr "Найближчі події"
 
-#: apps/core/templates/core/index_view.html:117
+#: apps/core/templates/core/index_view.html:115
 msgid "Last news"
 msgstr "Останні новини"
 
@@ -280,8 +285,8 @@ msgstr "Назва шаблону"
 
 #: apps/flatpages_my/models.py:14
 msgid ""
-"Example: 'flatpages/contact_page.html'. If this isn't provided, the "
-"system will use 'flatpages/default.html'."
+"Example: 'flatpages/contact_page.html'. If this isn't provided, the system "
+"will use 'flatpages/default.html'."
 msgstr ""
 "Наприклад: 'flatpages/contact_page.html'. Якщо це не задано, система "
 "використовуватиме 'flatpages/default.html'."
@@ -291,10 +296,10 @@ msgid "registration required"
 msgstr "Необхідна реєстрація"
 
 #: apps/flatpages_my/models.py:15
-msgid "If this is checked, only logged-in users will be able to view the page."
+msgid ""
+"If this is checked, only logged-in users will be able to view the page."
 msgstr ""
-"Якщо це відмічено, лише зареєстровані користувачі зможуть побачити "
-"сторінку."
+"Якщо це відмічено, лише зареєстровані користувачі зможуть побачити сторінку."
 
 #: apps/flatpages_my/models.py:20
 msgid "flat page"
@@ -307,7 +312,7 @@ msgstr "Прості сторінки"
 #: apps/flatpages_my/models.py:33 apps/news/models.py:19
 #: apps/news/models.py:65 apps/news/models.py:82 apps/sections/models.py:8
 #: apps/sections/models.py:28 apps/sections/models.py:45
-#: apps/sections/models.py:65 apps/seo/models.py:11
+#: apps/sections/models.py:66 apps/seo/models.py:11
 msgid "Title"
 msgstr "Назва"
 
@@ -347,7 +352,7 @@ msgid "News"
 msgstr "Новини"
 
 #: apps/news/models.py:72 apps/sections/models.py:34
-#: apps/sections/models.py:71
+#: apps/sections/models.py:72
 msgid "Images"
 msgstr "Зображення"
 
@@ -368,8 +373,7 @@ msgstr "З"
 #: apps/news/models.py:84
 msgid "If date only one - put it just here"
 msgstr ""
-"Якщо подія на одну дату - постав дату в це поле, наступне залиш "
-"пустим."
+"Якщо подія на одну дату - постав дату в це поле, наступне залиш пустим."
 
 #: apps/news/models.py:85
 msgid "Date to"
@@ -396,10 +400,6 @@ msgstr "Минулі події"
 msgid "Back to future events"
 msgstr "Назад до майбутніх подій"
 
-#: apps/sections/models.py:14 apps/sections/models.py:42
-msgid "Section"
-msgstr "Секція"
-
 #: apps/sections/models.py:15
 msgid "Sections"
 msgstr "Секції"
@@ -408,11 +408,15 @@ msgstr "Секції"
 msgid "section"
 msgstr "секція"
 
-#: apps/sections/models.py:51 apps/sections/models.py:64
+#: apps/sections/models.py:48
+msgid "Additional menu"
+msgstr "Додаткове меню"
+
+#: apps/sections/models.py:52 apps/sections/models.py:65
 msgid "Article"
 msgstr "Стаття"
 
-#: apps/sections/models.py:52
+#: apps/sections/models.py:53
 msgid "Articles"
 msgstr "Статті"
 
@@ -440,6 +444,10 @@ msgstr "Абсолютний шлях без доменного імені. Пр
 msgid "URLs"
 msgstr "URLs"
 
+#: templates/base.html:35 templates/base.html.py:56
+msgid "Faculty of Physics and Mathematics"
+msgstr "Фізико Математичний Факультет"
+
 #: templates/flatpages/about.html:16
 msgid "About the faculty"
 msgstr "Про факультет"
@@ -465,6 +473,9 @@ msgstr "попередня"
 #: templates/pagination/pagination.html:23
 msgid "next"
 msgstr "наступна"
+
+#~ msgid "more"
+#~ msgstr "більше"
 
 #~ msgid "Announcements"
 #~ msgstr "Анонси подій"

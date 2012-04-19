@@ -28,7 +28,7 @@ class BaseTranslationStackedInLine(AdminImageMixin, TranslationStackedInline):
     pass
 
 
-class IndexSliderImageAdmin(AdminImageMixin, admin.ModelAdmin):
+class IndexSliderImageAdmin(BaseTranslationAdmin):
     list_display = ('thumb', '__unicode__', 'position')
     list_display_links = ('thumb', '__unicode__')
 

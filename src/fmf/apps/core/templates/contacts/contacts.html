@@ -40,7 +40,7 @@
       $('#map_canvas').gmap({'center': '50.448579,30.456961', 'zoom': 15, 'callback': function() {
         var self = this;
           self.addMarker({'position': this.get('map').getCenter() }).click(function() {
-          self.openInfoWindow({ 'content': '{% trans "Faculty of Physics and Mathematics" %}' }, this);
+          self.openInfoWindow({ 'content': '{% trans "Faculty of Physics and Mathematics, 03056, Kiyv, Peremogy prospect, 37, corpys 7, audience 420" %}' }, this);
         });
       }});
     });

@@ -45,6 +45,7 @@ class Article(models.Model):
     title = models.CharField(_('Title'), max_length=256)
     slug = models.SlugField(_('Slug'))
     content = models.TextField(_('Content'), blank=True, null=True)
+    additional_menu = models.TextField(_('Additional menu'), blank=True, null=True)
     position = PositionField(collection='section', default=0)
 
     class Meta:
