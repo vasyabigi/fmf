@@ -341,7 +341,49 @@ article .main_sect img, .img_descr img, #feedback_list img {
 .title_arrow.green {background: #72a56c}
 .title_arrow.blue {background: #425972}
 
-
+.numbers-list {
+  padding: 4px;
+}
+.numbers-list li {
+  min-height: 55px;
+  margin-top: 4px;
+  margin-left: 5px;
+  box-shadow: 0 1px 0 #fff;
+  padding:3px 3px 0 60px;
+  border-bottom: 1px solid #D5D5D5;
+  background: url("../images/numbers.png") left top no-repeat;
+}
+.numbers-list p {
+  margin: 2px;
+  font-size: 14px;
+}
+.numbers-list h3 {
+  margin-left: 20px;
+  color: #588227;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #bbb;
+}
+.numbers-list b {
+  color: #993c23;
+}
+.numbers-list .first {
+  background-position: left 0;
+}
+.numbers-list .second {
+  background-position: left -154px;
+}
+.numbers-list .third {
+  background-position: left -308px;
+}
+.numbers-list .arrow_right {
+  position: relative;
+  top: -40px;
+  float: right;
+  width: 39px;
+  height: 50px;
+  background: url("../images/arrows_.png") -50px -39px;
+}
   /*END Why_fmf*/
 
   /*Feedbacks*/
@@ -349,8 +391,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
   background: rgba(255,255,255,.6);
 }
 #feedbacks .streamer_slider{
-  height: 260px;
-  width: 620px;
+  height: 251px;
   margin:5px 0 20px;
   border-bottom: 1px solid #D5D5D5;
   box-shadow: 0 1px 0 #fff;
@@ -358,7 +399,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
 .streamer_slider ul .img_descr {
   width: 100%;
   margin:0;
-  padding:8px 0;
+  padding: 4px 0;
   border-bottom: 1px solid #d5d5d5;
   box-shadow:0 1px 0 #fff;
   -webkit-transition:all 0.2s ease-in;
@@ -380,6 +421,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
 .status {
   padding: 0 20px;
   color: #888;
+  font-weight: bold;
 }
 #feedback_list .status {
   display: block;
@@ -424,7 +466,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
 
   /*News*/
 #news .streamer_slider {
-  height: 314px !important;
+  height: 290px !important;
 }
 .show_all {
   position: absolute;

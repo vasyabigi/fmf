@@ -16,7 +16,7 @@
         <ul>
           {% for image in images %}
             <li>
-              {% thumbnail image.image '600x300' crop='center' as im %}
+              {% thumbnail image.image '600x250' crop='center' as im %}
                 <img src="{{ im.url }}" alt="{{ image.get_page_title }}">
               {% endthumbnail %}
               <div class="caption"><a href="{{ image.get_page_url|default:"#" }}">{{ image.get_page_title }}</a></div>
@@ -29,42 +29,34 @@
 
     <!--why_fmf?-->
     <section id="why_fmf" class="bordered main_sect">
-      <div class="title_arrow">
-        <h5>{% trans "Why FPM?" %}</h5>
+      <div class="title_arrow blue">
+        <h5>Не впевнений з майбутнім?</h5>
       </div>
-      <p>{% trans "The Faculty of Physics and Mathematics provides training of professionals in fundamental and applied problems of various fields of modern physics and mathematics. They extend from the aero-and hydrodynamics to the physics of atomic nuclei and elementary particles, involve using methods of mathematical modeling and computer simulation, training in economic analysis and forecasting economic subjects activity, construction and calculation of mathematical models of commercial and financial structures." %}</p>
+      <ul class="numbers-list">
+        <li class="first">
+          <h3>Поступай до нас!</h3>
+          <p><b>95%</b> студентів на бюджеті</p>
+          <p><b>+ 20%</b> до звичайної стипендії</p>
+          <p><b>36/60</b> прохідний бал</p>
+          <p>Є питання? Задай прямо <a href="http://fmf.kpi.ua/contacts"><b>ТУТ »</b></a></p>
+        </li>
+        <li class="second">
+          <h3>Вчись!</h3>
+          <p><a href="http://fmf.kpi.ua/sections/pro-fakultet/spetsalnost/"><b>Найкраща</b></a> технічна освіта в Україні</p>
+          <p><a href="http://fmf.kpi.ua/sections/spvprobtnitstvo/"><b>Співробітництво</b></a> з іноземними університетами</p>
+          <p>Веселе <a href="http://studprofkom.kpi.ua/health"><b>Студентське життя</b></a></p>
+        </li>
+        <li class="third">
+          <h3>Виходь успішною людиною!</h3>
+          <p style="font-weight: bold">Тут не потрібно слів. Ось наші результати :</p>
+          <div class="arrow_right"></div>
+        </li>
+      </ul>
     </section>
     <!--end why_fmf?-->
 
     <!--feedbacks-->
-    {% if feedbacks %}
-      <section id="feedbacks" class="bordered main_sect">
-        <div class="title_arrow red">
-          <h3 class="title_list">{% trans "Feedbacks" %}:</h3>
-          <span class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></span>
-        </div>
-        <div class="streamer">
-          <div class="streamer_slider">
-            <ul>
-            {% for feedback in feedbacks %}
-              <li class="img_descr">
-                <a href="{{ feedback.get_absolute_url }}">
-                  {% thumbnail feedback.image '80x100' crop='top' as im %}
-                  <img src="{{ im.url }}" alt="{{ image.page.title }}">
-                  {% endthumbnail %}
-                </a>
-                <p class="name_status">
-                  <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
-                  <i class="status">{{ feedback.description|truncatewords:40 }}</i>
-                </p>
-              </li>
-            {% endfor %}
-              <li class="img_descr"></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    {% endif %}
+
     <!--END feedbacks-->
   {% endblock %}
 
@@ -79,7 +71,7 @@
     <aside>
 
       <!--events-->
-      <section id="events" class="bordered main_sect">
+      {% comment %}<section id="events" class="bordered main_sect">
         <div class="title_arrow blue">
           <h3 class="title_list">{% trans "Upcoming events" %}:</h3>
           <p class="show_all"><a href="{% url event-list %}">{% trans "All" %} »</a></p>
@@ -106,7 +98,7 @@
         {% else %}
         <p>Put something here if no events</p>
         {% endif %}
-      </section>
+      </section>{% endcomment %}
       <!--end of events-->
 
       <!--news-->
@@ -134,7 +126,34 @@
         </div>
       </section>
       <!--end news-->
-
+      {% if feedbacks %}
+        <section id="feedbacks" class="bordered main_sect">
+          <div class="title_arrow red">
+            <h3 class="title_list">Наші студенти :</h3>
+            <span class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></span>
+          </div>
+          <div class="streamer">
+            <div class="streamer_slider">
+              <ul>
+                {% for feedback in feedbacks %}
+                  <li class="img_descr">
+                    <a href="{{ feedback.get_absolute_url }}">
+                      {% thumbnail feedback.image '80x100' crop='top' as im %}
+                        <img src="{{ im.url }}" alt="{{ image.page.title }}">
+                      {% endthumbnail %}
+                    </a>
+                    <p class="name_status">
+                      <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
+                      <i class="status">{{ feedback.description|truncatewords:40 }}</i>
+                    </p>
+                  </li>
+                {% endfor %}
+                <li class="img_descr"></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      {% endif %}
     </aside>
 
 <!--END right column-->
