@@ -13,7 +13,6 @@
 {% block title %}{{ news.title }}{% endblock %}
 
 {% block extra_head %}
-  {% include 'includes/social_scripts.html' %}
   <meta property="og:title" content="{{ news.title }}" />
   <meta itemprop="description" content="{{ news.short_description }}">
   <meta property="og:type" content="university" />
@@ -30,7 +29,6 @@
 
 {% block content %}
   <section class="container bordered details">
-    {% include 'includes/social_html.html' %}
     <h2 class="title">{{ news.title }}</h2>
     <div class="img_descr">
       {% if news.main_image %}

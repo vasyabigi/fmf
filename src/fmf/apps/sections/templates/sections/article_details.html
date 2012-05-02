@@ -14,10 +14,6 @@
    {% trans "FPM" %}-{{ article.title }}
 {% endblock %}
 
-{% block extra_head %}
-  {% include 'includes/social_scripts.html' %}
-{% endblock %}
-
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "Home" %}</a> / </span>
   <span><a href="{{ article.section.get_absolute_url }}">{{ article.section }}</a></span>
@@ -48,7 +44,6 @@
 
 {% block content %}
   <section id="{{ section.title_en|slugify }}" class="flatpage bordered">
-    {% include 'includes/social_html.html' %}
     {% block section_content %}
       {{ article.content|safe }}
     {% endblock %}

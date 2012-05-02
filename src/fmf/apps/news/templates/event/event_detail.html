@@ -12,10 +12,6 @@
 
 {% block title %}{{ event.title }}{% endblock %}
 
-{% block extra_head %}
-  {% include 'includes/social_scripts.html' %}
-{% endblock %}
-
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "Home" %}</a> /</span>
   <span><a href="{% url event-list %}">{% trans "Events" %}</a> /</span>
@@ -24,7 +20,6 @@
 
 {% block content %}
   <section class="container bordered details">
-    {% include 'includes/social_html.html' %}
     <p class="title">{{ event.title }}</p>
     {% if event.image %}
       {% thumbnail event.image "250x200" crop="center" as im %}

@@ -8,10 +8,6 @@
   <h2>{{ feedback.name }}</h2>
 {% endblock %}
 
-{% block extra_head %}
-  {% include 'includes/social_scripts.html' %}
-{% endblock %}
-
 {% block meta_information %}
   {% cache 500 meta_information LANGUAGE_CODE %}
     <meta name="description" content="{% seo description for feedback %}" />
@@ -24,7 +20,6 @@
 
 {% block content %}
   <section class="container bordered details">
-    {% include 'includes/social_html.html' %}
     <h2 class="title">{{ feedback.name }}</h2>
     <div class="img_descr">
       {% thumbnail feedback.image '200' as im %}

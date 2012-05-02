@@ -14,10 +14,6 @@
    {% trans "FPM" %} - {{ flatpage.title }}
 {% endblock %}
 
-{% block extra_head %}
-  {% include 'includes/social_scripts.html' %}
-{% endblock %}
-
 {% block breadcrumbs %}
   <span><a href="{% url index-view %}">{% trans "Home" %}</a> / </span>
   <h2>{{ flatpage.title }}</h2>
@@ -59,7 +55,6 @@
 
 {% block content %}
   <section id="{{ flatpage.title_en|slugify }}" class="flatpage bordered">
-    {% include 'includes/social_html.html' %}
     {% block flatpage_content %}
       {{ flatpage.content }}
     {% endblock %}
