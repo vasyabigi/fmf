@@ -27,10 +27,18 @@
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
     <!--Styles-->
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/style_sudo.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/fmf.css">
-    <!--<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}less/fmf.less">-->
+    <style type="text/less">
+      @import url("{{ STATIC_URL }}less/bootstrap.less");
+    </style>
+    <style type="text/css">
+      @import url("{{ STATIC_URL }}css/reset.css");
+      @import url("{{ STATIC_URL }}css/style_sudo.css");
+      @import url("{{ STATIC_URL }}css/fmf.css");
+      {% block extra_css %}
+      {% endblock %}
+    </style>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/less.js"></script>
+
     <title>
       {% block title %}{% trans "Faculty of Physics and Mathematics" %}{% endblock %}
     </title>
@@ -93,6 +101,9 @@
   {% endblock %}
 
   {% block aside_right %}
+  {% endblock %}
+
+  {% block full_width %}
   {% endblock %}
 
     <footer>
