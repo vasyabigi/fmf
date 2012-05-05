@@ -263,6 +263,7 @@ article#single {
 }
 article#left_column {
   float:left;
+  min-height: inherit;
   margin: 20px 10% 0;
   margin-right: 0 !important;
 }
@@ -318,6 +319,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
 
   /*Why_fmf*/
 #why_fmf {
+  margin-bottom: 15px;
   padding: 0;
   background: url("/static/images/logo_bg_1.png") fixed 10% 150px #f4f4f4 no-repeat;
 }
@@ -466,7 +468,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
 
   /*News*/
 #news .streamer_slider {
-  height: 290px !important;
+  height: 198px !important;
 }
 .show_all {
   position: absolute;
@@ -698,6 +700,7 @@ aside > section {
   color: #f0f0f0;
   font-size: 14px;
   font-weight: bold;
+  line-height: 20px;
   text-shadow: 0 1px 1px #555;
 }
 #events .streamer_slider, #news .streamer_slider {

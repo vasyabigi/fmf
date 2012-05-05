@@ -26,70 +26,6 @@
       </div>
     </section>
     <!--end slider-->
-
-    <!--why_fmf?-->
-    <section id="why_fmf" class="bordered main_sect">
-      <div class="title_arrow blue">
-        <h5>Не впевнений з майбутнім?</h5>
-      </div>
-      <ul class="numbers-list">
-        <li class="first">
-          <h3>Поступай до нас!</h3>
-          <p><b>95%</b> студентів на бюджеті;</p>
-          <p><b>+ 20%</b> до звичайної стипендії;</p>
-          <p><b>36/60</b> прохідний бал;</p>
-          <p>Є питання? Задай прямо <a href="http://fmf.kpi.ua/contacts"><b>ТУТ »</b></a></p>
-        </li>
-        <li class="second">
-          <h3>Вчись!</h3>
-          <p><a href="http://fmf.kpi.ua/sections/pro-fakultet/spetsalnost/"><b>Найкраща</b></a> технічна освіта в Україні;</p>
-          <p><a href="http://fmf.kpi.ua/sections/spvprobtnitstvo/"><b>Співробітництво</b></a> з іноземними університетами;</p>
-          <p>Веселе <a href="http://studprofkom.kpi.ua/health"><b>cтудентське життя;</b></a></p>
-        </li>
-        <li class="third">
-          <h3>Виходь успішною людиною!</h3>
-          <p style="font-weight: bold">Тут не потрібно слів. Ось наші результати :</p>
-          <div class="arrow_right"></div>
-        </li>
-      </ul>
-    </section>
-    <!--end why_fmf?-->
-    <section class="bordered main_sect">
-      <div class="title_arrow red">
-        <h3 class="title_list">Students :</h3>
-        <span class="show_all">{% trans "All" %} »</span>
-      </div>
-      <div>
-        <div style="height: 300px;" class="feedback-main">
-          <div class="feedback-image-main" id="feedback-image-main"></div>
-          <div id="feedback-description-main"></div>
-        </div>
-        <ul class="feedback">
-          <li class="active">
-            First
-            <img src="http://placehold.it/100x100" alt="First">
-            <div class="feedback-image" style="display:none;"><img src="http://placehold.it/240x170&text=First" alt="First"></div>
-            <div class="feedback-description" style="display:none;">First feedback description</div>
-          </li>
-          <li>
-            Second
-            <img src="http://placehold.it/100x100" alt="Second">
-            <div class="feedback-image" style="display:none;"><img src="http://placehold.it/240x170&text=Second" alt="Second"></div>
-            <div class="feedback-description" style="display:none;">Second feedback description</div>
-          </li>
-          <li>
-            Third
-            <img src="http://placehold.it/100x100" alt="Third">
-            <div class="feedback-image" style="display:none;"><img src="http://placehold.it/240x170&text=Third" alt="Third"></div>
-            <div class="feedback-description" style="display:none;">Third feedback description</div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!--feedbacks-->
-
-    <!--END feedbacks-->
   {% endblock %}
 
   </article>
@@ -158,7 +94,7 @@
         </div>
       </section>
       <!--end news-->
-      {% if feedbacks %}
+    {% comment %}  {% if feedbacks %}
         <section id="feedbacks" class="bordered main_sect">
           <div class="title_arrow red">
             <h3 class="title_list">Наші студенти :</h3>
@@ -185,12 +121,79 @@
             </div>
           </div>
         </section>
-      {% endif %}
+      {% endif %}{% endcomment %}
     </aside>
 
 <!--END right column-->
 {% endblock %}
 
+{% block full_width %}
+
+  <div class="container clearfix">
+    <!--why_fmf?-->
+    <section id="why_fmf" class="bordered main_sect">
+      <div class="title_arrow blue">
+        <h5>Не впевнений з майбутнім?</h5>
+      </div>
+      <ul class="numbers-list">
+        <li class="first">
+          <h3>Поступай до нас!</h3>
+          <p><b>95%</b> студентів на бюджеті;</p>
+          <p><b>+ 20%</b> до звичайної стипендії;</p>
+          <p><b>36/60</b> прохідний бал;</p>
+          <p>Є питання? Задай прямо <a href="http://fmf.kpi.ua/contacts"><b>ТУТ »</b></a></p>
+        </li>
+        <li class="second">
+          <h3>Вчись!</h3>
+          <p><a href="http://fmf.kpi.ua/sections/pro-fakultet/spetsalnost/"><b>Найкраща</b></a> технічна освіта в Україні;</p>
+          <p><a href="http://fmf.kpi.ua/sections/spvprobtnitstvo/"><b>Співробітництво</b></a> з іноземними університетами;</p>
+          <p>Веселе <a href="http://studprofkom.kpi.ua/health"><b>cтудентське життя;</b></a></p>
+        </li>
+        <li class="third">
+          <h3>Виходь успішною людиною!</h3>
+          <p style="font-weight: bold">Тут не потрібно слів. Ось наші результати :</p>
+          <div class="arrow_right"></div>
+        </li>
+      </ul>
+    </section>
+    <!--end why_fmf?-->
+
+    <!-- feefbacks -->
+    <section class="bordered main_sect">
+      <div class="title_arrow red">
+        <h3 class="title_list">Students :</h3>
+        <span class="show_all">{% trans "All" %} »</span>
+      </div>
+      <div>
+        <div style="height: 200px;" class="feedback-main">
+          <div class="feedback-image-main" id="feedback-image-main"></div>
+          <div id="feedback-description-main"></div>
+        </div>
+        <ul class="feedback">
+          <li class="active">
+            First
+            <img src="http://placehold.it/100x100" alt="First">
+            <div class="feedback-image" style="display:none;"><img src="http://placehold.it/240x170&text=First" alt="First"></div>
+            <div class="feedback-description" style="display:none;">First feedback description</div>
+          </li>
+          <li>
+            Second
+            <img src="http://placehold.it/100x100" alt="Second">
+            <div class="feedback-image" style="display:none;"><img src="http://placehold.it/240x170&text=Second" alt="Second"></div>
+            <div class="feedback-description" style="display:none;">Second feedback description</div>
+          </li>
+          <li>
+            Third
+            <img src="http://placehold.it/100x100" alt="Third">
+            <div class="feedback-image" style="display:none;"><img src="http://placehold.it/240x170&text=Third" alt="Third"></div>
+            <div class="feedback-description" style="display:none;">Third feedback description</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- EO feefbacks -->
+  </div>
+{% endblock %}
 
 {% block extra_js %}
   <script src="{{ STATIC_URL }}js/jquery.sudoSlider.js"></script>
