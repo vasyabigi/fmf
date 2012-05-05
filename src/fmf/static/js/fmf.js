@@ -213,8 +213,41 @@ var Fmf = (function(){
             $("img").lazyload({
                 effect : "fadeIn"
             });
+        },
+        IndexFeedbackSlider: function() {
+            $('#feedback-image-main').html($(".feedback li:first").find('.feedback-image').html());
+            $('#feedback-description-main').html($(".feedback li:first").find('.feedback-description').html());
+
+            $(".feedback li").click(function(){
+              if (!$(this).hasClass('active')) {
+                  $(".feedback li").removeClass('active');
+                  $(this).addClass('active');
+                  var feedbackImage = $(this).find('.feedback-image').html();
+                  var feedbackDescription = $(this).find('.feedback-description').html();
+                  $('#feedback-image-main').html(feedbackImage).hide().fadeIn();
+                  $('#feedback-description-main').html(feedbackDescription).hide().fadeIn();
+              }
+            });
+
+            function startFeedbackInterval() {
+                timerFeedback = setInterval(function(){
+                    var activeSlide = $(".feedback li.active");
+                    if (activeSlide.next().length) {
+                      activeSlide.next().trigger('click');
+                    } else {
+                      $(".feedback li:first").trigger('click');
+                    }
+                }, 5000);
+            }
+            startFeedbackInterval();
+
+            $(".feedback li, .feedback-main").hover(function(){
+                clearInterval(timerFeedback);
+            }, function(){
+                startFeedbackInterval();
+            });
         }
-    }
+    };
 })($);
 
 
@@ -228,6 +261,7 @@ $(document).ready(function(){
     Fmf.TextNav();
     Fmf.StreamerSlider();
     Fmf.LazyLoad();
+    Fmf.IndexFeedbackSlider();
 });
 
 
