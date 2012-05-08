@@ -207,6 +207,22 @@ nav.main .breadcrumbs {
 }
   /*END Language buttons*/
 
+  /*Pagination*/
+.pagination li a {
+  background: #F4F4F4;
+}
+.pagination .active a {
+  padding-top:0;
+}
+.pagination .disabled span, .pagination .disabled a, .pagination .disabled a:hover {
+  color: #777;
+  background: #E5E5E5;
+}
+.pagination a:hover, .pagination .active a {
+  background-color: #fff;
+}
+  /* END Pagination*/
+
   /*END Main navigation*/
 
   /*LOGO*/
@@ -331,6 +347,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
 }
 .title_arrow {
   position: relative;
+  z-index: 2;
   width: 100%;
   margin: -2px 0 0 -3px;
   padding: 5px 4px;
@@ -344,23 +361,20 @@ article .main_sect img, .img_descr img, #feedback_list img {
 .title_arrow.blue {background: #425972}
 
 .numbers-list {
-  padding: 4px;
+
 }
 .numbers-list li {
   min-height: 55px;
   margin-top: 4px;
-  margin-left: 5px;
-  box-shadow: 0 1px 0 #fff;
-  padding:3px 3px 0 60px;
-  border-bottom: 1px solid #D5D5D5;
-  background: url("../images/numbers.png") left top no-repeat;
+  padding-top: 30px;
+  background: url("../images/glyphicons/glyphicons_290_skull.png") center top no-repeat;
+  text-align: center;
 }
 .numbers-list p {
   margin: 2px;
   font-size: 14px;
 }
 .numbers-list h3 {
-  margin-left: 20px;
   color: #588227;
   font-size: 16px;
   font-weight: bold;
@@ -370,21 +384,13 @@ article .main_sect img, .img_descr img, #feedback_list img {
   color: #993c23;
 }
 .numbers-list .first {
-  background-position: left 0;
+
 }
 .numbers-list .second {
-  background-position: left -154px;
+
 }
 .numbers-list .third {
-  background-position: left -308px;
-}
-.numbers-list .arrow_right {
-  position: relative;
-  top: -40px;
-  float: right;
-  width: 39px;
-  height: 50px;
-  background: url("../images/arrows_.png") -50px -39px;
+
 }
   /*END Why_fmf*/
 
@@ -467,8 +473,10 @@ article .main_sect img, .img_descr img, #feedback_list img {
   /*END Feedbacks*/
 
   /*News*/
-#news .streamer_slider {
-  height: 198px !important;
+
+#news .nav {
+  height: 38px;
+  margin-bottom: 5px;
 }
 .show_all {
   position: absolute;
@@ -514,12 +522,58 @@ article .main_sect img, .img_descr img, #feedback_list img {
   color: #fff;
   text-shadow: 0 1px #777;
 }
+.tabs-below > .nav-tabs > li > a {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.nav-tabs .dropdown-menu {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+  background-color: #BBD9EE;
+  color: #333;
+}
+.nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav > li.dropdown.open.active > a:hover {
+  color: #6A8CB0;
+  background-color: #fafafa;
+  border-color: #999;
+}
+.dropdown-menu {
+  top:34px;
+  left: -1px;
+  width: 100%;
+  min-width: 0;
+  padding: 2px 0;
+  background-color: #FAFAFA;
+  border: 1px solid #CCC;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-width: 0px 1px 1px 1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.nav-tabs > li > a {
+  margin: 0 0 0 -1px;
+  border: 1px solid red;
+  border-color: transparent #DDD #DDD #DDD;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+}
+.tabs-below > .nav-tabs > li > a:hover {
+  border-bottom-color:#DDD;
+}
+.tabs-below > .nav-tabs > .open > a {
+  border--color:#DDD;
+}
+
 .streamer ul li a, .name {
-  margin-right: 10px;
   font-size: 1.2em;
   font-style: italic;
   font-family: "dejavu sans", arial, sans-serif;
-  line-height: 20px;
   -webkit-transition:all 0.2s ease-in;
   -moz-transition:all 0.2s ease-in;
   -o-transition:all 0.2s ease-in;
@@ -686,9 +740,7 @@ aside > section {
   margin-bottom: 10px;
 }
 .streamer {
-  position: relative;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+
 }
 .streamer .date {
   margin:0 40px 0 0;
@@ -704,9 +756,9 @@ aside > section {
   text-shadow: 0 1px 1px #555;
 }
 #events .streamer_slider, #news .streamer_slider {
-  height: 362px;
-  margin:5px 0 20px;
-  border-bottom: 1px solid #D5D5D5;
+
+
+
   box-shadow: 0 1px 0 #fff;
 }
 #events .streamer_slider .img_descr > a, #news .streamer_slider .img_descr p > a{

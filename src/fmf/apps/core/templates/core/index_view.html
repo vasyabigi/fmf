@@ -76,21 +76,45 @@
           <p class="show_all"><a href="{% url news-list %}">{% trans "All" %} »</a></p>
         </div>
         <div class="streamer">
-          <div class="streamer_slider">
-            <ul>
-              {% for news in news_list %}
-                <li class="img_descr">
-                  <a href="{{ news.get_absolute_url }}">
-                    {% thumbnail news.main_image '75x75' crop='center' as im %}
-                      <img src="{{ im.url }}" alt="{{ news.title }}">
-                    {% endthumbnail %}
-                  </a>
-                  <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
-                  <p class="short_description">{{ news.short_description }}</p>
-                </li>
-              {% endfor %}
+          <div class="tabbable tabs-below">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#A" data-toggle="tab">Всі новини</a></li>
+              <li class=""><a href="#B" data-toggle="tab">Деканат</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Прийом <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#C" data-toggle="tab">1 Курс</a></li>
+                  <li><a href="#D" data-toggle="tab">5 Курс</a></li>
+                </ul>
+              </li>
             </ul>
+            <div class="tab-content">
+              <div class="tab-pane active streamer_slider" id="A">
+                <ul>
+                  {% for news in news_list %}
+                    <li class="img_descr">
+                      <a href="{{ news.get_absolute_url }}">
+                        {% thumbnail news.main_image '40x40' crop='center' as im %}
+                          <img src="{{ im.url }}" alt="{{ news.title }}">
+                        {% endthumbnail %}
+                      </a>
+                      <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="tab-pane" id="B">
+                <p>ДЕКАНАТ!!!</p>
+              </div>
+              <div class="tab-pane" id="C">
+                <p>1 Курс.</p>
+              </div>
+              <div class="tab-pane" id="D">
+                <p>5 Курс</p>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
       <!--end news-->
@@ -133,26 +157,25 @@
     <!--why_fmf?-->
     <section id="why_fmf" class="bordered main_sect">
       <div class="title_arrow blue">
-        <h5>Не впевнений з майбутнім?</h5>
+        <h5>Не впевнений у майбутньому?</h5>
       </div>
-      <ul class="numbers-list">
-        <li class="first">
+      <ul class="numbers-list row-fluid">
+        <li class="first span4">
           <h3>Поступай до нас!</h3>
           <p><b>95%</b> студентів на бюджеті;</p>
           <p><b>+ 20%</b> до звичайної стипендії;</p>
           <p><b>36/60</b> прохідний бал;</p>
           <p>Є питання? Задай прямо <a href="http://fmf.kpi.ua/contacts"><b>ТУТ »</b></a></p>
         </li>
-        <li class="second">
+        <li class="second span4">
           <h3>Вчись!</h3>
           <p><a href="http://fmf.kpi.ua/sections/pro-fakultet/spetsalnost/"><b>Найкраща</b></a> технічна освіта в Україні;</p>
           <p><a href="http://fmf.kpi.ua/sections/spvprobtnitstvo/"><b>Співробітництво</b></a> з іноземними університетами;</p>
           <p>Веселе <a href="http://studprofkom.kpi.ua/health"><b>cтудентське життя;</b></a></p>
         </li>
-        <li class="third">
+        <li class="third span4">
           <h3>Виходь успішною людиною!</h3>
           <p style="font-weight: bold">Тут не потрібно слів. Ось наші результати :</p>
-          <div class="arrow_right"></div>
         </li>
       </ul>
     </section>
@@ -205,4 +228,16 @@
 
 {% block extra_js %}
   <script src="{{ STATIC_URL }}js/jquery.sudoSlider.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-transition.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-alert.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-modal.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-dropdown.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-scrollspy.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-tab.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-tooltip.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-popover.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-button.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-collapse.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-carousel.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap/bootstrap-typeahead.js"></script>
 {% endblock %}

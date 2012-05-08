@@ -2,7 +2,7 @@ img{border:none;}
 #container {margin:0 auto;position:relative;text-align:left;background:#fff;margin-bottom:2em;}
 /* Sudo Slider */
 #slider > ul, #slider > ul > li, .streamer_slider > ul, .streamer_slider > ul > li {margin:0;padding:0;list-style:none;position:relative;display:block;}
-#slider > ul > li, .streamer_slider > ul > li {display:none;}
+/*#slider > ul > li, .streamer_slider > ul > li {display:none;}*/
 #slider > ul > li:first-child, .streamer_slider > ul > li:first-child {display:block;}
 
 
