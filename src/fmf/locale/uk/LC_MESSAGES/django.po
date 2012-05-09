@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-19 12:27+0300\n"
-"PO-Revision-Date: 2012-04-19 12:30\n"
+"POT-Creation-Date: 2012-05-09 16:40+0300\n"
+"PO-Revision-Date: 2012-05-09 16:41\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -106,14 +106,14 @@ msgid "Custom name"
 msgstr "Кастомне ім'я"
 
 #: apps/core/models.py:22 apps/core/models.py:58 apps/feedbacks/models.py:22
-#: apps/flatpages_my/models.py:34 apps/news/models.py:49
-#: apps/news/models.py:66 apps/news/models.py:71 apps/news/models.py:112
+#: apps/flatpages_my/models.py:34 apps/news/models.py:60
+#: apps/news/models.py:78 apps/news/models.py:83 apps/news/models.py:124
 #: apps/sections/models.py:29 apps/sections/models.py:33
 #: apps/sections/models.py:67 apps/sections/models.py:71
 msgid "Image"
 msgstr "Зображення"
 
-#: apps/core/models.py:24 apps/news/models.py:26 apps/news/models.py:89
+#: apps/core/models.py:24 apps/news/models.py:37 apps/news/models.py:101
 msgid "Active"
 msgstr "Активне"
 
@@ -130,7 +130,7 @@ msgstr "Зображення для слайдера"
 msgid "Image for %s"
 msgstr "зображення для %s"
 
-#: apps/core/models.py:56 apps/news/models.py:47 apps/news/models.py:110
+#: apps/core/models.py:56 apps/news/models.py:58 apps/news/models.py:122
 msgid "No image"
 msgstr "Немає зображення"
 
@@ -164,47 +164,21 @@ msgstr ""
 msgid "Content"
 msgstr "Повідомлення"
 
-#: apps/core/templates/core/index_view.html:33
-msgid "Why FPM?"
-msgstr "Чому ФМФ?"
-
-#: apps/core/templates/core/index_view.html:35
-msgid ""
-"The Faculty of Physics and Mathematics provides training of professionals in"
-" fundamental and applied problems of various fields of modern physics and "
-"mathematics. They extend from the aero-and hydrodynamics to the physics of "
-"atomic nuclei and elementary particles, involve using methods of "
-"mathematical modeling and computer simulation, training in economic analysis"
-" and forecasting economic subjects activity, construction and calculation of"
-" mathematical models of commercial and financial structures."
-msgstr ""
-"Фізико-математичний факультет здійснює підготовку фахівців з фундаментальних"
-" та прикладних проблем у різних галузях сучасної фізики та математики, від "
-"аеро- та гідродинаміки до фізики атомного ядра та елементарних частинок – з "
-"використанням методів математичного та комп'ютерного моделювання, підготовка"
-" фахівців з аналізу та прогнозування економічної діяльнсті суб'єктів "
-"ринкової економіки, побудови та розрахунку математичних моделей комерційних "
-"і фінансових структур."
-
-#: apps/core/templates/core/index_view.html:43 apps/feedbacks/models.py:27
-#: apps/feedbacks/templates/feedbacks/feedback_details.html:7
-#: apps/feedbacks/templates/feedbacks/feedback_list.html:7
-msgid "Feedbacks"
-msgstr "Відгуки"
+#: apps/core/templates/core/index_view.html:43
+msgid "Last news"
+msgstr "Останні новини"
 
 #: apps/core/templates/core/index_view.html:44
-#: apps/core/templates/core/index_view.html:85
-#: apps/core/templates/core/index_view.html:116
+#: apps/core/templates/core/index_view.html:73
+#: apps/core/templates/core/index_view.html:182
 msgid "All"
 msgstr "Усі"
 
-#: apps/core/templates/core/index_view.html:84
-msgid "Upcoming events"
-msgstr "Найближчі події"
-
+#: apps/core/templates/core/index_view.html:95
 #: apps/core/templates/core/index_view.html:115
-msgid "Last news"
-msgstr "Останні новини"
+#: apps/core/templates/core/index_view.html:135
+msgid "No news in this category."
+msgstr "Немає новин в даній категорії."
 
 #: apps/feedbacks/models.py:9
 msgid "question"
@@ -218,12 +192,12 @@ msgstr "Питання"
 msgid "Questions"
 msgstr "Питання"
 
-#: apps/feedbacks/models.py:21 apps/news/models.py:20 apps/news/models.py:83
+#: apps/feedbacks/models.py:21 apps/news/models.py:27 apps/news/models.py:95
 #: apps/sections/models.py:9 apps/sections/models.py:46
 msgid "Slug"
 msgstr "Посилання"
 
-#: apps/feedbacks/models.py:23 apps/news/models.py:23 apps/news/models.py:88
+#: apps/feedbacks/models.py:23 apps/news/models.py:34 apps/news/models.py:100
 #: apps/seo/models.py:12
 msgid "Description"
 msgstr "Опис"
@@ -231,6 +205,12 @@ msgstr "Опис"
 #: apps/feedbacks/models.py:26 apps/feedbacks/models.py:38
 msgid "Feedback"
 msgstr "Відгук"
+
+#: apps/feedbacks/models.py:27
+#: apps/feedbacks/templates/feedbacks/feedback_details.html:7
+#: apps/feedbacks/templates/feedbacks/feedback_list.html:7
+msgid "Feedbacks"
+msgstr "Відгуки"
 
 #: apps/feedbacks/models.py:40
 msgid "Answer"
@@ -250,15 +230,15 @@ msgstr "Питання"
 
 #: apps/feedbacks/templates/feedbacks/feedback_details.html:6
 #: apps/feedbacks/templates/feedbacks/feedback_list.html:6
-#: apps/news/templates/event/event_detail.html:20
+#: apps/news/templates/event/event_detail.html:16
 #: apps/news/templates/event/event_list.html:8
 #: apps/news/templates/event/event_list_past.html:8
-#: apps/news/templates/news/news_details.html:26
+#: apps/news/templates/news/news_details.html:25
 #: apps/news/templates/news/news_list.html:8
-#: apps/sections/templates/sections/article_details.html:22
-#: apps/sections/templates/sections/section_details.html:22
+#: apps/sections/templates/sections/article_details.html:18
+#: apps/sections/templates/sections/section_details.html:18
 #: templates/flatpages/about.html:12 templates/flatpages/cooperation.html:12
-#: templates/flatpages/default.html:22 templates/flatpages/entrants.html:12
+#: templates/flatpages/default.html:18 templates/flatpages/entrants.html:12
 #: templates/flatpages/students.html:12
 msgid "Home"
 msgstr "Головна"
@@ -309,8 +289,8 @@ msgstr "Проста сторінка"
 msgid "flat pages"
 msgstr "Прості сторінки"
 
-#: apps/flatpages_my/models.py:33 apps/news/models.py:19
-#: apps/news/models.py:65 apps/news/models.py:82 apps/sections/models.py:8
+#: apps/flatpages_my/models.py:33 apps/news/models.py:26
+#: apps/news/models.py:77 apps/news/models.py:94 apps/sections/models.py:8
 #: apps/sections/models.py:28 apps/sections/models.py:45
 #: apps/sections/models.py:66 apps/seo/models.py:11
 msgid "Title"
@@ -324,66 +304,82 @@ msgstr "Картинка"
 msgid "flat page images"
 msgstr "Картинки"
 
-#: apps/news/models.py:21 apps/news/models.py:86
+#: apps/news/models.py:19
+msgid "Dean"
+msgstr "Деканат"
+
+#: apps/news/models.py:20
+msgid "First year"
+msgstr "Перший курс"
+
+#: apps/news/models.py:21
+msgid "Fifth year"
+msgstr "П'ятий курс"
+
+#: apps/news/models.py:29
+msgid "Category"
+msgstr "Категорія"
+
+#: apps/news/models.py:32 apps/news/models.py:98
 msgid "Main image"
 msgstr "Основне зображення"
 
-#: apps/news/models.py:22 apps/news/models.py:87
+#: apps/news/models.py:33 apps/news/models.py:99
 msgid "Short Description"
 msgstr "Короткий опис"
 
-#: apps/news/models.py:24
+#: apps/news/models.py:35
 msgid "Date"
 msgstr "Дата"
 
-#: apps/news/models.py:25 apps/news/models.py:67
+#: apps/news/models.py:36 apps/news/models.py:79
 msgid "Position"
 msgstr "Позиція"
 
-#: apps/news/models.py:27 apps/news/models.py:90
+#: apps/news/models.py:38 apps/news/models.py:102
 msgid "Created"
 msgstr "Створено"
 
-#: apps/news/models.py:31 apps/news/models.py:32 apps/news/models.py:64
-#: apps/news/templates/news/news_details.html:27
+#: apps/news/models.py:42 apps/news/models.py:43 apps/news/models.py:76
+#: apps/news/templates/news/news_details.html:26
 #: apps/news/templates/news/news_list.html:5
 #: apps/news/templates/news/news_list.html:9
 msgid "News"
 msgstr "Новини"
 
-#: apps/news/models.py:72 apps/sections/models.py:34
+#: apps/news/models.py:84 apps/sections/models.py:34
 #: apps/sections/models.py:72
 msgid "Images"
 msgstr "Зображення"
 
-#: apps/news/models.py:76
+#: apps/news/models.py:88
 #, python-format
 msgid "image for %(news_title)s - %(title)s"
 msgstr "зображення для %(news_title)s  - %(title)s"
 
-#: apps/news/models.py:78
+#: apps/news/models.py:90
 #, python-format
 msgid "image for %s"
 msgstr "зображення для %s"
 
-#: apps/news/models.py:84
+#: apps/news/models.py:96
 msgid "Date from"
 msgstr "З"
 
-#: apps/news/models.py:84
+#: apps/news/models.py:96
 msgid "If date only one - put it just here"
 msgstr ""
 "Якщо подія на одну дату - постав дату в це поле, наступне залиш пустим."
 
-#: apps/news/models.py:85
+#: apps/news/models.py:97
 msgid "Date to"
 msgstr "По"
 
-#: apps/news/models.py:94
+#: apps/news/models.py:106
 msgid "Event"
 msgstr "Подія"
 
-#: apps/news/models.py:95 apps/news/templates/event/event_detail.html:21
+#: apps/news/models.py:107 apps/news/templates/event/event_detail.html:17
 #: apps/news/templates/event/event_list.html:5
 #: apps/news/templates/event/event_list.html:9
 #: apps/news/templates/event/event_list_past.html:5
@@ -444,7 +440,7 @@ msgstr "Абсолютний шлях без доменного імені. Пр
 msgid "URLs"
 msgstr "URLs"
 
-#: templates/base.html:35 templates/base.html.py:56
+#: templates/base.html:43 templates/base.html.py:64
 msgid "Faculty of Physics and Mathematics"
 msgstr "Фізико Математичний Факультет"
 
@@ -464,15 +460,38 @@ msgstr "Абітурієнтам"
 msgid "Students"
 msgstr "Студентам"
 
-#: templates/pagination/pagination.html:5
 #: templates/pagination/pagination.html:7
+#: templates/pagination/pagination.html:9
 msgid "previous"
 msgstr "попередня"
 
-#: templates/pagination/pagination.html:21
 #: templates/pagination/pagination.html:23
+#: templates/pagination/pagination.html:25
 msgid "next"
 msgstr "наступна"
+
+#~ msgid "Why FPM?"
+#~ msgstr "Чому ФМФ?"
+
+#~ msgid ""
+#~ "The Faculty of Physics and Mathematics provides training of professionals in"
+#~ " fundamental and applied problems of various fields of modern physics and "
+#~ "mathematics. They extend from the aero-and hydrodynamics to the physics of "
+#~ "atomic nuclei and elementary particles, involve using methods of "
+#~ "mathematical modeling and computer simulation, training in economic analysis"
+#~ " and forecasting economic subjects activity, construction and calculation of"
+#~ " mathematical models of commercial and financial structures."
+#~ msgstr ""
+#~ "Фізико-математичний факультет здійснює підготовку фахівців з фундаментальних"
+#~ " та прикладних проблем у різних галузях сучасної фізики та математики, від "
+#~ "аеро- та гідродинаміки до фізики атомного ядра та елементарних частинок – з "
+#~ "використанням методів математичного та комп'ютерного моделювання, підготовка"
+#~ " фахівців з аналізу та прогнозування економічної діяльнсті суб'єктів "
+#~ "ринкової економіки, побудови та розрахунку математичних моделей комерційних "
+#~ "і фінансових структур."
+
+#~ msgid "Upcoming events"
+#~ msgstr "Найближчі події"
 
 #~ msgid "more"
 #~ msgstr "більше"
@@ -524,9 +543,6 @@ msgstr "наступна"
 
 #~ msgid "Fmf"
 #~ msgstr "FMF"
-
-#~ msgid "Category"
-#~ msgstr "Категорія"
 
 #~ msgid "Categories"
 #~ msgstr "Категорії"

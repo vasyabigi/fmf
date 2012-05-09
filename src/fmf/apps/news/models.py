@@ -17,7 +17,6 @@ from core.models import fill_empty_languages
 
 NEWS_CATEGORY_CHOICES = (
     ('dean', _("Dean")),
-    ('admission', _("Admission")),
     ('first_year', _("First year")),
     ('fifth_year', _("Fifth year")),
 )
