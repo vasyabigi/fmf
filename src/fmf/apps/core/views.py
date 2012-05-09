@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import datetime
 import logging
 from django.core.mail import mail_managers
 from django.http import HttpResponse
@@ -29,10 +28,10 @@ class IndexView(TemplateView):
             images = IndexSliderImage.objects.filter(is_active=True).select_related()
             cache.set('images', images)
 
-        feedbacks = Feedback.objects.order_by('?').select_related()[:10]
+        feedbacks = Feedback.objects.order_by('?').select_related()[:6]
         context.update({
             'images': images,
-            'news_list': News.objects.filter(is_active=True).select_related()[:10],
+            'news_list': News.objects.filter(is_active=True).select_related(),
             'feedbacks': feedbacks,
         })
         return context

@@ -56,10 +56,11 @@
                 </ul>
               </li>
             </ul>
+
             <div class="tab-content">
               <div class="tab-pane active streamer_slider" id="A">
                 <ul>
-                  {% for news in news_list %}
+                  {% for news in news_list|slice:"4" %}
                     <li class="img_descr">
                       <a href="{{ news.get_absolute_url }}">
                         {% thumbnail news.main_image '40x40' crop='center' as im %}
@@ -72,55 +73,76 @@
                 </ul>
               </div>
               <div class="tab-pane" id="B">
-                <p>ДЕКАНАТ!!!</p>
+                {% with news_list=news_list|from_category:'dean' %}
+                  {% if news_list %}
+                    <ul>
+                      {% for news in news_list %}
+                        <li class="img_descr">
+                          <a href="{{ news.get_absolute_url }}">
+                            {% thumbnail news.main_image '40x40' crop='center' as im %}
+                              <img src="{{ im.url }}" alt="{{ news.title }}">
+                            {% endthumbnail %}
+                          </a>
+                          <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    <p>{% trans "No news in this category." %}</p>
+                  {% endif %}
+                {% endwith %}
               </div>
               <div class="tab-pane" id="C">
-                <p>1 Курс.</p>
+                {% with news_list=news_list|from_category:'first_year' %}
+                  {% if news_list %}
+                    <ul>
+                      {% for news in news_list %}
+                        <li class="img_descr">
+                          <a href="{{ news.get_absolute_url }}">
+                            {% thumbnail news.main_image '40x40' crop='center' as im %}
+                              <img src="{{ im.url }}" alt="{{ news.title }}">
+                            {% endthumbnail %}
+                          </a>
+                          <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    <p>{% trans "No news in this category." %}</p>
+                  {% endif %}
+                {% endwith %}
               </div>
               <div class="tab-pane" id="D">
-                <p>5 Курс</p>
+                {% with news_list=news_list|from_category:'first_year' %}
+                  {% if news_list %}
+                    <ul>
+                      {% for news in news_list %}
+                        <li class="img_descr">
+                          <a href="{{ news.get_absolute_url }}">
+                            {% thumbnail news.main_image '40x40' crop='center' as im %}
+                              <img src="{{ im.url }}" alt="{{ news.title }}">
+                            {% endthumbnail %}
+                          </a>
+                          <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    <p>{% trans "No news in this category." %}</p>
+                  {% endif %}
+                {% endwith %}
               </div>
             </div>
           </div>
-
         </div>
       </section>
       <!--end news-->
-    {% comment %}  {% if feedbacks %}
-        <section id="feedbacks" class="bordered main_sect">
-          <div class="title_arrow red">
-            <h3 class="title_list">Наші студенти :</h3>
-            <span class="show_all"><a href="{% url feedback-list %}">{% trans "All" %} »</a></span>
-          </div>
-          <div class="streamer">
-            <div class="streamer_slider">
-              <ul>
-                {% for feedback in feedbacks %}
-                  <li class="img_descr">
-                    <a href="{{ feedback.get_absolute_url }}">
-                      {% thumbnail feedback.image '80x100' crop='top' as im %}
-                        <img src="{{ im.url }}" alt="{{ image.page.title }}">
-                      {% endthumbnail %}
-                    </a>
-                    <p class="name_status">
-                      <a href="{{ feedback.get_absolute_url }}" class="name">{{ feedback.name }}</a><br/>
-                      <i class="status">{{ feedback.description|truncatewords:40 }}</i>
-                    </p>
-                  </li>
-                {% endfor %}
-                <li class="img_descr"></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      {% endif %}{% endcomment %}
     </aside>
 
 <!--END right column-->
 {% endblock %}
 
 {% block full_width %}
-
   <div class="container clearfix">
     <!--why_fmf?-->
     <section id="why_fmf" class="bordered main_sect">
