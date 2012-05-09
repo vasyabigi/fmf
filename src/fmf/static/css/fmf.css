@@ -374,6 +374,13 @@ article .main_sect img, .img_descr img, #feedback_list img {
 .numbers-list {
 
 }
+.numbers-box {
+  margin: 10px;
+  padding:5px;
+  background: #fff;
+  border: 4px solid #ddd;
+  box-shadow:inset 0 0 5px #777;
+}
 .numbers-list li {
   min-height: 55px;
   margin-top: 4px;
@@ -407,15 +414,40 @@ article .main_sect img, .img_descr img, #feedback_list img {
 #feedbacks {
   background: rgba(255,255,255,.6);
 }
-#feedbacks .streamer_slider{
-  height: 251px;
-  margin:5px 0 20px;
-  border-bottom: 1px solid #D5D5D5;
-  box-shadow: 0 1px 0 #fff;
+#feedback-description-main {
+  position: relative;
+  border: 4px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: inset 0 0 5px #777;
+}
+#feedback-description-main:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top:9px;
+  left:-17px;
+  width: 0;
+  height: 0;
+  border-top: 0 solid transparent;
+  border-right: 21px solid #fff;
+  border-bottom: 21px solid transparent;
+}
+#feedback-description-main:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top:5px;
+  left:-26px;
+  width: 0;
+  height: 0;
+  border-top: 0 solid transparent;
+  border-right: 26px solid #ddd;
+  border-bottom: 26px solid transparent;
 }
 .streamer_slider ul .img_descr {
   margin:0;
-  padding: 4px 5px;
+  padding: 10px 5px 3px;
   border-bottom: 1px solid #d5d5d5;
   border-top: 1px solid white;
   -webkit-transition:all 0.2s ease-in;
@@ -483,7 +515,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
 
 #news .nav {
   height: 38px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 .news-title {
   display: block;

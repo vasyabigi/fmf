@@ -147,42 +147,39 @@
       </div>
       <ul class="numbers-list row-fluid">
         <li class="first span4">
-          <h3>Поступай до нас!</h3>
-          <p><b>95%</b> студентів на бюджеті;</p>
-          <p><b>+ 20%</b> до звичайної стипендії;</p>
-          <p><b>36/60</b> прохідний бал;</p>
-          <p>Є питання? Задай прямо <a href="http://fmf.kpi.ua/contacts"><b>ТУТ »</b></a></p>
+          <div class="numbers-box">
+            <h3>Поступай до нас!</h3>
+            <p><b>95%</b> студентів на бюджеті;</p>
+            <p><b>+ 20%</b> до звичайної стипендії;</p>
+            <p><b>36/60</b> прохідний бал;</p>
+            <p>Є питання? Задай прямо <a href="http://fmf.kpi.ua/contacts"><b>ТУТ »</b></a></p>
+          </div>
         </li>
         <li class="second span4">
-          <h3>Вчись!</h3>
-          <p><a href="http://fmf.kpi.ua/sections/pro-fakultet/spetsalnost/"><b>Найкраща</b></a> технічна освіта в Україні;</p>
-          <p><a href="http://fmf.kpi.ua/sections/spvprobtnitstvo/"><b>Співробітництво</b></a> з іноземними університетами;</p>
-          <p>Веселе <a href="http://studprofkom.kpi.ua/health"><b>cтудентське життя;</b></a></p>
+          <div class="numbers-box">
+            <h3>Вчись!</h3>
+            <p><a href="http://fmf.kpi.ua/sections/pro-fakultet/spetsalnost/"><b>Найкраща</b></a> технічна освіта в Україні;</p>
+            <p><a href="http://fmf.kpi.ua/sections/spvprobtnitstvo/"><b>Співробітництво</b></a> з іноземними університетами;</p>
+            <p>Веселе <a href="http://studprofkom.kpi.ua/health"><b>cтудентське життя;</b></a></p>
+          </div>
         </li>
         <li class="third span4">
-          <h3>Виходь успішною людиною!</h3>
-          <p style="font-weight: bold">Тут не потрібно слів. Ось наші результати :</p>
+          <div class="numbers-box">
+            <h3>Виходь успішною людиною!</h3>
+            <p style="font-weight: bold">Тут не потрібно слів. Ось наші результати :</p>
+          </div>
         </li>
       </ul>
-    </section>
-    <!--end why_fmf?-->
-
-    <!-- feefbacks -->
-    <section class="bordered main_sect">
-      <div class="title_arrow red">
-        <h3 class="title_list">Students :</h3>
-        <span class="show_all">{% trans "All" %} »</span>
-      </div>
-        <div class="row-fluid" style="margin-top: 10px; height: 280px;">
-          <div class="span7">
-            <div class="feedback-main">
-              <div class="feedback-image-main span6" id="feedback-image-main"></div>
-              <div id="feedback-description-main" class="span6"></div>
-            </div>
+      <div class="row-fluid feedbacks" style="margin-top: 10px; height: 280px;">
+        <div class="span7">
+          <div class="feedback-main">
+            <div class="feedback-image-main span6" id="feedback-image-main"></div>
+            <div id="feedback-description-main" class="span6"></div>
           </div>
-          <div class="span5">
-            <ul class="feedback thumbnails">
-              {% for feedback in feedbacks %}
+        </div>
+        <div class="span5">
+          <ul class="feedback thumbnails">
+            {% for feedback in feedbacks %}
               <li class="{% if forloop.first %}feedback-active{% else %}feedback{% endif %}">
                 <a class="thumbnail" href="#">
                   {% thumbnail feedback.image "95x100" crop="top" as im %}
@@ -198,11 +195,49 @@
                 </div>
                 <div class="feedback-description" style="display:none;"><p>{{ feedback.description }}</p></div>
               </li>
-              {% endfor %}
-            </ul>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--end why_fmf?-->
+
+    <!-- feefbacks -->
+    {% comment %}<section class="bordered main_sect">
+      <div class="title_arrow red">
+        <h3 class="title_list">Students :</h3>
+        <span class="show_all">{% trans "All" %} »</span>
+      </div>
+      <div class="row-fluid" style="margin-top: 10px; height: 280px;">
+        <div class="span7">
+          <div class="feedback-main">
+            <div class="feedback-image-main span6" id="feedback-image-main"></div>
+            <div id="feedback-description-main" class="span6"></div>
           </div>
         </div>
-    </section>
+        <div class="span5">
+          <ul class="feedback thumbnails">
+            {% for feedback in feedbacks %}
+            <li class="{% if forloop.first %}feedback-active{% else %}feedback{% endif %}">
+              <a class="thumbnail" href="#">
+                {% thumbnail feedback.image "95x100" crop="top" as im %}
+                  <img src="{{ im.url }}" alt="{{ feedback.name }}">
+                {% endthumbnail %}
+              </a>
+              <div class="feedback-name" style="display:none;">{{ feedback.name }}</div>
+              <div class="feedback-short-description" style="display:none;">{{ feedback.short_description }}</div>
+              <div class="feedback-image" style="display:none;">
+                {% thumbnail feedback.image "250x280" crop="top" as im %}
+                  <img src="{{ im.url }}" alt="{{ feedback.name }}">
+                {% endthumbnail %}
+              </div>
+              <div class="feedback-description" style="display:none;"><p>{{ feedback.description }}</p></div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>{% endcomment %}
     <!-- EO feefbacks -->
   </div>
 {% endblock %}

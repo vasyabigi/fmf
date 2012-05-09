@@ -241,7 +241,7 @@ var Fmf = (function(){
                     } else {
                         feedbackClickEvent($(".feedback a:first"));
                     }
-                }, 5000);
+                }, 1000000);
             }
             startFeedbackInterval();
 
