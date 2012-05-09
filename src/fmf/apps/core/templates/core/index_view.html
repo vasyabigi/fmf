@@ -56,7 +56,6 @@
                 </ul>
               </li>
             </ul>
-
             <div class="tab-content">
               <div class="tab-pane active streamer_slider" id="A">
                 <ul>
@@ -68,11 +67,16 @@
                         {% endthumbnail %}
                       </a>
                       <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                      {% if news.category %}
+                        <span class="label label-important">{{ news.get_category_display }}</span>
+                      {% else %}
+                        <span class="label">{% trans "All" %}</span>
+                      {% endif %}
                     </li>
                   {% endfor %}
                 </ul>
               </div>
-              <div class="tab-pane" id="B">
+              <div class="tab-pane streamer_slider" id="B">
                 {% with news_list=news_list|from_category:'dean' %}
                   {% if news_list %}
                     <ul>
@@ -92,7 +96,7 @@
                   {% endif %}
                 {% endwith %}
               </div>
-              <div class="tab-pane" id="C">
+              <div class="tab-pane streamer_slider" id="C">
                 {% with news_list=news_list|from_category:'first_year' %}
                   {% if news_list %}
                     <ul>
@@ -112,7 +116,7 @@
                   {% endif %}
                 {% endwith %}
               </div>
-              <div class="tab-pane" id="D">
+              <div class="tab-pane streamer_slider" id="D">
                 {% with news_list=news_list|from_category:'first_year' %}
                   {% if news_list %}
                     <ul>
