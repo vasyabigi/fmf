@@ -6,8 +6,8 @@ var Fmf = (function(){
             });
 
             $('[href^=#]').click(function (e) {
-                e.preventDefault()
-            })
+                e.preventDefault();
+            });
         },
 
         IndexSlider : function(){
@@ -218,24 +218,25 @@ var Fmf = (function(){
             $('#feedback-image-main').html($(".feedback li:first").find('.feedback-image').html());
             $('#feedback-description-main').html($(".feedback li:first").find('.feedback-description').html());
 
-            $(".feedback li").click(function(){
-              if (!$(this).hasClass('active')) {
-                  $(".feedback li").removeClass('active');
-                  $(this).addClass('active');
-                  var feedbackImage = $(this).find('.feedback-image').html();
-                  var feedbackDescription = $(this).find('.feedback-description').html();
+            $(".feedback a").click(function(){
+                var feedback = $(this).parent();
+                if (!feedback.hasClass('feedback-active')) {
+                  $(".feedback li").removeClass('feedback-active');
+                  feedback.addClass('feedback-active');
+                  var feedbackImage = feedback.find('.feedback-image').html();
+                  var feedbackDescription = feedback.find('.feedback-description').html();
                   $('#feedback-image-main').html(feedbackImage).hide().fadeIn();
                   $('#feedback-description-main').html(feedbackDescription).hide().fadeIn();
-              }
+                }
             });
 
             function startFeedbackInterval() {
                 timerFeedback = setInterval(function(){
-                    var activeSlide = $(".feedback li.active");
+                    var activeSlide = $(".feedback-active");
                     if (activeSlide.next().length) {
-                      activeSlide.next().trigger('click');
+                        activeSlide.next().find('a').trigger('click');
                     } else {
-                      $(".feedback li:first").trigger('click');
+                        $(".feedback a:first").trigger('click');
                     }
                 }, 5000);
             }
