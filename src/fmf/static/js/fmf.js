@@ -260,7 +260,7 @@ $(document).ready(function(){
     Fmf.ContactForm();
     Fmf.Scroll();
     Fmf.TextNav();
-    Fmf.StreamerSlider();
+//    Fmf.StreamerSlider();
     Fmf.LazyLoad();
     Fmf.IndexFeedbackSlider();
 });

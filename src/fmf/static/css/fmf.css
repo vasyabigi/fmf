@@ -6,7 +6,7 @@ html, body {
   position: relative;
   height: 100%;
   padding: 0 !important;
-  font:13px "lucida grande",tahoma,verdana,arial,sans-serif;
+  font-size:13px;
 }
 .container {
   position: relative;
@@ -200,7 +200,7 @@ nav.main .breadcrumbs {
 #lang .selected, #lang .selected:hover {
 
 }
-#lang a.selected, .active > a{
+#lang a.selected, #lang .active > a{
   padding-top:10px;
   cursor: default;
   color:#ddd;
@@ -232,7 +232,9 @@ nav.main .breadcrumbs {
   width: 400px;
   padding-left:95px;
   color: #505050;
-  font:bold 20px/50px Georgia, sans-serif;
+  font-size:20px;
+  font-weight: bold;
+  line-height: 50px;
   background: url("/static/images/emblem_84x56.png") top left no-repeat;
 }
 .logo:hover {
@@ -257,6 +259,7 @@ nav.main .breadcrumbs {
   padding-bottom: 80px;
   color: #fff;
   font: normal 24px Georgia, 'Times New Roman', serif;
+
 }
   /*End LOGO*/
 
@@ -343,7 +346,9 @@ article .main_sect img, .img_descr img, #feedback_list img {
   padding: 5px;
   background: #444;
   color: #d6d6d6;
-  font: bold 18px/20px Georgia, sans-serif;
+  font-size:18px;
+  font-weight: bold;
+  line-height: 20px;
 }
 .title_arrow {
   position: relative;
@@ -353,7 +358,9 @@ article .main_sect img, .img_descr img, #feedback_list img {
   padding: 5px 4px;
   background: #8c8179;
   color: #fff;
-  font: bold 18px/20px Georgia, sans-serif;
+  font-size:18px;
+  font-weight: bold;
+  line-height: 20px;
   box-shadow:0 3px 6px -3px rgba(0, 0, 0, 1);
 }
 .title_arrow.red {background: #c53c50}
@@ -644,7 +651,10 @@ article .main_sect img, .img_descr img, #feedback_list img {
 #news_list ul li .img_descr > a, #events_list ul li .img_descr > a {
   display: block;
   margin-right: 60px;
-  font:bold italic 16px/25px "DejaVu Sans", arial, sans-serif;
+  font-size:16px;
+  font-weight: bold;
+  line-height: 25px;
+  font-style: italic;
 }
 .date{
   color: #BB9D59;
