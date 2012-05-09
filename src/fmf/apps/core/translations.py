@@ -2,7 +2,7 @@ from modeltranslation.translator import translator, TranslationOptions
 from chunks.models import Chunk
 from news.models import News, NewsImage, Event
 from flatpages_my.models import FlatPage, FlatPageImage
-from feedbacks.models import Question, Feedback, FeedbackQuestion
+from feedbacks.models import Feedback
 from seo.models import Seo
 from sections.models import Section, Article, ArticleImage, SectionImage
 from core.models import IndexSliderImage
@@ -32,16 +32,8 @@ class FlatPageImageTranslationOptions(TranslationOptions):
     fields = ('title',)
 
 
-class QuestionTranslationOptions(TranslationOptions):
-    fields = ('question',)
-
-
 class FeedbackTranslationOptions(TranslationOptions):
     fields = ('name', 'description')
-
-
-class FeedbackQuestionTranslationOptions(TranslationOptions):
-    fields = ('answer',)
 
 
 class SeoTranslationOptions(TranslationOptions):
@@ -78,9 +70,7 @@ translator.register(Event, EventTranslationOptions)
 translator.register(Chunk, ChunkTranslationOptions)
 translator.register(FlatPage, FlatPageTranslationOptions)
 translator.register(FlatPageImage, FlatPageImageTranslationOptions)
-translator.register(Question, QuestionTranslationOptions)
 translator.register(Feedback, FeedbackTranslationOptions)
-translator.register(FeedbackQuestion, FeedbackQuestionTranslationOptions)
 translator.register(Section, SectionTranslationOptions)
 translator.register(Article, ArticleTranslationOptions)
 translator.register(Seo, SeoTranslationOptions)

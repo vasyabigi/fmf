@@ -218,8 +218,8 @@ var Fmf = (function(){
             $('#feedback-image-main').html($(".feedback li:first").find('.feedback-image').html());
             $('#feedback-description-main').html($(".feedback li:first").find('.feedback-description').html());
 
-            $(".feedback a").click(function(){
-                var feedback = $(this).parent();
+            function feedbackClickEvent(item) {
+                var feedback = item.parent();
                 if (!feedback.hasClass('feedback-active')) {
                   $(".feedback li").removeClass('feedback-active');
                   feedback.addClass('feedback-active');
@@ -228,15 +228,18 @@ var Fmf = (function(){
                   $('#feedback-image-main').html(feedbackImage).hide().fadeIn();
                   $('#feedback-description-main').html(feedbackDescription).hide().fadeIn();
                 }
+            }
+            $(".feedback a").click(function(){
+                feedbackClickEvent($(this));
             });
 
             function startFeedbackInterval() {
                 timerFeedback = setInterval(function(){
                     var activeSlide = $(".feedback-active");
                     if (activeSlide.next().length) {
-                        activeSlide.next().find('a').trigger('click');
+                        feedbackClickEvent(activeSlide.next().find('a'));
                     } else {
-                        $(".feedback a:first").trigger('click');
+                        feedbackClickEvent($(".feedback a:first"));
                     }
                 }, 5000);
             }

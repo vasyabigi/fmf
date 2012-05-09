@@ -143,7 +143,7 @@
     <!--why_fmf?-->
     <section id="why_fmf" class="bordered main_sect">
       <div class="title_arrow blue">
-        <h5>Не впевнений у майбутньому?</h5>
+        <h5>Невпевнений у майбутньому?</h5>
       </div>
       <ul class="numbers-list row-fluid">
         <li class="first span4">
@@ -182,26 +182,23 @@
           </div>
           <div class="span5">
             <ul class="feedback thumbnails">
-              <li class="feedback-active">
-                <a class="thumbnail" href="#"><img src="http://placehold.it/95x100&text=First" alt="First"></a>
-                <div class="feedback-image" style="display:none;"><img src="http://placehold.it/250x280&text=First" alt="First"></div>
-                <div class="feedback-description" style="display:none;"><p>First feedback description</p></div>
+              {% for feedback in feedbacks %}
+              <li class="{% if forloop.first %}feedback-active{% else %}feedback{% endif %}">
+                <a class="thumbnail" href="#">
+                  {% thumbnail feedback.image "95x100" as im %}
+                    <img src="{{ im.url }}" alt="{{ feedback.name }}">
+                  {% endthumbnail %}
+                </a>
+                <div class="feedback-name" style="display:none;">{{ feedback.name }}</div>
+                <div class="feedback-short-description" style="display:none;">{{ feedback.short_description }}</div>
+                <div class="feedback-image" style="display:none;">
+                  {% thumbnail feedback.image "250x280" as im %}
+                    <img src="{{ im.url }}" alt="{{ feedback.name }}">
+                  {% endthumbnail %}
+                </div>
+                <div class="feedback-description" style="display:none;"><p>{{ feedback.description }}</p></div>
               </li>
-              <li>
-                <a class="thumbnail" href="#"><img src="http://placehold.it/95x100&text=Second" alt="Second"></a>
-                <div class="feedback-image" style="display:none;"><img src="http://placehold.it/250x280&text=Second" alt="Second"></div>
-                <div class="feedback-description" style="display:none;"><p>Second feedback description</p></div>
-              </li>
-              <li>
-                <a class="thumbnail" href="#"><img src="http://placehold.it/95x100&text=Third" alt="Third"></a>
-                <div class="feedback-image" style="display:none;"><img src="http://placehold.it/250x280&text=Third" alt="Third"></div>
-                <div class="feedback-description" style="display:none;"><p>Third feedback description</p></div>
-              </li>
-              <li>
-                <a class="thumbnail" href="#"><img src="http://placehold.it/95x100&text=Fourth" alt="Fourth"></a>
-                <div class="feedback-image" style="display:none;"><img src="http://placehold.it/250x280&text=Fourth" alt="Fourth"></div>
-                <div class="feedback-description" style="display:none;"><p>Fourth feedback description</p></div>
-              </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -213,4 +210,16 @@
 {% block extra_js %}
   <script src="{{ STATIC_URL }}js/jquery.sudoSlider.js"></script>
   <script src="{{ STATIC_URL }}js/bootstrap/bootstrap.min.js"></script>
+  <script type="text/javascript">
+      // Popovers on feedback previews
+      $('.feedback a').each(function(){
+          var title = $(this).next('.feedback-name').text();
+          var content = $(this).siblings('.feedback-short-description').text();
+          $(this).popover({
+              'placement': 'top',
+              'title': title,
+              'content': content
+          });
+      });
+  </script>
 {% endblock %}

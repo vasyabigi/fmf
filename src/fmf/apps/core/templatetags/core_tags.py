@@ -10,4 +10,4 @@ def get_random_question(feedback):
 
 @register.filter
 def from_category(news, category):
-    return news.filter(category=category)[:4]
+    return news.filter(category=category)[:3]

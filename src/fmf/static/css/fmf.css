@@ -150,6 +150,7 @@ nav.main > ul ul li a {
   color:#666;
   text-shadow:none;
   -webkit-transition: opacity 0.2s ease-in;
+  -ms-transition: opacity 0.2s ease-in;
   -moz-transition: opacity 0.2s ease-in;
   -o-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
@@ -376,8 +377,6 @@ article .main_sect img, .img_descr img, #feedback_list img {
 .numbers-list li {
   min-height: 55px;
   margin-top: 4px;
-  padding-top: 30px;
-  background: url("../images/glyphicons/glyphicons_290_skull.png") center top no-repeat;
   text-align: center;
 }
 .numbers-list p {
@@ -846,7 +845,7 @@ aside > section {
 .left_sidebar .side_nav {
   border-top: 4px solid #A51C30;
 }
-.left_sidebar .side_nav > ul > li.active_article > a {
+.left_sidebar .side_nav > ul > .active_article > a {
   background: #63212B;
   color: #eee;
 }
@@ -1207,4 +1206,3 @@ footer li a:hover {
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
 }
-
