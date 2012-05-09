@@ -12,7 +12,7 @@ from django.core.cache import cache
 
 from models import IndexSliderImage
 from forms import ContactForm
-from news.models import News, Event
+from news.models import News
 from feedbacks.models import Feedback
 
 
@@ -33,7 +33,6 @@ class IndexView(TemplateView):
         context.update({
             'images': images,
             'news_list': News.objects.filter(is_active=True).select_related()[:10],
-            'events': Event.objects.filter(is_active=True, date_to__gte=datetime.datetime.today()).order_by('-date_to')[:10],
             'feedbacks': feedbacks,
         })
         return context

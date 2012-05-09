@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^', include('core.urls')),
     url(r'^sections/', include('sections.urls')),
     url(r'^news/', include('news.urls')),
-    url(r'^events/', include('news.event_urls')),
+    # url(r'^events/', include('news.event_urls')),
     url(r'^feedbacks/', include('feedbacks.urls')),
 
 )

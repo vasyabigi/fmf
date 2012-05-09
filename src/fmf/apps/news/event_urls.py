@@ -6,4 +6,3 @@ urlpatterns = patterns('',
     url(r'^past/$', EventPastList.as_view(), name='event-list-past'),
     url(r'^(?P<slug>[a-z0-9_-]+)/$', event_details, name='event-detail'),
 )
-

@@ -37,38 +37,6 @@
 
 <!--right column-->
     <aside>
-
-      <!--events-->
-      {% comment %}<section id="events" class="bordered main_sect">
-        <div class="title_arrow blue">
-          <h3 class="title_list">{% trans "Upcoming events" %}:</h3>
-          <p class="show_all"><a href="{% url event-list %}">{% trans "All" %} »</a></p>
-        </div>
-        {% if events %}
-          <div class="streamer">
-            <div class="streamer_slider">
-              <ul>
-                {% for event in events %}
-                  <li class="img_descr">
-                    {#          <div class="bookmark"></div>#}
-                    <p class="date">
-                      {% ifequal event.date_from event.date_to %}{{ event.date_from }}
-                        {% else %}{{ event.date_from }} - {{ event.date_to }}
-                      {% endifequal %}
-                    </p>
-                    <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
-                    <p class="short_description">{{ event.short_description }}</p>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        {% else %}
-        <p>Put something here if no events</p>
-        {% endif %}
-      </section>{% endcomment %}
-      <!--end of events-->
-
       <!--news-->
       <section id="news" class="bordered main_sect">
         <div class="title_arrow green">
