@@ -185,14 +185,14 @@
               {% for feedback in feedbacks %}
               <li class="{% if forloop.first %}feedback-active{% else %}feedback{% endif %}">
                 <a class="thumbnail" href="#">
-                  {% thumbnail feedback.image "95x100" as im %}
+                  {% thumbnail feedback.image "95x100" crop="top" as im %}
                     <img src="{{ im.url }}" alt="{{ feedback.name }}">
                   {% endthumbnail %}
                 </a>
                 <div class="feedback-name" style="display:none;">{{ feedback.name }}</div>
                 <div class="feedback-short-description" style="display:none;">{{ feedback.short_description }}</div>
                 <div class="feedback-image" style="display:none;">
-                  {% thumbnail feedback.image "250x280" as im %}
+                  {% thumbnail feedback.image "250x280" crop="top" as im %}
                     <img src="{{ im.url }}" alt="{{ feedback.name }}">
                   {% endthumbnail %}
                 </div>
