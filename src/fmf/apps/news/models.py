@@ -15,9 +15,21 @@ from positions import PositionField
 from core.models import fill_empty_languages
 
 
+NEWS_CATEGORY_CHOICES = (
+    ('dean', _("Dean")),
+    ('admission', _("Admission")),
+    ('first_year', _("First year")),
+    ('fifth_year', _("Fifth year")),
+)
+
+
 class News(models.Model):
     title = models.CharField(_("Title"), max_length=256)
     slug = models.SlugField(_("Slug"), max_length=256)
+    category = models.CharField(
+        _("Category"), blank=True, null=True, max_length=255,
+        choices=NEWS_CATEGORY_CHOICES
+    )
     main_image = ImageField(upload_to='news/images', verbose_name=_("Main image"), blank=True, null=True)
     short_description = models.TextField(_("Short Description"))
     description = models.TextField(_("Description"))
@@ -41,7 +53,7 @@ class News(models.Model):
         try:
             im = get_thumbnail(self.main_image, '50x50', crop='center')
             t = Template('<img src="{{ image.url }}" alt="{{ alt }}" />')
-            c = Context({"image": im, 'alt': self.title })
+            c = Context({"image": im, 'alt': self.title})
             thum = t.render(c)
         except ThumbnailError:
             thum = _('No image')
@@ -49,15 +61,16 @@ class News(models.Model):
     thumb.short_description = _('Image')
     thumb.allow_tags = True
 
+
 @receiver(pre_save, sender=News)
 def news_slug(sender, instance, **kwargs):
     if News.objects.exclude(pk=instance.pk).filter(slug=instance.slug):
         instance.slug += unicode(uuid.uuid4())[:5]
 
+
 @receiver(pre_save, sender=News)
 def news_empty_languages(sender, instance, **kwargs):
     fill_empty_languages(instance, ('description', 'short_description'))
-
 
 
 class NewsImage(models.Model):
@@ -104,7 +117,7 @@ class Event(models.Model):
         try:
             im = get_thumbnail(self.image, '50x50', crop='center')
             t = Template('<img src="{{ image.url }}" alt="{{ alt }}" />')
-            c = Context({"image": im, 'alt': self.title })
+            c = Context({"image": im, 'alt': self.title})
             thum = t.render(c)
         except ThumbnailError:
             thum = _('No image')
@@ -112,10 +125,12 @@ class Event(models.Model):
     thumb.short_description = _('Image')
     thumb.allow_tags = True
 
+
 @receiver(pre_save, sender=Event)
 def put_date_to(sender, instance, **kwargs):
     if not instance.date_to:
         instance.date_to = instance.date_from
+
 
 @receiver(pre_save, sender=Event)
 def events_empty_languages(sender, instance, **kwargs):

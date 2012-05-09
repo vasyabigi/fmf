@@ -203,10 +203,11 @@ TINYMCE_DEFAULT_CONFIG = {
 try:
     DEBUG_APPS = DEBUG_MIDDLEWARE_CLASSES = tuple()
     from local_settings import *
-    INSTALLED_APPS += DEBUG_APPS
-    MIDDLEWARE_CLASSES += DEBUG_MIDDLEWARE_CLASSES
 except ImportError:
     print "LOCAL SETTINGS COULD NOT BE FOUND!"
+else:
+    INSTALLED_APPS += DEBUG_APPS
+    MIDDLEWARE_CLASSES += DEBUG_MIDDLEWARE_CLASSES
 
 
 #admin_tools
@@ -217,7 +218,6 @@ ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fmf.dashboard.CustomAppIndexDashboard'
 #seo
 SEO_FOR_MODELS = [
     'news.models.News',
-    'news.models.Event',
     'flatpages_my.models.FlatPage',
     'feedbacks.models.Feedback',
     'sections.models.Section',

@@ -15,9 +15,6 @@ class NewsImageAdmin(BaseTranslationTabularInLine):
 class NewsAdmin(BaseTranslationAdmin):
     list_display = ('title', 'thumb', 'short_description', 'position')
     list_display_links = ('title', 'thumb')
-    inlines = (
-        NewsImageAdmin,
-    )
     prepopulated_fields = {'slug': ('title',)}
 
     def formfield_for_dbfield(self, db_field, **kwargs):
@@ -43,4 +40,4 @@ class EventAdmin(BaseTranslationAdmin):
 
 
 admin.site.register(News, NewsAdmin)
-admin.site.register(Event, EventAdmin)
+# admin.site.register(Event, EventAdmin)
