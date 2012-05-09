@@ -16,7 +16,7 @@
         <ul>
           {% for image in images %}
             <li>
-              {% thumbnail image.image '600x250' crop='center' as im %}
+              {% thumbnail image.image '500x250' crop='center' as im %}
                 <img src="{{ im.url }}" alt="{{ image.get_page_title }}">
               {% endthumbnail %}
               <div class="caption"><a href="{{ image.get_page_url|default:"#" }}">{{ image.get_page_title }}</a></div>
@@ -43,12 +43,11 @@
           <h3 class="title_list">{% trans "Last news" %}:</h3>
           <p class="show_all"><a href="{% url news-list %}">{% trans "All" %} »</a></p>
         </div>
-        <div class="streamer">
           <div class="tabbable tabs-below">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#A" data-toggle="tab">Всі новини</a></li>
-              <li class=""><a href="#B" data-toggle="tab">Деканат</a></li>
-              <li class="dropdown">
+            <ul class="nav nav-tabs row-fluid">
+              <li class="span4 active"><a href="#A" data-toggle="tab">Всі новини</a></li>
+              <li class="span4"><a href="#B" data-toggle="tab">Деканат</a></li>
+              <li class="span4 dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Прийом <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="#C" data-toggle="tab">1 Курс</a></li>
@@ -59,19 +58,17 @@
             <div class="tab-content">
               <div class="tab-pane active streamer_slider" id="A">
                 <ul>
-                  {% for news in news_list|slice:"4" %}
+                  {% for news in news_list|slice:"3" %}
                     <li class="img_descr">
-                      <a href="{{ news.get_absolute_url }}">
-                        {% thumbnail news.main_image '40x40' crop='center' as im %}
-                          <img src="{{ im.url }}" alt="{{ news.title }}">
-                        {% endthumbnail %}
-                      </a>
-                      <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                      <span class="date">
+                        time
+                      </span>
                       {% if news.category %}
-                        <span class="label label-important">{{ news.get_category_display }}</span>
+                        <span class="label label-important fl-r">{{ news.get_category_display }}</span>
                       {% else %}
-                        <span class="label">{% trans "All" %}</span>
+                        <span class="label fl-r">{% trans "All" %}</span>
                       {% endif %}
+                      <a class="news-title" href="{{ news.get_absolute_url }}">{{ news.title }}</a>
                     </li>
                   {% endfor %}
                 </ul>
@@ -82,12 +79,10 @@
                     <ul>
                       {% for news in news_list %}
                         <li class="img_descr">
-                          <a href="{{ news.get_absolute_url }}">
-                            {% thumbnail news.main_image '40x40' crop='center' as im %}
-                              <img src="{{ im.url }}" alt="{{ news.title }}">
-                            {% endthumbnail %}
-                          </a>
-                          <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                          <span class="date">
+                           time
+                          </span>
+                          <a class="news-title" href="{{ news.get_absolute_url }}">{{ news.title }}</a>
                         </li>
                       {% endfor %}
                     </ul>
@@ -102,12 +97,10 @@
                     <ul>
                       {% for news in news_list %}
                         <li class="img_descr">
-                          <a href="{{ news.get_absolute_url }}">
-                            {% thumbnail news.main_image '40x40' crop='center' as im %}
-                              <img src="{{ im.url }}" alt="{{ news.title }}">
-                            {% endthumbnail %}
-                          </a>
-                          <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                          <span class="date">
+                           time
+                          </span>
+                          <a class="news-title" href="{{ news.get_absolute_url }}">{{ news.title }}</a>
                         </li>
                       {% endfor %}
                     </ul>
@@ -138,7 +131,6 @@
               </div>
             </div>
           </div>
-        </div>
       </section>
       <!--end news-->
     </aside>
