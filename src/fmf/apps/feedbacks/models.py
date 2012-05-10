@@ -10,7 +10,7 @@ class Feedback(models.Model):
     image = ImageField(_("Image"), upload_to='images/feedbacks/', blank=True, null=True)
     short_description = models.TextField(_("Short description"))
     description = models.TextField(_("Description"))
-    content = models.TextField(_("Content"))
+    content = models.TextField(_("Content"), blank=True, null=True)
 
     class Meta:
         verbose_name = _("Feedback")
