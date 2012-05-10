@@ -236,7 +236,7 @@ var Fmf = (function(){
             function startFeedbackInterval() {
                 timerFeedback = setInterval(function(){
                     var activeSlide = $(".feedback-active");
-                    if (activeSlide.next().length) {
+                    if (activeSlide.next('.feedback').length) {
                         feedbackClickEvent(activeSlide.next().find('a'));
                     } else {
                         feedbackClickEvent($(".feedback a:first"));

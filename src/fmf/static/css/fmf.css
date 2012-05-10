@@ -342,7 +342,6 @@ article .main_sect img, .img_descr img, #feedback_list img {
 #why_fmf {
   margin-bottom: 15px;
   padding: 0;
-  background: url("/static/images/logo_bg_1.png") fixed 10% 150px #f4f4f4 no-repeat;
 }
 #why_fmf .title_arrow h5 {
   padding-left: 30px;
@@ -380,12 +379,10 @@ article .main_sect img, .img_descr img, #feedback_list img {
   color: #aaa;
   text-shadow: 1px 1px 0 #333;
 }
-.numbers-list .icon-chevron-down {
+.numbers-list .icon-arrow-down {
   display: block;
   margin: 0 auto;
   font-size: 50px;
-  color: #ddd;
-  text-shadow: none;
 }
 .numbers-box .description {
   margin-left: 87px;
@@ -420,7 +417,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
 
   /*Feedbacks*/
 .feedback-image-main img {
-  margin-left: 10px;
+  margin-left: 30px;
   padding: 4px;
   background: #D7D7D7;
   border: 1px solid #BBB;

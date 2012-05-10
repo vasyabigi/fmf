@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-09 16:40+0300\n"
+"POT-Creation-Date: 2012-05-10 22:09+0300\n"
 "PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,7 @@ msgid "Email"
 msgstr ""
 
 #: apps/core/forms.py:26 apps/core/templates/contacts/manager_message.html:2
-#: apps/feedbacks/models.py:20
+#: apps/feedbacks/models.py:8
 msgid "Name"
 msgstr ""
 
@@ -100,7 +100,7 @@ msgstr ""
 msgid "Custom name"
 msgstr ""
 
-#: apps/core/models.py:22 apps/core/models.py:58 apps/feedbacks/models.py:22
+#: apps/core/models.py:22 apps/core/models.py:58 apps/feedbacks/models.py:10
 #: apps/flatpages_my/models.py:34 apps/news/models.py:60
 #: apps/news/models.py:78 apps/news/models.py:83 apps/news/models.py:124
 #: apps/sections/models.py:29 apps/sections/models.py:33
@@ -153,7 +153,8 @@ msgid ""
 msgstr ""
 
 #: apps/core/templates/contacts/manager_message.html:4
-#: apps/sections/models.py:10 apps/sections/models.py:47
+#: apps/feedbacks/models.py:13 apps/sections/models.py:10
+#: apps/sections/models.py:47
 msgid "Content"
 msgstr ""
 
@@ -162,63 +163,58 @@ msgid "Last news"
 msgstr ""
 
 #: apps/core/templates/core/index_view.html:44
-#: apps/core/templates/core/index_view.html:73
-#: apps/core/templates/core/index_view.html:182
+#: apps/core/templates/core/index_view.html:67
 msgid "All"
 msgstr ""
 
-#: apps/core/templates/core/index_view.html:95
-#: apps/core/templates/core/index_view.html:115
-#: apps/core/templates/core/index_view.html:135
+#: apps/core/templates/core/index_view.html:48
+msgid "All news"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:49 apps/news/models.py:19
+msgid "Dean"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:51
+msgid "Admissions"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:53 apps/news/models.py:20
+msgid "First year"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:54 apps/news/models.py:21
+msgid "Fifth year"
+msgstr ""
+
+#: apps/core/templates/core/index_view.html:86
+#: apps/core/templates/core/index_view.html:102
+#: apps/core/templates/core/index_view.html:122
 msgid "No news in this category."
 msgstr ""
 
-#: apps/feedbacks/models.py:9
-msgid "question"
-msgstr ""
-
-#: apps/feedbacks/models.py:12 apps/feedbacks/models.py:39
-msgid "Question"
-msgstr ""
-
-#: apps/feedbacks/models.py:13
-msgid "Questions"
-msgstr ""
-
-#: apps/feedbacks/models.py:21 apps/news/models.py:27 apps/news/models.py:95
+#: apps/feedbacks/models.py:9 apps/news/models.py:27 apps/news/models.py:95
 #: apps/sections/models.py:9 apps/sections/models.py:46
 msgid "Slug"
 msgstr ""
 
-#: apps/feedbacks/models.py:23 apps/news/models.py:34 apps/news/models.py:100
+#: apps/feedbacks/models.py:11
+msgid "Short description"
+msgstr ""
+
+#: apps/feedbacks/models.py:12 apps/news/models.py:34 apps/news/models.py:100
 #: apps/seo/models.py:12
 msgid "Description"
 msgstr ""
 
-#: apps/feedbacks/models.py:26 apps/feedbacks/models.py:38
+#: apps/feedbacks/models.py:16
 msgid "Feedback"
 msgstr ""
 
-#: apps/feedbacks/models.py:27
+#: apps/feedbacks/models.py:17
 #: apps/feedbacks/templates/feedbacks/feedback_details.html:7
 #: apps/feedbacks/templates/feedbacks/feedback_list.html:7
 msgid "Feedbacks"
-msgstr ""
-
-#: apps/feedbacks/models.py:40
-msgid "Answer"
-msgstr ""
-
-#: apps/feedbacks/models.py:41
-msgid "Can be main page?"
-msgstr ""
-
-#: apps/feedbacks/models.py:45
-msgid "Feedback question"
-msgstr ""
-
-#: apps/feedbacks/models.py:46
-msgid "Feedback questions"
 msgstr ""
 
 #: apps/feedbacks/templates/feedbacks/feedback_details.html:6
@@ -291,18 +287,6 @@ msgstr ""
 
 #: apps/flatpages_my/models.py:39
 msgid "flat page images"
-msgstr ""
-
-#: apps/news/models.py:19
-msgid "Dean"
-msgstr ""
-
-#: apps/news/models.py:20
-msgid "First year"
-msgstr ""
-
-#: apps/news/models.py:21
-msgid "Fifth year"
 msgstr ""
 
 #: apps/news/models.py:29

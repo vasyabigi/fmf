@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-09 16:40+0300\n"
-"PO-Revision-Date: 2012-05-09 16:41\n"
+"POT-Creation-Date: 2012-05-10 22:09+0300\n"
+"PO-Revision-Date: 2012-05-10 22:10\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgid "Email"
 msgstr "Email"
 
 #: apps/core/forms.py:26 apps/core/templates/contacts/manager_message.html:2
-#: apps/feedbacks/models.py:20
+#: apps/feedbacks/models.py:8
 msgid "Name"
 msgstr "Ім'я"
 
@@ -105,7 +105,7 @@ msgstr "Секція"
 msgid "Custom name"
 msgstr "Кастомне ім'я"
 
-#: apps/core/models.py:22 apps/core/models.py:58 apps/feedbacks/models.py:22
+#: apps/core/models.py:22 apps/core/models.py:58 apps/feedbacks/models.py:10
 #: apps/flatpages_my/models.py:34 apps/news/models.py:60
 #: apps/news/models.py:78 apps/news/models.py:83 apps/news/models.py:124
 #: apps/sections/models.py:29 apps/sections/models.py:33
@@ -160,7 +160,8 @@ msgstr ""
 "аудиторія 420"
 
 #: apps/core/templates/contacts/manager_message.html:4
-#: apps/sections/models.py:10 apps/sections/models.py:47
+#: apps/feedbacks/models.py:13 apps/sections/models.py:10
+#: apps/sections/models.py:47
 msgid "Content"
 msgstr "Повідомлення"
 
@@ -169,64 +170,59 @@ msgid "Last news"
 msgstr "Останні новини"
 
 #: apps/core/templates/core/index_view.html:44
-#: apps/core/templates/core/index_view.html:73
-#: apps/core/templates/core/index_view.html:182
+#: apps/core/templates/core/index_view.html:67
 msgid "All"
 msgstr "Усі"
 
-#: apps/core/templates/core/index_view.html:95
-#: apps/core/templates/core/index_view.html:115
-#: apps/core/templates/core/index_view.html:135
+#: apps/core/templates/core/index_view.html:48
+msgid "All news"
+msgstr "Усі новини"
+
+#: apps/core/templates/core/index_view.html:49 apps/news/models.py:19
+msgid "Dean"
+msgstr "Деканат"
+
+#: apps/core/templates/core/index_view.html:51
+msgid "Admissions"
+msgstr "Приймальна комісія"
+
+#: apps/core/templates/core/index_view.html:53 apps/news/models.py:20
+msgid "First year"
+msgstr "Перший курс"
+
+#: apps/core/templates/core/index_view.html:54 apps/news/models.py:21
+msgid "Fifth year"
+msgstr "П'ятий курс"
+
+#: apps/core/templates/core/index_view.html:86
+#: apps/core/templates/core/index_view.html:102
+#: apps/core/templates/core/index_view.html:122
 msgid "No news in this category."
 msgstr "Немає новин в даній категорії."
 
-#: apps/feedbacks/models.py:9
-msgid "question"
-msgstr "Питання"
-
-#: apps/feedbacks/models.py:12 apps/feedbacks/models.py:39
-msgid "Question"
-msgstr "Питання"
-
-#: apps/feedbacks/models.py:13
-msgid "Questions"
-msgstr "Питання"
-
-#: apps/feedbacks/models.py:21 apps/news/models.py:27 apps/news/models.py:95
+#: apps/feedbacks/models.py:9 apps/news/models.py:27 apps/news/models.py:95
 #: apps/sections/models.py:9 apps/sections/models.py:46
 msgid "Slug"
 msgstr "Посилання"
 
-#: apps/feedbacks/models.py:23 apps/news/models.py:34 apps/news/models.py:100
+#: apps/feedbacks/models.py:11
+msgid "Short description"
+msgstr "Короткий опис"
+
+#: apps/feedbacks/models.py:12 apps/news/models.py:34 apps/news/models.py:100
 #: apps/seo/models.py:12
 msgid "Description"
 msgstr "Опис"
 
-#: apps/feedbacks/models.py:26 apps/feedbacks/models.py:38
+#: apps/feedbacks/models.py:16
 msgid "Feedback"
 msgstr "Відгук"
 
-#: apps/feedbacks/models.py:27
+#: apps/feedbacks/models.py:17
 #: apps/feedbacks/templates/feedbacks/feedback_details.html:7
 #: apps/feedbacks/templates/feedbacks/feedback_list.html:7
 msgid "Feedbacks"
 msgstr "Відгуки"
-
-#: apps/feedbacks/models.py:40
-msgid "Answer"
-msgstr "Відповідь"
-
-#: apps/feedbacks/models.py:41
-msgid "Can be main page?"
-msgstr "Може бути на головній?"
-
-#: apps/feedbacks/models.py:45
-msgid "Feedback question"
-msgstr "Питання"
-
-#: apps/feedbacks/models.py:46
-msgid "Feedback questions"
-msgstr "Питання"
 
 #: apps/feedbacks/templates/feedbacks/feedback_details.html:6
 #: apps/feedbacks/templates/feedbacks/feedback_list.html:6
@@ -303,18 +299,6 @@ msgstr "Картинка"
 #: apps/flatpages_my/models.py:39
 msgid "flat page images"
 msgstr "Картинки"
-
-#: apps/news/models.py:19
-msgid "Dean"
-msgstr "Деканат"
-
-#: apps/news/models.py:20
-msgid "First year"
-msgstr "Перший курс"
-
-#: apps/news/models.py:21
-msgid "Fifth year"
-msgstr "П'ятий курс"
 
 #: apps/news/models.py:29
 msgid "Category"
@@ -470,6 +454,27 @@ msgstr "попередня"
 msgid "next"
 msgstr "наступна"
 
+#~ msgid "question"
+#~ msgstr "Питання"
+
+#~ msgid "Question"
+#~ msgstr "Питання"
+
+#~ msgid "Questions"
+#~ msgstr "Питання"
+
+#~ msgid "Answer"
+#~ msgstr "Відповідь"
+
+#~ msgid "Can be main page?"
+#~ msgstr "Може бути на головній?"
+
+#~ msgid "Feedback question"
+#~ msgstr "Питання"
+
+#~ msgid "Feedback questions"
+#~ msgstr "Питання"
+
 #~ msgid "Why FPM?"
 #~ msgstr "Чому ФМФ?"
 
@@ -498,9 +503,6 @@ msgstr "наступна"
 
 #~ msgid "Announcements"
 #~ msgstr "Анонси подій"
-
-#~ msgid "All news"
-#~ msgstr "Усі новини"
 
 #~ msgid "Meta information"
 #~ msgstr "Пошукова інформація"
