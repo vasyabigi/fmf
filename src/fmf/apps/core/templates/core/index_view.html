@@ -77,9 +77,7 @@
                     <ul>
                       {% for news in news_list %}
                         <li class="img_descr">
-                          <span class="date">
-                           time
-                          </span>
+                          <span class="date">{{ news.created|date:"d M. Y" }}</span>
                           <a class="news-title" href="{{ news.get_absolute_url }}">{{ news.title }}</a>
                         </li>
                       {% endfor %}
@@ -95,9 +93,7 @@
                     <ul>
                       {% for news in news_list %}
                         <li class="img_descr">
-                          <span class="date">
-                           time
-                          </span>
+                          <span class="date">{{ news.created|date:"d M. Y" }}</span>
                           <a class="news-title" href="{{ news.get_absolute_url }}">{{ news.title }}</a>
                         </li>
                       {% endfor %}
