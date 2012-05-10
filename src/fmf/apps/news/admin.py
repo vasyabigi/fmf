@@ -40,4 +40,4 @@ class EventAdmin(BaseTranslationAdmin):
 
 
 admin.site.register(News, NewsAdmin)
-# admin.site.register(Event, EventAdmin)
+admin.site.register(Event, EventAdmin)
