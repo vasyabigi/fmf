@@ -60,9 +60,7 @@
                 <ul>
                   {% for news in news_list|slice:"3" %}
                     <li class="img_descr">
-                      <span class="date">
-                        time
-                      </span>
+                      <span class="date">{{ news.created|date:"d M. Y" }}</span>
                       {% if news.category %}
                         <span class="label label-important fl-r">{{ news.get_category_display }}</span>
                       {% else %}
@@ -143,7 +141,7 @@
     <!--why_fmf?-->
     <section id="why_fmf" class="bordered main_sect">
       <div class="title_arrow blue">
-        <h5>Невпевнений у майбутньому?</h5>
+        <h3 class="title_list">Невпевнений у майбутньому?</h3>
       </div>
       <ul class="numbers-list row-fluid">
         <li class="first span4">
@@ -175,7 +173,7 @@
             <div class="description">
               <h3>Виходь успішною людиною!</h3>
               <p>Тут не потрібно слів.<br/>
-                Ось наші результати :</p>
+                Наші результати:</p>
             </div>
           </div>
           <i class="icon-chevron-down"></i>
@@ -200,7 +198,7 @@
                 <div class="feedback-name" style="display:none;">{{ feedback.name }}</div>
                 <div class="feedback-short-description" style="display:none;">{{ feedback.short_description }}</div>
                 <div class="feedback-image" style="display:none;">
-                  {% thumbnail feedback.image "250x280" crop="top" as im %}
+                  {% thumbnail feedback.image "220x240" crop="top" as im %}
                     <img src="{{ im.url }}" alt="{{ feedback.name }}">
                   {% endthumbnail %}
                 </div>
