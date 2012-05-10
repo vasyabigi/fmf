@@ -25,7 +25,6 @@ html, body {
 /*Header*/
 body > header {
   position: relative;
-  height: 75px;
   padding-top: 15px;
   border-top: 10px solid #444;
   background: url("/static/images/pattern.png") #f0f0f0 repeat;
@@ -121,6 +120,7 @@ nav.main > ul > li > a {
   border-left: 1px solid #bbb;
   color: #666;
   font-weight: bold;
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
   text-shadow: 0 1px #fff;
   -webkit-transition: background 0.2s ease-in;
   -moz-transition: background 0.2s ease-in;
@@ -236,9 +236,7 @@ nav.main .breadcrumbs {
   width: 400px;
   padding-left:95px;
   color: #505050;
-  font-size:20px;
-  font-weight: bold;
-  line-height: 50px;
+  font: bold 20px/50px Georgia, sans-serif;
   background: url("/static/images/emblem_84x56.png") top left no-repeat;
 }
 .logo:hover {
@@ -346,10 +344,8 @@ article .main_sect img, .img_descr img, #feedback_list img {
   padding: 0;
   background: url("/static/images/logo_bg_1.png") fixed 10% 150px #f4f4f4 no-repeat;
 }
-#why_fmf > h5 {
-  padding: 5px;
-  background: #444;
-  color: #d6d6d6;
+#why_fmf .title_arrow h5 {
+  padding-left: 30px;
   font-size:18px;
   font-weight: bold;
   line-height: 20px;
@@ -372,19 +368,31 @@ article .main_sect img, .img_descr img, #feedback_list img {
 .title_arrow.blue {background: #425972}
 
 .numbers-list {
-
+  border-bottom: 1px solid #DDD;
+  box-shadow: 0 1px 0 #fff;
 }
 .numbers-box {
-  margin: 10px;
   padding:5px;
-  background: #fff;
-  border: 4px solid #ddd;
-  box-shadow:inset 0 0 5px #777;
+}
+.numbers-list i {
+  margin-top: 10px;
+  font-size: 70px;
+  color: #aaa;
+  text-shadow: 1px 1px 0 #333;
+}
+.numbers-list .icon-chevron-down {
+  display: block;
+  margin: 0 auto;
+  font-size: 50px;
+  color: #ddd;
+  text-shadow: none;
+}
+.numbers-box .description {
+  margin-left: 87px;
 }
 .numbers-list li {
   min-height: 55px;
   margin-top: 4px;
-  text-align: center;
 }
 .numbers-list p {
   margin: 2px;
@@ -411,21 +419,33 @@ article .main_sect img, .img_descr img, #feedback_list img {
   /*END Why_fmf*/
 
   /*Feedbacks*/
+.feedback-image-main img {
+  margin-left: 10px;
+  padding: 4px;
+  background: #D7D7D7;
+  border: 1px solid #BBB;
+  box-shadow: inset 1px 1px 0 #bbb;
+}
+.feedbacks {
+  margin-top: 10px;
+  min-height: 300px;
+}
+
 #feedbacks {
   background: rgba(255,255,255,.6);
 }
 #feedback-description-main {
+  min-height: 100px;
   position: relative;
-  border: 4px solid #ddd;
-  border-radius: 10px;
+  border-radius: 20px;
   background: #fff;
-  box-shadow: inset 0 0 5px #777;
+  box-shadow: 0 0 10px #777;
 }
 #feedback-description-main:after {
   content: "";
   display: block;
   position: absolute;
-  top:9px;
+  top:19px;
   left:-17px;
   width: 0;
   height: 0;
@@ -437,13 +457,13 @@ article .main_sect img, .img_descr img, #feedback_list img {
   content: "";
   display: block;
   position: absolute;
-  top:5px;
-  left:-26px;
+  top:18px;
+  left:-21px;
   width: 0;
   height: 0;
   border-top: 0 solid transparent;
-  border-right: 26px solid #ddd;
-  border-bottom: 26px solid transparent;
+  border-right: 21px solid #ddd;
+  border-bottom: 21px solid transparent;
 }
 .streamer_slider ul .img_descr {
   margin:0;
@@ -877,7 +897,7 @@ aside > section {
 .left_sidebar .side_nav {
   border-top: 4px solid #A51C30;
 }
-.left_sidebar .side_nav > ul > .active_article > a {
+.left_sidebar .side_nav > ul > .active_article > a, .left_sidebar .side_nav > ul > .active_article > a:hover {
   background: #63212B;
   color: #eee;
 }
@@ -1231,10 +1251,7 @@ footer li a:hover {
 #loading img {
   padding-right:300px;
 }
-
-.feedback-active a {
-  border-color: #08C;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-  -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-  box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+.feedback-active a, a.thumbnail:hover {
+  border-color: #aaa;
+  box-shadow: 0 0 7px #777;
 }
