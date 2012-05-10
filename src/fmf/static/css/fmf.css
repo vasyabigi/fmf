@@ -439,7 +439,19 @@ article .main_sect img, .img_descr img, #feedback_list img {
   position: relative;
   border-radius: 20px;
   background: #fff;
-  box-shadow: 0 0 10px #777;
+  box-shadow: 0 0 7px #aaa;
+
+}
+#feedback-description-main .name {
+  margin:0;
+  padding: 11px;
+  background: #f0f0f0;
+  border-radius: 20px 20px 0 0;
+  font-style: normal;
+}
+.feedback-description-link {
+  float: right;
+  margin: 5px 15px;
 }
 #feedback-description-main:after {
   content: "";
@@ -450,7 +462,7 @@ article .main_sect img, .img_descr img, #feedback_list img {
   width: 0;
   height: 0;
   border-top: 0 solid transparent;
-  border-right: 21px solid #fff;
+  border-right: 21px solid #f0f0f0;
   border-bottom: 21px solid transparent;
 }
 #feedback-description-main:before {
