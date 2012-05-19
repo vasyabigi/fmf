@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-10 22:09+0300\n"
-"PO-Revision-Date: 2012-05-10 22:10\n"
+"POT-Creation-Date: 2012-05-19 17:34+0300\n"
+"PO-Revision-Date: 2012-05-19 17:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,6 +171,7 @@ msgstr "Останні новини"
 
 #: apps/core/templates/core/index_view.html:44
 #: apps/core/templates/core/index_view.html:67
+#: apps/core/templates/core/index_view.html:212
 msgid "All"
 msgstr "Усі"
 
@@ -199,6 +200,10 @@ msgstr "П'ятий курс"
 #: apps/core/templates/core/index_view.html:122
 msgid "No news in this category."
 msgstr "Немає новин в даній категорії."
+
+#: apps/core/templates/core/index_view.html:207
+msgid "Interview"
+msgstr "Інтерв'ю"
 
 #: apps/feedbacks/models.py:9 apps/news/models.py:27 apps/news/models.py:95
 #: apps/sections/models.py:9 apps/sections/models.py:46
@@ -454,6 +459,9 @@ msgstr "попередня"
 msgid "next"
 msgstr "наступна"
 
+#~ msgid "Read more"
+#~ msgstr "більше"
+
 #~ msgid "question"
 #~ msgstr "Питання"
 
@@ -497,9 +505,6 @@ msgstr "наступна"
 
 #~ msgid "Upcoming events"
 #~ msgstr "Найближчі події"
-
-#~ msgid "more"
-#~ msgstr "більше"
 
 #~ msgid "Announcements"
 #~ msgstr "Анонси подій"

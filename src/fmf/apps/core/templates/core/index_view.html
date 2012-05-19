@@ -144,7 +144,7 @@
           <div class="numbers-box">
             <i class="icon-cogs fl-l"></i>
             <div class="description">
-              <h3>Поступай до нас!</h3>
+              <h3>Вступай до нас!</h3>
               <p><b>95%</b> студентів на бюджеті;</p>
               <p><b>+ 20%</b> до звичайної стипендії;</p>
               <p><b>36/60</b> прохідний бал;</p>
@@ -204,12 +204,12 @@
                 <div class="feedback-description" style="display:none;">
                   <div class="name"><span>{{ feedback.name }}</span></div>
                   <p>{{ feedback.description }}</p>
-                  <a class="feedback-description-link" href="{% if feedback.content %}{{ feedback.get_absolute_url }}{% else %}#{% endif %}">Read more »</a>
+                  {% if feedback.content %}<a class="feedback-description-link" href="{{ feedback.get_absolute_url }}">{% trans "Interview" %} »</a>{% endif %}
                 </div>
               </li>
             {% endfor %}
           </ul>
-          <p class="feedbacks-all-link"><a href="#">{% trans "All" %} »</a></p>
+          <p class="feedbacks-all-link"><a href="{% url feedback-list %}">{% trans "All" %} »</a></p>
           <!-- EO feefbacks -->
         </div>
       </div>
