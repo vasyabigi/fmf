@@ -382,7 +382,9 @@ article .main_sect img, .img_descr img, #feedback_list img {
 .numbers-list .icon-arrow-down {
   display: block;
   margin: 0 auto;
+  color: #bbb;
   font-size: 50px;
+  text-shadow: none;
 }
 .numbers-box .description {
   margin-left: 87px;
@@ -404,15 +406,6 @@ article .main_sect img, .img_descr img, #feedback_list img {
 .numbers-list b {
   color: #993c23;
 }
-.numbers-list .first {
-
-}
-.numbers-list .second {
-
-}
-.numbers-list .third {
-
-}
   /*END Why_fmf*/
 
   /*Feedbacks*/
@@ -427,17 +420,12 @@ article .main_sect img, .img_descr img, #feedback_list img {
   margin-top: 10px;
   min-height: 300px;
 }
-
-#feedbacks {
-  background: rgba(255,255,255,.6);
-}
 #feedback-description-main {
   min-height: 100px;
   position: relative;
   border-radius: 20px;
   background: #fff;
   box-shadow: 0 0 7px #aaa;
-
 }
 #feedback-description-main .name {
   margin:0;
@@ -474,6 +462,14 @@ article .main_sect img, .img_descr img, #feedback_list img {
   border-right: 21px solid #ddd;
   border-bottom: 21px solid transparent;
 }
+.feedbacks-all-link {
+  float: right;
+  margin-right: 60px;
+  font-weight: bold;
+  padding: 4px;
+  border: 1px solid #eee;
+
+  }
 .streamer_slider ul .img_descr {
   margin:0;
   padding: 10px 5px 3px;

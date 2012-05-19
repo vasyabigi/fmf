@@ -19,7 +19,7 @@
               {% thumbnail image.image '500x250' crop='center' as im %}
                 <img src="{{ im.url }}" alt="{{ image.get_page_title }}">
               {% endthumbnail %}
-              <div class="caption"><a href="{{ image.get_page_url|default:"#" }}">{{ image.get_page_title }}</a></div>
+              <div class="caption"><a href='{{ image.get_page_url|default:"#" }}'>{{ image.get_page_title }}</a></div>
             </li>
           {% endfor %}
         </ul>
@@ -201,10 +201,15 @@
                   {% endthumbnail %}
                   </a>
                 </div>
-                <div class="feedback-description" style="display:none;"><p>{{ feedback.description }}</p></div>
+                <div class="feedback-description" style="display:none;">
+                  <div class="name"><span>{{ feedback.name }}</span></div>
+                  <p>{{ feedback.description }}</p>
+                  <a class="feedback-description-link" href="{% if feedback.content %}{{ feedback.get_absolute_url }}{% else %}#{% endif %}">Read more »</a>
+                </div>
               </li>
             {% endfor %}
           </ul>
+          <p class="feedbacks-all-link"><a href="#">{% trans "All" %} »</a></p>
           <!-- EO feefbacks -->
         </div>
       </div>

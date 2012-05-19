@@ -216,17 +216,18 @@ var Fmf = (function(){
         },
         IndexFeedbackSlider: function() {
             $('#feedback-image-main').html($(".feedback li:first").find('.feedback-image').html());
+            $('#feedback-description-main .name').html($(".feedback li:first").find('.feedback-name').html());
             $('#feedback-description-main').html($(".feedback li:first").find('.feedback-description').html());
 
             function feedbackClickEvent(item) {
                 var feedback = item.parent();
                 if (!feedback.hasClass('feedback-active')) {
-                  $(".feedback li").removeClass('feedback-active');
-                  feedback.addClass('feedback-active');
-                  var feedbackImage = feedback.find('.feedback-image').html();
-                  var feedbackDescription = feedback.find('.feedback-description').html();
-                  $('#feedback-image-main').html(feedbackImage).hide().fadeIn();
-                  $('#feedback-description-main').html(feedbackDescription).hide().fadeIn();
+                    $(".feedback li").removeClass('feedback-active');
+                    feedback.addClass('feedback-active');
+                    var feedbackImage = feedback.find('.feedback-image').html();
+                    var feedbackDescription = feedback.find('.feedback-description').html();
+                    $('#feedback-image-main').html(feedbackImage).hide().fadeIn();
+                    $('#feedback-description-main').html(feedbackDescription).hide().fadeIn();
                 }
             }
             $(".feedback a").click(function(){
