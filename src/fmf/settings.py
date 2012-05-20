@@ -84,7 +84,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'pagination.middleware.PaginationMiddleware',
-    'flatpages_my.middleware.FlatpageFallbackMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -186,18 +185,6 @@ LOGGING = {
 MODELTRANSLATION_TRANSLATION_REGISTRY = 'core.translations'
 
 PREFIX_DEFAULT_LOCALE = False
-
-TINYMCE_DEFAULT_CONFIG = {
-    'plugins': "preview,fullscreen,table,paste",
-    'theme': "advanced",
-    'cleanup_on_startup': True,
-    'custom_undo_redo_levels': 10,
-    'theme_advanced_toolbar_location': "top",
-    'theme_advanced_toolbar_align': "left",
-    'theme_advanced_buttons1': "fullscreen,|,undo,redo,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,|,outdent,indent,|,bullist,numlist,|,anchor,link,unlink,image,|,preview,code,|,cleanup,removeformat,|,pastetext,pasteword",
-    'theme_advanced_buttons2': "formatselect,tablecontrols",
-    'theme_advanced_buttons3': "",
-}
 
 try:
     DEBUG_APPS = DEBUG_MIDDLEWARE_CLASSES = tuple()

@@ -26,7 +26,6 @@ def news_details(request, slug):
     return TemplateResponse(request, template_name, context)
 
 
-
 class EventList(ListView):
     template_name = 'event/event_list.html'
     context_object_name = 'events'
