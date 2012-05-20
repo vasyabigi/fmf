@@ -108,7 +108,7 @@ TEMPLATE_DIRS = (
 PROJECT_APPS = (
     'core',
     'news',
-    'flatpages_my',
+    # 'flatpages_my',
     'feedbacks',
     'sections',
 
@@ -137,7 +137,6 @@ INSTALLED_APPS = (
     'modeltranslation',
     'pagination',
     'filebrowser',
-    'tinymce',
     'chunks',
 #    'memcache_status',
     'admin_tools',
@@ -218,7 +217,6 @@ ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fmf.dashboard.CustomAppIndexDashboard'
 #seo
 SEO_FOR_MODELS = [
     'news.models.News',
-    'flatpages_my.models.FlatPage',
     'feedbacks.models.Feedback',
     'sections.models.Section',
     'sections.models.Article',

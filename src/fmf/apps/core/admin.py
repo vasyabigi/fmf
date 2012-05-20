@@ -5,13 +5,13 @@ from models import IndexSliderImage
 
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline, TranslationStackedInline
 from sorl.thumbnail.admin import AdminImageMixin
+from imperavi.admin import ImperaviAdmin
 
 
-class BaseTranslationAdmin(AdminImageMixin, TranslationAdmin):
+class BaseTranslationAdmin(ImperaviAdmin, AdminImageMixin, TranslationAdmin):
 
-    class Media:
+    class Media(ImperaviAdmin.Media):
         js = (
-            '/static/modeltranslation/js/force_jquery.js',
             'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js',
             '/static/modeltranslation/js/tabbed_translation_fields.js',
         )

@@ -47,4 +47,4 @@ class FlatPageAdmin(BaseTranslationAdmin):
         return super(FlatPageAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
 
-admin.site.register(FlatPage, FlatPageAdmin)
+# admin.site.register(FlatPage, FlatPageAdmin)
