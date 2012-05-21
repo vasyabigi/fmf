@@ -30,8 +30,7 @@ def upload_image(request, upload_path=None):
         m = md5.new(image_name)
         hashed_name = '{0}{1}'.format(m.hexdigest(), extension)
         image_path = default_storage.save(os.path.join(upload_path or UPLOAD_PATH, hashed_name), image)
-        import ipdb; ipdb.set_trace()
-        relative_path = os.path.join(settings.MEDIA_URL, os.path.relpath(image_path, settings.MEDIA_ROOT))
+        relative_path = os.path.join(settings.MEDIA_URL, image_path.split(settings.MEDIA_URL)[-1])
         return HttpResponse('<img src="%s">' % relative_path)
     return HttpResponseForbidden()
 
