@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-22 00:39+0300\n"
+"POT-Creation-Date: 2012-05-22 00:45+0300\n"
 "PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -215,7 +215,7 @@ msgid "lowest passing score"
 msgstr ""
 
 #: apps/core/templates/core/index_view.html:151
-msgid "Have a question? Ask just"
+msgid "Have a question? Ask right"
 msgstr ""
 
 #: apps/core/templates/core/index_view.html:151
