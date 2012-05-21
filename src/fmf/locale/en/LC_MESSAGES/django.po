@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-22 00:32+0300\n"
+"POT-Creation-Date: 2012-05-22 00:39+0300\n"
 "PO-Revision-Date: 2011-11-28 14:34\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -255,7 +255,7 @@ msgid "Become successful"
 msgstr ""
 
 #: apps/core/templates/core/index_view.html:171
-msgid "It goes witout saying."
+msgid "It goes without saying."
 msgstr ""
 
 #: apps/core/templates/core/index_view.html:172

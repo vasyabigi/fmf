@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-22 00:32+0300\n"
-"PO-Revision-Date: 2012-05-22 00:32\n"
+"POT-Creation-Date: 2012-05-22 00:39+0300\n"
+"PO-Revision-Date: 2012-05-22 00:39\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -262,7 +262,7 @@ msgid "Become successful"
 msgstr "Виходь успішною людиною"
 
 #: apps/core/templates/core/index_view.html:171
-msgid "It goes witout saying."
+msgid "It goes without saying."
 msgstr "Тут не потрібно слів."
 
 #: apps/core/templates/core/index_view.html:172
