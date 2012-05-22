@@ -186,6 +186,24 @@ MODELTRANSLATION_TRANSLATION_REGISTRY = 'core.translations'
 
 PREFIX_DEFAULT_LOCALE = False
 
+# admin_tools
+ADMIN_TOOLS_MENU = 'fmf.menu.CustomMenu'
+ADMIN_TOOLS_INDEX_DASHBOARD = 'fmf.dashboard.CustomIndexDashboard'
+ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fmf.dashboard.CustomAppIndexDashboard'
+
+# seo
+SEO_FOR_MODELS = [
+    'news.models.News',
+    'feedbacks.models.Feedback',
+    'sections.models.Section',
+    'sections.models.Article',
+]
+
+# imperavi
+IMPERAVI_CUSTOM_SETTINGS = {
+    'lang': 'ua',
+}
+
 try:
     DEBUG_APPS = DEBUG_MIDDLEWARE_CLASSES = tuple()
     from local_settings import *
@@ -194,17 +212,3 @@ except ImportError:
 else:
     INSTALLED_APPS += DEBUG_APPS
     MIDDLEWARE_CLASSES += DEBUG_MIDDLEWARE_CLASSES
-
-
-#admin_tools
-ADMIN_TOOLS_MENU = 'fmf.menu.CustomMenu'
-ADMIN_TOOLS_INDEX_DASHBOARD = 'fmf.dashboard.CustomIndexDashboard'
-ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fmf.dashboard.CustomAppIndexDashboard'
-
-#seo
-SEO_FOR_MODELS = [
-    'news.models.News',
-    'feedbacks.models.Feedback',
-    'sections.models.Section',
-    'sections.models.Article',
-]

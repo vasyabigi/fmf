@@ -62,9 +62,9 @@
                     <li class="img_descr">
                       <span class="date">{{ news.created|date:"d M. Y" }}</span>
                       {% if news.category %}
-                        <span class="label label-important fl-r">{{ news.get_category_display }}</span>
+                        <a href="{% url news-list %}"><span class="label label-important fl-r">{{ news.get_category_display }}</span></a>
                       {% else %}
-                        <span class="label fl-r">{% trans "All" %}</span>
+                        <a href="{% url news-list %}"><span class="label fl-r">{% trans "All" %}</span></a>
                       {% endif %}
                       <a class="news-title" href="{{ news.get_absolute_url }}">{{ news.title }}</a>
                     </li>
@@ -104,17 +104,13 @@
                 {% endwith %}
               </div>
               <div class="tab-pane streamer_slider" id="D">
-                {% with news_list=news_list|from_category:'first_year' %}
+                {% with news_list=news_list|from_category:'fifth_year' %}
                   {% if news_list %}
                     <ul>
                       {% for news in news_list %}
                         <li class="img_descr">
-                          <a href="{{ news.get_absolute_url }}">
-                            {% thumbnail news.main_image '40x40' crop='center' as im %}
-                              <img src="{{ im.url }}" alt="{{ news.title }}">
-                            {% endthumbnail %}
-                          </a>
-                          <p><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                          <span class="date">{{ news.created|date:"d M. Y" }}</span>
+                          <a class="news-title" href="{{ news.get_absolute_url }}">{{ news.title }}</a>
                         </li>
                       {% endfor %}
                     </ul>
