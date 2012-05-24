@@ -2,16 +2,16 @@ import datetime
 from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic.list import ListView
+from django.shortcuts import render
 
 from models import News, Event
 
 
-class NewsList(ListView):
-    template_name = 'news/news_list.html'
-    context_object_name = 'news_list'
-
-    def get_queryset(self):
-        return News.objects.filter(is_active=True)
+def news_list(request):
+    context = {
+        'news_list': News.objects.filter(is_active=True)
+    }
+    return render(request, 'news/news_list.html', context)
 
 
 def news_details(request, slug):

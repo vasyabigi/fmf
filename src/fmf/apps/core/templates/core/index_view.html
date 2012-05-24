@@ -189,7 +189,7 @@
                   {% endthumbnail %}
                 </a>
                 <div class="feedback-name" style="display:none;">{{ feedback.name }}</div>
-                <div class="feedback-short-description" style="display:none;">{{ feedback.short_description }}</div>
+                <div class="feedback-short-description" style="display:none;">{{ feedback.short_description|safe }}</div>
                 <div class="feedback-image" style="display:none;">
                   <a href="{% if feedback.content %}{{ feedback.get_absolute_url }}{% else %}#{% endif %}">
                   {% thumbnail feedback.image "220x240" crop="top" as im %}
@@ -199,7 +199,7 @@
                 </div>
                 <div class="feedback-description" style="display:none;">
                   <div class="name"><span>{{ feedback.name }}</span></div>
-                  <p>{{ feedback.description }}</p>
+                  <p>{{ feedback.description|safe }}</p>
                   {% if feedback.content %}<a class="feedback-description-link" href="{{ feedback.get_absolute_url }}">{% trans "Interview" %} »</a>{% endif %}
                 </div>
               </li>
