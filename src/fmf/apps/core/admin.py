@@ -8,11 +8,12 @@ from sorl.thumbnail.admin import AdminImageMixin
 from imperavi.admin import ImperaviAdmin
 
 
-class BaseTranslationAdmin(ImperaviAdmin, AdminImageMixin, TranslationAdmin):
+class BaseTranslationAdmin(AdminImageMixin, TranslationAdmin, ImperaviAdmin):
 
-    class Media(ImperaviAdmin.Media):
+    class Media:
         js = (
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js',
+            '/static/modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js',
             '/static/modeltranslation/js/tabbed_translation_fields.js',
         )
         css = {
