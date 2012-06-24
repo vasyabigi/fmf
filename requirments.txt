@@ -1,4 +1,4 @@
-django>=1.3,<1.4
+django
 south
 django-extensions
 django-debug-toolbar
@@ -10,9 +10,8 @@ sorl-thumbnail
 django-pagination
 django-localeurl
 -e git+https://github.com/jpwatts/django-positions.git#egg=django-positions
-django-filebrowser-no-grappelli
-django-tinymce
 psycopg2
 django-chunks
 gunicorn
 django-memcache-status
+django-imperavi
