@@ -1,15 +1,15 @@
 from django.contrib import admin
 
-from core.admin import BaseTranslationAdmin, BaseTranslationTabularInLine
+from core.admin import BaseTranslationAdmin, BaseTranslationStackedInLine
 from models import Section, Article, ArticleImage, SectionImage
 
 
-class ArticleImageAdmin(BaseTranslationTabularInLine):
+class ArticleImageAdmin(BaseTranslationStackedInLine):
     model = ArticleImage
     extra = 0
 
 
-class SectionImageAdmin(BaseTranslationTabularInLine):
+class SectionImageAdmin(BaseTranslationStackedInLine):
     model = SectionImage
     extra = 0
 
